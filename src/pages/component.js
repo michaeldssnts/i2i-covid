@@ -6,27 +6,16 @@ import Country from 'pages/country';
 import Widget from 'pages/widget';
 import NotFound from 'pages/not-found';
 
+const PagesComponents = { Home, Country, Widget, NotFound };
 
-const Pages = ({ router: { type, routesMap } }) => {
-  const { page } = routesMap[type];
-  return (
-    <>
-      {Object.keys(routesMap).map(route => page === routesMap[route].page && (
-        (page === 'home' && <Home key={page}/>)
-        || (page === 'country' && <Country key={page} />)
-        || (page === 'widget' && <Widget key={page} />)
-        || (page === 'not-found' && <NotFound key={page} />)
-      ))}
-    </>
-  );
+const Pages = ({ page }) => {
+  const Page = PagesComponents[page];
+
+  return <Page />;
 };
 
 Pages.propTypes = {
-  router: PropTypes.shape({
-    type: PropTypes.string,
-    routesMap: PropTypes.shape({})
-  }).isRequired,
-
+  page: PropTypes.string.isRequired,
 };
 
 export default Pages;
