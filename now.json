@@ -6,5 +6,7 @@
       "SASS_PATH": "@i2i-covid-sass_path"
     }
   },
-  "env": {}
+  "env": {
+    "SASS_PATH": "@i2i-covid-sass_path"
+  }
 }
