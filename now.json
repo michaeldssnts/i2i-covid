@@ -2,7 +2,9 @@
   "version": 2,
   "name": "i2i-covid",
   "build": {
-    "env": {}
+    "env": {
+      "SASS_PATH": "@i2i-covid-sass_path"
+    }
   },
   "env": {}
 }
