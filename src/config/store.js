@@ -1,23 +1,16 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { connectRoutes } from 'redux-first-router';
 import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
-import { handleModule } from 'vizzuality-redux-tools';
 
+import routesMap from 'config/router';
+import pageReducer from 'modules/pages/reducer';
 
-import router from './router';
+export default function configureStore(preloadedState = {}) {
+  const { reducer, middleware, enhancer } = connectRoutes(routesMap);
+  const rootReducer = combineReducers({ page: pageReducer, location: reducer });
+  const middlewares = applyMiddleware(middleware);
+  const enhancers = composeWithDevTools(enhancer, middlewares);
+  const store = createStore(rootReducer, preloadedState, enhancers);
 
-
-const {
-  reducer: routerReducer,
-  middleware: routerMiddleware,
-  enhancer: routerEnhancer
-} = router;
-
-
-const reducers = combineReducers({
-  router: routerReducer,
-});
-const middleware = applyMiddleware(routerMiddleware);
-const enhancers = composeWithDevTools(routerEnhancer, middleware);
-const store = createStore(reducers, enhancers);
-
-export default store;
+  return { store };
+}
