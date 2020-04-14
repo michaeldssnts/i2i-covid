@@ -1,9 +1,6 @@
 import { connect } from 'react-redux';
-import Component from './component';
+import Pages from './component';
 
-const stateToProps = ({ router }) => ({ router });
+const mapStateToProps = ({ page }) => ({ page });
 
-export default connect(
-  stateToProps,
-  null
-)(Component);
+export default connect(mapStateToProps)(Pages);

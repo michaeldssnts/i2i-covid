@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+}
+
 button {
   border: none;
   background: none;
@@ -27,4 +31,8 @@ a {
   &:hover {
     text-decoration: underline;
   }
+}
+
+li {
+  list-style: none;
 }

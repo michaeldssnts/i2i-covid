@@ -1,0 +1,17 @@
+.c-dropdown {
+  display: inline;
+  position: relative;
+
+  ul {
+    position: absolute;
+    justify-content: flex-start;
+    color: $color-2;
+    margin: 0;
+    padding: 0;
+    display: none;
+
+    &.-active {
+      display: block;
+    }
+  }
+}

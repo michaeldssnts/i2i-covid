@@ -1,11 +1,18 @@
 import React from 'react';
-import Hero from 'components/hero'
+import PropTypes from 'prop-types';
 
-const Layout = ({ children }) => (
+import Hero from 'components/hero';
+
+const Layout = ({ iso, children }) => (
   <div className="c-layout">
-    <Hero />
+    <Hero iso={iso} />
     {children}
   </div>
 );
+
+Layout.propTypes = {
+  iso: PropTypes.string.isRequired,
+  children: PropTypes.func.isRequired,
+};
 
 export default Layout;
