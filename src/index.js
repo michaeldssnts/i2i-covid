@@ -12,6 +12,9 @@ const App = () => {
   return (
     <Provider store={store}>
       <div className="app">
+      <header className="App-header">
+        <p>i2i covid</p>
+      </header>
         <Pages className="l-pages" />
       </div>
     </Provider>

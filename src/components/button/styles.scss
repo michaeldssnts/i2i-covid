@@ -1,0 +1,16 @@
+.c-button {
+  background-color: $white;
+  color: $color-1;
+  font-family: $font-family-1;
+  border-radius: 20px;
+  font-weight: bold;
+  line-height: 22px;
+  text-align: center;
+  box-sizing: border-box;
+  padding: 0 20px;
+
+  &.-color-1 {
+    background-color: $color-1;
+    color: $white;
+  }
+}
