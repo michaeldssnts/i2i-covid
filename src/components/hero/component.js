@@ -10,13 +10,14 @@ const Hero = () => (
         <ul className="dropdown-list">
           {countries.map(country =>
             <li key={country.iso}>
-              <Link to={`${country.path}/${country.iso}`}>
+              {console.log(country.iso)}
+              <Link to={{ payload: country.iso }}>
                 {country.name}
               </Link>
             </li>
           )}
         </ul>
-      </div>)
+      </div>
     </h1>
   </div>
 );

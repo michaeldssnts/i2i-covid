@@ -1,17 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/app';
-import * as serviceWorker from './serviceWorker';
+import store from './config/store';
+import { Provider } from 'react-redux';
+
+import Pages from './pages';
+import CountryPage from 'pages/country';
+
 import 'styles/index.scss';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const App = () => {
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+  return (
+    <Provider store={store}>
+      <div className="app">
+      <header className="App-header">
+        <p>i2i covid</p>
+      </header>
+        <Pages className="l-pages" />
+        <CountryPage />
+      </div>
+    </Provider>
+  )
+};
+
+ReactDOM.render(<App />, document.getElementById('root'));

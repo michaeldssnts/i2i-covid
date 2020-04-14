@@ -1,9 +1,10 @@
 import React from 'react';
-import Hero from '../hero'
+import Hero from 'components/hero'
 
-const Layout = () => (
+const Layout = ({ children }) => (
   <div className="c-layout">
     <Hero />
+    {children}
   </div>
 );
 
