@@ -17,7 +17,7 @@ export const routes = {
   },
   WIDGET: {
     page: 'widget',
-    path: '/widget/:widget_slug'
+    path: '/widget/:widget_slug?iso=:iso'
   },
 };
 
