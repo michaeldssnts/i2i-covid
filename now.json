@@ -1,0 +1,8 @@
+{
+  "version": 2,
+  "name": "i2i-covid",
+  "build": {
+    "env": {}
+  },
+  "env": {}
+}
