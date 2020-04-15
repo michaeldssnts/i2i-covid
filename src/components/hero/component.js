@@ -12,7 +12,7 @@ const Hero = ({ iso }) => {
     <div className="c-hero">
       <div className="hero-title">
         <h1>
-          COVID19 status in
+          COVID-19 tracking survey status in
           <Dropdown info={options} option={option} />
         </h1>
       </div>
