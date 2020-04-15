@@ -1,19 +1,30 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import useAxios from 'axios-hooks';
 import Dropdown from 'components/dropdown';
 
-import countries from './constants';
+import cartoApi from 'utils/carto-api';
+
+const SQL = `
+  SELECT country as name,
+    country_iso as iso
+  FROM covid_data_test
+  GROUP BY country, country_iso
+`;
 
 const Hero = ({ iso }) => {
-  const option = countries.find((country) => country.iso === iso);
-  const options = countries.filter((country) => country.iso !== iso);
+  const [{ data }] = useAxios(cartoApi(SQL));
+  const countries = data && data.rows ? data.rows : null;
+
+  const option = countries ? countries.find((country) => country.iso === iso) : null;
+  const options = countries ? countries.filter((country) => country.iso !== iso) : null;
 
   return (
     <div className="c-hero">
       <div className="hero-title">
         <h1>
           COVID-19 tracking survey status in
-          <Dropdown info={options} option={option} />
+          {options && <Dropdown info={options} option={option} />}
         </h1>
       </div>
     </div>
