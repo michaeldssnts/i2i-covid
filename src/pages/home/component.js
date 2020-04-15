@@ -1,14 +1,13 @@
 import React from 'react';
 import classnames from 'classnames';
 import Link from 'redux-first-router-link';
-import styles from './styles.module.scss';
 
 const HomePage = () => (
-  <section className={styles.homepage}>
+  <section className="l-homepage">
     <div className="l-container">
-      <article className={styles.welcome}>
-        <div className={styles.welcomeTop} />
-        <div className={classnames(styles.welcomeContent, 'clearfix')}>
+      <article className="l-homepage-welcome">
+        <div className="welcome-top" />
+        <div className={classnames('welcome-content', 'clearfix')}>
           <header>
             <h1>COVID-19</h1>
             <h2>Tracking Survey Status</h2>
@@ -22,9 +21,9 @@ const HomePage = () => (
             <p>Select a country to start &#8594;</p>
           </aside>
         </div>
-        <div className={styles.welcomeBottom} />
+        <div className="welcome-bottom" />
       </article>
-      <nav className={styles.countriesNav}>
+      <nav className="l-homepage-countries-nav">
         <ul>
           <li>
             <Link to="/NGA">Nigeria</Link>
