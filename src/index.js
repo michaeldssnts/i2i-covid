@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 
 import configureStore from './config/store';
 import Pages from './pages';
-import CountryPage from 'pages/country';
 
 import 'styles/index.scss';
 
@@ -18,7 +17,6 @@ const App = () => {
           <p>i2i covid</p>
         </header>
         <Pages className="l-pages" />
-        <CountryPage />
       </div>
     </Provider>
   );
