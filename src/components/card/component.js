@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Link from 'redux-first-router-link';
 
-const CardInfo = ({ info }) => {
+const CardInfo = ({ info, iso }) => {
   return (
     <div className="c-card">
       <ul>
@@ -12,7 +12,7 @@ const CardInfo = ({ info }) => {
             <h2>{i.title}</h2>
             <p>{i.intro}</p>
             <div className="widgets">widgets</div>
-            {i.link && <Link to={`/${i.link}`}>Know more</Link>}
+            {i.link && <Link to={`/${iso}/${i.link}`}>Know more</Link>}
           </li>
         ))}
       </ul>
@@ -22,6 +22,7 @@ const CardInfo = ({ info }) => {
 
 CardInfo.propTypes = {
   info: PropTypes.array.isRequired,
+  iso: PropTypes.string.isRequired,
 };
 
 export default CardInfo;
