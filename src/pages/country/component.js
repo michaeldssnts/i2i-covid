@@ -1,21 +1,14 @@
 import React from 'react';
-import proptypes from 'prop-types';
-import Navigation from 'components/navigation';
+import PropTypes from 'prop-types';
 
 import TabsInfo from './constants';
+import Layout from 'components/layout';
 
-const CountryPage = ({ current }) => {
-  const infoPage = TabsInfo.find((info) => info.category === current);
-  return (
-    <div className="l-country">
-      <Navigation tabs={TabsInfo} currentTab={current} />
-      {infoPage.content}
-    </div>
-  );
-};
+const CountryPage = ({ iso, current }) => <Layout iso={iso} info={TabsInfo} current={current} />;
 
 CountryPage.propTypes = {
-  current: proptypes.string.isRequired,
+  iso: PropTypes.string.isRequired,
+  current: PropTypes.string.isRequired,
 };
 
 export default CountryPage;

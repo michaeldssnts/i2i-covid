@@ -4,6 +4,7 @@ import Component from './component';
 
 const mapStateToProps = (state) => ({
   current: state.location.payload.category,
+  iso: state.country.selectedIso,
 });
 
 export default connect(mapStateToProps)(Component);

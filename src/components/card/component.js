@@ -1,5 +1,5 @@
 import React from 'react';
-import proptypes from 'prop-types';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Link from 'redux-first-router-link';
 
@@ -21,7 +21,7 @@ const CardInfo = ({ info }) => {
 };
 
 CardInfo.propTypes = {
-  info: proptypes.array.isRequired,
+  info: PropTypes.array.isRequired,
 };
 
 export default CardInfo;
