@@ -1,5 +1,5 @@
 import * as actions from './actions';
-import * as reducers from './reducers';
+import reducer from './reducer';
 import initialState from './initial-state';
 
-export { actions, initialState, reducers };
+export { actions, initialState, reducer };

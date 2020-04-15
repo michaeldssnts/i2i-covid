@@ -1,4 +1,3 @@
 export default {
-  isos: [ 'NGA', 'KEN', 'MOZ', 'ZAF' ],
-  selectedIso: '',
+  selectedIso: null,
 };

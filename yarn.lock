@@ -7319,11 +7319,6 @@ normalize-url@^3.0.0:
   resolved "https://registry.yarnpkg.com/normalize-url/-/normalize-url-3.3.0.tgz#b2e1c4dc4f7c6d57743df733a4f5978d18650559"
   integrity sha512-U+JJi7duF1o+u2pynbp2zXDW2/PADgC30f0GsHZtRh+HOcXHnw137TrNlyxxRvWW5fjKd3bcLHPxofWuCjaeZg==
 
-normalize.css@^8.0.1:
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/normalize.css/-/normalize.css-8.0.1.tgz#9b98a208738b9cc2634caacbc42d131c97487bf3"
-  integrity sha512-qizSNPO93t1YUuUhP22btGOo3chcvDFqFaj2TRybP0DMxkHOCTYwp3n34fel4a31ORXy4m1Xq0Gyqpb5m33qIg==
-
 npm-run-path@^2.0.0:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/npm-run-path/-/npm-run-path-2.0.2.tgz#35a9232dfa35d7067b4cb2ddf2357b1871536c5f"
@@ -9157,22 +9152,10 @@ redent@^3.0.0:
     indent-string "^4.0.0"
     strip-indent "^3.0.0"
 
-reduce-reducers@^0.1.0:
-  version "0.1.5"
-  resolved "https://registry.yarnpkg.com/reduce-reducers/-/reduce-reducers-0.1.5.tgz#ff77ca8068ff41007319b8b4b91533c7e0e54576"
-  integrity sha512-uoVmQnZQ+BtKKDKpBdbBri5SLNyIK9ULZGOA504++VbHcwouWE+fJDIo8AuESPF9/EYSkI0v05LDEQK6stCbTA==
-
 reduce-reducers@^0.4.3:
   version "0.4.3"
   resolved "https://registry.yarnpkg.com/reduce-reducers/-/reduce-reducers-0.4.3.tgz#8e052618801cd8fc2714b4915adaa8937eb6d66c"
   integrity sha512-+CNMnI8QhgVMtAt54uQs3kUxC3Sybpa7Y63HR14uGLgI9/QR5ggHvpxwhGGe3wmx5V91YwqQIblN9k5lspAmGw==
-
-redux-actions@^0.10.1:
-  version "0.10.1"
-  resolved "https://registry.yarnpkg.com/redux-actions/-/redux-actions-0.10.1.tgz#bb442ee37dd9643a94933e4071e089f435587135"
-  integrity sha1-u0Qu433ZZDqUkz5AceCJ9DVYcTU=
-  dependencies:
-    reduce-reducers "^0.1.0"
 
 redux-actions@^2.6.5:
   version "2.6.5"
@@ -9207,13 +9190,6 @@ redux-first-router@^2.1.5:
   dependencies:
     rudy-history "^1.0.0"
     rudy-match-path "^0.3.0"
-
-redux-thunk-actions@^1.3.2:
-  version "1.3.2"
-  resolved "https://registry.yarnpkg.com/redux-thunk-actions/-/redux-thunk-actions-1.3.2.tgz#a239f1afc10f45bcb13525d5ff86f7f695a7a9c7"
-  integrity sha512-tB3XlTybdBW79gJIgb5+Lifcg7melgCrJWAqsZJRWT2lz/wreFfWPofDZ/wQZOJn50Bse//vQrS4bGM3bmkJGQ==
-  dependencies:
-    redux-actions "^0.10.1"
 
 redux@^4.0.5:
   version "4.0.5"
@@ -10949,14 +10925,6 @@ verror@1.10.0:
     assert-plus "^1.0.0"
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
-
-vizzuality-redux-tools@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/vizzuality-redux-tools/-/vizzuality-redux-tools-4.1.1.tgz#f4f3a736443032ec74ef842c66fd5745ab8c9d90"
-  integrity sha512-b6by+seoENZuLGaeuUrXaHYx898uX0z+CGO+LLcuO7hzAoqRifvmz7CRPHyRFHWIaqnBIMRsApdAKoUxu3wC6Q==
-  dependencies:
-    redux-actions "^2.6.5"
-    redux-thunk-actions "^1.3.2"
 
 vm-browserify@^1.0.1:
   version "1.1.2"
