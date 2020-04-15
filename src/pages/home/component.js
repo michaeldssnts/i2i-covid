@@ -33,16 +33,16 @@ const HomePage = () => (
             <span>Uganda</span>
           </li>
           <li>
-            <Link to="/NGA">Rwanda</Link>
+            <Link to="/RWA">Rwanda</Link>
           </li>
           <li>
-            <Link to="/NGA">Kenya</Link>
+            <Link to="/KEN">Kenya</Link>
           </li>
           <li>
             <span>Tanzania</span>
           </li>
           <li>
-            <Link to="/NGA">South Africa</Link>
+            <Link to="/ZAF">South Africa</Link>
           </li>
         </ul>
       </nav>
