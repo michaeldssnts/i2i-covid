@@ -18,7 +18,7 @@ const Dropdown = ({ info, option }) => {
       >
         {info.map((i) => (
           <li key={i.iso} onClick={handleClick}>
-            <Link to={`/${i.iso}`}>{i.name}</Link>
+            <Link to={`/${i.iso}/summary`}>{i.name}</Link>
           </li>
         ))}
       </ul>

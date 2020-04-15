@@ -26,22 +26,22 @@ const HomePage = () => (
       <nav className="l-homepage-countries-nav">
         <ul>
           <li>
-            <Link to="/NGA">Nigeria</Link>
+            <Link to="/NGA/summary">Nigeria</Link>
           </li>
           <li>
             <span>Uganda</span>
           </li>
           <li>
-            <Link to="/RWA">Rwanda</Link>
+            <Link to="/RWA/summary">Rwanda</Link>
           </li>
           <li>
-            <Link to="/KEN">Kenya</Link>
+            <Link to="/KEN/summary">Kenya</Link>
           </li>
           <li>
             <span>Tanzania</span>
           </li>
           <li>
-            <Link to="/ZAF">South Africa</Link>
+            <Link to="/ZAF/summary">South Africa</Link>
           </li>
         </ul>
       </nav>
