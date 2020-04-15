@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import proptypes from 'prop-types';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Link from 'redux-first-router-link';
 
@@ -27,15 +27,15 @@ const Dropdown = ({ info, option }) => {
 };
 
 Dropdown.propTypes = {
-  info: proptypes.arrayOf(
-    proptypes.shape({
-      iso: proptypes.string.isRequired,
-      name: proptypes.string.isRequired,
+  info: PropTypes.arrayOf(
+    PropTypes.shape({
+      iso: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
     })
   ),
-  option: proptypes.shape({
-    name: proptypes.string.isRequired,
-    iso: proptypes.string.isRequired,
+  option: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    iso: PropTypes.string.isRequired,
   }),
 };
 

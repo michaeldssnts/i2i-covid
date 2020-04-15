@@ -1,3 +1,3 @@
 export default {
-  selectedIso: null,
+  selectedIso: 'NGA',
 };
