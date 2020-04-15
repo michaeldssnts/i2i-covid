@@ -1,16 +1,16 @@
 @import 'styles/_settings';
 
-.homepage {
+.l-homepage {
   position: relative;
   min-height: 100vh;
 
   background-repeat: no-repeat;
-  background-image: url(./covid-bg.png), linear-gradient(135deg, rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, 0) 100%);
-  background-color:$color-1;
+  background-image: url(./covid-bg.png), linear-gradient(135deg, #20727E 0%, #2F939C 100%);
+  background-color: $color-1;
   background-position: center;
 }
 
-.welcome {
+.l-homepage-welcome {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -19,15 +19,15 @@
 
   $border-style: 10px solid white;
 
-  > .welcomeTop,
-  > .welcomeBottom {
+  > .welcome-top,
+  > .welcome-bottom {
     height: 60px;
     border-left: $border-style;
     border-right: $border-style;
     border-top: $border-style;
   }
 
-  > .welcomeContent {
+  > .welcome-content {
     border-right: $border-style;
     font-size: 18px;
     letter-spacing: 0;
@@ -59,13 +59,13 @@
     }
   }
 
-  > .welcomeBottom {
+  > .welcome-bottom {
     border-top: 0;
     border-bottom: $border-style;
   }
 }
 
-.countriesNav {
+.l-homepage-countries-nav {
   position: absolute;
   top: 50%;
   left: 50%;
