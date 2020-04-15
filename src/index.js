@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-
+import Header from 'components/header';
 import configureStore from './config/store';
 import Pages from './pages';
 
@@ -13,9 +13,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <div className="app">
-        <header className="App-header">
-          <p>i2i covid</p>
-        </header>
+        <Header />
         <Pages className="l-pages" />
       </div>
     </Provider>
