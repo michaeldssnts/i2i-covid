@@ -1,12 +1,9 @@
-//@import 'normalize.css';
-
 @import './settings';
 @import './base';
 @import './mixins';
 
 // Components
 @import 'components/button/styles.scss';
-@import 'components/select/styles.scss';
 @import 'components/dropdown/styles.scss';
 @import 'components/layout/styles.scss';
 @import 'components/hero/styles.scss';

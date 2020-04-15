@@ -21,24 +21,5 @@
         font-size: 40px;
       }
     }
-
-    button{
-      cursor: pointer;
-
-      p {
-        color: $color-2;
-        position: relative;
-        display: inline-flex;
-        margin: 0;
-
-        &:after {
-          position: absolute;
-          right: -20px;
-          top: 50%;
-          @include arrow(9px,2px, $color-2, 'down');
-          transform: translateY(-50%) rotate(45deg);
-        }
-      }
-    }
   }
 }
