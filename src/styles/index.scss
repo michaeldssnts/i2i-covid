@@ -2,6 +2,8 @@
 @import './base';
 @import './mixins';
 
+@import './layout';
+
 // Components
 @import 'components/button/styles.scss';
 @import 'components/dropdown/styles.scss';
