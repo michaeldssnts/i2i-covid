@@ -1,16 +1,40 @@
 .c-button {
-  background-color: $white;
-  color: $color-1;
   font-family: $font-family-1;
-  border-radius: 20px;
+  border-radius: 22.5px;
   font-weight: bold;
   line-height: 22px;
   text-align: center;
   box-sizing: border-box;
   padding: 7px 20px;
+  box-shadow: 0 2px 3px 0 rgba(0,0,0,0.15);
 
   &.-color-1 {
-    background-color: $color-1;
+    background-color: $color-4;
     color: $white;
+  }
+
+  &.-color-2 {
+    background-color: $white;
+    color: $color-1;
+  }
+
+  &.-border-color-1 {
+    border: 1px solid rgba($white, 0.5);
+    color: $white;
+  }
+
+  &.-border-color-2 {
+    border: 1px solid rgba($color-1, 0.5);
+    color: $color-1;
+  }
+
+  &.-border-color-2 {
+    border: 1px solid rgba($color-2, 0.5);
+    color: $color-2;
+  }
+
+
+  &.-medium {
+    padding: 10px 35px;
   }
 }
