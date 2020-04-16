@@ -1,23 +1,34 @@
 import cartoApi from 'utils/carto-api';
 
 export const fetchDataQuery = (columns) => {
-  const groupingQuery = columns.map((column) => `GROUPING(${column}) AS ${column}_group`).join(',');
+  const groupingQuery = columns.map((column) => `GROUPING(${column}) grouping_${column}`).join(',');
   const selectQuery = columns.join(',');
-  const whereQuery = columns.map((column) => `${column} != 'N/A'`).join(' OR ');
   const groupByQuery = columns.map((column) => `(${column})`).join(',');
+  const valuesQuery = columns.map((column) => `(r.${column}, '${column}', r.count)`).join(',');
+
   const query = `
-    SELECT ${groupingQuery},
-      ${selectQuery},
-      COUNT(cartodb_id)
-    FROM covid_data_test
-    WHERE ${whereQuery}
-    GROUP BY
-      GROUPING SETS (
+    WITH r AS (
+      SELECT
+        ${groupingQuery},
+        ${selectQuery},
+        COUNT(cartodb_id)
+      FROM covid_data_test
+      GROUP BY GROUPING SETS (
         ${groupByQuery}
       )
+    ),
+    f AS (
+      SELECT t.*
+      FROM r
+        CROSS JOIN LATERAL (
+          VALUES ${valuesQuery}
+        ) AS t(response, indicator, valuesw)
+      WHERE response != 'N/A'
+    )
+    SELECT *,
+      sum(valuesw) OVER (partition BY indicator) AS total
+    FROM f
   `;
-
-  console.log(query);
 
   return cartoApi(query);
 };
