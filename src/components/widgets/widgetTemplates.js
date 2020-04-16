@@ -1,5 +1,5 @@
 import Bars from './widget-templates/bars';
-import StackedBar from './widget-templates/stackedBar';
+import StackedBar from './widget-templates/stacked-bars';
 
 const widgetTemplates = new Map([
   ['Relationship Status', { component: Bars }],
