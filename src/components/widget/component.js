@@ -24,9 +24,4 @@ Widget.propTypes = {
   slug: PropTypes.string.isRequired,
 };
 
-Widget.defaultProps = {
-  sentence: '',
-  chartData: {}
-};
-
 export default Widget;

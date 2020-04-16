@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Widget from 'components/widgets';
+import Widget from 'components/widget';
 
 import Hero from 'components/hero';
 
