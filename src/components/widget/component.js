@@ -9,14 +9,19 @@ import { parseData, fetchDataQuery } from './utils.js';
 
 const Widget = ({ slug }) => {
   const { columns, title } = widgetsSpec.find((widgetSpec) => widgetSpec.slug === slug);
-  const [{ data, loading, error }, refetch] = useAxios(fetchDataQuery(columns));
-  const parsedData = parseData(data);
+  const [{ data, loading }] = useAxios(fetchDataQuery(columns));
 
   return (
     <div className="c-widget">
       <h2>{title}</h2>
+      {loading && <p>Loading...</p>}
       {/* For now, we only have one type of chart (bar chart) */}
-      <LineChart data={parsedData} config={{ groupBy: 'updated_at', categories: columns }} />
+      {data && !loading && (
+        <BarChart
+          config={{ groupBy: 'update_date', categories: columns }}
+          data={parseData(data.rows)}
+        />
+      )}
     </div>
   );
 };
