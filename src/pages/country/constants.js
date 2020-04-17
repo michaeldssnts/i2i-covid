@@ -6,7 +6,7 @@ import Summary from 'pages/country/category/summary';
 import WorkAndEconomy from 'pages/country/category/w&e';
 import Health from 'pages/country/category/health';
 import Policits from 'pages/country/category/politics';
-import Mobility from 'pages/country/category/mobility';
+import Migration from 'pages/country/category/migration';
 import Awareness from 'pages/country/category/awareness';
 
 const TabsInfo = [
@@ -23,8 +23,8 @@ const TabsInfo = [
     content: <CardInfo info={WorkAndEconomy} />,
   },
   {
-    name: 'Health',
-    category: 'health',
+    name: 'Healthcare access',
+    category: 'healthcare-access',
     filters: true,
     content: <CardInfo info={Health} />,
   },
@@ -35,10 +35,10 @@ const TabsInfo = [
     content: <CardInfo info={Policits} />,
   },
   {
-    name: 'Mobility',
-    category: 'mobility',
+    name: 'Migration',
+    category: 'migration',
     filters: true,
-    content: <CardInfo info={Mobility} />,
+    content: <CardInfo info={Migration} />,
   },
   {
     name: 'Awareness',
