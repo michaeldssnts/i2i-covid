@@ -18,7 +18,7 @@ import {
   ResponsiveContainer,
   ComposedChart,
   PieChart,
-  Label
+  Label,
 } from 'recharts';
 
 import ChartTick from './tick';
@@ -31,22 +31,22 @@ class Chart extends PureComponent {
     config: PropTypes.shape({}).isRequired,
     className: PropTypes.string,
     handleMouseMove: PropTypes.func,
-    handleMouseLeave: PropTypes.func
+    handleMouseLeave: PropTypes.func,
   };
 
   static defaultProps = {
     className: '',
     handleMouseMove: null,
-    handleMouseLeave: null
-  }
+    handleMouseLeave: null,
+  };
 
   findMaxValue = (data, config) => {
     const { yKeys } = config;
     const maxValues = [];
 
-    Object.keys(yKeys).forEach(key => {
-      Object.keys(yKeys[key]).forEach(subKey => {
-        if (data.some(d => d.key)) {
+    Object.keys(yKeys).forEach((key) => {
+      Object.keys(yKeys[key]).forEach((subKey) => {
+        if (data.some((d) => d.key)) {
           maxValues.push(maxBy(data, subKey)[subKey]);
         }
       });
@@ -56,13 +56,7 @@ class Chart extends PureComponent {
   };
 
   render() {
-    const {
-      className,
-      data,
-      config,
-      handleMouseMove,
-      handleMouseLeave
-    } = this.props;
+    const { className, data, config, handleMouseMove, handleMouseLeave } = this.props;
 
     const {
       margin = { top: 20, right: 0, left: 50, bottom: 0 },
@@ -80,7 +74,7 @@ class Chart extends PureComponent {
       layout,
       legend,
       unit,
-      unitFormat
+      unitFormat,
     } = config;
 
     const { lines, bars, areas, pies } = yKeys;
@@ -89,10 +83,10 @@ class Chart extends PureComponent {
     let CHART;
     switch (type) {
       case 'pie':
-        CHART = PieChart
-      break;
+        CHART = PieChart;
+        break;
       default: {
-        CHART = ComposedChart
+        CHART = ComposedChart;
       }
     }
 
@@ -110,45 +104,29 @@ class Chart extends PureComponent {
           >
             <defs>
               {gradients &&
-                Object.keys(gradients).map(key => (
-                  <linearGradient
-                    key={`lg_${key}`}
-                    {...gradients[key].attributes}
-                  >
+                Object.keys(gradients).map((key) => (
+                  <linearGradient key={`lg_${key}`} {...gradients[key].attributes}>
                     {gradients[key].stops &&
-                      Object.keys(gradients[key].stops).map(sKey => (
-                        <stop
-                          key={`st_${sKey}`}
-                          {...gradients[key].stops[sKey]}
-                        />
-                      ))
-                    }
+                      Object.keys(gradients[key].stops).map((sKey) => (
+                        <stop key={`st_${sKey}`} {...gradients[key].stops[sKey]} />
+                      ))}
                   </linearGradient>
-                ))
-              }
+                ))}
 
               {patterns &&
-                Object.keys(patterns).map(key => (
-                  <pattern
-                    key={`pattern_${key}`}
-                    {...patterns[key].attributes}
-                  >
+                Object.keys(patterns).map((key) => (
+                  <pattern key={`pattern_${key}`} {...patterns[key].attributes}>
                     {patterns[key].children &&
-                      Object.keys(patterns[key].children).map(iKey => {
+                      Object.keys(patterns[key].children).map((iKey) => {
                         const { tag } = patterns[key].children[iKey];
 
-                        return React.createElement(
-                          tag,
-                          {
-                            key: iKey,
-                            ...patterns[key].children[iKey]
-                          }
-                        );
-                      })
-                    }
+                        return React.createElement(tag, {
+                          key: iKey,
+                          ...patterns[key].children[iKey],
+                        });
+                      })}
                   </pattern>
-                ))
-              }
+                ))}
             </defs>
 
             {xAxis && (
@@ -161,7 +139,6 @@ class Chart extends PureComponent {
               />
             )}
 
-
             {yAxis && (
               <YAxis
                 dataKey={layout === 'vertical' && (xKey || '')}
@@ -170,15 +147,15 @@ class Chart extends PureComponent {
                 mirror
                 tickMargin={0}
                 tickLine={false}
-                tick={(
+                tick={
                   <ChartTick
                     dataMax={maxYValue}
                     unit={unit || ''}
-                    unitFormat={unitFormat || (value => value)}
+                    unitFormat={unitFormat || ((value) => value)}
                     fill="#FFF"
                     fontWeight={500}
                   />
-                )}
+                }
                 {...yAxis}
               />
             )}
@@ -186,49 +163,34 @@ class Chart extends PureComponent {
             {cartesianGrid && (
               <CartesianGrid
                 strokeWidth={0.5}
-                stroke='#999'
+                stroke="#999"
                 shapeRendering="crispEdges"
                 {...cartesianGrid}
               />
             )}
 
             {areas &&
-              Object.keys(areas).map(key => (
+              Object.keys(areas).map((key) => (
                 <Area key={key} dataKey={key} dot={false} {...areas[key]} />
               ))}
 
             {lines &&
-              Object.keys(lines).map(key => (
-                <Line
-                  key={key}
-                  dataKey={key}
-                  dot={false}
-                  strokeWidth={2}
-                  {...lines[key]}
-                />
+              Object.keys(lines).map((key) => (
+                <Line key={key} dataKey={key} dot={false} strokeWidth={2} {...lines[key]} />
               ))}
 
             {bars &&
-
-              Object.keys(bars).map(key => (
+              Object.keys(bars).map((key) => (
                 <Bar key={key} dataKey={key} dot={false} {...bars[key]}>
-                  {!!bars[key].label &&
-                    <Label {...bars[key].label} />
-                  }
+                  {!!bars[key].label && <Label {...bars[key].label} />}
 
                   {bars[key].itemColor &&
-                    data.map(item => (
-                      <Cell
-                        key={`c_${item.color}`}
-                        fill={item.color}
-                      />
-                    ))}
+                    data.map((item) => <Cell key={`c_${item.color}`} fill={item.color} />)}
                 </Bar>
               ))}
 
-
-            {pies && (
-              Object.keys(pies).map(key => (
+            {pies &&
+              Object.keys(pies).map((key) => (
                 <Pie
                   key={key}
                   data={data}
@@ -245,22 +207,11 @@ class Chart extends PureComponent {
                     />
                   ))}
                 </Pie>
-              ))
-            )}
+              ))}
 
-            {tooltip && (
-              <Tooltip
-                isAnimationActive={false}
-                {...tooltip}
-              />
-            )}
+            {tooltip && <Tooltip isAnimationActive={false} {...tooltip} />}
 
-            {legend && (
-              <Legend
-                {...legend}
-                data={data}
-              />
-            )}
+            {legend && <Legend {...legend} data={data} />}
           </CHART>
         </ResponsiveContainer>
       </div>

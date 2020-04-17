@@ -10,28 +10,19 @@ class Tick extends PureComponent {
     unit: PropTypes.string.isRequired,
     unitFormat: PropTypes.func.isRequired,
     fill: PropTypes.string.isRequired,
-    backgroundColor: PropTypes.string
-  }
+    backgroundColor: PropTypes.string,
+  };
 
   static defaultProps = {
     x: 0,
     y: 0,
     dataMax: Infinity,
     payload: {},
-    backgroundColor: ''
-  }
+    backgroundColor: '',
+  };
 
   render() {
-    const {
-      x,
-      y,
-      payload,
-      dataMax,
-      unit,
-      unitFormat,
-      fill,
-      backgroundColor
-    } = this.props;
+    const { x, y, payload, dataMax, unit, unitFormat, fill, backgroundColor } = this.props;
 
     const tickValue = payload && payload.value;
     const formattedTick = tickValue ? unitFormat(tickValue) : 0;
@@ -45,13 +36,7 @@ class Tick extends PureComponent {
           </filter>
         </defs>
         <span>Hello</span>
-        <text
-          x="0"
-          y="3"
-          textAnchor="start"
-          fontSize="11px"
-          fill={fill}
-        >
+        <text x="0" y="3" textAnchor="start" fontSize="11px" fill={fill}>
           {tick}
         </text>
       </g>

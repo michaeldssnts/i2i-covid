@@ -8,13 +8,13 @@ class Tooltip extends PureComponent {
   static propTypes = {
     payload: PropTypes.arrayOf(PropTypes.shape({})),
     settings: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-    hideZeros: PropTypes.bool
+    hideZeros: PropTypes.bool,
   };
 
   static defaultProps = {
     payload: [],
-    hideZeros: false
-  }
+    hideZeros: false,
+  };
 
   getValue = (item, value) => {
     const { format, suffix = '', preffix = '' } = item;
@@ -25,7 +25,7 @@ class Tooltip extends PureComponent {
     }
 
     return `${preffix}${val}${suffix}`;
-  }
+  };
 
   render() {
     const { payload, settings, hideZeros } = this.props;
@@ -34,12 +34,9 @@ class Tooltip extends PureComponent {
       <div>
         {settings && settings.length && (
           <div className={styles.chart_tooltip}>
-            {settings.map(
-              d => (hideZeros && !values[d.key] ? null : (
-                <div
-                  key={d.key}
-                  className={`data-line ${d.position || ''}`}
-                >
+            {settings.map((d) =>
+              hideZeros && !values[d.key] ? null : (
+                <div key={d.key} className={`data-line ${d.position || ''}`}>
                   {/* LABEL */}
                   {(d.label || d.labelKey) && (
                     <div className={styles.data_label}>
@@ -47,7 +44,7 @@ class Tooltip extends PureComponent {
                         <div
                           className={styles.data_color}
                           style={{
-                            backgroundColor: d.color
+                            backgroundColor: d.color,
                           }}
                         />
                       )}
@@ -61,11 +58,9 @@ class Tooltip extends PureComponent {
                   )}
 
                   {/* UNIT */}
-                  <div className={styles.data_value}>
-                    {this.getValue(d, values[d.key])}
-                  </div>
+                  <div className={styles.data_value}>{this.getValue(d, values[d.key])}</div>
                 </div>
-              ))
+              )
             )}
           </div>
         )}

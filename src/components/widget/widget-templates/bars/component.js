@@ -12,10 +12,7 @@ const StackedBar = ({ widgetData, id }) => {
   return (
     <Fragment>
       <div className={`c-widget${title}`}>
-        <Chart
-          data={[chartData]}
-          config={chartConfig}
-        />
+        <Chart data={[chartData]} config={chartConfig} />
         <div id={`widget-legend-${id}`} />
       </div>
     </Fragment>
@@ -24,7 +21,7 @@ const StackedBar = ({ widgetData, id }) => {
 
 StackedBar.propTypes = {
   widgetData: PropTypes.array.isRequired,
-  id: PropTypes.array.isRequired
+  id: PropTypes.array.isRequired,
 };
 
 export default StackedBar;

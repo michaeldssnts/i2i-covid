@@ -1,10 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Header from 'components/header';
+import Hero from 'components/hero';
+import Navigation from 'components/navigation';
 import TabsInfo from './constants';
-import Layout from 'components/layout';
 
-const CountryPage = ({ iso, current }) => <Layout iso={iso} info={TabsInfo} current={current} />;
+const CountryPage = ({ iso, current }) => (
+  <div>
+    <Header />
+    <Hero iso={iso} />
+    <Navigation tabs={TabsInfo} />
+  </div>
+);
 
 CountryPage.propTypes = {
   iso: PropTypes.string.isRequired,

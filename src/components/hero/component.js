@@ -16,7 +16,7 @@ const Hero = ({ iso }) => {
   const [{ data }] = useAxios(cartoApi(SQL));
   const countries = data && data.rows ? data.rows : null;
 
-  const option = countries ? countries.find((country) => country.iso === iso) : null;
+  const current = countries ? countries.find((country) => country.iso === iso) : null;
   const options = countries ? countries.filter((country) => country.iso !== iso) : null;
 
   return (
@@ -24,7 +24,7 @@ const Hero = ({ iso }) => {
       <div className="hero-title">
         <h1>
           COVID-19 tracking survey status in
-          {options && <Dropdown info={options} option={option} />}
+          {options && <Dropdown options={options} current={current} />}
         </h1>
       </div>
     </div>

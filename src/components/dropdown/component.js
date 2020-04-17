@@ -3,20 +3,20 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Link from 'redux-first-router-link';
 
-const Dropdown = ({ info, option }) => {
+const Dropdown = ({ options, current }) => {
   const [isActive, toggleDropdown] = useState(false);
   const handleClick = () => {
     toggleDropdown(!isActive);
   };
   return (
     <div className="c-dropdown">
-      <button onClick={handleClick}>{option.name}</button>
+      <button onClick={handleClick}>{current.name}</button>
       <ul
         className={classnames('dropdown-list', {
           '-active': isActive,
         })}
       >
-        {info.map((i) => (
+        {options.map((i) => (
           <li key={i.iso} onClick={handleClick}>
             <Link to={`/${i.iso}/summary`}>{i.name}</Link>
           </li>
@@ -27,13 +27,13 @@ const Dropdown = ({ info, option }) => {
 };
 
 Dropdown.propTypes = {
-  info: PropTypes.arrayOf(
+  options: PropTypes.arrayOf(
     PropTypes.shape({
       iso: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
     })
   ),
-  option: PropTypes.shape({
+  current: PropTypes.shape({
     name: PropTypes.string.isRequired,
     iso: PropTypes.string.isRequired,
   }),

@@ -7,21 +7,15 @@ import config from './config';
 
 const numberFormat = format(',.2f');
 
-const Bars = ({
-  data
-}) => {
-
+const Bars = ({ data }) => {
   if (!data) return null;
   const { chartConfig, chartData } = config.parse(data, id);
 
-  console.log(chartConfig, chartData, 'widget')
+  console.log(chartConfig, chartData, 'widget');
   return (
     <Fragment>
       <div className="c-population-trends-widget">
-        <Chart
-          data={[chartData]}
-          config={chartConfig}
-        />
+        <Chart data={[chartData]} config={chartConfig} />
         <div id={`widget-legend-${id}`} />
       </div>
     </Fragment>
@@ -30,7 +24,7 @@ const Bars = ({
 
 Bars.propTypes = {
   data: PropTypes.array.isRequired,
-  id: PropTypes.array.isRequired
+  id: PropTypes.array.isRequired,
 };
 
 export default Bars;
