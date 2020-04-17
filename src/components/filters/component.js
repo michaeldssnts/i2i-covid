@@ -19,17 +19,16 @@ const Filters = ({ filters, resetFilters, setFilter }) => {
 
   const handleChange = (e) => {
     const { name, value } = e.currentTarget;
-    //condition to checkbox ??
-    // if (name === 'age') {
-    //   const index = filters.age.findIndex((filter) => filter === value);
-    //   const ages =
-    //     index === -1
-    //       ? [...filters.age, ...[value]]
-    //       : filters.age.filter((filter) => filter !== value);
-    //   setFilter({
-    //     [name]: ages,
-    //   });
-    // } else
+
+    if (name === 'age') {
+      const minValue = Number(value.split('-')[0]);
+      const maxValue = Number(value.split('-')[1]);
+      const ages = [...filters.age, ...[minValue], ...[maxValue]];
+
+      setFilter({
+        [name]: [Math.min(...ages), Math.max(...ages)],
+      });
+    } else
       setFilter({
         [name]: value,
       });

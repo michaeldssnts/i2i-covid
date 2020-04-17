@@ -4,7 +4,7 @@ import { resetFilters, setFilter } from 'modules/filters/actions';
 import Component from './component';
 
 const mapStateToProps = (state) => ({
-  filtersState: state.filters,
+  filters: state.filters,
 });
 
 const mapDispatchToProps = {
