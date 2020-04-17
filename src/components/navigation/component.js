@@ -16,7 +16,7 @@ const Navigation = ({ tabs, currentTab, iso }) => (
             to={{
               type: 'COUNTRY',
               pathname: '/country',
-              payload: { iso: iso, category: `${item.category}` },
+              payload: { iso, category: `${item.category}` },
             }}
           >
             {item.name}

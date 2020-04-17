@@ -15,7 +15,15 @@ const CardInfo = ({ info, iso }) => {
             {i.filters && <Filters />}
             <div className="widgets">widgets</div>
             {i.link && (
-              <Link to={{ type: 'COUNTRY', pathname: '/country', payload: { iso: `${iso}`, category: `${i.link}` } }}>Know more</Link>
+              <Link
+                to={{
+                  type: 'COUNTRY',
+                  pathname: '/country',
+                  payload: { iso, category: `${i.link}` },
+                }}
+              >
+                Know more
+              </Link>
             )}
           </li>
         ))}
