@@ -2,10 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Link from 'redux-first-router-link';
+import Filters from 'components/filters';
 
 const CardInfo = ({ info, iso }) => {
   return (
     <div className="c-card">
+      <Filters />
       <ul>
         {info.map((i) => (
           <li key={i.category} id={i.category} className={classnames({ '-active': false })}>
