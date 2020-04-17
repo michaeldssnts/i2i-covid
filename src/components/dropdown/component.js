@@ -18,7 +18,7 @@ const Dropdown = ({ options, current }) => {
       >
         {options.map((i) => (
           <li key={i.iso} onClick={handleClick}>
-            <Link to={`/${i.iso}/summary`}>{i.name}</Link>
+            <Link to={{ type: 'COUNTRY', pathname: 'country', payload: { iso: `${i.iso}`, category: 'summary' } }}>{i.name}</Link>
           </li>
         ))}
       </ul>
