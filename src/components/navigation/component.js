@@ -12,7 +12,7 @@ const Navigation = ({ tabs, currentTab }) => (
           id={item.category}
           className={classnames({ '-active': currentTab === item.category })}
         >
-          <Link to={`/${'NGA'}/#${item.category}`}>{item.name}</Link>
+          <Link to={{ payload: { category: `${item.category}` } }}>{item.name}</Link>
         </li>
       ))}
     </ul>

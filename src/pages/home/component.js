@@ -2,6 +2,8 @@ import React from 'react';
 import classnames from 'classnames';
 import Link from 'redux-first-router-link';
 
+import countries from './constants';
+
 const HomePage = () => (
   <section className="l-homepage">
     <div className="l-container">
@@ -25,24 +27,23 @@ const HomePage = () => (
       </article>
       <nav className="l-homepage-countries-nav">
         <ul>
-          <li>
-            <Link to="/NGA/summary">Nigeria</Link>
-          </li>
-          <li>
-            <span>Uganda</span>
-          </li>
-          <li>
-            <Link to="/RWA/summary">Rwanda</Link>
-          </li>
-          <li>
-            <Link to="/KEN/summary">Kenya</Link>
-          </li>
-          <li>
-            <span>Tanzania</span>
-          </li>
-          <li>
-            <Link to="/ZAF/summary">South Africa</Link>
-          </li>
+          {countries.map((country) => (
+            <li key={country.label}>
+              {country.iso ? (
+                <Link
+                  to={{
+                    type: 'COUNTRY',
+                    pathname: '/country',
+                    payload: { iso: country.iso, category: 'summary' },
+                  }}
+                >
+                  {country.label}
+                </Link>
+              ) : (
+                <span>{country.label}</span>
+              )}
+            </li>
+          ))}
         </ul>
       </nav>
     </div>

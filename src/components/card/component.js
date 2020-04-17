@@ -12,7 +12,9 @@ const CardInfo = ({ info, iso }) => {
             <h2>{i.title}</h2>
             <p>{i.intro}</p>
             <div className="widgets">widgets</div>
-            {i.link && <Link to={`/${iso}/${i.link}`}>Know more</Link>}
+            {i.link && (
+              <Link to={{ type: 'COUNTRY', pathname: '/country', payload: { iso: `${iso}`, category: `${i.link}` } }}>Know more</Link>
+            )}
           </li>
         ))}
       </ul>
