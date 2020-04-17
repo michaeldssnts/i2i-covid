@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import useAxios from 'axios-hooks';
 import Dropdown from 'components/dropdown';
 
+import Image from 'media/images/header-bg.jpg';
+
 import cartoApi from 'utils/carto-api';
 
 const SQL = `
@@ -20,7 +22,7 @@ const Hero = ({ iso }) => {
   const options = countries ? countries.filter((country) => country.iso !== iso) : null;
 
   return (
-    <div className="c-hero">
+    <div className="c-hero" style={{ backgroundImage: `url(${Image})` }}>
       <div className="hero-title">
         <h1>
           COVID-19 tracking survey status in
