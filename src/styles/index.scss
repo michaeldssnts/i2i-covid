@@ -1,17 +1,21 @@
 @import './settings';
 @import './base';
 @import './mixins';
+@import './modal';
 
 @import './layout';
 
 // Pages
 @import 'pages/home/styles.scss';
+@import 'pages/widget/styles.scss';
 
 // Components
 @import 'components/button/styles.scss';
 @import 'components/navigation/styles.scss';
 @import 'components/card/styles.scss';
+@import 'components/widget/styles.scss';
+@import 'components/filters/styles.scss';
+@import 'components/modal/styles.scss';
 @import 'components/dropdown/styles.scss';
-@import 'components/layout/styles.scss';
 @import 'components/hero/styles.scss';
 @import 'components/header/styles.scss';

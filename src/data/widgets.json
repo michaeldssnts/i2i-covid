@@ -1,0 +1,24 @@
+[
+  {
+    "slug": "covid-19-induced-behaviour-changes",
+    "title": "Covid-19 induced behaviour changes",
+    "category": "healthcare-access",
+    "columns": [
+      "covid_19_induced_behaviour_changes_wash_hands_more",
+      "covid_19_induced_behaviour_changes_use_hand_sanitizer_more",
+      "covid_19_induced_behaviour_changes_cover_mouth_when_cough_or_sn",
+      "covid_19_induced_behaviour_changes_limit_contact_with_other_peo",
+      "covid_19_induced_behaviour_changes_avoid_big_groups",
+      "covid_19_induced_behaviour_changes_stay_home_more",
+      "covid_19_induced_behaviour_changes_travel_outside_home_less",
+      "covid_19_induced_behaviour_changes_go_to_work_less",
+      "covid_19_induced_behaviour_changes_wear_face_mask",
+      "covid_19_induced_behaviour_changes_stock_up_on_food",
+      "covid_19_induced_behaviour_changes_avoid_the_clinic_or_hospital",
+      "covid_19_induced_behaviour_changes_avoid_elderly",
+      "covid_19_induced_behaviour_changes_other_specify",
+      "covid_19_induced_behaviour_changes_don_t_know",
+      "covid_19_induced_behaviour_changes_refused"
+    ]
+  }
+]
