@@ -1,9 +1,11 @@
 import React from 'react';
 import classnames from 'classnames';
 import Link from 'redux-first-router-link';
+import Header from 'components/header';
 
 const HomePage = () => (
   <section className="l-homepage">
+    <Header />
     <div className="l-container">
       <article className="l-homepage-welcome">
         <div className="welcome-top" />
