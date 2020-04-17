@@ -6,13 +6,19 @@ import Hero from 'components/hero';
 import Navigation from 'components/navigation';
 import TabsInfo from './constants';
 
-const CountryPage = ({ iso, current }) => (
-  <div className="l-country">
-    <Header />
-    <Hero iso={iso} />
-    <Navigation tabs={TabsInfo} />
-  </div>
-);
+const CountryPage = ({ iso, current }) => {
+  const infoPage = TabsInfo.find((info) => info.category === current);
+  return (
+    <div className="l-country">
+      <Header />
+      <Hero iso={iso} />
+      <div className="country-content">
+        <Navigation tabs={TabsInfo} iso={iso} currentTab={current} />
+        {infoPage.content}
+      </div>
+    </div>
+  );
+};
 
 CountryPage.propTypes = {
   iso: PropTypes.string.isRequired,

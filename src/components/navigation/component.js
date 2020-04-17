@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Link from 'redux-first-router-link';
 
-const Navigation = ({ tabs, currentTab }) => (
+const Navigation = ({ tabs, currentTab, iso }) => (
   <div className="c-navigation">
     <ul>
       {tabs.map((item) => (
@@ -12,7 +12,15 @@ const Navigation = ({ tabs, currentTab }) => (
           id={item.category}
           className={classnames({ '-active': currentTab === item.category })}
         >
-          <Link to={{ payload: { category: `${item.category}` } }}>{item.name}</Link>
+          <Link
+            to={{
+              type: 'COUNTRY',
+              pathname: '/country',
+              payload: { iso: iso, category: `${item.category}` },
+            }}
+          >
+            {item.name}
+          </Link>
         </li>
       ))}
     </ul>
@@ -20,6 +28,7 @@ const Navigation = ({ tabs, currentTab }) => (
 );
 
 Navigation.propTypes = {
+  iso: PropTypes.string.isRequired,
   tabs: PropTypes.array.isRequired,
   currentTab: PropTypes.string.isRequired,
 };
