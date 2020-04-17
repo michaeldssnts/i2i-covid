@@ -6,7 +6,7 @@ import Modal from 'components/modal';
 import filtersInfo from './constants';
 
 const Filters = ({ filters, resetFilters, setFilter }) => {
-  const [isOpen, toggleModal] = useState(true);
+  const [isOpen, toggleModal] = useState(false);
 
   const handleClick = () => {
     toggleModal(!isOpen);
@@ -36,7 +36,7 @@ const Filters = ({ filters, resetFilters, setFilter }) => {
 
   return (
     <div className="c-filters">
-      <Button onClick={handleClick} className="-primary">
+      <Button onClick={handleClick} className="-border-color-2">
         Filter results
       </Button>
       <Modal
