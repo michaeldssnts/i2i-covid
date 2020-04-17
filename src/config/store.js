@@ -4,12 +4,10 @@ import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
 
 import routesMap from 'config/router';
 import pageReducer from 'modules/page/reducer';
-import countryReducer from 'modules/country/reducer';
 
 export default function configureStore(preloadedState = {}) {
   const { reducer, middleware, enhancer } = connectRoutes(routesMap);
   const rootReducer = combineReducers({
-    country: countryReducer,
     location: reducer,
     page: pageReducer,
   });
