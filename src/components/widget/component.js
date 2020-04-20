@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import useAxios from 'axios-hooks';
 
 import BarChart from 'components/chart/bar';
+import LineChart from 'components/chart/line';
 import widgetsSpec from 'data/widgets.json';
 import { parseData, fetchDataQuery } from './utils.js';
 
@@ -15,7 +16,7 @@ const Widget = ({ slug }) => {
     <div className="c-widget">
       <h2>{title}</h2>
       {/* For now, we only have one type of chart (bar chart) */}
-      <BarChart data={parsedData} config={{ groupBy: 'updated_at', categories: columns }} />
+      <LineChart data={parsedData} config={{ groupBy: 'updated_at', categories: columns }} />
     </div>
   );
 };
