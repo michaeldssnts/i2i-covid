@@ -110,4 +110,13 @@ export const fetchDataQuery = (columns) => {
 
 export const parseData = () => fakeData;
 
-export default { fetchDataQuery, parseData };
+export const fetchCategories = () => {
+  const query = `
+    SELECT
+      name,
+      slug
+    FROM covid_categories`;
+  return cartoApi(query);
+};
+
+export default { fetchDataQuery, fetchCategories, parseData };

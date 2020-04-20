@@ -9,6 +9,7 @@ import { parseData, fetchDataQuery } from './utils.js';
 const Widget = ({ slug }) => {
   const { columns, title } = widgetsSpec.find((widgetSpec) => widgetSpec.slug === slug);
   const [{ data, loading, error }, refetch] = useAxios(fetchDataQuery(columns));
+
   const parsedData = parseData(data);
 
   return (
