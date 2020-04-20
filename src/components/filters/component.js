@@ -12,7 +12,7 @@ const Filters = ({ filters, resetFilters, setFilter }) => {
     toggleModal(!isOpen);
   };
 
-  const handleCancel = () => {
+  const handleReset = () => {
     resetFilters();
     toggleModal(false);
   };
@@ -42,7 +42,7 @@ const Filters = ({ filters, resetFilters, setFilter }) => {
       <Modal
         isOpen={isOpen}
         title="Select filters"
-        onCancel={handleCancel}
+        onReset={handleReset}
         onRequestClose={() => toggleModal(false)}
       >
         <div className="modal-filters">
@@ -54,7 +54,7 @@ const Filters = ({ filters, resetFilters, setFilter }) => {
                   <li key={i}>
                     <label htmlFor={opt}>{opt}</label>
                     <input
-                      type={filter.options.length > 2 ? 'checkbox' : 'radio'}
+                      type="checkbox"
                       id={opt}
                       name={filter.id}
                       value={opt}
@@ -74,7 +74,7 @@ const Filters = ({ filters, resetFilters, setFilter }) => {
 Filters.propTypes = {
   filters: PropTypes.shape({
     gender: PropTypes.string.isRequired,
-    are: PropTypes.string.isRequired,
+    area: PropTypes.string.isRequired,
     age: PropTypes.array.isRequired,
   }),
   resetFilters: PropTypes.func.isRequired,
