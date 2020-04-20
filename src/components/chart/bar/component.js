@@ -32,7 +32,7 @@ const UIBarChart = ({ data, config, stacked }) => {
   if (stacked) defaultBarProps.stackId = 'a';
 
   return (
-    <div className="pivot-chart">
+    <div className="c-chart">
       <ResponsiveContainer {...layout}>
         <BarChart data={data}>
           <CartesianGrid {...cartesianGrid} />

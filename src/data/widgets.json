@@ -165,5 +165,95 @@
       "economic_sector2"
     ],
     "chart": "bar"
+  },
+  {
+    "slug": "Preferred_agent_open/closed",
+    "title": "Preferred agent open/closed",
+    "hint": null,
+    "category": "financial_lives",
+    "columns": [
+      "preferred_agent_open/closed"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "Change_in_agent_fee",
+    "title": "Change in agent fee",
+    "hint": null,
+    "category": "financial_lives",
+    "columns": [
+      "change_in_agent_fee"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "Difficulty_Sending/ReceivingCash",
+    "title": "DifficultySending/ReceivingCash",
+    "hint": null,
+    "category": "financial_lives",
+    "columns": [
+      "difficulty_Sending/ReceivingCash"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "Recent_borrowing",
+    "title": "Recent borrowing",
+    "hint": null,
+    "category": "financial_lives",
+    "columns": [
+      "recent_borrowing"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "Source_of_borrowing",
+    "title": "Source of borrowing",
+    "hint": null,
+    "category": "financial_lives",
+    "columns": [
+      "source_of_borrowing"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "Missed_repayment",
+    "title": "Missed repayment",
+    "hint": null,
+    "category": "financial_lives",
+    "columns": [
+      "missed_repayment"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "Reason_for_missed_payment",
+    "title": "Reason for missed payment",
+    "hint": null,
+    "category": "financial_lives",
+    "columns": [
+      "reason_for_missed_payment"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "Account_ownership_/_validation",
+    "title": "Account ownership / validation",
+    "hint": null,
+    "category": "financial_lives",
+    "columns": [
+      "account_ownership_/_validation"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "Account_use_trends",
+    "title": "Account use trends",
+    "hint": null,
+    "category": "financial_lives",
+    "columns": [
+      "account_use_trends"
+    ],
+    "chart": "bar"
   }
 ]
