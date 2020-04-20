@@ -79,7 +79,7 @@
     "hint": null,
     "category": "livelihoods",
     "columns": [
-      "Past 7 days meals eaten"
+      "past_7_days_meals_eaten"
     ],
     "chart": "bar"
   },
@@ -89,7 +89,7 @@
     "hint": null,
     "category": "livelihoods",
     "columns": [
-      "Past 7 days hours earned"
+      "past_7_days_hours_earned"
     ],
     "chart": "bar"
   },
@@ -99,7 +99,7 @@
     "hint": null,
     "category": "livelihoods",
     "columns": [
-      "1 yr income comparison"
+      "1_yr_income_comparison"
     ],
     "chart": "bar"
   },
@@ -109,8 +109,8 @@
     "hint": null,
     "category": "livelihoods",
     "columns": [
-      "FinHealth - possibility",
-      "FinHealth - sources"
+      "finHealth-possibility",
+      "finHealth-sources"
     ],
     "chart": "bar"
   },
@@ -120,8 +120,8 @@
     "hint": null,
     "category": "livelihoods",
     "columns": [
-      "Value of remittances sent",
-      "Value of remittances received"
+      "value_of_remittances_sent",
+      "value_of_remittances_received"
     ],
     "chart": "bar"
   },
@@ -131,7 +131,7 @@
     "hint": null,
     "category": "livelihoods",
     "columns": [
-      "main income earner primary income source"
+      "main_income_earner_primary_income_source"
     ],
     "chart": "bar"
   },
@@ -141,7 +141,7 @@
     "hint": null,
     "category": "livelihoods",
     "columns": [
-      "farm labour changes"
+      "farm_labour_changes"
     ],
     "chart": "bar"
   },
@@ -151,7 +151,7 @@
     "hint": null,
     "category": "livelihoods",
     "columns": [
-      "ease of selling crops"
+      "ease_of_selling_crops"
     ],
     "chart": "bar"
   },
@@ -161,8 +161,8 @@
     "hint": null,
     "category": "livelihoods",
     "columns": [
-      "economic sector",
-      "economic sector2"
+      "economic_sector",
+      "economic_sector2"
     ],
     "chart": "bar"
   }
