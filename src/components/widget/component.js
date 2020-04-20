@@ -7,9 +7,16 @@ import LineChart from 'components/chart/line';
 import widgetsSpec from 'data/widgets.json';
 import { parseData, fetchDataQuery } from './utils.js';
 
-const Widget = ({ slug }) => {
+const chartsMap = {
+  bar: BarChart,
+  line: LineChart,
+  'stacked-bar': BarChart,
+};
+
+const Widget = ({ chart, slug }) => {
   const { columns, title } = widgetsSpec.find((widgetSpec) => widgetSpec.slug === slug);
   const [{ data, loading }] = useAxios(fetchDataQuery(columns));
+  const ChartComponent = chartsMap[chart];
 
   return (
     <div className="c-widget">
@@ -17,7 +24,7 @@ const Widget = ({ slug }) => {
       {loading && <p>Loading...</p>}
       {/* For now, we only have one type of chart (bar chart) */}
       {data && !loading && (
-        <BarChart
+        <ChartComponent
           config={{ groupBy: 'update_date', categories: columns }}
           data={parseData(data.rows)}
         />
@@ -27,7 +34,12 @@ const Widget = ({ slug }) => {
 };
 
 Widget.propTypes = {
+  chart: PropTypes.string,
   slug: PropTypes.string.isRequired,
+};
+
+Widget.defaultProps = {
+  chart: 'bar',
 };
 
 export default Widget;

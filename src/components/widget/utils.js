@@ -34,13 +34,10 @@ export const fetchDataQuery = (columns) => {
       sum(valuesw) OVER (partition BY indicator) AS total
     FROM f
   `;
-  console.log(query);
-
   return cartoApi(query);
 };
 
 export const parseData = (data) => {
-  console.log(data);
   const groupedData = groupBy(data, (d) => d.update_date);
   const dates = Object.keys(groupedData);
   const result = dates.map((date) => {
