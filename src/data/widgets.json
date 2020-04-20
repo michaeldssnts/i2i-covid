@@ -72,5 +72,98 @@
       "change_in_cost_of_medicine"
     ],
     "chart": "bar"
+  },
+  {
+    "slug": "Past-7-days-meals-eaten",
+    "title": "Past 7 days meals eaten",
+    "hint": null,
+    "category": "livelihoods",
+    "columns": [
+      "past_7_days_meals_eaten"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "Past-7-days-hours-earned",
+    "title": "Past 7 days hours earned",
+    "hint": null,
+    "category": "livelihoods",
+    "columns": [
+      "past_7_days_hours_earned"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "1-yr-income-comparison",
+    "title": "1 yr income comparison",
+    "hint": null,
+    "category": "livelihoods",
+    "columns": [
+      "1_yr_income_comparison"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "FinHealth",
+    "title": "FinHealth",
+    "hint": null,
+    "category": "livelihoods",
+    "columns": [
+      "finHealth-possibility",
+      "finHealth-sources"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "livelihoods",
+    "title": "Value of remittances",
+    "hint": null,
+    "category": "livelihoods",
+    "columns": [
+      "value_of_remittances_sent",
+      "value_of_remittances_received"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "main-income-earner-primary-income-source",
+    "title": "Main income earner",
+    "hint": null,
+    "category": "livelihoods",
+    "columns": [
+      "main_income_earner_primary_income_source"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "farm-labour-changes",
+    "title": "Farm labour changes",
+    "hint": null,
+    "category": "livelihoods",
+    "columns": [
+      "farm_labour_changes"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "ease-of-selling-crops",
+    "title": "Ease of selling crops",
+    "hint": null,
+    "category": "livelihoods",
+    "columns": [
+      "ease_of_selling_crops"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "economic-sector",
+    "title": "Economic sector",
+    "hint": null,
+    "category": "livelihoods",
+    "columns": [
+      "economic_sector",
+      "economic_sector2"
+    ],
+    "chart": "bar"
   }
 ]

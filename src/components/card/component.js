@@ -15,7 +15,6 @@ const CardInfo = ({ info, iso }) => {
             <p>{i.intro}</p>
             {i.filters && <Filters />}
             <Widgets category={i.category} />
-            <div className="widgets">widgets</div>
             {i.link && (
               <Link
                 to={{
