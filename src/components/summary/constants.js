@@ -1,4 +1,4 @@
-const summary = [
+const info = [
   {
     title: 'Work and Economy',
     category: 'Work and Economy',
@@ -36,4 +36,4 @@ const summary = [
   },
 ];
 
-export default summary;
+export default info;

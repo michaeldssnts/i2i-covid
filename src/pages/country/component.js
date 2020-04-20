@@ -6,18 +6,17 @@ import Hero from 'components/hero';
 import Spinner from 'components/spinner';
 import Navigation from 'components/navigation';
 import CardInfo from 'components/card';
-//import TabsInfo from './constants';
+import Summary from 'components/summary';
 import { fetchCategories } from 'components/widget/utils';
 import useAxios from 'axios-hooks';
 
 const CountryPage = ({ iso, current }) => {
-  const [{ data, loading, error }, refetch] = useAxios(fetchCategories());
-  const tabs = !loading ? data.rows.name : null;
-  const currentTab = !loading
-    ? tabs.find(tab => tab.slug === current)
-    : null;
+  const [{ data, loading }] = useAxios(fetchCategories());
+  const tabs = data && data.rows ? data.rows : null;
 
-  const { name, slug } = currentTab;
+  const currentTab = tabs ? tabs.find((tab) => tab.slug === current) : null;
+  const name = currentTab ? currentTab.name : null;
+  const slug = currentTab ? currentTab.slug : null;
 
   return (
     <div className="l-country">
@@ -28,7 +27,9 @@ const CountryPage = ({ iso, current }) => {
       ) : (
         <div className="country-content">
           <Navigation tabs={tabs} iso={iso} currentTab={slug} />
-          <CardInfo title={name} iso={iso} category={slug} />
+          <div className="country-info">
+            {slug === 'summary' ? <Summary /> : <CardInfo title={name} iso={iso} category={slug} />}
+          </div>
         </div>
       )}
     </div>

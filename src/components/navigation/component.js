@@ -8,15 +8,15 @@ const Navigation = ({ tabs, currentTab, iso }) => (
     <ul>
       {tabs.map((item) => (
         <li
-          key={item.category}
-          id={item.category}
-          className={classnames({ '-active': currentTab === item.category })}
+          key={item.name}
+          id={item.name}
+          className={classnames({ '-active': currentTab === item.slug })}
         >
           <Link
             to={{
               type: 'COUNTRY',
               pathname: '/country',
-              payload: { iso, category: `${item.category}` },
+              payload: { iso, category: `${item.slug}` },
             }}
           >
             {item.name}
