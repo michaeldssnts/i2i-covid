@@ -525,5 +525,151 @@
       "economic_sector2_don_t_know"
     ],
     "chart": "bar"
+  },
+  {
+    "slug": "languages",
+    "title": "languages",
+    "hint": null,
+    "category": "demographic",
+    "columns": [
+      "language",
+      "language2"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "race",
+    "title": "Race",
+    "hint": null,
+    "category": "demographic",
+    "columns": [
+      "race"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "age-categories",
+    "title": "Age categories",
+    "hint": null,
+    "category": "demographic",
+    "columns": [
+      "age"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "sex",
+    "title": "Sex",
+    "hint": null,
+    "category": "demographic",
+    "columns": [
+      "sex"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "region",
+    "title": "Region",
+    "hint": null,
+    "category": "demographic",
+    "columns": [
+      "region"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "urban-city",
+    "title": "Urban / rural setting",
+    "hint": null,
+    "category": "demographic",
+    "columns": [
+      "urban_city"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "city-name",
+    "title": "City name",
+    "hint": null,
+    "category": "demographic",
+    "columns": [
+      "city_name"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "nearest-city",
+    "title": "Nearest city",
+    "hint": null,
+    "category": "demographic",
+    "columns": [
+      "nearest_city"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "distance-to-nearest-city",
+    "title": "Distance to nearest city",
+    "hint": null,
+    "category": "demographic",
+    "columns": [
+      "nearest_city_distance"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "education-level",
+    "title": "Education level",
+    "hint": null,
+    "category": "demographic",
+    "columns": [
+      "education_level"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "relationship_status",
+    "title": "Relationship status",
+    "hint": null,
+    "category": "demographic",
+    "columns": [
+      "relationship_status",
+      "live_with_spouse"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "household-characteristics",
+    "title": "Household characteristics",
+    "hint": null,
+    "category": "demographic",
+    "columns": [
+      "hh_size",
+      "children_under_5_years_old",
+      "people_over_60_years_old"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "phone-ownership",
+    "title": "Phone ownership",
+    "hint": null,
+    "category": "demographic",
+    "columns": [
+      "phone_ownership"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "main-income-earner",
+    "title": "Main income earner",
+    "hint": null,
+    "category": "demographic",
+    "columns": [
+      "main_income_earner",
+      "main_income_earner_age",
+      "main_income_earner_gender"
+    ],
+    "chart": "stacked-bar"
   }
 ]
