@@ -30,7 +30,7 @@ const TabsInfo = [
   },
   {
     name: 'Politics',
-    category: 'politics',
+    category: 'livelihoods',
     filters: true,
     content: <CardInfo info={Policits} />,
   },
