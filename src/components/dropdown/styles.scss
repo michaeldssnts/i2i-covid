@@ -32,6 +32,15 @@
       align-content: flex-start;
       justify-content: flex-start;
       align-items: flex-start;
+      display: contents;
+
+      li {
+        display: block;
+      }
+
+      li:last-child {
+        margin-bottom: 60px;
+      }
     }
 
     a {

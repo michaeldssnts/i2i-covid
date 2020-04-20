@@ -5,8 +5,8 @@ import Button from 'components/button';
 
 ReactModal.setAppElement('#root');
 
-const Modal = ({ children, title, onRequestClose, onCancel, ...domProps }) => (
-  <ReactModal className="c-modal" onRequestClose={onRequestClose} {...domProps}>
+const Modal = ({ children, title, isOpen, onRequestClose, onReset, ...domProps }) => (
+  <ReactModal className="c-modal" isOpen={isOpen} onRequestClose={onRequestClose} {...domProps}>
     <div className="modal-content">
       {title && <h2 className="modal-title">{title}</h2>}
       <button type="button" className="modal-button" onClick={onRequestClose}>
@@ -14,8 +14,8 @@ const Modal = ({ children, title, onRequestClose, onCancel, ...domProps }) => (
       </button>
       {children}
       <div className="control-buttons">
-        <Button className="-border-color-1 -medium" onClick={onCancel}>
-          Cancel
+        <Button className="-border-color-1 -medium" onClick={onReset}>
+          Reset
         </Button>
         <Button className="-color-2 -medium" onClick={onRequestClose}>
           Close
@@ -27,13 +27,15 @@ const Modal = ({ children, title, onRequestClose, onCancel, ...domProps }) => (
 
 Modal.propTypes = {
   onRequestClose: PropTypes.func.isRequired,
-  onCancel: PropTypes.func.isRequired,
+  onReset: PropTypes.func.isRequired,
   children: PropTypes.node,
   title: PropTypes.string,
+  isOpen: PropTypes.bool,
 };
 
 Modal.defaultProps = {
   title: null,
+  isOpen: false,
 };
 
 export default Modal;

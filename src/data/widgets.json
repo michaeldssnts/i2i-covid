@@ -2,7 +2,8 @@
   {
     "slug": "covid-19-induced-behaviour-changes",
     "title": "Covid-19 induced behaviour changes",
-    "category": "healthcare-access",
+    "hint": null,
+    "category": "awareness_and_behaviour",
     "columns": [
       "covid_19_induced_behaviour_changes_wash_hands_more",
       "covid_19_induced_behaviour_changes_use_hand_sanitizer_more",
@@ -20,5 +21,56 @@
       "covid_19_induced_behaviour_changes_don_t_know",
       "covid_19_induced_behaviour_changes_refused"
     ]
+  },
+  {
+    "slug": "access-to-medicine",
+    "title": "Access to medicine",
+    "hint": null,
+    "category": "health_and_food_security",
+    "columns": [
+      "access_to_medicine"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "reasons-for-not-having-access-to-medicine",
+    "title": "Reasons for not having accesss to medicine",
+    "hint": null,
+    "category": "health_and_food_security",
+    "columns": [
+      "reasons_for_not_having_access_to_medicine_closed_hospital_cli",
+      "reasons_for_not_having_access_to_medicine_crowded_hospital_cl",
+      "reasons_for_not_having_access_to_medicine_don_t_know",
+      "reasons_for_not_having_access_to_medicine_medicines_were_unavai",
+      "reasons_for_not_having_access_to_medicine_other_specify",
+      "reasons_for_not_having_access_to_medicine_refused",
+      "reasons_for_not_having_access_to_medicine_too_sick_to_travel",
+      "reasons_for_not_having_access_to_medicine_travel_is_currently_p",
+      "reasons_for_not_having_access_to_medicine_was_scared_to_go_to_p",
+      "reasons_for_not_having_access_to_medicine_you_did_not_have_enou"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "price-of-basics",
+    "title": "Price of basics",
+    "hint": null,
+    "category": "health_and_food_security",
+    "columns": [
+      "price_of_staple",
+      "price_of_milk",
+      "price_of_soap"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "change-in-cost-of-medicine",
+    "title": "Change in cost of medicine",
+    "hint": null,
+    "category": "health_and_food_security",
+    "columns": [
+      "change_in_cost_of_medicine"
+    ],
+    "chart": "bar"
   }
 ]
