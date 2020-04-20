@@ -74,7 +74,7 @@ const Filters = ({ filters, resetFilters, setFilter }) => {
 Filters.propTypes = {
   filters: PropTypes.shape({
     gender: PropTypes.string.isRequired,
-    are: PropTypes.string.isRequired,
+    area: PropTypes.string.isRequired,
     age: PropTypes.array.isRequired,
   }),
   resetFilters: PropTypes.func.isRequired,

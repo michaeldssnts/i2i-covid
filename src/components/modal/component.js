@@ -5,8 +5,8 @@ import Button from 'components/button';
 
 ReactModal.setAppElement('#root');
 
-const Modal = ({ children, title, onRequestClose, onCancel, ...domProps }) => (
-  <ReactModal className="c-modal" onRequestClose={onRequestClose} {...domProps}>
+const Modal = ({ children, title, isOpen, onRequestClose, onCancel, ...domProps }) => (
+  <ReactModal className="c-modal" isOpen={isOpen} onRequestClose={onRequestClose} {...domProps}>
     <div className="modal-content">
       {title && <h2 className="modal-title">{title}</h2>}
       <button type="button" className="modal-button" onClick={onRequestClose}>
@@ -30,10 +30,12 @@ Modal.propTypes = {
   onCancel: PropTypes.func.isRequired,
   children: PropTypes.node,
   title: PropTypes.string,
+  isOpen: PropTypes.bool,
 };
 
 Modal.defaultProps = {
   title: null,
+  isOpen: false,
 };
 
 export default Modal;
