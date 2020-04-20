@@ -1,6 +1,16 @@
+.recharts-cartesian-axis {
+
+  &.recharts-xAxis {
+    text {
+      font-size: 13px;
+    }
+  }
+}
+
 .recharts-legend-wrapper {
 
   .recharts-legend-item {
+
     .recharts-legend-item-text {
       font-size: 13px;
       letter-spacing: 0.08px;
