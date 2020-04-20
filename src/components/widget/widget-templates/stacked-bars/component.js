@@ -11,7 +11,6 @@ const Bars = ({ data }) => {
   if (!data) return null;
   const { chartConfig, chartData } = config.parse(data, id);
 
-  console.log(chartConfig, chartData, 'widget');
   return (
     <Fragment>
       <div className="c-population-trends-widget">
