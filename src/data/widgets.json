@@ -635,7 +635,7 @@
     "columns": [
       "language"
     ],
-    "chart": "bar"
+    "chart": "multiple-bar"
   },
   {
     "slug": "race",
@@ -647,7 +647,7 @@
     "columns": [
       "race"
     ],
-    "chart": "bar"
+    "chart": "single-bar"
   },
   {
     "slug": "age-categories",

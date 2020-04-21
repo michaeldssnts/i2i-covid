@@ -11,15 +11,18 @@ import { getWidgetProps } from './utils.js';
 const chartsMap = {
   bar: BarChart,
   line: LineChart,
+  'multiple-bar': BarChart,
+  'single-bar': BarChart,
   'stacked-bar': BarChart,
 };
 
 const Widget = ({ chart, slug }) => {
-  const { columns, title, chart: chartType } = widgetsSpec.find((widgetSpec) => widgetSpec.slug === slug);
+  const { columns, title, chart: chartType } = widgetsSpec.find(
+    (widgetSpec) => widgetSpec.slug === slug
+  );
   const [{ data, loading }] = useAxios(fetchIndicators(columns));
   const ChartComponent = chartsMap[chart];
   const widgetProps = data && getWidgetProps(data.rows, chartType);
-  console.log(widgetProps)
 
   return (
     <div className="c-widget">
