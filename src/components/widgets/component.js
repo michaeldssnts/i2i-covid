@@ -10,7 +10,10 @@ const Widgets = ({ category }) => {
     <div className="c-widgets">
       <div className="row">
         {widgets.map((widget) => (
-          <div key={widget.slug} className="col-6">
+          <div
+            key={widget.slug}
+            className={`col-${widget.chart === 'bar' || 'stacked-bar' ? 6 : 12}`}
+          >
             <Widget {...widget} />
           </div>
         ))}

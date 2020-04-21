@@ -26,7 +26,7 @@ const Widget = ({ chart, slug }) => {
 
   return (
     <div className="c-widget">
-      <h2>{title}</h2>
+      <h3>{title}</h3>
       {loading && <p>Loading...</p>}
       {data && !loading && <ChartComponent {...widgetProps} />}
     </div>
