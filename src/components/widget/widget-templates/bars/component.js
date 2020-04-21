@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import Chart from 'components/recharts';
 
 import config from './config';
-import './styles.scss';
 
 const StackedBar = ({ widgetData, id }) => {
   if (!widgetData) return null;

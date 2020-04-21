@@ -14,7 +14,7 @@ const CountryPage = ({ iso, current }) => {
       <Hero iso={iso} />
       <div className="country-content">
         <Navigation tabs={TabsInfo} iso={iso} currentTab={current} />
-        {infoPage.content}
+
       </div>
     </div>
   );
