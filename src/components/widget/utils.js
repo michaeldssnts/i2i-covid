@@ -56,4 +56,14 @@ export const parseData = (data) => {
   return result;
 };
 
-export default { fetchDataQuery, parseData };
+export const fetchCategories = () => {
+  const query = `
+    SELECT
+      name,
+      slug
+    FROM covid_categories
+    ORDER by name`;
+  return cartoApi(query);
+};
+
+export default { fetchDataQuery, fetchCategories, parseData };

@@ -35,7 +35,6 @@ const HomePage = () => (
                 <Link
                   to={{
                     type: 'COUNTRY',
-                    pathname: '/country',
                     payload: { iso: country.iso, category: 'summary' },
                   }}
                 >
