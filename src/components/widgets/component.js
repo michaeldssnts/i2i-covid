@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import * as widgetsModule from 'data/widgets.json';
-
+import widgetsModule from 'data/widgets.json';
 import Widget from 'components/widget';
 
 const Widgets = ({ category }) => {
