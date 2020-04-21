@@ -11,50 +11,33 @@ export const parseSingleChart = (data) => {
       update_date: date,
     };
 
-    arr.forEach(({ original_name, value }) => {
-      obj.name = original_name;
-      obj.value = value;
-    });
-
-    return obj;
-  });
-
-  return {
-    config: {
-      dataKey: 'name',
-      groupBy: 'name',
-      categories: ['value'],
-    },
-    data: widgetData,
-  };
-};
-
-export const parseMultipleChart = (data) => {
-  const groupedData = groupBy(data, (d) => d.update_date);
-  const dates = Object.keys(groupedData);
-  const widgetData = dates.map((date) => {
-    const arr = groupedData[date];
-    const obj = {
-      update_date: date,
-    };
-
-    arr.forEach(({ answer, value }) => {
+    arr.forEach(({ value, answer }) => {
       obj[answer] = value;
     });
 
     return obj;
   });
 
-  let categories = [];
-
-  categories = map(data, 'answer');
+  const categories = map(data, 'answer').map((d) => d.toString());
 
   return {
     config: {
-      dataKey: 'update_date',
+      groupBy: 'update_date',
       categories,
     },
+    chartType: 'single-bar',
     data: widgetData,
+  };
+};
+
+export const parseMultipleChart = (data) => {
+  return {
+    config: {
+      groupBy: 'answer',
+      categories: ['value'],
+    },
+    chartType: 'multiple-bar',
+    data,
   };
 };
 

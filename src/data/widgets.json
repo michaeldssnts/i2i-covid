@@ -23,7 +23,7 @@
       "covid_19_induced_behaviour_changes_don_t_know",
       "covid_19_induced_behaviour_changes_refused"
     ],
-    "chart": "sinlge-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "access-to-medicine",
@@ -35,7 +35,7 @@
     "columns": [
       "access_to_medicine"
     ],
-    "chart": "sinlge-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "reasons-for-not-having-access-to-medicine",
@@ -56,7 +56,7 @@
       "reasons_for_not_having_access_to_medicine_was_scared_to_go_to_p",
       "reasons_for_not_having_access_to_medicine_you_did_not_have_enou"
     ],
-    "chart": "sinlge-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "price-of-basics",
@@ -70,7 +70,7 @@
       "price_of_milk",
       "price_of_soap"
     ],
-    "chart": "sinlge-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "change-in-cost-of-medicine",
@@ -149,7 +149,7 @@
       "understanding_of_covid_19_other",
       "understanding_of_covid_19_don_t_know"
     ],
-    "chart": "sinlge-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "increase-in-household-care-due-to-covid-19",
@@ -174,7 +174,7 @@
       "time_spent_caring_for_others",
       "time_spouse_spent_caring_for_others"
     ],
-    "chart": "sinlge-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "recent-travel",
@@ -188,7 +188,7 @@
       "moved_locations_since_march_1st",
       "travel_restriction"
     ],
-    "chart": "sinlge-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "amount-willing-to-pay-for-covid-19-vaccine",
@@ -200,7 +200,7 @@
     "columns": [
       "amount_willing_to_pay_for_covid_19_vaccine"
     ],
-    "chart": "sinlge-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "likeliness-to-seek-medical-attention-for-mild-symptoms",
@@ -226,7 +226,7 @@
       "number_of_contacts_with_working_age_adults",
       "number_of_contacts_with_elderly"
     ],
-    "chart": "sinlge-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "religious-group-attendance",
@@ -324,7 +324,7 @@
     "columns": [
       "past_30_days_value_of_govt_support"
     ],
-    "chart": "sinlge-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "amount-willing-to-accept-to-stay-home",
@@ -336,7 +336,7 @@
     "columns": [
       "amount_willing_to_accept_to_stay_home"
     ],
-    "chart": "sinlge-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "preferred-agent-availability",
@@ -384,7 +384,7 @@
     "columns": [
       "recent_borrowing"
     ],
-    "chart": "sinlge-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "Source-of-borrowing",
@@ -409,7 +409,7 @@
       "source_of_borrowing_other_specify",
       "source_of_borrowing_don_t_know"
     ],
-    "chart": "sinlge-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "missed-repayment",
@@ -421,7 +421,7 @@
     "columns": [
       "missed_repayment"
     ],
-    "chart": "sinlge-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "reason-for-missed-payment",
@@ -440,7 +440,7 @@
       "reason_for_missed_payment_other_specify",
       "reason_for_missed_payment_don_t_know"
     ],
-    "chart": "sinlge-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "account-use-trends",
@@ -464,7 +464,7 @@
     "columns": [
       "past_7_days_hours_worked"
     ],
-    "chart": "sinlge-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "past-7-days-hours-earned",
@@ -476,7 +476,7 @@
     "columns": [
       "past_7_days_hours_earned"
     ],
-    "chart": "sinlge-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "1-yr-income-comparison",
@@ -488,7 +488,7 @@
     "columns": [
       "_1_yr_income_comparison"
     ],
-    "chart": "sinlge-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "FinHealth",
@@ -498,10 +498,10 @@
     "weight": "weight_ind",
     "category": "livelihoods",
     "columns": [
-      "finHealth_possibility",
-      "finHealth_sources"
+      "finhealth_possibility",
+      "finhealth_sources"
     ],
-    "chart": "sinlge-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "value-of-remittances",
@@ -514,7 +514,7 @@
       "value_of_remittances_sent",
       "value_of_remittances_received"
     ],
-    "chart": "sinlge-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "main-income-earner-primary-income-source",
@@ -575,7 +575,7 @@
       "economic_sector_other_specify",
       "economic_sector_don_t_know"
     ],
-    "chart": "sinlge-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "main-business-challenge",
@@ -599,7 +599,7 @@
     "columns": [
       "main_income_earner_jobs_change"
     ],
-    "chart": "sinlge-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "former-job",
@@ -783,7 +783,7 @@
     "columns": [
       "phone_ownership"
     ],
-    "chart": "sinlge-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "main-income-earner",
