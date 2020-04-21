@@ -23,12 +23,14 @@ const CountryPage = ({ iso, current }) => {
       {data && !loading && (
         <div className="country-content">
           <Navigation tabs={categories} iso={iso} currentTab={current} />
-          <div className="country-info">
-            {current === 'summary' ? (
-              <Summary />
-            ) : (
-              <CardInfo title={name} iso={iso} category={current} />
-            )}
+          <div className="container">
+            <div className="country-info">
+              {current === 'summary' ? (
+                <Summary />
+              ) : (
+                <CardInfo title={name} iso={iso} category={current} />
+              )}
+            </div>
           </div>
         </div>
       )}

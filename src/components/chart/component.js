@@ -153,7 +153,7 @@ class Chart extends PureComponent {
                     unit={unit || ''}
                     unitFormat={unitFormat || ((value) => value)}
                     fill="#FFF"
-                    fontWeight={500}
+                    fontWeight={400}
                   />
                 }
                 {...yAxis}
