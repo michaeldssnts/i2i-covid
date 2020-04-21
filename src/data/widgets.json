@@ -71,6 +71,605 @@
     "columns": [
       "change_in_cost_of_medicine"
     ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "relative-food-availability",
+    "title": "Relative food availability",
+    "hint": null,
+    "category": "health_and_food_security",
+    "columns": [
+      "relative_food_availability"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "past-7-days-meals-eaten",
+    "title": "Past 7 days meals eaten",
+    "hint": null,
+    "category": "health_and_food_security",
+    "columns": [
+      "past_7_days_meals_eaten"
+    ],
     "chart": "bar"
+  },
+  {
+    "slug": "change-in-chronic-care",
+    "title": "Change in chronic care",
+    "hint": null,
+    "category": "health_and_food_security",
+    "columns": [
+      "change_in_chronic_care"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "change-in-ease-of-getting-contraceptives",
+    "title": "Change in ease of getting contraceptives",
+    "hint": null,
+    "category": "health_and_food_security",
+    "columns": [
+      "change_in_ease_of_getting_contraceptives"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "understanding-of-covid-19",
+    "title": "Understanding of Covid-19",
+    "hint": null,
+    "category": "awareness_and_behaviour",
+    "columns": [
+      "understanding_of_covid_19_illness_or_disease",
+      "understanding_of_covid_19_virus",
+      "understanding_of_covid_19_not_real",
+      "understanding_of_covid_19_conspiracy",
+      "understanding_of_covid_19_a_weapon",
+      "understanding_of_covid_19_punishment_from_god",
+      "understanding_of_covid_19_other",
+      "understanding_of_covid_19_don_t_know"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "increase-in-household-care-due-to-covid-19",
+    "title": "Increase in household care due to Covid-19",
+    "hint": null,
+    "category": "awareness_and_behaviour",
+    "columns": [
+      "increase_in_household_care_due_to_covid_19"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "time-spent-caring-for-others",
+    "title": "Time spent caring for others",
+    "hint": null,
+    "category": "awareness_and_behaviour",
+    "columns": [
+      "time_spent_caring_for_others",
+      "time_spouse_spent_caring_for_others"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "recent-travel",
+    "title": "Recent travel",
+    "hint": null,
+    "category": "awareness_and_behaviour",
+    "columns": [
+      "past_14_days_travel",
+      "moved_locations_since_march_1st",
+      "travel_restriction"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "amount-willing-to-pay-for-covid-19-vaccine",
+    "title": "Amount willing to pay for Covid-19 vaccine",
+    "hint": null,
+    "category": "awareness_and_behaviour",
+    "columns": [
+      "amount_willing_to_pay_for_covid_19_vaccine"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "likeliness-to-seek-medical-attention-for-mild-symptoms",
+    "title": "Likeliness to seek medical attention for mild symptoms",
+    "hint": null,
+    "category": "awareness_and_behaviour",
+    "columns": [
+      "likeliness_to_seek_medical_attention_for_mild_symptoms"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "number-of-contacts",
+    "title": "Number of contacts",
+    "hint": null,
+    "category": "awareness_and_behaviour",
+    "columns": [
+      "number_of_contacts_with_children",
+      "number_of_contacts_with_working_age_adults",
+      "number_of_contacts_with_elderly"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "religious-group-attendance",
+    "title": "Religious group attendance (past 14 days)",
+    "hint": null,
+    "category": "awareness_and_behaviour",
+    "columns": [
+      "past_14_days_religious_group_attendance"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "where-children-stay-when-school-is-closed",
+    "title": "Where children stay when school is closed",
+    "hint": null,
+    "category": "awareness_and_behaviour",
+    "columns": [
+      "where_children_stay_when_school_is_closed"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "safety-worries",
+    "title": "Safety worries",
+    "hint": null,
+    "category": "awareness_and_behaviour",
+    "columns": [
+      "safety_worries"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "likelihood_to_go_out_at_night",
+    "title": "Likelihood to go out at night",
+    "hint": null,
+    "category": "awareness_and_behaviour",
+    "columns": [
+      "likelihood_to_go_out_at_night"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "applications-to-government-support",
+    "title": "Applications to government support",
+    "hint": null,
+    "category": "government_support",
+    "columns": [
+      "emergency_food_support",
+      "emergency_money_support",
+      "govt_support_preference"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "difficulty-accessing-government-support",
+    "title": "Difficulty accessing government support",
+    "hint": null,
+    "category": "government_support",
+    "columns": [
+      "difficulty_accessing_government_support"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "bribes-to-get-government-support",
+    "title": "Bribes needed to get government support",
+    "hint": null,
+    "category": "government_support",
+    "columns": [
+      "need_to_pay_bribes_to_get_government_support"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "government-support-financials",
+    "title": "Government support financials",
+    "hint": null,
+    "category": "government_support",
+    "columns": [
+      "past_30_days_value_of_govt_support",
+      "amount_willing_to_accept_to_stay_home"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "preferred-agent-availability",
+    "title": "Preferred agent availability",
+    "hint": null,
+    "category": "financial_lives",
+    "columns": [
+      "preferred_agent_open_closed"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "change-in-agent-fee",
+    "title": "Change in agent fee",
+    "hint": null,
+    "category": "financial_lives",
+    "columns": [
+      "change_in_agent_fee"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "difficulty-sending-receiving-cash",
+    "title": "Difficulty sending/receiving cash",
+    "hint": null,
+    "category": "financial_lives",
+    "columns": [
+      "difficultysending_receivingcash"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "recent-borrowing",
+    "title": "Recent borrowing",
+    "hint": null,
+    "category": "financial_lives",
+    "columns": [
+      "recent_borrowing"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "Source-of-borrowing",
+    "title": "Source of borrowing",
+    "hint": null,
+    "category": "financial_lives",
+    "columns": [
+      "source_of_borrowing_shopkeeper",
+      "source_of_borrowing_group_chama",
+      "source_of_borrowing_group_stokvel_group",
+      "source_of_borrowing_group_ajo_adashi_esusu",
+      "source_of_borrowing_digital_app_lender",
+      "source_of_borrowing_sacco_cooperative",
+      "source_of_borrowing_bank",
+      "source_of_borrowing_friends_family_community",
+      "source_of_borrowing_employer",
+      "source_of_borrowing_microfinance",
+      "source_of_borrowing_moneylender",
+      "source_of_borrowing_government",
+      "source_of_borrowing_other_specify",
+      "source_of_borrowing_don_t_know"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "missed-repayment",
+    "title": "Missed repayment",
+    "hint": null,
+    "category": "financial_lives",
+    "columns": [
+      "missed_repayment"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "reason-for-missed-payment",
+    "title": "Reason for missed payment",
+    "hint": null,
+    "category": "financial_lives",
+    "columns": [
+      "reason_for_missed_payment_you_needed_money_for_essentials",
+      "reason_for_missed_payment_self_or_other_household_member_lost_i",
+      "reason_for_missed_payment_government_says_you_do_not_need_to_re",
+      "reason_for_missed_payment_you_prioritised_other_loan_payments",
+      "reason_for_missed_payment_interest_payments_went_up",
+      "reason_for_missed_payment_loan_was_forgiven",
+      "reason_for_missed_payment_other_specify",
+      "reason_for_missed_payment_don_t_know"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "account-use-trends",
+    "title": "Account use trends",
+    "hint": null,
+    "category": "financial_lives",
+    "columns": [
+      "account_use_trends"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "past-7-days-hours-worked",
+    "title": "Hours worked past 7 days",
+    "hint": null,
+    "category": "livelihoods",
+    "columns": [
+      "past_7_days_hours_worked"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "past-7-days-hours-earned",
+    "title": "Past 7 days hours earned",
+    "hint": null,
+    "category": "livelihoods",
+    "columns": [
+      "past_7_days_hours_earned"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "1-yr-income-comparison",
+    "title": "1 yr income comparison",
+    "hint": null,
+    "category": "livelihoods",
+    "columns": [
+      "_1_yr_income_comparison"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "FinHealth",
+    "title": "Financial health",
+    "hint": null,
+    "category": "livelihoods",
+    "columns": [
+      "finHealth_possibility",
+      "finHealth_sources"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "value-of-remittances",
+    "title": "Value of remittances",
+    "hint": null,
+    "category": "livelihoods",
+    "columns": [
+      "value_of_remittances_sent",
+      "value_of_remittances_received"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "main-income-earner-primary-income-source",
+    "title": "Primary income source",
+    "hint": null,
+    "category": "livelihoods",
+    "columns": [
+      "main_income_earner_primary_income_source"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "farm-labour-changes",
+    "title": "Farm labour changes",
+    "hint": null,
+    "category": "livelihoods",
+    "columns": [
+      "farm_labour_changes"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "ease-of-selling-crops",
+    "title": "Ease of selling crops",
+    "hint": null,
+    "category": "livelihoods",
+    "columns": [
+      "ease_of_selling_crops"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "economic-sector",
+    "title": "Economic sector",
+    "hint": null,
+    "category": "livelihoods",
+    "columns": [
+      "economic_sector_farming_or_raising_livestock",
+      "economic_sector_catering",
+      "economic_sector_market_or_selling_goods",
+      "economic_sector_tourism",
+      "economic_sector_health_and_social_work",
+      "economic_sector_transport",
+      "economic_sector_cooking_cleaning_babysitting_domestic_wor",
+      "economic_sector_education",
+      "economic_sector_security",
+      "economic_sector_government",
+      "economic_sector_professional_e_g_lawyer_accountant",
+      "economic_sector_services_barber_braiding_hair_welder_etc",
+      "economic_sector_other_specify",
+      "economic_sector_don_t_know"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "main-business-challenge",
+    "title": "Main business challenge",
+    "hint": null,
+    "category": "livelihoods",
+    "columns": [
+      "biggest_business_challenge"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "main-income-earner-jobs-change",
+    "title": "Changed jobs in the past year",
+    "hint": null,
+    "category": "livelihoods",
+    "columns": [
+      "main_income_earner_jobs_change"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "former-job",
+    "title": "Former income earner job",
+    "hint": null,
+    "category": "livelihoods",
+    "columns": [
+      "economic_sector2_farming_or_raising_livestock",
+      "economic_sector2_catering",
+      "economic_sector2_market_or_selling_goods",
+      "economic_sector2_tourism",
+      "economic_sector2_health_and_social_work",
+      "economic_sector2_transport",
+      "economic_sector2_cooking_cleaning_babysitting_domestic_wo",
+      "economic_sector2_education",
+      "economic_sector2_security",
+      "economic_sector2_government",
+      "economic_sector2_professional_e_g_lawyer_accountant",
+      "economic_sector2_services_barber_braiding_hair_welder_etc",
+      "economic_sector2_other_specify",
+      "economic_sector2_don_t_know"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "languages",
+    "title": "languages",
+    "hint": null,
+    "category": "demographic",
+    "columns": [
+      "language",
+      "language2"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "race",
+    "title": "Race",
+    "hint": null,
+    "category": "demographic",
+    "columns": [
+      "race"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "age-categories",
+    "title": "Age categories",
+    "hint": null,
+    "category": "demographic",
+    "columns": [
+      "age"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "sex",
+    "title": "Sex",
+    "hint": null,
+    "category": "demographic",
+    "columns": [
+      "sex"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "region",
+    "title": "Region",
+    "hint": null,
+    "category": "demographic",
+    "columns": [
+      "region"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "urban-city",
+    "title": "Urban / rural setting",
+    "hint": null,
+    "category": "demographic",
+    "columns": [
+      "urban_city"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "city-name",
+    "title": "City name",
+    "hint": null,
+    "category": "demographic",
+    "columns": [
+      "city_name"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "nearest-city",
+    "title": "Nearest city",
+    "hint": null,
+    "category": "demographic",
+    "columns": [
+      "nearest_city"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "distance-to-nearest-city",
+    "title": "Distance to nearest city",
+    "hint": null,
+    "category": "demographic",
+    "columns": [
+      "nearest_city_distance"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "education-level",
+    "title": "Education level",
+    "hint": null,
+    "category": "demographic",
+    "columns": [
+      "education_level"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "relationship_status",
+    "title": "Relationship status",
+    "hint": null,
+    "category": "demographic",
+    "columns": [
+      "relationship_status",
+      "live_with_spouse"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "household-characteristics",
+    "title": "Household characteristics",
+    "hint": null,
+    "category": "demographic",
+    "columns": [
+      "hh_size",
+      "children_under_5_years_old",
+      "people_over_60_years_old"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "phone-ownership",
+    "title": "Phone ownership",
+    "hint": null,
+    "category": "demographic",
+    "columns": [
+      "phone_ownership"
+    ],
+    "chart": "bar"
+  },
+  {
+    "slug": "main-income-earner",
+    "title": "Main income earner",
+    "hint": null,
+    "category": "demographic",
+    "columns": [
+      "main_income_earner",
+      "main_income_earner_age",
+      "main_income_earner_gender"
+    ],
+    "chart": "stacked-bar"
   }
 ]

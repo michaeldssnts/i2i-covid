@@ -15,6 +15,7 @@ const CountryPage = ({ iso, current }) => {
   const tabs = data && data.rows ? data.rows : null;
 
   const currentTab = tabs ? tabs.find((tab) => tab.slug === current) : null;
+
   const name = currentTab ? currentTab.name : null;
   const slug = currentTab ? currentTab.slug : null;
 
@@ -22,15 +23,15 @@ const CountryPage = ({ iso, current }) => {
     <div className="l-country">
       <Header />
       <Hero iso={iso} />
-      {loading ? (
-        <Spinner />
-      ) : (
+      {!loading && data ? (
         <div className="country-content">
           <Navigation tabs={tabs} iso={iso} currentTab={slug} />
           <div className="country-info">
             {slug === 'summary' ? <Summary /> : <CardInfo title={name} iso={iso} category={slug} />}
           </div>
         </div>
+      ) : (
+        <Spinner />
       )}
     </div>
   );
