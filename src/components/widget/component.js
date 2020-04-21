@@ -5,7 +5,8 @@ import useAxios from 'axios-hooks';
 import BarChart from 'components/chart/bar';
 import LineChart from 'components/chart/line';
 import widgetsSpec from 'data/widgets.json';
-import { parseData, fetchDataQuery } from './utils.js';
+import { fetchIndicators } from 'services/indicators';
+import { parseData } from './utils.js';
 
 const chartsMap = {
   bar: BarChart,
@@ -15,18 +16,19 @@ const chartsMap = {
 
 const Widget = ({ chart, slug }) => {
   const { columns, title } = widgetsSpec.find((widgetSpec) => widgetSpec.slug === slug);
-  const [{ data, loading }] = useAxios(fetchDataQuery(columns));
+  const [{ data, loading }] = useAxios(fetchIndicators(columns));
   const ChartComponent = chartsMap[chart];
+  const widgetData = data && parseData(data.rows);
+  console.log(data);
 
   return (
     <div className="c-widget">
       <h2>{title}</h2>
       {loading && <p>Loading...</p>}
-      {/* For now, we only have one type of chart (bar chart) */}
       {data && !loading && (
         <ChartComponent
           config={{ groupBy: 'update_date', categories: columns }}
-          data={parseData(data.rows)}
+          data={widgetData}
         />
       )}
     </div>
