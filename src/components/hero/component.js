@@ -21,11 +21,17 @@ const Hero = ({ iso }) => {
 
   return (
     <div className="c-hero">
-      <div className="hero-title">
-        <h1>
-          COVID-19 tracking survey status in
-          {options && <Dropdown options={options} current={current} />}
-        </h1>
+      <div className="container">
+        <div className="row justify-content-center">
+          <div className="col-10">
+            <div className="hero-title">
+              <h1>
+                COVID-19 tracking survey status in
+                {options && <Dropdown options={options} current={current} />}
+              </h1>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

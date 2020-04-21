@@ -8,7 +8,7 @@ import countries from './constants';
 const HomePage = () => (
   <section className="l-homepage">
     <Header />
-    <div className="l-container">
+    <div className="container">
       <article className="l-homepage-welcome">
         <div className="welcome-top" />
         <div className={classnames('welcome-content', 'clearfix')}>
