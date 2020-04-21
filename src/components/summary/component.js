@@ -17,8 +17,7 @@ const Summary = ({ iso }) => {
             <Link
               to={{
                 type: 'COUNTRY',
-                pathname: '/country',
-                payload: { iso, category: `${i.link}` },
+                payload: { iso, category: i.category },
               }}
             >
               Know more

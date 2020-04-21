@@ -6,20 +6,25 @@ import Link from 'redux-first-router-link';
 const Navigation = ({ tabs, currentTab, iso }) => (
   <div className="c-navigation">
     <ul>
-      {tabs.map((item) => (
-        <li
-          key={item.name}
-          id={item.name}
-          className={classnames({ '-active': currentTab === item.slug })}
+      <li id="Summary" className={classnames({ '-active': currentTab === 'summary' })}>
+        <Link
+          to={{
+            type: 'COUNTRY',
+            payload: { iso, category: 'summary' },
+          }}
         >
+          Summary
+        </Link>
+      </li>
+      {tabs.map(({ name, slug }) => (
+        <li key={slug} id={slug} className={classnames({ '-active': currentTab === slug })}>
           <Link
             to={{
               type: 'COUNTRY',
-              pathname: '/country',
-              payload: { iso, category: `${item.slug}` },
+              payload: { iso, category: slug },
             }}
           >
-            {item.name}
+            {name}
           </Link>
         </li>
       ))}
