@@ -27,7 +27,7 @@ You can edit information for widget editing the file:
 		"title": "Title of the widget", // REQUIRED. Title of the widget
 		"hint": "Lorem ipsum", // A small description you can add to explain to add more context to the widget
 		"columns": [], // Array of strings with column names (i2i_metadata_[staging|prod])
-		"chart": "bar" // Type of chart, possible values: "bar", "stacked-bar" or "line"
+		"chart": "bar" // Type of chart, possible values: "single-bar", "multiple-bar", "stacked-bar" or "line"
 	},
 	...
 }

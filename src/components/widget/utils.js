@@ -1,23 +1,37 @@
-import cartoApi from 'utils/carto-api';
 import groupBy from 'lodash/groupBy';
+import map from 'lodash/map';
 
-export const parseData = (data) => {
+export const getWidgetProps = (data, chartType) => {
   const groupedData = groupBy(data, (d) => d.update_date);
   const dates = Object.keys(groupedData);
-  const result = dates.map((date) => {
+  const widgetData = dates.map((date) => {
     const arr = groupedData[date];
     const obj = {
       update_date: date,
     };
 
-    arr.forEach(({ indicator, total }) => {
-      obj[indicator] = total;
+    arr.forEach(({ answer, indicator, value }) => {
+      if (chartType === 'single-bar') {
+        obj[indicator] = value;
+      } else {
+        obj[answer] = value;
+      }
     });
 
     return obj;
   });
 
-  return result;
+  console.log(widgetData)
+
+  const categories = map(data, 'answer');
+
+  return {
+    config: {
+      dataKey: 'update_date',
+      categories,
+    },
+    data: widgetData,
+  };
 };
 
-export default { parseData };
+export default { getWidgetProps };

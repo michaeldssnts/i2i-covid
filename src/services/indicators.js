@@ -2,50 +2,28 @@ import cartoApi from 'utils/carto-api';
 
 export const fetchIndicators = (columns, filters = { iso: 'NGA' }) => {
   const selectQuery = columns.join(',');
-  // const whereQuery = columns.map((column) => `${column} != 'N/A'`).join(' AND ');
-
-  const query = `
-    SELECT ${selectQuery}
-    FROM ${process.env.REACT_APP_DATA_TABLENAME}
-    WHERE country_iso = '${filters.iso}'
-  `;
-  console.log(query);
-
-  return cartoApi(query);
-};
-
-export const fetchGroupIndicators = (columns) => {
-  const groupingQuery = columns.map((column) => `GROUPING(${column}) grouping_${column}`).join(',');
-  const selectQuery = columns.join(',');
-  const groupByQuery = columns.map((column) => `(${column})`).join(',');
   const valuesQuery = columns
-    .map((column) => `(r.${column}, '${column}', r.count, r.update_date)`)
-    .join(',');
+    .map((column) => `(a.${column}, '${column}', a.update_date)`)
+    .join(', ');
 
   const query = `
-    WITH r AS (
-      SELECT
-        ${groupingQuery},
-        ${selectQuery},
-        COUNT(cartodb_id),
-        update_date
-      FROM covid_data_test
-      GROUP BY GROUPING SETS (
-        ${groupByQuery}
-      ),
-      update_date
-    ),
-    f AS (
+    WITH a as (
+      SELECT ${selectQuery}, update_date
+      FROM ${process.env.REACT_APP_DATA_TABLENAME}
+      WHERE country_iso = '${filters.iso}'
+    ), b as (
       SELECT t.*
-      FROM r
-        CROSS JOIN LATERAL (
-          VALUES ${valuesQuery}
-        ) AS t(response, indicator, valuesw, update_date)
-      WHERE response != 'N/A'
+      FROM a
+      CROSS JOIN LATERAL (
+        VALUES ${valuesQuery}
+      ) AS t(answer, indicator, update_date)
+    ), c as (
+      SELECT b.*, m.original_name, m.label
+      FROM b
+      INNER JOIN covid_metadata m ON m.field_name = indicator
     )
-    SELECT *,
-      sum(valuesw) OVER (partition BY indicator) AS total
-    FROM f
+    SELECT *, COUNT(answer) AS value FROM c
+    GROUP BY answer, indicator, update_date, original_name, label
   `;
 
   return cartoApi(query);

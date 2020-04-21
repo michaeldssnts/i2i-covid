@@ -572,13 +572,12 @@
   },
   {
     "slug": "languages",
-    "title": "languages",
+    "title": "Main language",
     "hint": null,
     "summary": false,
     "category": "demographic",
     "columns": [
-      "language",
-      "language2"
+      "language"
     ],
     "chart": "bar"
   },

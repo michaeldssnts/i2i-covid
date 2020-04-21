@@ -6,7 +6,7 @@ import BarChart from 'components/chart/bar';
 import LineChart from 'components/chart/line';
 import widgetsSpec from 'data/widgets.json';
 import { fetchIndicators } from 'services/indicators';
-import { parseData } from './utils.js';
+import { getWidgetProps } from './utils.js';
 
 const chartsMap = {
   bar: BarChart,
@@ -15,22 +15,17 @@ const chartsMap = {
 };
 
 const Widget = ({ chart, slug }) => {
-  const { columns, title } = widgetsSpec.find((widgetSpec) => widgetSpec.slug === slug);
+  const { columns, title, chart: chartType } = widgetsSpec.find((widgetSpec) => widgetSpec.slug === slug);
   const [{ data, loading }] = useAxios(fetchIndicators(columns));
   const ChartComponent = chartsMap[chart];
-  const widgetData = data && parseData(data.rows);
-  console.log(data);
+  const widgetProps = data && getWidgetProps(data.rows, chartType);
+  console.log(widgetProps)
 
   return (
     <div className="c-widget">
       <h2>{title}</h2>
       {loading && <p>Loading...</p>}
-      {data && !loading && (
-        <ChartComponent
-          config={{ groupBy: 'update_date', categories: columns }}
-          data={widgetData}
-        />
-      )}
+      {data && !loading && <ChartComponent {...widgetProps} />}
     </div>
   );
 };
