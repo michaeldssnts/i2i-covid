@@ -5,7 +5,7 @@ import widgetsModule from 'data/widgets.json';
 import Widget from 'components/widget';
 
 const Widgets = ({ category }) => {
-  const widgets = widgetsModule.default.filter((widget) => widget.category === category);
+  const widgets = widgetsModule.filter((widget) => widget.category === category);
   return (
     <div className="c-widgets">
       {widgets.map((widget) => (
