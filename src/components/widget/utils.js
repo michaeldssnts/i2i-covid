@@ -1,69 +1,52 @@
-import cartoApi from 'utils/carto-api';
 import groupBy from 'lodash/groupBy';
+import map from 'lodash/map';
+import sumBy from 'lodash/sumBy';
 
-export const fetchDataQuery = (columns) => {
-  const groupingQuery = columns.map((column) => `GROUPING(${column}) grouping_${column}`).join(',');
-  const selectQuery = columns.join(',');
-  const groupByQuery = columns.map((column) => `(${column})`).join(',');
-  const valuesQuery = columns
-    .map((column) => `(r.${column}, '${column}', r.count, r.update_date)`)
-    .join(',');
-
-  const query = `
-    WITH r AS (
-      SELECT
-        ${groupingQuery},
-        ${selectQuery},
-        COUNT(cartodb_id),
-        update_date
-      FROM covid_data_test
-      GROUP BY GROUPING SETS (
-        ${groupByQuery}
-      ),
-      update_date
-    ),
-    f AS (
-      SELECT t.*
-      FROM r
-        CROSS JOIN LATERAL (
-          VALUES ${valuesQuery}
-        ) AS t(response, indicator, valuesw, update_date)
-      WHERE response != 'N/A'
-    )
-    SELECT *,
-      sum(valuesw) OVER (partition BY indicator) AS total
-    FROM f
-  `;
-  return cartoApi(query);
-};
-
-export const parseData = (data) => {
+export const parseSingleChart = (data) => {
   const groupedData = groupBy(data, (d) => d.update_date);
   const dates = Object.keys(groupedData);
-  const result = dates.map((date) => {
+  const widgetData = dates.map((date) => {
     const arr = groupedData[date];
     const obj = {
       update_date: date,
     };
 
-    arr.forEach(({ indicator, total }) => {
-      obj[indicator] = total;
+    arr.forEach(({ value, answer }) => {
+      obj[answer] = value;
     });
 
     return obj;
   });
 
-  return result;
+  const categories = map(data, 'answer').map((d) => d.toString());
+
+  return {
+    config: {
+      groupBy: 'update_date',
+      categories,
+    },
+    chartType: 'single-bar',
+    data: widgetData,
+  };
 };
 
-export const fetchCategories = () => {
-  const query = `
-    SELECT
-      name,
-      slug
-    FROM covid_categories
-    ORDER by name`;
-  return cartoApi(query);
+export const parseMultipleChart = (data) => {
+  return {
+    config: {
+      groupBy: 'answer',
+      categories: ['value'],
+    },
+    chartType: 'multiple-bar',
+    data,
+  };
 };
 
-export default { fetchDataQuery, fetchCategories, parseData };
+export const getWidgetProps = (data, chartType) => {
+  if (chartType === 'single-bar') {
+    return parseSingleChart(data);
+  }
+
+  return parseMultipleChart(data);
+};
+
+export default { getWidgetProps };

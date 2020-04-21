@@ -14,7 +14,7 @@ import {
 // constants
 import { WIDGET_THEME } from './constants';
 
-const UIBarChart = ({ data, config, stacked }) => {
+const UIBarChart = ({ data, config, chartType }) => {
   const {
     layout,
     cartesianGrid,
@@ -29,7 +29,7 @@ const UIBarChart = ({ data, config, stacked }) => {
   const colors = colorsConfig || defaultColors;
   const defaultBarProps = {};
 
-  if (stacked) defaultBarProps.stackId = 'a';
+  if (chartType === 'stacked-bar') defaultBarProps.stackId = 'a';
 
   return (
     <div className="c-chart">
@@ -48,7 +48,7 @@ const UIBarChart = ({ data, config, stacked }) => {
               fill={colors(_category, index)}
             />
           ))}
-          <Legend {...legend} />
+          {chartType !== 'multiple-bar' && <Legend {...legend} />}
         </BarChart>
       </ResponsiveContainer>
     </div>
@@ -62,12 +62,12 @@ UIBarChart.propTypes = {
     categories: PropTypes.array,
     colors: PropTypes.func,
   }).isRequired,
-  stacked: PropTypes.bool,
+  chartType: PropTypes.oneOf(['single-bar', 'multiple-bar', 'stacked-bar']),
 };
 
 UIBarChart.defaultProps = {
   data: null,
-  stacked: false,
+  chartType: 'single-bar',
 };
 
 export default UIBarChart;
