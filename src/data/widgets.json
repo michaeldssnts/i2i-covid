@@ -4,6 +4,7 @@
     "title": "Covid-19 induced behaviour changes",
     "hint": null,
     "summary": true,
+    "weight": "weight_ind",
     "category": "awareness_and_behaviour",
     "columns": [
       "covid_19_induced_behaviour_changes_wash_hands_more",
@@ -21,24 +22,27 @@
       "covid_19_induced_behaviour_changes_other_specify",
       "covid_19_induced_behaviour_changes_don_t_know",
       "covid_19_induced_behaviour_changes_refused"
-    ]
+    ],
+    "chart": "single-bar"
   },
   {
     "slug": "access-to-medicine",
     "title": "Access to medicine",
     "hint": null,
     "summary": true,
+    "weight": "weight_ind",
     "category": "health_and_food_security",
     "columns": [
       "access_to_medicine"
     ],
-    "chart": "bar"
+    "chart": "single-bar"
   },
   {
     "slug": "reasons-for-not-having-access-to-medicine",
     "title": "Reasons for not having accesss to medicine",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "health_and_food_security",
     "columns": [
       "reasons_for_not_having_access_to_medicine_closed_hospital_cli",
@@ -52,26 +56,28 @@
       "reasons_for_not_having_access_to_medicine_was_scared_to_go_to_p",
       "reasons_for_not_having_access_to_medicine_you_did_not_have_enou"
     ],
-    "chart": "bar"
+    "chart": "single-bar"
   },
   {
     "slug": "price-of-basics",
     "title": "Price of basics",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "health_and_food_security",
     "columns": [
       "price_of_staple",
       "price_of_milk",
       "price_of_soap"
     ],
-    "chart": "bar"
+    "chart": "single-bar"
   },
   {
     "slug": "change-in-cost-of-medicine",
     "title": "Change in cost of medicine",
     "hint": null,
     "summary": true,
+    "weight": "weight_ind",
     "category": "health_and_food_security",
     "columns": [
       "change_in_cost_of_medicine"
@@ -83,6 +89,7 @@
     "title": "Relative food availability",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "health_and_food_security",
     "columns": [
       "relative_food_availability"
@@ -94,17 +101,19 @@
     "title": "Past 7 days meals eaten",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "health_and_food_security",
     "columns": [
       "past_7_days_meals_eaten"
     ],
-    "chart": "bar"
+    "chart": "stacked-bar"
   },
   {
     "slug": "change-in-chronic-care",
     "title": "Change in chronic care",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "health_and_food_security",
     "columns": [
       "change_in_chronic_care"
@@ -116,6 +125,7 @@
     "title": "Change in ease of getting contraceptives",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "health_and_food_security",
     "columns": [
       "change_in_ease_of_getting_contraceptives"
@@ -127,6 +137,7 @@
     "title": "Understanding of Covid-19",
     "hint": null,
     "summary": true,
+    "weight": "weight_ind",
     "category": "awareness_and_behaviour",
     "columns": [
       "understanding_of_covid_19_illness_or_disease",
@@ -138,13 +149,14 @@
       "understanding_of_covid_19_other",
       "understanding_of_covid_19_don_t_know"
     ],
-    "chart": "bar"
+    "chart": "single-bar"
   },
   {
     "slug": "increase-in-household-care-due-to-covid-19",
     "title": "Increase in household care due to Covid-19",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "awareness_and_behaviour",
     "columns": [
       "increase_in_household_care_due_to_covid_19"
@@ -156,25 +168,27 @@
     "title": "Time spent caring for others",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "awareness_and_behaviour",
     "columns": [
       "time_spent_caring_for_others",
       "time_spouse_spent_caring_for_others"
     ],
-    "chart": "bar"
+    "chart": "single-bar"
   },
   {
     "slug": "recent-travel",
     "title": "Recent travel",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "awareness_and_behaviour",
     "columns": [
       "past_14_days_travel",
       "moved_locations_since_march_1st",
       "travel_restriction"
     ],
-    "chart": "bar"
+    "chart": "single-bar"
   },
   {
     "slug": "amount-willing-to-pay-for-covid-19-vaccine",
@@ -182,16 +196,18 @@
     "hint": null,
     "summary": false,
     "category": "awareness_and_behaviour",
+    "weight": "weight_ind",
     "columns": [
       "amount_willing_to_pay_for_covid_19_vaccine"
     ],
-    "chart": "bar"
+    "chart": "single-bar"
   },
   {
     "slug": "likeliness-to-seek-medical-attention-for-mild-symptoms",
     "title": "Likeliness to seek medical attention for mild symptoms",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "awareness_and_behaviour",
     "columns": [
       "likeliness_to_seek_medical_attention_for_mild_symptoms"
@@ -203,19 +219,21 @@
     "title": "Number of contacts",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "awareness_and_behaviour",
     "columns": [
       "number_of_contacts_with_children",
       "number_of_contacts_with_working_age_adults",
       "number_of_contacts_with_elderly"
     ],
-    "chart": "bar"
+    "chart": "single-bar"
   },
   {
     "slug": "religious-group-attendance",
     "title": "Religious group attendance (past 14 days)",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "awareness_and_behaviour",
     "columns": [
       "past_14_days_religious_group_attendance"
@@ -227,6 +245,7 @@
     "title": "Where children stay when school is closed",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "awareness_and_behaviour",
     "columns": [
       "where_children_stay_when_school_is_closed"
@@ -238,6 +257,7 @@
     "title": "Safety worries",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "awareness_and_behaviour",
     "columns": [
       "safety_worries"
@@ -249,6 +269,7 @@
     "title": "Likelihood to go out at night",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "awareness_and_behaviour",
     "columns": [
       "likelihood_to_go_out_at_night"
@@ -260,6 +281,7 @@
     "title": "Applications to government support",
     "hint": true,
     "summary": true,
+    "weight": "weight_ind",
     "category": "government_support",
     "columns": [
       "emergency_food_support",
@@ -273,6 +295,7 @@
     "title": "Difficulty accessing government support",
     "hint": null,
     "summary": true,
+    "weight": "weight_ind",
     "category": "government_support",
     "columns": [
       "difficulty_accessing_government_support"
@@ -284,6 +307,7 @@
     "title": "Bribes needed to get government support",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "government_support",
     "columns": [
       "need_to_pay_bribes_to_get_government_support"
@@ -291,22 +315,35 @@
     "chart": "stacked-bar"
   },
   {
-    "slug": "government-support-financials",
-    "title": "Government support financials",
+    "slug": "government-support-during-past-moth",
+    "title": "Government support during past month",
     "hint": null,
     "summary": false,
+    "weight": "weight_hh",
     "category": "government_support",
     "columns": [
-      "past_30_days_value_of_govt_support",
+      "past_30_days_value_of_govt_support"
+    ],
+    "chart": "single-bar"
+  },
+  {
+    "slug": "amount-willing-to-accept-to-stay-home",
+    "title": "Amount willing to accept to stay home",
+    "hint": null,
+    "summary": false,
+    "weight": "weight_ind",
+    "category": "government_support",
+    "columns": [
       "amount_willing_to_accept_to_stay_home"
     ],
-    "chart": "bar"
+    "chart": "single-bar"
   },
   {
     "slug": "preferred-agent-availability",
     "title": "Preferred agent availability",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "financial_lives",
     "columns": [
       "preferred_agent_open_closed"
@@ -318,6 +355,7 @@
     "title": "Change in agent fee",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "financial_lives",
     "columns": [
       "change_in_agent_fee"
@@ -329,6 +367,7 @@
     "title": "Difficulty sending/receiving cash",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "financial_lives",
     "columns": [
       "difficultysending_receivingcash"
@@ -340,17 +379,19 @@
     "title": "Recent borrowing",
     "hint": null,
     "summary": true,
+    "weight": "weight_ind",
     "category": "financial_lives",
     "columns": [
       "recent_borrowing"
     ],
-    "chart": "bar"
+    "chart": "single-bar"
   },
   {
     "slug": "Source-of-borrowing",
     "title": "Source of borrowing",
     "hint": null,
     "summary": true,
+    "weight": "weight_ind",
     "category": "financial_lives",
     "columns": [
       "source_of_borrowing_shopkeeper",
@@ -368,24 +409,26 @@
       "source_of_borrowing_other_specify",
       "source_of_borrowing_don_t_know"
     ],
-    "chart": "bar"
+    "chart": "single-bar"
   },
   {
     "slug": "missed-repayment",
     "title": "Missed repayment",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "financial_lives",
     "columns": [
       "missed_repayment"
     ],
-    "chart": "bar"
+    "chart": "single-bar"
   },
   {
     "slug": "reason-for-missed-payment",
     "title": "Reason for missed payment",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "financial_lives",
     "columns": [
       "reason_for_missed_payment_you_needed_money_for_essentials",
@@ -397,13 +440,14 @@
       "reason_for_missed_payment_other_specify",
       "reason_for_missed_payment_don_t_know"
     ],
-    "chart": "bar"
+    "chart": "single-bar"
   },
   {
     "slug": "account-use-trends",
     "title": "Account use trends",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "financial_lives",
     "columns": [
       "account_use_trends"
@@ -412,66 +456,72 @@
   },
   {
     "slug": "past-7-days-hours-worked",
-    "title": "Hours worked past 7 days",
+    "title": "Hours worked during past week",
     "hint": null,
     "summary": true,
+    "weight": "weight_ind",
     "category": "livelihoods",
     "columns": [
       "past_7_days_hours_worked"
     ],
-    "chart": "bar"
+    "chart": "single-bar"
   },
   {
     "slug": "past-7-days-hours-earned",
-    "title": "Past 7 days hours earned",
+    "title": "Money earned during past week",
     "hint": null,
     "summary": true,
+    "weight": "weight_ind",
     "category": "livelihoods",
     "columns": [
       "past_7_days_hours_earned"
     ],
-    "chart": "bar"
+    "chart": "single-bar"
   },
   {
     "slug": "1-yr-income-comparison",
     "title": "1 yr income comparison",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "livelihoods",
     "columns": [
       "_1_yr_income_comparison"
     ],
-    "chart": "bar"
+    "chart": "single-bar"
   },
   {
     "slug": "FinHealth",
     "title": "Financial health",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "livelihoods",
     "columns": [
-      "finHealth_possibility",
-      "finHealth_sources"
+      "finhealth_possibility",
+      "finhealth_sources"
     ],
-    "chart": "bar"
+    "chart": "single-bar"
   },
   {
     "slug": "value-of-remittances",
     "title": "Value of remittances",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "livelihoods",
     "columns": [
       "value_of_remittances_sent",
       "value_of_remittances_received"
     ],
-    "chart": "bar"
+    "chart": "single-bar"
   },
   {
     "slug": "main-income-earner-primary-income-source",
     "title": "Primary income source",
     "hint": null,
     "summary": false,
+    "weight": "weight_hh",
     "category": "livelihoods",
     "columns": [
       "main_income_earner_primary_income_source"
@@ -483,6 +533,7 @@
     "title": "Farm labour changes",
     "hint": null,
     "summary": false,
+    "weight": "weight_hh",
     "category": "livelihoods",
     "columns": [
       "farm_labour_changes"
@@ -494,6 +545,7 @@
     "title": "Ease of selling crops",
     "hint": null,
     "summary": false,
+    "weight": "weight_hh",
     "category": "livelihoods",
     "columns": [
       "ease_of_selling_crops"
@@ -505,6 +557,7 @@
     "title": "Economic sector",
     "hint": null,
     "summary": false,
+    "weight": "weight_hh",
     "category": "livelihoods",
     "columns": [
       "economic_sector_farming_or_raising_livestock",
@@ -522,13 +575,14 @@
       "economic_sector_other_specify",
       "economic_sector_don_t_know"
     ],
-    "chart": "bar"
+    "chart": "single-bar"
   },
   {
     "slug": "main-business-challenge",
     "title": "Main business challenge",
     "hint": null,
     "summary": false,
+    "weight": "weight_hh",
     "category": "livelihoods",
     "columns": [
       "biggest_business_challenge"
@@ -540,17 +594,19 @@
     "title": "Changed jobs in the past year",
     "hint": null,
     "summary": false,
+    "weight": "weight_hh",
     "category": "livelihoods",
     "columns": [
       "main_income_earner_jobs_change"
     ],
-    "chart": "bar"
+    "chart": "single-bar"
   },
   {
     "slug": "former-job",
     "title": "Former income earner job",
     "hint": null,
     "summary": false,
+    "weight": "weight_hh",
     "category": "livelihoods",
     "columns": [
       "economic_sector2_farming_or_raising_livestock",
@@ -568,69 +624,74 @@
       "economic_sector2_other_specify",
       "economic_sector2_don_t_know"
     ],
-    "chart": "bar"
+    "chart": "single-bar"
   },
   {
-    "slug": "languages",
-    "title": "languages",
+    "slug": "main-language",
+    "title": "Main language",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "demographic",
     "columns": [
-      "language",
-      "language2"
+      "language"
     ],
-    "chart": "bar"
+    "chart": "multiple-bar"
   },
   {
     "slug": "race",
     "title": "Race",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "demographic",
     "columns": [
       "race"
     ],
-    "chart": "bar"
+    "chart": "multiple-bar"
   },
   {
     "slug": "age-categories",
     "title": "Age categories",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "demographic",
     "columns": [
       "age"
     ],
-    "chart": "bar"
+    "chart": "multiple-bar"
   },
   {
     "slug": "sex",
     "title": "Sex",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "demographic",
     "columns": [
       "sex"
     ],
-    "chart": "bar"
+    "chart": "multiple-bar"
   },
   {
     "slug": "region",
     "title": "Region",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "demographic",
     "columns": [
       "region"
     ],
-    "chart": "bar"
+    "chart": "multiple-bar"
   },
   {
     "slug": "urban-city",
     "title": "Urban / rural setting",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "demographic",
     "columns": [
       "urban_city"
@@ -642,62 +703,68 @@
     "title": "City name",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "demographic",
     "columns": [
       "city_name"
     ],
-    "chart": "bar"
+    "chart": "multiple-bar"
   },
   {
     "slug": "nearest-city",
     "title": "Nearest city",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "demographic",
     "columns": [
       "nearest_city"
     ],
-    "chart": "bar"
+    "chart": "multiple-bar"
   },
   {
     "slug": "distance-to-nearest-city",
     "title": "Distance to nearest city",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "demographic",
     "columns": [
       "nearest_city_distance"
     ],
-    "chart": "bar"
+    "chart": "multiple-bar"
   },
   {
     "slug": "education-level",
     "title": "Education level",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "demographic",
     "columns": [
       "education_level"
     ],
-    "chart": "bar"
+    "chart": "multiple-bar"
   },
   {
     "slug": "relationship_status",
     "title": "Relationship status",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "demographic",
     "columns": [
       "relationship_status",
       "live_with_spouse"
     ],
-    "chart": "stacked-bar"
+    "chart": "multiple-bar"
   },
   {
     "slug": "household-characteristics",
     "title": "Household characteristics",
     "hint": null,
     "summary": false,
+    "weight": "weight_hh",
     "category": "demographic",
     "columns": [
       "hh_size",
@@ -711,17 +778,19 @@
     "title": "Phone ownership",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "demographic",
     "columns": [
       "phone_ownership"
     ],
-    "chart": "bar"
+    "chart": "single-bar"
   },
   {
     "slug": "main-income-earner",
     "title": "Main income earner",
     "hint": null,
     "summary": false,
+    "weight": "weight_ind",
     "category": "demographic",
     "columns": [
       "main_income_earner",

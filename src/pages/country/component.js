@@ -7,7 +7,7 @@ import Spinner from 'components/spinner';
 import Navigation from 'components/navigation';
 import CardInfo from 'components/card';
 import Summary from 'components/summary';
-import { fetchCategories } from 'components/widget/utils';
+import { fetchCategories } from 'services/categories';
 import useAxios from 'axios-hooks';
 
 const CountryPage = ({ iso, current }) => {
