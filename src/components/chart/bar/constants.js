@@ -2,7 +2,7 @@ import { format } from 'd3-format';
 import { schemePaired } from 'd3-scale-chromatic';
 
 export const WIDGET_THEME = {
-  layout: { width: '100%', height: 500 },
+  layout: { width: '100%', height: 400 },
   cartesianGrid: {
     strokeDasharray: '5 4',
     stroke: '#d8d8d8',

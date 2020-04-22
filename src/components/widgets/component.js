@@ -8,9 +8,16 @@ const Widgets = ({ category }) => {
   const widgets = widgetsModule.filter((widget) => widget.category === category);
   return (
     <div className="c-widgets">
-      {widgets.map((widget) => (
-        <Widget key={widget.slug} {...widget} />
-      ))}
+      <div className="row">
+        {widgets.map((widget) => (
+          <div
+            key={widget.slug}
+            className={`col-${widget.chart === 'bar' || 'stacked-bar' ? 6 : 12}`}
+          >
+            <Widget {...widget} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
