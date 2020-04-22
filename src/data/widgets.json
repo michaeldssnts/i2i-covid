@@ -704,7 +704,7 @@
     "calc": "percentage",
     "category": "demographic",
     "columns": [
-      "language",
+      "language"
     ],
     "chart": "multiple-bar"
   },
