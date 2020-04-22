@@ -14,37 +14,43 @@ const Summary = ({ iso, categories }) => {
           ({ name, slug, indicatorsList, widgets }) =>
             widgets &&
             widgets.length > 0 && (
-              <article key={slug} className={classnames({ '-active': false })}>
-                <div className="row justify-content-md-center">
-                  <div className="col-sm-12 col-md-12">
-                    <h2>{name}</h2>
-                  </div>
-                </div>
-                <div className="row justify-content-md-center">
-                  <div className="col-sm-10 col-md-10">
-                    <p>{indicatorsList}</p>
-                  </div>
-                </div>
-                <div className="row justify-content-md-center">
-                  {widgets.map(({ widgetSlug, widgetType }) => (
-                    <div key={widgetSlug} className="col-sm-12 col-md-6">
-                      <Widget chart={widgetType} slug={widgetSlug} />
+              <div className="row justify-content-center">
+                <div className="col-sm-12 col-md-12">
+                  <article key={slug} className="summary-content">
+                    <div className="row justify-content-center">
+                      <div className="col-sm-12 col-md-12">
+                        <h2>{name}</h2>
+                      </div>
                     </div>
-                  ))}
+                    <div className="row justify-content-center">
+                      <div className="col-sm-10 col-md-10">
+                        <p>{indicatorsList}</p>
+                      </div>
+                    </div>
+                    <div className="row justify-content-center">
+                      {widgets.map(({ widgetSlug, widgetType }) => (
+                        <div key={widgetSlug} className="col-sm-12 col-md-6">
+                          <Widget chart={widgetType} slug={widgetSlug} />
+                        </div>
+                      ))}
+                    </div>
+                    <div className="row justify-content-center">
+                      <div className="col-auto">
+                        <aside className="summary-button">
+                          <Link
+                            to={{
+                              type: 'COUNTRY',
+                              payload: { iso, category: slug },
+                            }}
+                          >
+                            Know more
+                          </Link>
+                        </aside>
+                      </div>
+                    </div>
+                  </article>
                 </div>
-                <div className="row justify-content-md-center">
-                  <aside>
-                    <Link
-                      to={{
-                        type: 'COUNTRY',
-                        payload: { iso, category: slug },
-                      }}
-                    >
-                      Know more
-                    </Link>
-                  </aside>
-                </div>
-              </article>
+              </div>
             )
         )}
       </div>
