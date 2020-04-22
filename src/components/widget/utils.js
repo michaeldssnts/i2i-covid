@@ -1,6 +1,5 @@
 import groupBy from 'lodash/groupBy';
 import map from 'lodash/map';
-import sumBy from 'lodash/sumBy';
 
 export const parseSingleChart = (data) => {
   const groupedData = groupBy(data, (d) => d.update_date);
@@ -11,8 +10,8 @@ export const parseSingleChart = (data) => {
       update_date: date,
     };
 
-    arr.forEach(({ value, answer }) => {
-      obj[answer] = value;
+    arr.forEach(({ percent, answer }) => {
+      obj[answer] = percent;
     });
 
     return obj;
@@ -34,7 +33,7 @@ export const parseMultipleChart = (data) => {
   return {
     config: {
       groupBy: 'answer',
-      categories: ['value'],
+      categories: ['percent'],
     },
     chartType: 'multiple-bar',
     data,
