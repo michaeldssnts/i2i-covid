@@ -25,7 +25,7 @@ const CountryPage = ({ iso, current }) => {
           <Navigation tabs={categories} iso={iso} currentTab={current} />
           <div className="country-info">
             {current === 'summary' ? (
-              <Summary />
+              <Summary categories={categories} />
             ) : (
               <CardInfo title={name} iso={iso} category={current} />
             )}
