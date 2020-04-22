@@ -2,29 +2,38 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Link from 'redux-first-router-link';
+import { parseData } from './utils.js';
+import Widget from 'components/widget';
 
-import info from './constants';
-
-const Summary = ({ iso }) => {
+const Summary = ({ iso, categories }) => {
+  const indicators = parseData(categories);
   return (
     <ul className="c-summary">
-      {info.map((i) => (
-        <li key={i.category} id={i.category} className={classnames({ '-active': false })}>
-          <h2>{i.title}</h2>
-          <p>{i.intro}</p>
-          {/* <Widgets category={i.category} /> */}
-          {i.link && (
-            <Link
-              to={{
-                type: 'COUNTRY',
-                payload: { iso, category: i.category },
-              }}
-            >
-              Know more
-            </Link>
-          )}
-        </li>
-      ))}
+      {indicators.map(
+        ({ name, slug, indicatorsList, widgets }) =>
+          widgets &&
+          widgets.length > 0 && (
+            <li key={slug} className={classnames({ '-active': false })}>
+              <h2>{name}</h2>
+              <p>{indicatorsList}</p>
+              <div className="row">
+                {widgets.map(({ widgetSlug, widgetType }) => (
+                  <div key={widgetSlug} className="col-6">
+                    <Widget chart={widgetType} slug={widgetSlug} />
+                  </div>
+                ))}
+              </div>
+              <Link
+                to={{
+                  type: 'COUNTRY',
+                  payload: { iso, category: slug },
+                }}
+              >
+                Know more
+              </Link>
+            </li>
+          )
+      )}
     </ul>
   );
 };
@@ -33,6 +42,12 @@ Summary.propTypes = {
   title: PropTypes.string.isRequired,
   iso: PropTypes.string.isRequired,
   category: PropTypes.string.isRequired,
+  categories: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      slug: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
 export default Summary;
