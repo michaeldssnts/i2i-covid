@@ -4,7 +4,7 @@ import useAxios from 'axios-hooks';
 
 import BarChart from 'components/chart/bar';
 import LineChart from 'components/chart/line';
-import Button from 'components/button';
+import Share from 'components/share';
 import widgetsSpec from 'data/widgets.json';
 import { fetchIndicators } from 'services/indicators';
 import { getWidgetProps } from './utils.js';
@@ -30,7 +30,7 @@ const Widget = ({ chart, slug }) => {
       <h2>{title}</h2>
       {loading && <p>Loading...</p>}
       {data && !loading && <ChartComponent {...widgetProps} />}
-      <Button className="-border-color-2 -small">Save</Button>
+      <Share slug={slug} />
     </div>
   );
 };
