@@ -6,23 +6,24 @@
     "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "one",
+    "orientation": "vertical",
     "category": "awareness_and_behaviour",
     "columns": [
-      "covid_19_induced_behaviour_changes_wash_hands_more",
-      "covid_19_induced_behaviour_changes_use_hand_sanitizer_more",
-      "covid_19_induced_behaviour_changes_cover_mouth_when_cough_or_sn",
-      "covid_19_induced_behaviour_changes_limit_contact_with_other_peo",
-      "covid_19_induced_behaviour_changes_avoid_big_groups",
-      "covid_19_induced_behaviour_changes_stay_home_more",
-      "covid_19_induced_behaviour_changes_travel_outside_home_less",
-      "covid_19_induced_behaviour_changes_go_to_work_less",
-      "covid_19_induced_behaviour_changes_wear_face_mask",
-      "covid_19_induced_behaviour_changes_stock_up_on_food",
-      "covid_19_induced_behaviour_changes_avoid_the_clinic_or_hospital",
-      "covid_19_induced_behaviour_changes_avoid_elderly",
-      "covid_19_induced_behaviour_changes_other_specify",
-      "covid_19_induced_behaviour_changes_don_t_know",
-      "covid_19_induced_behaviour_changes_refused"
+      "covid19inducedbehaviourchanges_gotoworkless",
+      "covid19inducedbehaviourchanges_limitcontactwithotherpeople",
+      "covid19inducedbehaviourchanges_usehandsanitizermore",
+      "covid19inducedbehaviourchanges_wearfacemask",
+      "covid19inducedbehaviourchanges_stayhomemore",
+      "covid19inducedbehaviourchanges_covermouthwhencoughorsneeze",
+      "covid19inducedbehaviourchanges_washhandsmore",
+      "covid19inducedbehaviourchanges_traveloutsidehomeless",
+      "covid19inducedbehaviourchanges_avoidbiggroups",
+      "covid19inducedbehaviourchanges_avoidelderly",
+      "covid19inducedbehaviourchanges_avoidtheclinicorhospital",
+      "covid19inducedbehaviourchanges_stockuponfood",
+      "covid19inducedbehaviourchanges_dontknow",
+      "covid19inducedbehaviourchanges_other"
     ],
     "chart": "single-bar"
   },
@@ -33,9 +34,11 @@
     "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "health_and_food_security",
     "columns": [
-      "access_to_medicine"
+      "accesstomedicine"
     ],
     "chart": "stacked-bar"
   },
@@ -46,18 +49,19 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "one",
+    "orientation": "vertical",
     "category": "health_and_food_security",
     "columns": [
-      "reasons_for_not_having_access_to_medicine_closed_hospital_cli",
-      "reasons_for_not_having_access_to_medicine_crowded_hospital_cl",
-      "reasons_for_not_having_access_to_medicine_don_t_know",
-      "reasons_for_not_having_access_to_medicine_medicines_were_unavai",
-      "reasons_for_not_having_access_to_medicine_other_specify",
-      "reasons_for_not_having_access_to_medicine_refused",
-      "reasons_for_not_having_access_to_medicine_too_sick_to_travel",
-      "reasons_for_not_having_access_to_medicine_travel_is_currently_p",
-      "reasons_for_not_having_access_to_medicine_was_scared_to_go_to_p",
-      "reasons_for_not_having_access_to_medicine_you_did_not_have_enou"
+      "reasonsfornothavingaccesstomedicine_youdidnothaveenoughmoney",
+      "reasonsfornothavingaccesstomedicine_hospitalclinicpharmacywasclo",
+      "reasonsfornothavingaccesstomedicine_traveliscurrentlyprohibited",
+      "reasonsfornothavingaccesstomedicine_medicineswereunavailable",
+      "reasonsfornothavingaccesstomedicine_hospitalclinicpharmacywastoo",
+      "reasonsfornothavingaccesstomedicine_wasscaredtogotopurchaseit",
+      "reasonsfornothavingaccesstomedicine_toosicktotravel",
+      "reasonsfornothavingaccesstomedicine_dontknow",
+      "reasonsfornothavingaccesstomedicine_other"
     ],
     "chart": "single-bar"
   },
@@ -68,11 +72,13 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "average",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "health_and_food_security",
     "columns": [
-      "price_of_staple",
-      "price_of_milk",
-      "price_of_soap"
+      "priceofstaple",
+      "priceofmilk",
+      "priceofsoap"
     ],
     "chart": "single-bar"
   },
@@ -83,9 +89,11 @@
     "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "health_and_food_security",
     "columns": [
-      "change_in_cost_of_medicine"
+      "changeincostofmedicine"
     ],
     "chart": "stacked-bar"
   },
@@ -96,9 +104,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "health_and_food_security",
     "columns": [
-      "relative_food_availability"
+      "relativefoodavailability"
     ],
     "chart": "stacked-bar"
   },
@@ -109,9 +119,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "health_and_food_security",
     "columns": [
-      "past_7_days_meals_eaten"
+      "past7daysmealseaten"
     ],
     "chart": "stacked-bar"
   },
@@ -122,9 +134,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "health_and_food_security",
     "columns": [
-      "change_in_chronic_care"
+      "changeinchroniccare"
     ],
     "chart": "stacked-bar"
   },
@@ -135,9 +149,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "health_and_food_security",
     "columns": [
-      "change_in_ease_of_getting_contraceptives"
+      "changeineaseofgettingcontraceptives"
     ],
     "chart": "stacked-bar"
   },
@@ -148,16 +164,18 @@
     "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "one",
+    "orientation": "vertical",
     "category": "awareness_and_behaviour",
     "columns": [
-      "understanding_of_covid_19_illness_or_disease",
-      "understanding_of_covid_19_virus",
-      "understanding_of_covid_19_not_real",
-      "understanding_of_covid_19_conspiracy",
-      "understanding_of_covid_19_a_weapon",
-      "understanding_of_covid_19_punishment_from_god",
-      "understanding_of_covid_19_other",
-      "understanding_of_covid_19_don_t_know"
+      "understandingofcovid19_aweapon",
+      "understandingofcovid19_conspiracy",
+      "understandingofcovid19_dontknow",
+      "understandingofcovid19_illnessordisease",
+      "understandingofcovid19_notreal",
+      "understandingofcovid19_other",
+      "understandingofcovid19_punishmentfromgod",
+      "understandingofcovid19_punishmentfromgod"
     ],
     "chart": "single-bar"
   },
@@ -168,9 +186,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "awareness_and_behaviour",
     "columns": [
-      "increase_in_household_care_due_to_covid_19"
+      "increaseinhouseholdcareduetocovid19"
     ],
     "chart": "stacked-bar"
   },
@@ -181,25 +201,57 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "average",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "awareness_and_behaviour",
     "columns": [
-      "time_spent_caring_for_others",
-      "time_spouse_spent_caring_for_others"
+      "timespentcaringforothers",
+      "timespousespentcaringforothers"
     ],
     "chart": "single-bar"
   },
   {
-    "slug": "recent-travel",
-    "title": "Recent travel",
+    "slug": "travel-within-past-two-weeks",
+    "title": "Travel within past two weeks",
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "awareness_and_behaviour",
     "columns": [
-      "past_14_days_travel",
-      "moved_locations_since_march_1st",
-      "travel_restriction"
+      "past14daystravel"
+    ],
+    "chart": "single-bar"
+  },
+  {
+    "slug": "gvt-travel-restriction",
+    "title": "Gvt. travel restriction",
+    "hint": null,
+    "summary": false,
+    "weight": "weight_ind",
+    "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
+    "category": "awareness_and_behaviour",
+    "columns": [
+      "travelrestriction"
+    ],
+    "chart": "single-bar"
+  },
+  {
+    "slug": "moved-location-since-march-1st",
+    "title": "Moved location since March 1st",
+    "hint": null,
+    "summary": false,
+    "weight": "weight_ind",
+    "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
+    "category": "awareness_and_behaviour",
+    "columns": [
+      "movedlocationsincemarch1st"
     ],
     "chart": "single-bar"
   },
@@ -208,11 +260,13 @@
     "title": "Amount willing to pay for Covid-19 vaccine",
     "hint": null,
     "summary": false,
-    "category": "awareness_and_behaviour",
     "weight": "weight_ind",
     "calc": "average",
+    "gridspace": "half",
+    "orientation": "vertical",
+    "category": "awareness_and_behaviour",
     "columns": [
-      "amount_willing_to_pay_for_covid_19_vaccine"
+      "amountwillingtopayforcovid19vaccine"
     ],
     "chart": "single-bar"
   },
@@ -223,9 +277,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "awareness_and_behaviour",
     "columns": [
-      "likeliness_to_seek_medical_attention_for_mild_symptoms"
+      "likelinesstoseekmedicalattentionformildsymptoms"
     ],
     "chart": "stacked-bar"
   },
@@ -236,24 +292,14 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "average",
+    "gridspace": "one",
+    "orientation": "vertical",
     "category": "awareness_and_behaviour",
     "columns": [
-      "number_of_contacts_with_children",
-      "number_of_contacts_with_working_age_adults",
-      "number_of_contacts_with_elderly"
-    ],
-    "chart": "single-bar"
-  },
-  {
-    "slug": "religious-group-attendance",
-    "title": "Religious group attendance (past 14 days)",
-    "hint": null,
-    "summary": false,
-    "weight": "weight_ind",
-    "calc": "average",
-    "category": "awareness_and_behaviour",
-    "columns": [
-      "past_14_days_religious_group_attendance"
+      "numberofcontactswithchildren",
+      "numberofcontactswithworkingageadults",
+      "numberofcontactswithelderly",
+      "past14daysreligiousgroupattendance"
     ],
     "chart": "single-bar"
   },
@@ -264,9 +310,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "one",
+    "orientation": "vertical",
     "category": "awareness_and_behaviour",
     "columns": [
-      "where_children_stay_when_school_is_closed"
+      "wherechildrenstaywhenschoolisclosed"
     ],
     "chart": "stacked-bar"
   },
@@ -277,9 +325,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "awareness_and_behaviour",
     "columns": [
-      "safety_worries"
+      "safetyworries"
     ],
     "chart": "stacked-bar"
   },
@@ -290,23 +340,41 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "awareness_and_behaviour",
     "columns": [
-      "likelihood_to_go_out_at_night"
+      "likelihoodtogooutatnight"
     ],
     "chart": "stacked-bar"
   },
   {
-    "slug": "applications-to-government-support",
-    "title": "Applications to government support",
+    "slug": "applications-to-economic-support",
+    "title": "Applications to economic support",
     "hint": true,
     "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "government_support",
     "columns": [
-      "emergency_food_support",
-      "emergency_money_support"
+      "emergencymoneysupport"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "applications-to-food-support",
+    "title": "Applications to food support",
+    "hint": true,
+    "summary": true,
+    "weight": "weight_ind",
+    "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
+    "category": "government_support",
+    "columns": [
+      "emergencyfoodsupport"
     ],
     "chart": "stacked-bar"
   },
@@ -317,9 +385,11 @@
     "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "government_support",
     "columns": [
-      "govt_support_preference"
+      "govt_supportpreference"
     ],
     "chart": "stacked-bar"
   },
@@ -330,9 +400,11 @@
     "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "government_support",
     "columns": [
-      "difficulty_accessing_government_support"
+      "difficultyaccessinggovernmentsupport"
     ],
     "chart": "stacked-bar"
   },
@@ -343,9 +415,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "government_support",
     "columns": [
-      "need_to_pay_bribes_to_get_government_support"
+      "needtopaybribestogetgovernmentsupport"
     ],
     "chart": "stacked-bar"
   },
@@ -356,9 +430,11 @@
     "summary": false,
     "weight": "weight_hh",
     "calc": "average",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "government_support",
     "columns": [
-      "past_30_days_value_of_govt_support"
+      "past30daysvalueofgovt_support"
     ],
     "chart": "single-bar"
   },
@@ -369,9 +445,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "average",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "government_support",
     "columns": [
-      "amount_willing_to_accept_to_stay_home"
+      "amountwillingtoaccepttostayhome"
     ],
     "chart": "single-bar"
   },
@@ -382,9 +460,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "financial_lives",
     "columns": [
-      "preferred_agent_open_closed"
+      "preferredagentopenclosed"
     ],
     "chart": "stacked-bar"
   },
@@ -395,9 +475,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "financial_lives",
     "columns": [
-      "change_in_agent_fee"
+      "changeinagentfee"
     ],
     "chart": "stacked-bar"
   },
@@ -408,9 +490,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "financial_lives",
     "columns": [
-      "difficultysending_receivingcash"
+      "difficultysendingreceivingcash"
     ],
     "chart": "stacked-bar"
   },
@@ -421,9 +505,11 @@
     "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "financial_lives",
     "columns": [
-      "recent_borrowing"
+      "recentborrowing"
     ],
     "chart": "stacked-bar"
   },
@@ -434,22 +520,23 @@
     "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "one",
+    "orientation": "vertical",
     "category": "financial_lives",
     "columns": [
-      "source_of_borrowing_shopkeeper",
-      "source_of_borrowing_group_chama",
-      "source_of_borrowing_group_stokvel_group",
-      "source_of_borrowing_group_ajo_adashi_esusu",
-      "source_of_borrowing_digital_app_lender",
-      "source_of_borrowing_sacco_cooperative",
-      "source_of_borrowing_bank",
-      "source_of_borrowing_friends_family_community",
-      "source_of_borrowing_employer",
-      "source_of_borrowing_microfinance",
-      "source_of_borrowing_moneylender",
-      "source_of_borrowing_government",
-      "source_of_borrowing_other_specify",
-      "source_of_borrowing_don_t_know"
+      "sourceofborrowing_friendsfamilycommunity",
+      "sourceofborrowing_groupchama",
+      "sourceofborrowing_digitalapplender",
+      "sourceofborrowing_moneylender",
+      "sourceofborrowing_shopkeeper",
+      "sourceofborrowing_government",
+      "sourceofborrowing_bank",
+      "sourceofborrowing_saccocooperative",
+      "sourceofborrowing_employer",
+      "sourceofborrowing_microfinance",
+      "sourceofborrowing_groupajoadashiesusu",
+      "sourceofborrowing_groupstokvelgroup",
+      "sourceofborrowing_other"
     ],
     "chart": "single-bar"
   },
@@ -460,9 +547,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "financial_lives",
     "columns": [
-      "missed_repayment"
+      "missedrepayment"
     ],
     "chart": "stacked-bar"
   },
@@ -473,16 +562,17 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "one",
+    "orientation": "vertical",
     "category": "financial_lives",
     "columns": [
-      "reason_for_missed_payment_you_needed_money_for_essentials",
-      "reason_for_missed_payment_self_or_other_household_member_lost_i",
-      "reason_for_missed_payment_government_says_you_do_not_need_to_re",
-      "reason_for_missed_payment_you_prioritised_other_loan_payments",
-      "reason_for_missed_payment_interest_payments_went_up",
-      "reason_for_missed_payment_loan_was_forgiven",
-      "reason_for_missed_payment_other_specify",
-      "reason_for_missed_payment_don_t_know"
+      "reasonformissedpayment_governmentsaysyoudonotneedtorepayloans",
+      "reasonformissedpayment_youneededmoneyforessentials",
+      "reasonformissedpayment_youprioritisedotherloanpayments",
+      "reasonformissedpayment_selforotherhouseholdmemberlostincome",
+      "reasonformissedpayment_loanwasforgiven",
+      "reasonformissedpayment_interestpaymentswentup",
+      "reasonformissedpayment_other"
     ],
     "chart": "single-bar"
   },
@@ -493,9 +583,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "financial_lives",
     "columns": [
-      "account_use_trends"
+      "accountusetrends"
     ],
     "chart": "stacked-bar"
   },
@@ -506,9 +598,11 @@
     "summary": true,
     "weight": "weight_ind",
     "calc": "average",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "livelihoods",
     "columns": [
-      "past_7_days_hours_worked"
+      "past7dayshoursworked"
     ],
     "chart": "single-bar"
   },
@@ -519,9 +613,11 @@
     "summary": true,
     "weight": "weight_ind",
     "calc": "average",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "livelihoods",
     "columns": [
-      "past_7_days_hours_earned"
+      "past7dayshoursearned"
     ],
     "chart": "single-bar"
   },
@@ -532,9 +628,26 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "livelihoods",
     "columns": [
-      "_1_yr_income_comparison"
+      "oneyrincomecomparison"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "asset-sales-since-march-1st",
+    "title": "Asset sales since March 1st",
+    "hint": null,
+    "summary": false,
+    "weight": "weight_ind",
+    "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
+    "category": "livelihoods",
+    "columns": [
+      "assetsalessincemarch1st"
     ],
     "chart": "stacked-bar"
   },
@@ -545,9 +658,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "livelihoods",
     "columns": [
-      "finhealth_possibility"
+      "finhealthpossibility"
     ],
     "chart": "stacked-bar"
   },
@@ -558,9 +673,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "livelihoods",
     "columns": [
-      "finhealth_sources"
+      "finhealthsources"
     ],
     "chart": "stacked-bar"
   },
@@ -571,10 +688,12 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "average",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "livelihoods",
     "columns": [
-      "value_of_remittances_sent",
-      "value_of_remittances_received"
+      "valueofremittancesreceived",
+      "valueofremittancessent"
     ],
     "chart": "single-bar"
   },
@@ -585,9 +704,11 @@
     "summary": false,
     "weight": "weight_hh",
     "calc": "percentage",
+    "gridspace": "one",
+    "orientation": "vertical",
     "category": "livelihoods",
     "columns": [
-      "main_income_earner_primary_income_source"
+      "mainincomeearnerprimaryincomesource"
     ],
     "chart": "stacked-bar"
   },
@@ -598,9 +719,11 @@
     "summary": false,
     "weight": "weight_hh",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "livelihoods",
     "columns": [
-      "farm_labour_changes"
+      "farmlabourchanges"
     ],
     "chart": "stacked-bar"
   },
@@ -611,9 +734,11 @@
     "summary": false,
     "weight": "weight_hh",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "livelihoods",
     "columns": [
-      "ease_of_selling_crops"
+      "easeofsellingcrops"
     ],
     "chart": "stacked-bar"
   },
@@ -624,22 +749,24 @@
     "summary": false,
     "weight": "weight_hh",
     "calc": "percentage",
+    "gridspace": "one",
+    "orientation": "vertical",
     "category": "livelihoods",
     "columns": [
-      "economic_sector_farming_or_raising_livestock",
-      "economic_sector_catering",
-      "economic_sector_market_or_selling_goods",
-      "economic_sector_tourism",
-      "economic_sector_health_and_social_work",
-      "economic_sector_transport",
-      "economic_sector_cooking_cleaning_babysitting_domestic_wor",
-      "economic_sector_education",
-      "economic_sector_security",
-      "economic_sector_government",
-      "economic_sector_professional_e_g_lawyer_accountant",
-      "economic_sector_services_barber_braiding_hair_welder_etc",
-      "economic_sector_other_specify",
-      "economic_sector_don_t_know"
+      "currenteconomicsector_transport",
+      "currenteconomicsector_tourism",
+      "currenteconomicsector_servicesbarberbraidinghairwelderetc",
+      "currenteconomicsector_marketorsellinggoods",
+      "currenteconomicsector_education",
+      "currenteconomicsector_security",
+      "currenteconomicsector_farmingorraisinglivestock",
+      "currenteconomicsector_government",
+      "currenteconomicsector_healthandsocialwork",
+      "currenteconomicsector_professionale_g_lawyeraccountant",
+      "currenteconomicsector_catering",
+      "currenteconomicsector_cookingcleaningbabysittingdomesticwork",
+      "currenteconomicsector_dontknow",
+      "currenteconomicsector_other"
     ],
     "chart": "single-bar"
   },
@@ -650,9 +777,11 @@
     "summary": false,
     "weight": "weight_hh",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "livelihoods",
     "columns": [
-      "biggest_business_challenge"
+      "biggestbusinesschallenge"
     ],
     "chart": "stacked-bar"
   },
@@ -663,9 +792,11 @@
     "summary": false,
     "weight": "weight_hh",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "livelihoods",
     "columns": [
-      "main_income_earner_jobs_change"
+      "mainincomeearnerjobschange"
     ],
     "chart": "stacked-bar"
   },
@@ -676,22 +807,23 @@
     "summary": false,
     "weight": "weight_hh",
     "calc": "percentage",
+    "gridspace": "one",
+    "orientation": "vertical",
     "category": "livelihoods",
     "columns": [
-      "economic_sector2_farming_or_raising_livestock",
-      "economic_sector2_catering",
-      "economic_sector2_market_or_selling_goods",
-      "economic_sector2_tourism",
-      "economic_sector2_health_and_social_work",
-      "economic_sector2_transport",
-      "economic_sector2_cooking_cleaning_babysitting_domestic_wo",
-      "economic_sector2_education",
-      "economic_sector2_security",
-      "economic_sector2_government",
-      "economic_sector2_professional_e_g_lawyer_accountant",
-      "economic_sector2_services_barber_braiding_hair_welder_etc",
-      "economic_sector2_other_specify",
-      "economic_sector2_don_t_know"
+      "previouseconomicsector_transport",
+      "previouseconomicsector_farmingorraisinglivestock",
+      "previouseconomicsector_dontknow",
+      "previouseconomicsector_education",
+      "previouseconomicsector_professionale_g_lawyeraccountant",
+      "previouseconomicsector_marketorsellinggoods",
+      "previouseconomicsector_cookingcleaningbabysittingdomesticwork",
+      "previouseconomicsector_servicesbarberbraidinghairwelderetc",
+      "previouseconomicsector_security",
+      "previouseconomicsector_catering",
+      "previouseconomicsector_government",
+      "previouseconomicsector_healthandsocialwork",
+      "previouseconomicsector_other"
     ],
     "chart": "single-bar"
   },
@@ -702,9 +834,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "one",
+    "orientation": "horizontal",
     "category": "demographic",
     "columns": [
-      "language"
+      "mainlanguage"
     ],
     "chart": "multiple-bar"
   },
@@ -715,6 +849,8 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "demographic",
     "columns": [
       "race"
@@ -728,9 +864,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "demographic",
     "columns": [
-      "age"
+      "age_cat"
     ],
     "chart": "multiple-bar"
   },
@@ -739,6 +877,8 @@
     "title": "Sex",
     "hint": null,
     "summary": false,
+    "gridspace": "half",
+    "orientation": "vertical",
     "weight": "weight_ind",
     "calc": "percentage",
     "category": "demographic",
@@ -754,6 +894,8 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "one",
+    "orientation": "horizontal",
     "category": "demographic",
     "columns": [
       "region"
@@ -767,9 +909,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "demographic",
     "columns": [
-      "urban_city"
+      "urbancity"
     ],
     "chart": "multiple-bar"
   },
@@ -780,9 +924,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "one",
+    "orientation": "horizontal",
     "category": "demographic",
     "columns": [
-      "city_name"
+      "cityname"
     ],
     "chart": "multiple-bar"
   },
@@ -793,9 +939,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "one",
+    "orientation": "horizontal",
     "category": "demographic",
     "columns": [
-      "nearest_city"
+      "nearestcity"
     ],
     "chart": "multiple-bar"
   },
@@ -806,9 +954,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "horizontal",
     "category": "demographic",
     "columns": [
-      "nearest_city_distance"
+      "nearestcitydistance"
     ],
     "chart": "multiple-bar"
   },
@@ -819,9 +969,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "one",
+    "orientation": "horizontal",
     "category": "demographic",
     "columns": [
-      "education_level"
+      "education"
     ],
     "chart": "multiple-bar"
   },
@@ -832,12 +984,28 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "demographic",
     "columns": [
-      "relationship_status",
-      "live_with_spouse"
+      "relationshipstatus"
     ],
     "chart": "multiple-bar"
+  },
+  {
+    "slug": "live_with_spouse",
+    "title": "Live with spouse",
+    "hint": null,
+    "summary": false,
+    "weight": "weight_ind",
+    "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
+    "category": "demographic",
+    "columns": [
+      "livewithspouse"
+    ],
+    "chart": "stacked-bar"
   },
   {
     "slug": "household-characteristics",
@@ -846,11 +1014,14 @@
     "summary": false,
     "weight": "weight_hh",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "demographic",
     "columns": [
-      "hh_size",
-      "children_under_5_years_old",
-      "people_over_60_years_old"
+      "hhsize",
+      "childrenunder5yearsold",
+      "adultsinhh",
+      "peopleover60yearsold"
     ],
     "chart": "single-bar"
   },
@@ -861,24 +1032,41 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "demographic",
     "columns": [
-      "phone_ownership"
+      "phoneownership"
     ],
     "chart": "single-bar"
   },
   {
-    "slug": "main-income-earner",
-    "title": "Main income earner",
+    "slug": "main-income-earner-sex",
+    "title": "Main income earner sex",
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
     "category": "demographic",
     "columns": [
-      "main_income_earner",
-      "main_income_earner_age",
-      "main_income_earner_gender"
+      "main_sex"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "main-income-earner-age",
+    "title": "Main income earner age",
+    "hint": null,
+    "summary": false,
+    "weight": "weight_ind",
+    "calc": "percentage",
+    "gridspace": "half",
+    "orientation": "vertical",
+    "category": "demographic",
+    "columns": [
+      "main_age"
     ],
     "chart": "stacked-bar"
   }
