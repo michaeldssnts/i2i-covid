@@ -3,11 +3,11 @@
   justify-content: center;
   position: relative;
   height: 100%;
+  display: flex;
   pointer-events: none;
 
   .modal-content {
     position: relative;
-    top: 100px;
     margin: auto;
     padding: 45px;
     box-sizing: border-box;
@@ -50,7 +50,3 @@
     }
   }
 }
-
-
-
-
