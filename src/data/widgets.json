@@ -5,6 +5,7 @@
     "hint": null,
     "summary": true,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "awareness_and_behaviour",
     "columns": [
       "covid_19_induced_behaviour_changes_wash_hands_more",
@@ -31,11 +32,12 @@
     "hint": null,
     "summary": true,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "health_and_food_security",
     "columns": [
       "access_to_medicine"
     ],
-    "chart": "single-bar"
+    "chart": "stacked-bar"
   },
   {
     "slug": "reasons-for-not-having-access-to-medicine",
@@ -43,6 +45,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "health_and_food_security",
     "columns": [
       "reasons_for_not_having_access_to_medicine_closed_hospital_cli",
@@ -64,6 +67,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "average",
     "category": "health_and_food_security",
     "columns": [
       "price_of_staple",
@@ -78,6 +82,7 @@
     "hint": null,
     "summary": true,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "health_and_food_security",
     "columns": [
       "change_in_cost_of_medicine"
@@ -90,6 +95,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "health_and_food_security",
     "columns": [
       "relative_food_availability"
@@ -102,6 +108,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "health_and_food_security",
     "columns": [
       "past_7_days_meals_eaten"
@@ -114,6 +121,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "health_and_food_security",
     "columns": [
       "change_in_chronic_care"
@@ -126,6 +134,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "health_and_food_security",
     "columns": [
       "change_in_ease_of_getting_contraceptives"
@@ -138,6 +147,7 @@
     "hint": null,
     "summary": true,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "awareness_and_behaviour",
     "columns": [
       "understanding_of_covid_19_illness_or_disease",
@@ -157,6 +167,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "awareness_and_behaviour",
     "columns": [
       "increase_in_household_care_due_to_covid_19"
@@ -169,6 +180,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "average",
     "category": "awareness_and_behaviour",
     "columns": [
       "time_spent_caring_for_others",
@@ -182,6 +194,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "awareness_and_behaviour",
     "columns": [
       "past_14_days_travel",
@@ -197,6 +210,7 @@
     "summary": false,
     "category": "awareness_and_behaviour",
     "weight": "weight_ind",
+    "calc": "average",
     "columns": [
       "amount_willing_to_pay_for_covid_19_vaccine"
     ],
@@ -208,6 +222,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "awareness_and_behaviour",
     "columns": [
       "likeliness_to_seek_medical_attention_for_mild_symptoms"
@@ -220,6 +235,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "average",
     "category": "awareness_and_behaviour",
     "columns": [
       "number_of_contacts_with_children",
@@ -234,11 +250,12 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "average",
     "category": "awareness_and_behaviour",
     "columns": [
       "past_14_days_religious_group_attendance"
     ],
-    "chart": "stacked-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "where-children-stay-when-school-is-closed",
@@ -246,6 +263,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "awareness_and_behaviour",
     "columns": [
       "where_children_stay_when_school_is_closed"
@@ -258,6 +276,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "awareness_and_behaviour",
     "columns": [
       "safety_worries"
@@ -270,6 +289,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "awareness_and_behaviour",
     "columns": [
       "likelihood_to_go_out_at_night"
@@ -282,10 +302,23 @@
     "hint": true,
     "summary": true,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "government_support",
     "columns": [
       "emergency_food_support",
-      "emergency_money_support",
+      "emergency_money_support"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "government-support-preference",
+    "title": "Government support preference",
+    "hint": true,
+    "summary": true,
+    "weight": "weight_ind",
+    "calc": "percentage",
+    "category": "government_support",
+    "columns": [
       "govt_support_preference"
     ],
     "chart": "stacked-bar"
@@ -296,6 +329,7 @@
     "hint": null,
     "summary": true,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "government_support",
     "columns": [
       "difficulty_accessing_government_support"
@@ -308,6 +342,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "government_support",
     "columns": [
       "need_to_pay_bribes_to_get_government_support"
@@ -320,6 +355,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_hh",
+    "calc": "average",
     "category": "government_support",
     "columns": [
       "past_30_days_value_of_govt_support"
@@ -332,6 +368,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "average",
     "category": "government_support",
     "columns": [
       "amount_willing_to_accept_to_stay_home"
@@ -344,6 +381,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "financial_lives",
     "columns": [
       "preferred_agent_open_closed"
@@ -356,6 +394,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "financial_lives",
     "columns": [
       "change_in_agent_fee"
@@ -368,6 +407,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "financial_lives",
     "columns": [
       "difficultysending_receivingcash"
@@ -380,11 +420,12 @@
     "hint": null,
     "summary": true,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "financial_lives",
     "columns": [
       "recent_borrowing"
     ],
-    "chart": "single-bar"
+    "chart": "stacked-bar"
   },
   {
     "slug": "Source-of-borrowing",
@@ -392,6 +433,7 @@
     "hint": null,
     "summary": true,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "financial_lives",
     "columns": [
       "source_of_borrowing_shopkeeper",
@@ -417,11 +459,12 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "financial_lives",
     "columns": [
       "missed_repayment"
     ],
-    "chart": "single-bar"
+    "chart": "stacked-bar"
   },
   {
     "slug": "reason-for-missed-payment",
@@ -429,6 +472,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "financial_lives",
     "columns": [
       "reason_for_missed_payment_you_needed_money_for_essentials",
@@ -448,6 +492,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "financial_lives",
     "columns": [
       "account_use_trends"
@@ -460,6 +505,7 @@
     "hint": null,
     "summary": true,
     "weight": "weight_ind",
+    "calc": "average",
     "category": "livelihoods",
     "columns": [
       "past_7_days_hours_worked"
@@ -472,6 +518,7 @@
     "hint": null,
     "summary": true,
     "weight": "weight_ind",
+    "calc": "average",
     "category": "livelihoods",
     "columns": [
       "past_7_days_hours_earned"
@@ -484,24 +531,38 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "livelihoods",
     "columns": [
       "_1_yr_income_comparison"
     ],
-    "chart": "single-bar"
+    "chart": "stacked-bar"
   },
   {
-    "slug": "FinHealth",
-    "title": "Financial health",
+    "slug": "financia-health-access-to-support",
+    "title": "Financial health: access to support",
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "livelihoods",
     "columns": [
-      "finhealth_possibility",
+      "finhealth_possibility"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "financia-health-support-sources",
+    "title": "Financial health: support sources",
+    "hint": null,
+    "summary": false,
+    "weight": "weight_ind",
+    "calc": "percentage",
+    "category": "livelihoods",
+    "columns": [
       "finhealth_sources"
     ],
-    "chart": "single-bar"
+    "chart": "stacked-bar"
   },
   {
     "slug": "value-of-remittances",
@@ -509,6 +570,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "average",
     "category": "livelihoods",
     "columns": [
       "value_of_remittances_sent",
@@ -522,6 +584,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_hh",
+    "calc": "percentage",
     "category": "livelihoods",
     "columns": [
       "main_income_earner_primary_income_source"
@@ -534,6 +597,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_hh",
+    "calc": "percentage",
     "category": "livelihoods",
     "columns": [
       "farm_labour_changes"
@@ -546,6 +610,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_hh",
+    "calc": "percentage",
     "category": "livelihoods",
     "columns": [
       "ease_of_selling_crops"
@@ -558,6 +623,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_hh",
+    "calc": "percentage",
     "category": "livelihoods",
     "columns": [
       "economic_sector_farming_or_raising_livestock",
@@ -583,6 +649,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_hh",
+    "calc": "percentage",
     "category": "livelihoods",
     "columns": [
       "biggest_business_challenge"
@@ -595,11 +662,12 @@
     "hint": null,
     "summary": false,
     "weight": "weight_hh",
+    "calc": "percentage",
     "category": "livelihoods",
     "columns": [
       "main_income_earner_jobs_change"
     ],
-    "chart": "single-bar"
+    "chart": "stacked-bar"
   },
   {
     "slug": "former-job",
@@ -607,6 +675,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_hh",
+    "calc": "percentage",
     "category": "livelihoods",
     "columns": [
       "economic_sector2_farming_or_raising_livestock",
@@ -632,9 +701,10 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "demographic",
     "columns": [
-      "language"
+      "language",
     ],
     "chart": "multiple-bar"
   },
@@ -644,6 +714,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "demographic",
     "columns": [
       "race"
@@ -656,6 +727,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "demographic",
     "columns": [
       "age"
@@ -668,6 +740,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "demographic",
     "columns": [
       "sex"
@@ -680,6 +753,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "demographic",
     "columns": [
       "region"
@@ -692,11 +766,12 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "demographic",
     "columns": [
       "urban_city"
     ],
-    "chart": "stacked-bar"
+    "chart": "multiple-bar"
   },
   {
     "slug": "city-name",
@@ -704,6 +779,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "demographic",
     "columns": [
       "city_name"
@@ -716,6 +792,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "demographic",
     "columns": [
       "nearest_city"
@@ -728,6 +805,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "demographic",
     "columns": [
       "nearest_city_distance"
@@ -740,6 +818,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "demographic",
     "columns": [
       "education_level"
@@ -752,6 +831,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "demographic",
     "columns": [
       "relationship_status",
@@ -765,13 +845,14 @@
     "hint": null,
     "summary": false,
     "weight": "weight_hh",
+    "calc": "percentage",
     "category": "demographic",
     "columns": [
       "hh_size",
       "children_under_5_years_old",
       "people_over_60_years_old"
     ],
-    "chart": "stacked-bar"
+    "chart": "single-bar"
   },
   {
     "slug": "phone-ownership",
@@ -779,6 +860,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "demographic",
     "columns": [
       "phone_ownership"
@@ -791,6 +873,7 @@
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
+    "calc": "percentage",
     "category": "demographic",
     "columns": [
       "main_income_earner",
