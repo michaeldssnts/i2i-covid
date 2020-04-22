@@ -1,7 +1,7 @@
 import cartoApi from 'utils/carto-api';
 
 export const fetchIndicators = (columns, filters = { iso: 'NGA' }) => {
-  const selectQuery = columns.join(',');
+  const selectQuery = columns.join(', ');
   const valuesQuery = columns
     .map((column) => `(a.${column}, '${column}', a.update_date)`)
     .join(', ');
@@ -23,6 +23,7 @@ export const fetchIndicators = (columns, filters = { iso: 'NGA' }) => {
       INNER JOIN covid_metadata m ON m.field_name = indicator
     )
     SELECT *, COUNT(answer) AS value FROM c
+    WHERE answer NOT IN ('N/A', 'nan', 'REFUSED')
     GROUP BY answer, indicator, update_date, original_name, label
   `;
 
