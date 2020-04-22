@@ -1,39 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
-import Link from 'redux-first-router-link';
+import { NavLink } from 'redux-first-router-link';
 
 const Navigation = ({ tabs, currentTab, iso }) => (
-  <div className="c-navigation">
+  <nav className="c-navigation">
     <div className="container">
       <div className="row justify-content-center">
-        <ul className="col-9">
-          <li className={classnames('nav-item', { '-active': currentTab === 'summary' })}>
-            <Link
-              to={{
-                type: 'COUNTRY',
-                payload: { iso, category: 'summary' },
-              }}
-            >
-              Summary
-            </Link>
-          </li>
+        <div className="col-12">
+          <NavLink
+            to={{ type: 'COUNTRY', payload: { iso, category: 'summary' } }}
+            activeClassName="-active"
+            exact={true}
+            strict={true}
+            isActive={(match, location) => location.payload.category === 'summary'}
+          >
+            Summary
+          </NavLink>
           {tabs.map(({ name, slug }) => (
-            <li key={slug} className={classnames({ '-active': currentTab === slug })}>
-              <Link
-                to={{
-                  type: 'COUNTRY',
-                  payload: { iso, category: slug },
-                }}
-              >
-                {name}
-              </Link>
-            </li>
+            <NavLink
+              key={slug}
+              to={{ type: 'COUNTRY', payload: { iso, category: slug } }}
+              activeClassName="-active"
+              exact={true}
+              strict={true}
+              isActive={(match, location) => location.payload.category === slug}
+            >
+              {name}
+            </NavLink>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
-  </div>
+  </nav>
 );
 
 Navigation.propTypes = {
