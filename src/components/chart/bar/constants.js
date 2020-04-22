@@ -1,5 +1,7 @@
 import { format } from 'd3-format';
 import { schemePaired } from 'd3-scale-chromatic';
+import { capitalize } from 'utils/strings';
+import { isValidDate, dateFormat } from 'utils/dates';
 
 export const WIDGET_THEME = {
   layout: { width: '100%', height: 500 },
@@ -14,6 +16,13 @@ export const WIDGET_THEME = {
     axisLine: {
       stroke: '#d8d8d8',
     },
+    tickFormatter: (value) => {
+      const valueDate = new Date(value);
+      if (isValidDate(valueDate)) {
+        return dateFormat(valueDate);
+      }
+      return capitalize(value);
+    },
     tickLine: false,
     tick: {
       fontSize: '16px',
@@ -22,8 +31,7 @@ export const WIDGET_THEME = {
   },
   yAxis: {
     type: 'number',
-    tickFormatter: (tick) => format('~s')(tick),
-    domain: ['auto', 0],
+    domain: [0, 100],
     tickLine: false,
     axisLine: false,
     tick: {
@@ -31,6 +39,7 @@ export const WIDGET_THEME = {
       fontWeight: 300,
       fill: '#3c3c3c',
     },
+    unit: '%',
   },
   tooltip: {
     cursor: false,
