@@ -23,7 +23,7 @@ export const WIDGET_THEME = {
   yAxis: {
     type: 'number',
     tickFormatter: (tick) => format('~s')(tick),
-    domain: ['auto', 0],
+    domain: [0, 'auto'],
     tickLine: false,
     axisLine: false,
     tick: {
