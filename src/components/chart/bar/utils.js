@@ -1,4 +1,3 @@
-import { format } from 'd3-format';
 import { schemePaired } from 'd3-scale-chromatic';
 import { capitalize } from 'utils/strings';
 import { isValidDate, dateFormat } from 'utils/dates';

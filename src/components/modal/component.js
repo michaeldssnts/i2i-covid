@@ -28,7 +28,7 @@ const Modal = ({ actionsComponent, children, isOpen, onRequestClose, title, ...d
 Modal.propTypes = {
   onRequestClose: PropTypes.func.isRequired,
   children: PropTypes.node,
-  actionsComponent: PropTypes.node,
+  actionsComponent: PropTypes.func,
   title: PropTypes.string,
   isOpen: PropTypes.bool,
 };

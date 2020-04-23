@@ -95,7 +95,6 @@ Filters.propTypes = {
     area: PropTypes.array,
     age: PropTypes.array,
   }),
-  filtersNames: PropTypes.array.isRequired,
   resetFilters: PropTypes.func.isRequired,
   setFilter: PropTypes.func.isRequired,
 };

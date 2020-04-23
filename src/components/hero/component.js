@@ -8,7 +8,6 @@ import { fetchCountries } from 'services/countries';
 const Hero = ({ iso }) => {
   const [{ data }] = useAxios(fetchCountries());
   const countries = data && data.rows ? data.rows : null;
-
   const current = countries ? countries.find((country) => country.iso === iso) : null;
   const options = countries ? countries.filter((country) => country.iso !== iso) : null;
 
@@ -19,7 +18,7 @@ const Hero = ({ iso }) => {
           <div className="col">
             <h1 className="hero-title">
               COVID-19 tracking survey status <br />
-              in
+              in&nbsp;
               {options && <Dropdown options={options} current={current} />}
             </h1>
           </div>
