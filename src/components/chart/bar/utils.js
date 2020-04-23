@@ -2,8 +2,9 @@ import { format } from 'd3-format';
 import { schemePaired } from 'd3-scale-chromatic';
 import { capitalize } from 'utils/strings';
 import { isValidDate, dateFormat } from 'utils/dates';
+import { formatNumber, formatPercentage } from 'utils/numbers';
 
-export const WIDGET_THEME = {
+export const getWidgetTheme = ({ calc }) => ({
   layout: { width: '100%', height: 500 },
   cartesianGrid: {
     strokeDasharray: '5 4',
@@ -31,9 +32,10 @@ export const WIDGET_THEME = {
   },
   yAxis: {
     type: 'number',
-    domain: [0, 100],
+    domain: [0, calc === 'average' ? 'auto' : 100],
     tickLine: false,
     axisLine: false,
+    tickFormatter: formatPercentage,
     tick: {
       fontSize: '13px',
       fontWeight: 300,
@@ -44,7 +46,10 @@ export const WIDGET_THEME = {
   tooltip: {
     cursor: false,
     isAnimationActive: false,
-    formatter: (value) => format('.4s')(value),
+    formatter: (value) => {
+      if (calc === 'percentage') return `${formatNumber(value)} %`;
+      return formatNumber(value);
+    },
   },
   legend: {
     align: 'left',
@@ -54,11 +59,12 @@ export const WIDGET_THEME = {
       bottom: -10,
       left: 80,
     },
+    formatter: capitalize,
   },
   bar: {
     minBarSize: 40,
     maxBarSize: 120,
   },
-};
+});
 
-export default { WIDGET_THEME };
+export default { getWidgetTheme };

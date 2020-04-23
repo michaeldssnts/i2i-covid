@@ -4,7 +4,7 @@ export const routes = {
   HOME: '/',
   [NOT_FOUND]: '/404',
   COUNTRY: '/country/:iso/:category',
-  WIDGET: '/widget/:widget_slug',
+  WIDGET: '/widget/:iso/:widget_slug',
 };
 
 export default routes;

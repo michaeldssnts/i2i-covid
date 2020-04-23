@@ -12,9 +12,10 @@ import {
 } from 'recharts';
 
 // constants
-import { WIDGET_THEME } from './constants';
+import { getWidgetTheme } from './utils';
 
-const UIBarChart = ({ data, config, chartType }) => {
+const UIBarChart = ({ data, config, widgetSpec }) => {
+  const { calc, chart: chartType } = widgetSpec;
   const {
     layout,
     cartesianGrid,
@@ -24,12 +25,14 @@ const UIBarChart = ({ data, config, chartType }) => {
     legend,
     colors: defaultColors,
     bar,
-  } = WIDGET_THEME;
+  } = getWidgetTheme({ calc });
   const { groupBy, categories, colors: colorsConfig } = config;
   const colors = colorsConfig || defaultColors;
   const defaultBarProps = {};
 
-  if (chartType === 'stacked-bar') defaultBarProps.stackId = 'a';
+  if (chartType === 'stacked-bar' || chartType === 'multiple-stacked-bar') {
+    defaultBarProps.stackId = 'a';
+  }
 
   return (
     <div className="c-chart">
@@ -62,7 +65,11 @@ UIBarChart.propTypes = {
     categories: PropTypes.array,
     colors: PropTypes.func,
   }).isRequired,
-  chartType: PropTypes.oneOf(['single-bar', 'multiple-bar', 'stacked-bar']),
+  chartType: PropTypes.oneOf(['single-bar', 'multiple-bar', 'stacked-bar', 'multiple-stacked-bar']),
+  widgetSpec: PropTypes.shape({
+    calc: PropTypes.string,
+    chart: PropTypes.string,
+  }).isRequired,
 };
 
 UIBarChart.defaultProps = {

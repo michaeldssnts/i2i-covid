@@ -1,24 +1,36 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
-import widgetsModule from 'data/widgets.json';
 import Widget from 'components/widget';
+import widgetsSpec from 'data/widgets.json';
 
-const Widgets = ({ category }) => {
-  const widgets = widgetsModule.filter((widget) => widget.category === category);
+const Widgets = ({ category, iso, filterBySummary }) => {
+  const widgetsSpecByCategory = useMemo(
+    // TODO: Implement order by here
+    () => {
+      if (filterBySummary) {
+        return widgetsSpec.filter(
+          (widgetSpec) => widgetSpec.category === category && widgetSpec.summary
+        );
+      }
+      return widgetsSpec.filter((widgetSpec) => widgetSpec.category === category);
+    },
+    [category, filterBySummary]
+  );
+
   return (
     <div className="c-widgets">
       <div className="row justify-content-md-center">
-        {widgets.map((widget) => (
+        {widgetsSpecByCategory.map((widgetSpec) => (
           <div
-            key={widget.slug}
-            className={classnames('col-12', {
-              'col-md-6': widget.chart === 'single-bar' || 'stacked-bar',
+            key={widgetSpec.slug}
+            className={classnames({
+              'col-sm-12 col-md-6': widgetSpec.gridspace === 'half',
+              'col-sm-12 col-md-12': widgetSpec.gridspace === 'one',
             })}
           >
-            {console.log(widget.slug, widget.chart)}
-            <Widget {...widget} />
+            <Widget iso={iso} {...widgetSpec} />
           </div>
         ))}
       </div>
@@ -28,6 +40,12 @@ const Widgets = ({ category }) => {
 
 Widgets.propTypes = {
   category: PropTypes.string.isRequired,
+  iso: PropTypes.string.isRequired,
+  filterBySummary: PropTypes.bool,
+};
+
+Widgets.defaultProps = {
+  filterBySummary: false,
 };
 
 export default Widgets;

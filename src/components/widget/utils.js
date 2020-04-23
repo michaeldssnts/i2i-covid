@@ -1,5 +1,6 @@
 import groupBy from 'lodash/groupBy';
 import map from 'lodash/map';
+import uniq from 'lodash/uniq';
 
 export const parseSingleChart = (data) => {
   const groupedData = groupBy(data, (d) => d.update_date);
@@ -10,8 +11,8 @@ export const parseSingleChart = (data) => {
       update_date: date,
     };
 
-    arr.forEach(({ percent, answer }) => {
-      obj[answer] = percent;
+    arr.forEach(({ value, answer }) => {
+      obj[answer] = value;
     });
 
     return obj;
@@ -24,7 +25,64 @@ export const parseSingleChart = (data) => {
       groupBy: 'update_date',
       categories,
     },
-    chartType: 'single-bar',
+    data: widgetData,
+  };
+};
+
+export const parseStackedChart = (data) => {
+  const groupedData = groupBy(data, (d) => d.update_date);
+  const dates = Object.keys(groupedData);
+  const widgetData = dates.map((date) => {
+    const arr = groupedData[date];
+    const obj = {
+      update_date: date,
+    };
+
+    arr.forEach(({ value, answer }) => {
+      obj[answer] = value;
+    });
+
+    return obj;
+  });
+
+  const categories = map(data, 'answer').map((d) => d.toString());
+
+  return {
+    config: {
+      groupBy: 'update_date',
+      categories,
+      yAxis: {
+        domain: [0, 100],
+      },
+    },
+    data: widgetData,
+  };
+};
+
+export const parseMultipleStackedChart = (data) => {
+  const groupedData = groupBy(data, (d) => d.indicator);
+  const indicators = Object.keys(groupedData);
+  const widgetData = indicators.map((indicator) => {
+    const arr = groupedData[indicator];
+    const obj = {};
+
+    arr.forEach(({ answer, label, update_date, value }) => {
+      obj[answer] = value;
+      obj.indicator = indicator;
+      obj.label = label;
+      obj.update_date = update_date;
+    });
+
+    return obj;
+  });
+
+  const categories = uniq(map(data, 'answer').map((d) => d.toString()));
+
+  return {
+    config: {
+      groupBy: 'update_date',
+      categories,
+    },
     data: widgetData,
   };
 };
@@ -33,19 +91,28 @@ export const parseMultipleChart = (data) => {
   return {
     config: {
       groupBy: 'answer',
-      categories: ['percent'],
+      categories: ['value'],
     },
-    chartType: 'multiple-bar',
     data,
   };
 };
 
-export const getWidgetProps = (data, chartType) => {
-  if (chartType === 'single-bar') {
-    return parseSingleChart(data);
+export const getWidgetProps = (data, widgetSpec) => {
+  const { chart } = widgetSpec;
+
+  if (chart === 'single-bar') {
+    return { ...parseSingleChart(data), widgetSpec };
   }
 
-  return parseMultipleChart(data);
+  if (chart === 'stacked-bar') {
+    return { ...parseStackedChart(data), widgetSpec };
+  }
+
+  if (chart === 'multiple-stacked-bar') {
+    return { ...parseMultipleStackedChart(data), widgetSpec };
+  }
+
+  return { ...parseMultipleChart(data), widgetSpec };
 };
 
 export default { getWidgetProps };

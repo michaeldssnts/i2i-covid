@@ -5,43 +5,43 @@ import useAxios from 'axios-hooks';
 import BarChart from 'components/chart/bar';
 import LineChart from 'components/chart/line';
 import Share from 'components/share';
-import widgetsSpec from 'data/widgets.json';
 import { fetchIndicators } from 'services/indicators';
 import { getWidgetProps } from './utils.js';
 
 const chartsMap = {
-  bar: BarChart,
   line: LineChart,
   'multiple-bar': BarChart,
+  'multiple-stacked-bar': BarChart,
   'single-bar': BarChart,
   'stacked-bar': BarChart,
 };
 
-const Widget = ({ chart, slug }) => {
-  const { columns, title, chart: chartType } = widgetsSpec.find(
-    (widgetSpec) => widgetSpec.slug === slug
-  );
-  const [{ data, loading }] = useAxios(fetchIndicators(columns));
+const Widget = (widgetSpec) => {
+  const { title, chart, slug } = widgetSpec;
+  const [{ data, loading }] = useAxios(fetchIndicators(widgetSpec));
   const ChartComponent = chartsMap[chart];
-  const widgetProps = data && getWidgetProps(data.rows, chartType);
+  const widgetProps = data && getWidgetProps(data.rows, widgetSpec);
 
   return (
     <div className="c-widget">
       <h2>{title}</h2>
       {loading && <p>Loading...</p>}
-      {data && !loading && <ChartComponent {...widgetProps} />}
+      {ChartComponent && data && !loading && <ChartComponent {...widgetProps} />}
       <Share slug={slug} />
     </div>
   );
 };
 
 Widget.propTypes = {
-  chart: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  chart: PropTypes.oneOf([
+    'single-bar',
+    'multiple-bar',
+    'stacked-bar',
+    'multiple-stacked-bar',
+    'line',
+  ]).isRequired,
   slug: PropTypes.string.isRequired,
-};
-
-Widget.defaultProps = {
-  chart: 'bar',
 };
 
 export default Widget;
