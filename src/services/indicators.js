@@ -1,20 +1,26 @@
 import cartoApi from 'utils/carto-api';
 
-const undefinedValues = ['N/A', 'nan', 'REFUSED', '-1'];
+const undefinedValues = ['N/A', 'NaN', 'nan', 'REFUSED', '-1'];
 
-export const fetchIndicators = ({ columns, weight, calc }, filters = { iso: 'NGA' }) => {
+export const fetchIndicators = ({ columns, weight, calc, iso }) => {
   let query;
 
   if (calc === 'average') {
-    const selectQuery = columns.map((column) => `AVG(${column}::float * ${weight}) AS ${column}`).join(', ');
-    const whereQuery = columns.map((column) => `${column} NOT IN ('${undefinedValues.join('\', \'')}')`).join(' AND ');
-    const valuesQuery = columns.map((column) => `(a.${column}, '${column}', a.update_date)`).join(', ');
+    const selectQuery = columns
+      .map((column) => `AVG(${column}::float * ${weight}) AS ${column}`)
+      .join(', ');
+    const whereQuery = columns
+      .map((column) => `${column} NOT IN ('${undefinedValues.join("', '")}')`)
+      .join(' AND ');
+    const valuesQuery = columns
+      .map((column) => `(a.${column}, '${column}', a.update_date)`)
+      .join(', ');
 
     query = `
       WITH a as (
         SELECT ${selectQuery}, update_date
         FROM covid_data_dev
-        WHERE country_iso = 'NGA' 
+        WHERE country_iso = '${iso}'
           AND ${whereQuery}
         GROUP BY update_date
       ), b as (
@@ -24,7 +30,7 @@ export const fetchIndicators = ({ columns, weight, calc }, filters = { iso: 'NGA
           VALUES ${valuesQuery}
         ) AS t(answer, indicator, update_date)
       ), c as (
-        SELECT b.answer, b.indicator, b.update_date, m.original_name, m.label, b.answer AS value
+        SELECT b.answer, b.indicator, b.update_date, m.label, b.answer AS value
         FROM b
         LEFT JOIN covid_metadata m ON m.field_name = indicator
       )
@@ -40,7 +46,7 @@ export const fetchIndicators = ({ columns, weight, calc }, filters = { iso: 'NGA
       WITH a as (
         SELECT ${selectQuery}, ${weight}, update_date
         FROM ${process.env.REACT_APP_DATA_TABLENAME}
-        WHERE country_iso = '${filters.iso}'
+        WHERE country_iso = '${iso}'
       ), b as (
         SELECT t.*
         FROM a
@@ -48,15 +54,15 @@ export const fetchIndicators = ({ columns, weight, calc }, filters = { iso: 'NGA
           VALUES ${valuesQuery}
         ) AS t(answer, indicator, ${weight}, update_date)
       ), c as (
-        SELECT b.answer, b.indicator, b.${weight}, b.update_date, m.original_name, m.label
+        SELECT b.answer, b.indicator, b.${weight}, b.update_date, m.label
         FROM b
         LEFT JOIN covid_metadata m ON m.field_name = indicator
       ), d as (
-        SELECT answer, indicator, original_name, label, update_date, SUM(${weight}) AS value FROM c
-        WHERE answer NOT IN ('${undefinedValues.join('\', \'')}') AND ${weight} != 'NaN'
-        GROUP BY answer, indicator, update_date, original_name, label
+        SELECT answer, indicator, label, update_date, SUM(${weight}) AS value FROM c
+        WHERE answer NOT IN ('${undefinedValues.join("', '")}') AND ${weight} != 'NaN'
+        GROUP BY answer, indicator, update_date, label
       )
-      SELECT d.answer, d.indicator, d.original_name, d.label, d.update_date, (d.value * 100 / SUM(d.value) OVER()) as value FROM d
+      SELECT d.answer, d.indicator, d.label, d.update_date, (d.value * 100 / SUM(d.value) OVER(PARTITION BY indicator)) as value FROM d
     `;
   }
 

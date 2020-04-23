@@ -11,21 +11,22 @@ import { getWidgetProps } from './utils.js';
 const chartsMap = {
   line: LineChart,
   'multiple-bar': BarChart,
+  'multiple-stacked-bar': BarChart,
   'single-bar': BarChart,
   'stacked-bar': BarChart,
 };
 
 const Widget = (widgetSpec) => {
-  const { title, chart: chartType, slug } = widgetSpec;
+  const { title, chart, slug } = widgetSpec;
   const [{ data, loading }] = useAxios(fetchIndicators(widgetSpec));
-  const ChartComponent = chartsMap[chartType];
-  const widgetProps = data && getWidgetProps(data.rows, chartType);
+  const ChartComponent = chartsMap[chart];
+  const widgetProps = data && getWidgetProps(data.rows, widgetSpec);
 
   return (
     <div className="c-widget">
       <h2>{title}</h2>
       {loading && <p>Loading...</p>}
-      {data && !loading && <ChartComponent {...widgetProps} />}
+      {ChartComponent && data && !loading && <ChartComponent {...widgetProps} />}
       <Share slug={slug} />
     </div>
   );
@@ -33,7 +34,13 @@ const Widget = (widgetSpec) => {
 
 Widget.propTypes = {
   title: PropTypes.string.isRequired,
-  chart: PropTypes.oneOf(['single-bar', 'multiple-bar', 'stacked-bar', 'multiple-stacked-bar', 'line']).isRequired,
+  chart: PropTypes.oneOf([
+    'single-bar',
+    'multiple-bar',
+    'stacked-bar',
+    'multiple-stacked-bar',
+    'line',
+  ]).isRequired,
   slug: PropTypes.string.isRequired,
 };
 

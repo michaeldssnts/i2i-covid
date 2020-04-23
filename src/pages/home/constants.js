@@ -5,11 +5,11 @@ const countries = [
   },
   {
     label: 'Uganda',
-  //  iso: 'NGA',
+    // iso: 'UGA' // No data yet
   },
   {
     label: 'Rwanda',
-    iso: 'UGA',
+    iso: 'RWA',
   },
   {
     label: 'Kenya',
@@ -17,7 +17,7 @@ const countries = [
   },
   {
     label: 'Tanzania',
-  //  iso: 'TZA',  // No data yet
+    // iso: 'TZA',  // No data yet
   },
   {
     label: 'South Africa',

@@ -51,6 +51,9 @@ export const parseStackedChart = (data) => {
     config: {
       groupBy: 'update_date',
       categories,
+      yAxis: {
+        domain: [0, 100],
+      },
     },
     data: widgetData,
   };
@@ -72,42 +75,44 @@ export const parseMultipleStackedChart = (data) => {
 
     return obj;
   });
-  console.log(widgetData)
 
   const categories = uniq(map(data, 'answer').map((d) => d.toString()));
-  console.log(categories)
 
   return {
     config: {
       groupBy: 'update_date',
-      categories: ['YES', 'NO'],
+      categories,
     },
     data: widgetData,
   };
 };
 
-export const parseMultipleChart = (data) => ({
-  config: {
-    groupBy: 'answer',
-    categories: ['value'],
-  },
-  data,
-});
+export const parseMultipleChart = (data) => {
+  return {
+    config: {
+      groupBy: 'answer',
+      categories: ['value'],
+    },
+    data,
+  };
+};
 
-export const getWidgetProps = (data, chartType) => {
-  if (chartType === 'single-bar') {
-    return { ...parseSingleChart(data), chartType };
+export const getWidgetProps = (data, widgetSpec) => {
+  const { chart } = widgetSpec;
+
+  if (chart === 'single-bar') {
+    return { ...parseSingleChart(data), widgetSpec };
   }
 
-  if (chartType === 'stacked-bar') {
-    return { ...parseStackedChart(data), chartType };
+  if (chart === 'stacked-bar') {
+    return { ...parseStackedChart(data), widgetSpec };
   }
 
-  if (chartType === 'multiple-stacked-bar') {
-    return { ...parseMultipleStackedChart(data), chartType };
+  if (chart === 'multiple-stacked-bar') {
+    return { ...parseMultipleStackedChart(data), widgetSpec };
   }
 
-  return { ...parseMultipleChart(data), chartType };
+  return { ...parseMultipleChart(data), widgetSpec };
 };
 
 export default { getWidgetProps };
