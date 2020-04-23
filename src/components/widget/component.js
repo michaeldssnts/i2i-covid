@@ -5,7 +5,6 @@ import useAxios from 'axios-hooks';
 import BarChart from 'components/chart/bar';
 import LineChart from 'components/chart/line';
 import Share from 'components/share';
-import widgetsSpec from 'data/widgets.json';
 import { fetchIndicators } from 'services/indicators';
 import { getWidgetProps } from './utils.js';
 
@@ -17,13 +16,11 @@ const chartsMap = {
   'stacked-bar': BarChart,
 };
 
-const Widget = ({ chart, slug }) => {
-  const { columns, title, chart: chartType } = widgetsSpec.find(
-    (widgetSpec) => widgetSpec.slug === slug
-  );
+const Widget = (widgetSpec) => {
+  const { columns, title, chart: chartType, slug } = widgetSpec;
   const [{ data, loading }] = useAxios(fetchIndicators(columns));
-  const ChartComponent = chartsMap[chart];
-  const widgetProps = data && getWidgetProps(data.rows, chartType);
+  const ChartComponent = chartsMap[chartType];
+  const widgetProps = data && getWidgetProps(data.rows, widgetSpec);
 
   return (
     <div className="c-widget">
@@ -36,12 +33,10 @@ const Widget = ({ chart, slug }) => {
 };
 
 Widget.propTypes = {
-  chart: PropTypes.string,
-  slug: PropTypes.string.isRequired,
-};
-
-Widget.defaultProps = {
-  chart: 'bar',
+  widgetSpec: PropTypes.shape({
+    chart: PropTypes.string,
+    slug: PropTypes.string,
+  }).isRequired,
 };
 
 export default Widget;

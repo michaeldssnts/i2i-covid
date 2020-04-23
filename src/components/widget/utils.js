@@ -40,8 +40,10 @@ export const parseMultipleChart = (data) => {
   };
 };
 
-export const getWidgetProps = (data, chartType) => {
-  if (chartType === 'single-bar') {
+export const getWidgetProps = (data, widgetSpec) => {
+  console.log(data, widgetSpec);
+  const { chart } = widgetSpec;
+  if (chart === 'single-bar') {
     return parseSingleChart(data);
   }
 

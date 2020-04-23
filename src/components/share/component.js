@@ -7,7 +7,7 @@ import Button from 'components/button';
 const Share = ({ slug, iso }) => {
   const inputElUrl = useRef();
   const inputElEmbed = useRef();
-  const url = `${window.location.origin}/widget/${slug}`;
+  const url = `${window.location.origin}/widget/${iso}/${slug}`;
 
   const [{ isCopied, isOpen }, setState] = useState({
     isUrlCopied: false,
