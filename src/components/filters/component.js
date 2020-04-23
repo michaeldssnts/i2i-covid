@@ -19,26 +19,15 @@ const Filters = ({ filters, resetFilters, setFilter }) => {
   const handleChange = (e) => {
     const { name, value, id } = e.currentTarget;
 
-    if (id === 'age') {
-      const minValue = Number(value.split('-')[0]);
-      const maxValue = Number(value.split('-')[1]);
-      const ages = [...filters.age, ...[minValue], ...[maxValue]];
-
-      setFilter({
-        [id]: [Math.min(...ages), Math.max(...ages)],
-      });
+    if (!filters[id].includes(name)) {
+      const filterResult = [...filters[id]];
+      filterResult.push(`${name}`);
+      setFilter({ [id]: filterResult });
+    } else {
+      const filterResult = filters[id].filter((el) => el !== name);
+      setFilter({ [id]: filterResult });
     }
 
-    if (id !== 'age') {
-      if (!filters[id].includes(name)) {
-        const filterResult = [...filters[id]];
-        filterResult.push(`${name}`);
-        setFilter({ [id]: filterResult });
-      } else {
-        const filterResult = filters[id].filter((el) => el !== name);
-        setFilter({ [id]: filterResult });
-      }
-    }
   };
 
   return (
