@@ -14,24 +14,31 @@ const Filters = ({ filters, resetFilters, setFilter }) => {
 
   const handleReset = () => {
     resetFilters();
-    toggleModal(false);
   };
 
   const handleChange = (e) => {
-    const { name, value } = e.currentTarget;
+    const { name, value, id } = e.currentTarget;
 
-    if (name === 'age') {
+    if (id === 'age') {
       const minValue = Number(value.split('-')[0]);
       const maxValue = Number(value.split('-')[1]);
       const ages = [...filters.age, ...[minValue], ...[maxValue]];
 
       setFilter({
-        [name]: [Math.min(...ages), Math.max(...ages)],
+        [id]: [Math.min(...ages), Math.max(...ages)],
       });
-    } else
-      setFilter({
-        [name]: value,
-      });
+    }
+
+    if (id !== 'age') {
+      if (!filters[id].includes(name)) {
+        const filterResult = [...filters[id]];
+        filterResult.push(`${name}`);
+        setFilter({ [id]: filterResult });
+      } else {
+        const filterResult = filters[id].filter((el) => el !== name);
+        setFilter({ [id]: filterResult });
+      }
+    }
   };
 
   return (
@@ -55,8 +62,8 @@ const Filters = ({ filters, resetFilters, setFilter }) => {
                     <label htmlFor={opt}>{opt}</label>
                     <input
                       type="checkbox"
-                      id={opt}
-                      name={filter.id}
+                      id={filter.id}
+                      name={opt}
                       value={opt}
                       onChange={handleChange}
                     />

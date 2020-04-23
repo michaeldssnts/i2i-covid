@@ -1,5 +1,5 @@
 export default {
-  gender: '',
-  area: '',
+  gender: [],
+  area: [],
   age: [],
 };
