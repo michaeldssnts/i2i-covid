@@ -7,7 +7,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "one",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "awareness_and_behaviour",
     "columns": [
       "covid19inducedbehaviourchanges_gotoworkless",
@@ -25,7 +25,7 @@
       "covid19inducedbehaviourchanges_dontknow",
       "covid19inducedbehaviourchanges_other"
     ],
-    "chart": "single-bar"
+    "chart": "multiple-stacked-bar"
   },
   {
     "slug": "access-to-medicine",
@@ -35,7 +35,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "health_and_food_security",
     "columns": [
       "accesstomedicine"
@@ -50,7 +50,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "one",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "health_and_food_security",
     "columns": [
       "reasonsfornothavingaccesstomedicine_youdidnothaveenoughmoney",
@@ -63,7 +63,7 @@
       "reasonsfornothavingaccesstomedicine_dontknow",
       "reasonsfornothavingaccesstomedicine_other"
     ],
-    "chart": "single-bar"
+    "chart": "multiple-stacked-bar"
   },
   {
     "slug": "price-of-basics",
@@ -73,7 +73,7 @@
     "weight": "weight_ind",
     "calc": "average",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "health_and_food_security",
     "columns": [
       "priceofstaple",
@@ -90,7 +90,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "health_and_food_security",
     "columns": [
       "changeincostofmedicine"
@@ -105,7 +105,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "health_and_food_security",
     "columns": [
       "relativefoodavailability"
@@ -120,7 +120,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "health_and_food_security",
     "columns": [
       "past7daysmealseaten"
@@ -135,7 +135,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "health_and_food_security",
     "columns": [
       "changeinchroniccare"
@@ -150,7 +150,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "health_and_food_security",
     "columns": [
       "changeineaseofgettingcontraceptives"
@@ -165,7 +165,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "one",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "awareness_and_behaviour",
     "columns": [
       "understandingofcovid19_aweapon",
@@ -177,7 +177,7 @@
       "understandingofcovid19_punishmentfromgod",
       "understandingofcovid19_punishmentfromgod"
     ],
-    "chart": "single-bar"
+    "chart": "multiple-stacked-bar"
   },
   {
     "slug": "increase-in-household-care-due-to-covid-19",
@@ -187,7 +187,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "awareness_and_behaviour",
     "columns": [
       "increaseinhouseholdcareduetocovid19"
@@ -202,7 +202,7 @@
     "weight": "weight_ind",
     "calc": "average",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "awareness_and_behaviour",
     "columns": [
       "timespentcaringforothers",
@@ -218,7 +218,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "awareness_and_behaviour",
     "columns": [
       "past14daystravel"
@@ -233,7 +233,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "awareness_and_behaviour",
     "columns": [
       "travelrestriction"
@@ -248,7 +248,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "awareness_and_behaviour",
     "columns": [
       "movedlocationsincemarch1st"
@@ -263,7 +263,7 @@
     "weight": "weight_ind",
     "calc": "average",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "awareness_and_behaviour",
     "columns": [
       "amountwillingtopayforcovid19vaccine"
@@ -278,7 +278,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "awareness_and_behaviour",
     "columns": [
       "likelinesstoseekmedicalattentionformildsymptoms"
@@ -293,7 +293,7 @@
     "weight": "weight_ind",
     "calc": "average",
     "gridspace": "one",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "awareness_and_behaviour",
     "columns": [
       "numberofcontactswithchildren",
@@ -301,7 +301,7 @@
       "numberofcontactswithelderly",
       "past14daysreligiousgroupattendance"
     ],
-    "chart": "single-bar"
+    "chart": "multiple-stacked-bar"
   },
   {
     "slug": "where-children-stay-when-school-is-closed",
@@ -311,7 +311,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "one",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "awareness_and_behaviour",
     "columns": [
       "wherechildrenstaywhenschoolisclosed"
@@ -326,7 +326,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "awareness_and_behaviour",
     "columns": [
       "safetyworries"
@@ -341,7 +341,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "awareness_and_behaviour",
     "columns": [
       "likelihoodtogooutatnight"
@@ -356,7 +356,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "government_support",
     "columns": [
       "emergencymoneysupport"
@@ -371,7 +371,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "government_support",
     "columns": [
       "emergencyfoodsupport"
@@ -386,7 +386,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "government_support",
     "columns": [
       "govt_supportpreference"
@@ -401,7 +401,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "government_support",
     "columns": [
       "difficultyaccessinggovernmentsupport"
@@ -416,7 +416,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "government_support",
     "columns": [
       "needtopaybribestogetgovernmentsupport"
@@ -431,7 +431,7 @@
     "weight": "weight_hh",
     "calc": "average",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "government_support",
     "columns": [
       "past30daysvalueofgovt_support"
@@ -446,7 +446,7 @@
     "weight": "weight_ind",
     "calc": "average",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "government_support",
     "columns": [
       "amountwillingtoaccepttostayhome"
@@ -461,7 +461,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "financial_lives",
     "columns": [
       "preferredagentopenclosed"
@@ -476,7 +476,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "financial_lives",
     "columns": [
       "changeinagentfee"
@@ -491,7 +491,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "financial_lives",
     "columns": [
       "difficultysendingreceivingcash"
@@ -506,7 +506,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "financial_lives",
     "columns": [
       "recentborrowing"
@@ -521,7 +521,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "one",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "financial_lives",
     "columns": [
       "sourceofborrowing_friendsfamilycommunity",
@@ -538,7 +538,7 @@
       "sourceofborrowing_groupstokvelgroup",
       "sourceofborrowing_other"
     ],
-    "chart": "single-bar"
+    "chart": "multiple-stacked-bar"
   },
   {
     "slug": "missed-repayment",
@@ -548,7 +548,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "financial_lives",
     "columns": [
       "missedrepayment"
@@ -563,7 +563,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "one",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "financial_lives",
     "columns": [
       "reasonformissedpayment_governmentsaysyoudonotneedtorepayloans",
@@ -574,7 +574,7 @@
       "reasonformissedpayment_interestpaymentswentup",
       "reasonformissedpayment_other"
     ],
-    "chart": "single-bar"
+    "chart": "multiple-stacked-bar"
   },
   {
     "slug": "account-use-trends",
@@ -584,7 +584,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "financial_lives",
     "columns": [
       "accountusetrends"
@@ -599,7 +599,7 @@
     "weight": "weight_ind",
     "calc": "average",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "livelihoods",
     "columns": [
       "past7dayshoursworked"
@@ -614,7 +614,7 @@
     "weight": "weight_ind",
     "calc": "average",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "livelihoods",
     "columns": [
       "past7dayshoursearned"
@@ -629,7 +629,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "livelihoods",
     "columns": [
       "oneyrincomecomparison"
@@ -644,7 +644,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "livelihoods",
     "columns": [
       "assetsalessincemarch1st"
@@ -659,7 +659,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "livelihoods",
     "columns": [
       "finhealthpossibility"
@@ -674,7 +674,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "livelihoods",
     "columns": [
       "finhealthsources"
@@ -689,7 +689,7 @@
     "weight": "weight_ind",
     "calc": "average",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "livelihoods",
     "columns": [
       "valueofremittancesreceived",
@@ -705,7 +705,7 @@
     "weight": "weight_hh",
     "calc": "percentage",
     "gridspace": "one",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "livelihoods",
     "columns": [
       "mainincomeearnerprimaryincomesource"
@@ -720,7 +720,7 @@
     "weight": "weight_hh",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "livelihoods",
     "columns": [
       "farmlabourchanges"
@@ -735,7 +735,7 @@
     "weight": "weight_hh",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "livelihoods",
     "columns": [
       "easeofsellingcrops"
@@ -750,7 +750,7 @@
     "weight": "weight_hh",
     "calc": "percentage",
     "gridspace": "one",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "livelihoods",
     "columns": [
       "currenteconomicsector_transport",
@@ -768,7 +768,7 @@
       "currenteconomicsector_dontknow",
       "currenteconomicsector_other"
     ],
-    "chart": "single-bar"
+    "chart": "multiple-stacked-bar"
   },
   {
     "slug": "main-business-challenge",
@@ -778,7 +778,7 @@
     "weight": "weight_hh",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "livelihoods",
     "columns": [
       "biggestbusinesschallenge"
@@ -793,7 +793,7 @@
     "weight": "weight_hh",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "livelihoods",
     "columns": [
       "mainincomeearnerjobschange"
@@ -808,7 +808,7 @@
     "weight": "weight_hh",
     "calc": "percentage",
     "gridspace": "one",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "livelihoods",
     "columns": [
       "previouseconomicsector_transport",
@@ -825,7 +825,7 @@
       "previouseconomicsector_healthandsocialwork",
       "previouseconomicsector_other"
     ],
-    "chart": "single-bar"
+    "chart": "multiple-stacked-bar"
   },
   {
     "slug": "main-language",
@@ -835,7 +835,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "one",
-    "orientation": "horizontal",
+    "orientation": "vertical",
     "category": "demographic",
     "columns": [
       "mainlanguage"
@@ -850,7 +850,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "demographic",
     "columns": [
       "race"
@@ -865,7 +865,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "demographic",
     "columns": [
       "age_cat"
@@ -878,7 +878,7 @@
     "hint": null,
     "summary": false,
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "weight": "weight_ind",
     "calc": "percentage",
     "category": "demographic",
@@ -895,7 +895,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "one",
-    "orientation": "horizontal",
+    "orientation": "vertical",
     "category": "demographic",
     "columns": [
       "region"
@@ -910,7 +910,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "demographic",
     "columns": [
       "urbancity"
@@ -925,7 +925,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "one",
-    "orientation": "horizontal",
+    "orientation": "vertical",
     "category": "demographic",
     "columns": [
       "cityname"
@@ -940,7 +940,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "one",
-    "orientation": "horizontal",
+    "orientation": "vertical",
     "category": "demographic",
     "columns": [
       "nearestcity"
@@ -955,7 +955,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "horizontal",
+    "orientation": "vertical",
     "category": "demographic",
     "columns": [
       "nearestcitydistance"
@@ -970,7 +970,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "one",
-    "orientation": "horizontal",
+    "orientation": "vertical",
     "category": "demographic",
     "columns": [
       "education"
@@ -985,7 +985,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "demographic",
     "columns": [
       "relationshipstatus"
@@ -1000,7 +1000,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "demographic",
     "columns": [
       "livewithspouse"
@@ -1015,7 +1015,7 @@
     "weight": "weight_hh",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "demographic",
     "columns": [
       "hhsize",
@@ -1023,7 +1023,7 @@
       "adultsinhh",
       "peopleover60yearsold"
     ],
-    "chart": "single-bar"
+    "chart": "multiple-stacked-bar"
   },
   {
     "slug": "phone-ownership",
@@ -1033,7 +1033,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "demographic",
     "columns": [
       "phoneownership"
@@ -1048,7 +1048,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "demographic",
     "columns": [
       "main_sex"
@@ -1063,7 +1063,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "gridspace": "half",
-    "orientation": "vertical",
+    "orientation": "horizontal",
     "category": "demographic",
     "columns": [
       "main_age"
