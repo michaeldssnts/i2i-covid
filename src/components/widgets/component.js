@@ -1,24 +1,27 @@
-import React from 'react';
+import React, { useMemo } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
-import widgetsModule from 'data/widgets.json';
 import Widget from 'components/widget';
+import widgetsSpec from 'data/widgets.json';
 
 const Widgets = ({ category }) => {
-  const widgets = widgetsModule.filter((widget) => widget.category === category);
+  const widgetsSpecByCategory = useMemo(
+    () => widgetsSpec.filter((widget) => widget.category === category),
+    [widgetsSpec]
+  );
+
   return (
     <div className="c-widgets">
       <div className="row justify-content-md-center">
-        {widgets.map((widget) => (
+        {widgetsSpecByCategory.map((widgetSpec) => (
           <div
-            key={widget.slug}
+            key={widgetSpec.slug}
             className={classnames('col-12', {
-              'col-md-6': widget.chart === 'single-bar' || 'stacked-bar',
+              'col-md-6': widgetSpec.chart === 'single-bar' || 'stacked-bar',
             })}
           >
-            {console.log(widget.slug, widget.chart)}
-            <Widget {...widget} />
+            <Widget {...widgetSpec} />
           </div>
         ))}
       </div>
