@@ -59,6 +59,7 @@ export const getWidgetTheme = ({ calc }) => ({
       bottom: -10,
       left: 80,
     },
+    formatter: capitalize,
   },
   bar: {
     minBarSize: 40,
