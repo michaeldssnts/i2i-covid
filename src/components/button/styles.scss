@@ -23,8 +23,8 @@
   }
 
   &.-border-color-2 {
-    border: 1px solid rgba($color-1, 0.5);
-    color: $color-1;
+    border: 1px solid rgba($color-4, 0.5);
+    color: $color-4;
   }
 
   &.-border-color-3 {
@@ -32,6 +32,11 @@
     color: $color-2;
   }
 
+  &.-small {
+    padding: 0 14px;
+    font-size: 13px;
+    letter-spacing: 0;
+  }
 
   &.-medium {
     padding: 10px 35px;

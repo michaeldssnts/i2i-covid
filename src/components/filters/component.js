@@ -49,6 +49,7 @@ const Filters = ({ filters, resetFilters, setFilter }) => {
       <Modal
         isOpen={isOpen}
         title="Select filters"
+        type="filters"
         onReset={handleReset}
         onRequestClose={() => toggleModal(false)}
       >
