@@ -31,7 +31,7 @@ export const WIDGET_THEME = {
   },
   yAxis: {
     type: 'number',
-    domain: [0, 100],
+    domain: [0, 'auto'],
     tickLine: false,
     axisLine: false,
     tick: {
@@ -44,7 +44,7 @@ export const WIDGET_THEME = {
   tooltip: {
     cursor: false,
     isAnimationActive: false,
-    formatter: (value) => format('.4s')(value),
+    // formatter: (value) => format('.4s')(value),
   },
   legend: {
     align: 'left',

@@ -62,7 +62,7 @@ UIBarChart.propTypes = {
     categories: PropTypes.array,
     colors: PropTypes.func,
   }).isRequired,
-  chartType: PropTypes.oneOf(['single-bar', 'multiple-bar', 'stacked-bar']),
+  chartType: PropTypes.oneOf(['single-bar', 'multiple-bar', 'stacked-bar', 'multiple-stacked-bar']),
 };
 
 UIBarChart.defaultProps = {

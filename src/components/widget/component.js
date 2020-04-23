@@ -9,7 +9,6 @@ import { fetchIndicators } from 'services/indicators';
 import { getWidgetProps } from './utils.js';
 
 const chartsMap = {
-  bar: BarChart,
   line: LineChart,
   'multiple-bar': BarChart,
   'single-bar': BarChart,
@@ -17,10 +16,10 @@ const chartsMap = {
 };
 
 const Widget = (widgetSpec) => {
-  const { columns, title, chart: chartType, slug } = widgetSpec;
-  const [{ data, loading }] = useAxios(fetchIndicators(columns));
+  const { title, chart: chartType, slug } = widgetSpec;
+  const [{ data, loading }] = useAxios(fetchIndicators(widgetSpec));
   const ChartComponent = chartsMap[chartType];
-  const widgetProps = data && getWidgetProps(data.rows, widgetSpec);
+  const widgetProps = data && getWidgetProps(data.rows, chartType);
 
   return (
     <div className="c-widget">
@@ -33,10 +32,9 @@ const Widget = (widgetSpec) => {
 };
 
 Widget.propTypes = {
-  widgetSpec: PropTypes.shape({
-    chart: PropTypes.string,
-    slug: PropTypes.string,
-  }).isRequired,
+  title: PropTypes.string.isRequired,
+  chart: PropTypes.oneOf(['single-bar', 'multiple-bar', 'stacked-bar', 'multiple-stacked-bar', 'line']).isRequired,
+  slug: PropTypes.string.isRequired,
 };
 
 export default Widget;
