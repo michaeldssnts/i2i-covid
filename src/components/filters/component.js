@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'components/button';
 import Modal from 'components/modal';
-
-import filtersInfo from './constants';
+import { filtersData } from './constants';
 
 const Filters = ({ filters, resetFilters, setFilter }) => {
+  const [filtersResult, setFiltersResult] = useState(filters);
   const [isOpen, toggleModal] = useState(false);
 
-  const handleClick = () => {
+  const handleToggleModal = () => {
     toggleModal(!isOpen);
   };
 
@@ -16,64 +16,74 @@ const Filters = ({ filters, resetFilters, setFilter }) => {
     resetFilters();
   };
 
-  const handleChange = (e) => {
-    const { name, value, id } = e.currentTarget;
-
-    if (id === 'age') {
-      const minValue = Number(value.split('-')[0]);
-      const maxValue = Number(value.split('-')[1]);
-      const ages = [...filters.age, ...[minValue], ...[maxValue]];
-
-      setFilter({
-        [id]: [Math.min(...ages), Math.max(...ages)],
-      });
-    }
-
-    if (id !== 'age') {
-      if (!filters[id].includes(name)) {
-        const filterResult = [...filters[id]];
-        filterResult.push(`${name}`);
-        setFilter({ [id]: filterResult });
-      } else {
-        const filterResult = filters[id].filter((el) => el !== name);
-        setFilter({ [id]: filterResult });
-      }
-    }
+  const handleSubmit = (evt) => {
+    evt.preventDefault();
+    setFilter(filtersResult);
+    handleToggleModal();
   };
+
+  const handleChange = (e) => {
+    const { name, checked, value } = e.target;
+    let filterItem = [...filtersResult[name]];
+    const isAlready = filterItem.includes(value);
+
+    if (checked && !isAlready) {
+      filterItem.push(value);
+    } else if (!checked && isAlready) {
+      filterItem = filterItem.filter((item) => item !== value);
+    }
+
+    setFiltersResult({ ...filtersResult, [name]: filterItem });
+  };
+
+  const numberOfFilters = Object.keys(filtersResult)
+    .map((key) => filtersResult[key].length)
+    .reduce((prev, current) => prev + current);
 
   return (
     <div className="c-filters">
-      <Button onClick={handleClick} className="-border-color-2">
-        Filter results
+      <Button onClick={handleToggleModal} className="-color-2">
+        Filter by {numberOfFilters} indicator{numberOfFilters > 1 ? 's' : ''}
       </Button>
       <Modal
         isOpen={isOpen}
         title="Select filters"
         type="filters"
-        onReset={handleReset}
         onRequestClose={() => toggleModal(false)}
+        actionsComponent={() => (
+          <div className="c-filters-action-buttons">
+            <Button className="-border-color-1 -medium" onClick={handleReset}>
+              Reset
+            </Button>
+            <Button className="-color-2 -medium" onClick={handleSubmit}>
+              Apply
+            </Button>
+          </div>
+        )}
       >
-        <div className="modal-filters">
-          {filtersInfo.map((filter, n) => (
-            <div key={n}>
-              <h3>{filter.label}</h3>
-              <ul>
-                {filter.options.map((opt, i) => (
-                  <li key={i}>
-                    <label htmlFor={opt}>{opt}</label>
-                    <input
-                      type="checkbox"
-                      id={filter.id}
-                      name={opt}
-                      value={opt}
-                      onChange={handleChange}
-                    />
-                  </li>
-                ))}
-              </ul>
+        <form className="modal-filters" onSubmit={handleSubmit}>
+          {filtersData.map((filter) => (
+            <div key={filter.column} className="form-group">
+              <h3>{filter.title}</h3>
+              {filter.options.map((opt) => (
+                <div className="form-check form-check-inline" key={opt.value}>
+                  <input
+                    type="checkbox"
+                    id={opt.value}
+                    name={filter.column}
+                    className="form-check-input"
+                    value={opt.value}
+                    onChange={handleChange}
+                    checked={filtersResult[filter.column].includes(opt.value)}
+                  />
+                  <label className="form-check-label" htmlFor={opt.value}>
+                    {opt.label}
+                  </label>
+                </div>
+              ))}
             </div>
           ))}
-        </div>
+        </form>
       </Modal>
     </div>
   );
@@ -81,12 +91,20 @@ const Filters = ({ filters, resetFilters, setFilter }) => {
 
 Filters.propTypes = {
   filters: PropTypes.shape({
-    gender: PropTypes.string.isRequired,
-    area: PropTypes.string.isRequired,
-    age: PropTypes.array.isRequired,
+    gender: PropTypes.array,
+    area: PropTypes.array,
+    age: PropTypes.array,
   }),
   resetFilters: PropTypes.func.isRequired,
   setFilter: PropTypes.func.isRequired,
+};
+
+Filters.defaultProps = {
+  filters: PropTypes.shape({
+    gender: [],
+    area: [],
+    age: [],
+  }),
 };
 
 export default Filters;

@@ -17,8 +17,8 @@ const chartsMap = {
 };
 
 const Widget = (widgetSpec) => {
-  const { title, chart, slug } = widgetSpec;
-  const [{ data, loading }] = useAxios(fetchIndicators(widgetSpec));
+  const { title, chart, slug, filters } = widgetSpec;
+  const [{ data, loading }] = useAxios(fetchIndicators(widgetSpec, filters));
   const ChartComponent = chartsMap[chart];
   const widgetProps = data && getWidgetProps(data.rows, widgetSpec);
 

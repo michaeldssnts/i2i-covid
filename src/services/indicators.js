@@ -2,8 +2,19 @@ import cartoApi from 'utils/carto-api';
 
 const undefinedValues = ['N/A', 'NaN', 'nan', 'REFUSED', '-1'];
 
-export const fetchIndicators = ({ columns, weight, calc, iso }) => {
+export const fetchIndicators = ({ columns, weight, calc, iso }, filters = {}) => {
   let query;
+
+  const filtersQuery = Object.keys(filters)
+    .map((filterKey) => {
+      const filter = filters[filterKey];
+
+      if (filter && filter.length) {
+        return ` AND ${filterKey} IN ('${filter.join("', '")}')`;
+      }
+      return '';
+    })
+    .join('');
 
   if (calc === 'average') {
     const selectQuery = columns
@@ -20,7 +31,7 @@ export const fetchIndicators = ({ columns, weight, calc, iso }) => {
       WITH a as (
         SELECT ${selectQuery}, update_date
         FROM covid_data_dev
-        WHERE country_iso = '${iso}'
+        WHERE country_iso = '${iso}' ${filtersQuery}
           AND ${whereQuery}
         GROUP BY update_date
       ), b as (
@@ -46,7 +57,7 @@ export const fetchIndicators = ({ columns, weight, calc, iso }) => {
       WITH a as (
         SELECT ${selectQuery}, ${weight}, update_date
         FROM ${process.env.REACT_APP_DATA_TABLENAME}
-        WHERE country_iso = '${iso}'
+        WHERE country_iso = '${iso}' ${filtersQuery}
       ), b as (
         SELECT t.*
         FROM a

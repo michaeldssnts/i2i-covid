@@ -7,7 +7,6 @@ export const fetchCategories = () => {
       slug
     FROM covid_categories
     ORDER by name`;
-
   return cartoApi(query);
 };
 

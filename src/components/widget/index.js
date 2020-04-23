@@ -1,1 +1,8 @@
-export { default } from './component';
+import { connect } from 'react-redux';
+import Component from './component';
+
+const mapStateToProps = (state) => ({
+  filters: state.filters,
+});
+
+export default connect(mapStateToProps)(Component);

@@ -9,19 +9,26 @@ const Dropdown = ({ options, current }) => {
     toggleDropdown(!isActive);
   };
   return (
-    <div className="c-dropdown">
-      <button onClick={handleClick}>{current.name}</button>
-      <ul
-        className={classnames('dropdown-list', {
+    <div className="c-dropdown dropdown">
+      <button className="btn dropdown-toggle" onClick={handleClick}>
+        {current.country}
+      </button>
+      <div
+        className={classnames('dropdown-menu', {
           '-active': isActive,
         })}
       >
-        {options.map(({ iso, name }) => (
-          <li key={iso} onClick={handleClick}>
-            <Link to={{ type: 'COUNTRY', payload: { iso, category: 'summary' } }}>{name}</Link>
-          </li>
+        {options.map(({ iso, country }) => (
+          <Link
+            key={iso}
+            to={{ type: 'COUNTRY', payload: { iso, category: 'summary' } }}
+            onClick={handleClick}
+            className="dropdown-item"
+          >
+            {country}
+          </Link>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
@@ -30,11 +37,11 @@ Dropdown.propTypes = {
   options: PropTypes.arrayOf(
     PropTypes.shape({
       iso: PropTypes.string.isRequired,
-      name: PropTypes.string.isRequired,
+      country: PropTypes.string.isRequired,
     })
   ),
   current: PropTypes.shape({
-    name: PropTypes.string.isRequired,
+    country: PropTypes.string.isRequired,
     iso: PropTypes.string.isRequired,
   }),
 };
