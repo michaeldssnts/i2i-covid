@@ -1,5 +1,5 @@
 export default {
   sex: [],
-  area: [],
+  urbancity: [],
   age_cat: [],
 };

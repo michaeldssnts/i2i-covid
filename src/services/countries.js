@@ -2,11 +2,12 @@ import cartoApi from 'utils/carto-api';
 
 export const fetchCountries = () => {
   const query = `
-    SELECT
-      country,
-      iso
-    FROM country_borders_gadm36
-    ORDER by country`;
+    SELECT country,
+      country_iso as iso
+    FROM covid_data_test
+    GROUP BY country, country_iso
+    ORDER BY country
+  `;
 
   return cartoApi(query);
 };

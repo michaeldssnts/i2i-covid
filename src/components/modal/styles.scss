@@ -1,52 +1,54 @@
 .c-modal {
+  $padding-box: 45px;
+
   background-color: rgba($color-4, 0.9);
   justify-content: center;
+  align-items: center;
   position: relative;
   height: 100%;
   display: flex;
   pointer-events: all;
 
-  .modal-content {
+  .modal-container {
     position: relative;
     margin: auto;
-    padding: 45px;
-    box-sizing: border-box;
-    max-width: 750px;
-    margin: auto;
-    border: 1px solid rgba($black, 0.1);
-    background-color: $white;
-    box-shadow: 0 4px 12px 0 rgba($black, 0.15);
     pointer-events: all;
 
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0;
+      border: 0;
+    }
+
     .modal-title {
-      position: absolute;
-      top: -80px;
-      left: 0;
+      padding: 1rem 0;
+
       font-size: 35px;
       line-height: 1.5;
       color: $white;
       text-shadow: 0 2px 3px rgba(0,0,0,0.15);
     }
 
+    .modal-content {
+      background-color: $white;
+      border: 0;
+      box-shadow: 0 4px 12px 0 rgba($black, 0.15);
+      padding: $padding-box;
+    }
+
+    .modal-footer {
+      padding: 1rem 0;
+      border: 0;
+    }
+
     .close-button {
-      position: absolute;
-      top: -37px;
-      right: 0;
       font-weight: bold;
       font-size: 25px;
       color: $white;
       width: 25px;
       z-index: 1;
-    }
-
-    .control-buttons {
-      position: absolute;
-      display: flex;
-      justify-content: space-between;
-      bottom: -55px;
-      display: flex;
-      left: 0;
-      right: 0;
     }
   }
 }

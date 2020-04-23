@@ -2,38 +2,35 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import useAxios from 'axios-hooks';
 import Dropdown from 'components/dropdown';
-
-import cartoApi from 'utils/carto-api';
-
-const SQL = `
-  SELECT country as name,
-    country_iso as iso
-  FROM covid_data_test
-  GROUP BY country, country_iso
-`;
+import Filters from 'components/filters';
+import { fetchCountries } from 'services/countries';
 
 const Hero = ({ iso }) => {
-  const [{ data }] = useAxios(cartoApi(SQL));
+  const [{ data }] = useAxios(fetchCountries());
   const countries = data && data.rows ? data.rows : null;
 
   const current = countries ? countries.find((country) => country.iso === iso) : null;
   const options = countries ? countries.filter((country) => country.iso !== iso) : null;
 
   return (
-    <div className="c-hero">
+    <section className="c-hero">
       <div className="container">
-        <div className="row justify-content-center">
-          <div className="col-10">
-            <div className="hero-title">
-              <h1>
-                COVID-19 tracking survey status in
-                {options && <Dropdown options={options} current={current} />}
-              </h1>
-            </div>
+        <div className="row">
+          <div className="col">
+            <h1 className="hero-title">
+              COVID-19 tracking survey status <br />
+              in
+              {options && <Dropdown options={options} current={current} />}
+            </h1>
+          </div>
+        </div>
+        <div className="row">
+          <div className="col-auto ml-auto mr-auto">
+            <Filters />
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Filters from 'components/filters';
 import Widgets from 'components/widgets';
 
 const CardInfo = ({ title, iso, category }) => {
@@ -24,7 +23,6 @@ const CardInfo = ({ title, iso, category }) => {
             </p>
           </div>
         </div>
-        <Filters />
         <Widgets iso={iso} category={category} />
       </div>
     </div>
