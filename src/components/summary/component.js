@@ -1,6 +1,5 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import classnames from 'classnames';
 import Link from 'redux-first-router-link';
 import { parseData } from './utils.js';
 import Widget from 'components/widget';
