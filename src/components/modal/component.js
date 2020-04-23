@@ -9,7 +9,7 @@ const Modal = ({ children, type, title, isOpen, onRequestClose, onReset, ...domP
   <ReactModal className="c-modal" isOpen={isOpen} onRequestClose={onRequestClose} {...domProps}>
     <div className="modal-content">
       {title && <h2 className="modal-title">{title}</h2>}
-      <button type="button" className="modal-button" onClick={onRequestClose}>
+      <button type="button" className="close-button" onClick={onRequestClose}>
         x
       </button>
       {children}

@@ -4,14 +4,14 @@
   position: relative;
   height: 100%;
   display: flex;
-  pointer-events: none;
+  pointer-events: all;
 
   .modal-content {
     position: relative;
     margin: auto;
     padding: 45px;
     box-sizing: border-box;
-    max-width: 900px;
+    max-width: 750px;
     margin: auto;
     border: 1px solid rgba($black, 0.1);
     background-color: $white;
@@ -28,7 +28,7 @@
       text-shadow: 0 2px 3px rgba(0,0,0,0.15);
     }
 
-    .modal-button {
+    .close-button {
       position: absolute;
       top: -37px;
       right: 0;

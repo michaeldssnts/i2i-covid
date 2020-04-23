@@ -7,7 +7,8 @@ import Button from 'components/button';
 const Share = ({ slug, iso }) => {
   const inputElUrl = useRef();
   const inputElEmbed = useRef();
-  const url = `${window.location.origin}/widget/${slug}?iso=:${iso}`;
+  const url = `${window.location.origin}/widget/${slug}`;
+
   const [{ isCopied, isOpen }, setState] = useState({
     isUrlCopied: false,
     isEmbedCopied: false,
@@ -30,34 +31,54 @@ const Share = ({ slug, iso }) => {
     }
   };
 
-  const handleModal = () => {
+  const toggleModal = () => {
     setState({ isOpen: !isOpen });
   };
 
   return (
     <div className="c-share">
-      <Button className="-border-color-2 -small" onClick={handleModal}>
+      <Button className="-border-color-2 -small" onClick={toggleModal}>
         Share
       </Button>
-      <Modal isOpen={isOpen} onRequestClose={() => setState({ isOpen: false })}>
-        <div className="container">
-          <h2>Public url to share</h2>
-          <div className="share-controls">
+
+      <Modal isOpen={isOpen} onRequestClose={() => toggleModal(false)}>
+        <div className="share-content">
+          <h3 className="label">Public url to share</h3>
+          <div className="share-control">
             <input ref={inputElUrl} value={url} readOnly />
-            <Button className="-border-color-2" onClick={() => handleClick('Url')}>
-              {isCopied ? 'Copied' : 'Copy'}
-            </Button>
+            <div className="share-buttons">
+              <a
+                href={`http://www.facebook.com/sharer/sharer.php?u=${url}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                F
+              </a>
+              <a
+                href={`https://twitter.com/share?url=${url}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                T
+              </a>
+
+              <Button
+                className="copy-button -border-color-2 -small"
+                onClick={() => handleClick('Url')}
+              >
+                {isCopied ? 'Copied' : 'Copy'}
+              </Button>
+            </div>
           </div>
-        </div>
-        <div className="container">
-          <h2>Code to embed</h2>
-          <div className="share-controls">
+
+          <h3 className="label">Code to embed</h3>
+          <div className="share-control">
             <input
               ref={inputElEmbed}
               value={`<iframe src="${url}" width="100%" height="500px" frameBorder="0" />`}
               readOnly
             />
-            <Button className="-border-color-2" onClick={() => handleClick('Embed')}>
+            <Button className="-border-color-2 -small" onClick={() => handleClick('Embed')}>
               {isCopied ? 'Copied' : 'Copy'}
             </Button>
           </div>
