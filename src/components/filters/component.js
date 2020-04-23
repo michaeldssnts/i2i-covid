@@ -2,8 +2,11 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'components/button';
 import Modal from 'components/modal';
+import useAxios from 'axios-hooks';
 
-import filtersInfo from './constants';
+import { fetchFilters } from 'services/filters';
+import { filtersInfo } from './utils';
+import { filtersNames } from './constants';
 
 const Filters = ({ filters, resetFilters, setFilter }) => {
   const [isOpen, toggleModal] = useState(false);
@@ -16,8 +19,12 @@ const Filters = ({ filters, resetFilters, setFilter }) => {
     resetFilters();
   };
 
+  const [{ data, loading }] = useAxios(fetchFilters());
+
+  const filtersModal = !loading && data && data.rows && filtersInfo(filtersNames, data);
+
   const handleChange = (e) => {
-    const { name, value, id } = e.currentTarget;
+    const { name, id } = e.currentTarget;
 
     if (!filters[id].includes(name)) {
       const filterResult = [...filters[id]];
@@ -27,7 +34,6 @@ const Filters = ({ filters, resetFilters, setFilter }) => {
       const filterResult = filters[id].filter((el) => el !== name);
       setFilter({ [id]: filterResult });
     }
-
   };
 
   return (
@@ -42,27 +48,29 @@ const Filters = ({ filters, resetFilters, setFilter }) => {
         onReset={handleReset}
         onRequestClose={() => toggleModal(false)}
       >
-        <div className="modal-filters">
-          {filtersInfo.map((filter, n) => (
-            <div key={n}>
-              <h3>{filter.label}</h3>
-              <ul>
-                {filter.options.map((opt, i) => (
-                  <li key={i}>
-                    <label htmlFor={opt}>{opt}</label>
-                    <input
-                      type="checkbox"
-                      id={filter.id}
-                      name={opt}
-                      value={opt}
-                      onChange={handleChange}
-                    />
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+        {data && data.rows && (
+          <div className="modal-filters">
+            {filtersModal.map((filter, n) => (
+              <div key={n}>
+                <h3>{filter.label}</h3>
+                <ul>
+                  {filter.options.map((opt, i) => (
+                    <li key={i}>
+                      <label htmlFor={opt.label}>{opt.label}</label>
+                      <input
+                        type="checkbox"
+                        id={filter.id}
+                        name={opt.label}
+                        value={opt}
+                        onChange={handleChange}
+                      />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        )}
       </Modal>
     </div>
   );
@@ -70,12 +78,21 @@ const Filters = ({ filters, resetFilters, setFilter }) => {
 
 Filters.propTypes = {
   filters: PropTypes.shape({
-    gender: PropTypes.string.isRequired,
-    area: PropTypes.string.isRequired,
-    age: PropTypes.array.isRequired,
+    gender: PropTypes.array,
+    area: PropTypes.array,
+    age: PropTypes.array,
   }),
+  filtersNames: PropTypes.array.isRequired,
   resetFilters: PropTypes.func.isRequired,
   setFilter: PropTypes.func.isRequired,
+};
+
+Filters.defaultProps = {
+  filters: PropTypes.shape({
+    gender: [],
+    area: [],
+    age: [],
+  }),
 };
 
 export default Filters;
