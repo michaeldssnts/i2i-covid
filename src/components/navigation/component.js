@@ -3,35 +3,37 @@ import PropTypes from 'prop-types';
 import { NavLink } from 'redux-first-router-link';
 
 const Navigation = ({ tabs, currentTab, iso }) => (
-  <nav className="c-navigation">
+  <div className="c-navigation">
     <div className="container">
       <div className="row justify-content-center">
         <div className="col-12">
-          <NavLink
-            to={{ type: 'COUNTRY', payload: { iso, category: 'summary' } }}
-            activeClassName="-active"
-            exact={true}
-            strict={true}
-            isActive={(match, location) => location.payload.category === 'summary'}
-          >
-            Summary
-          </NavLink>
-          {tabs.map(({ name, slug }) => (
+          <nav className="navigation">
             <NavLink
-              key={slug}
-              to={{ type: 'COUNTRY', payload: { iso, category: slug } }}
+              to={{ type: 'COUNTRY', payload: { iso, category: 'summary' } }}
               activeClassName="-active"
               exact={true}
               strict={true}
-              isActive={(match, location) => location.payload.category === slug}
+              isActive={(match, location) => location.payload.category === 'summary'}
             >
-              {name}
-            </NavLink>
-          ))}
+              Summary
+          </NavLink>
+            {tabs.map(({ name, slug }) => (
+              <NavLink
+                key={slug}
+                to={{ type: 'COUNTRY', payload: { iso, category: slug } }}
+                activeClassName="-active"
+                exact={true}
+                strict={true}
+                isActive={(match, location) => location.payload.category === slug}
+              >
+                {name}
+              </NavLink>
+            ))}
+          </nav>
         </div>
       </div>
     </div>
-  </nav>
+  </div>
 );
 
 Navigation.propTypes = {
