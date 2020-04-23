@@ -7,6 +7,7 @@ import widgetsSpec from 'data/widgets.json';
 
 const Widgets = ({ category }) => {
   const widgetsSpecByCategory = useMemo(
+    // TODO: Implement order by here
     () => widgetsSpec.filter((widget) => widget.category === category),
     [widgetsSpec]
   );
@@ -17,8 +18,9 @@ const Widgets = ({ category }) => {
         {widgetsSpecByCategory.map((widgetSpec) => (
           <div
             key={widgetSpec.slug}
-            className={classnames('col-12', {
-              'col-md-6': widgetSpec.chart === 'single-bar' || 'stacked-bar',
+            className={classnames({
+              'col-sm-12 col-md-12': widgetSpec.gridspace === 'half',
+              'col-sm-12 col-md-6': widgetSpec.gridspace === 'one',
             })}
           >
             <Widget {...widgetSpec} />
