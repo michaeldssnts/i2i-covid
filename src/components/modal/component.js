@@ -12,7 +12,7 @@ const Modal = ({ actionsComponent, children, isOpen, onRequestClose, title, ...d
           <section className="modal-container">
             <header className="modal-header">
               {title && <h2 className="modal-title">{title}</h2>}
-              <button type="button" className="close-button" onClick={onRequestClose}>
+              <button type="button" className="btn close-button" onClick={onRequestClose}>
                 x
               </button>
             </header>

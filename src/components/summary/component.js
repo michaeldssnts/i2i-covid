@@ -6,23 +6,23 @@ import Widgets from 'components/widgets';
 const Summary = ({ iso, categories }) => (
   <section className="c-summary">
     <div className="container">
-      {categories.map(({ name, slug }) => (
-        <div key={slug} className="row justify-content-center">
-          <div className="col-sm-12 col-md-12">
-            <article className="summary-content">
-              <div className="row justify-content-center">
-                <div className="col-sm-12 col-md-8">
-                  <h2 className="title">{name}</h2>
-                  {/* TODO: Indicators list from metadata */}
-                  {/* <p>{indicatorsList}</p> */}
+      <div className="row">
+        <div className="col-12">
+          {categories.map(({ name, slug, description }) => (
+            <article key={slug} className="summary-content">
+              <header>
+                <div className="row">
+                  <div className="col-sm-10 col-md-8 m-auto">
+                    <h2 className="text-center">{name}</h2>
+                    {description && <p>{description}</p>}
+                  </div>
                 </div>
-              </div>
+              </header>
 
               <Widgets iso={iso} category={slug} filterBySummary={true} />
-
-              <div className="row justify-content-center">
-                <div className="col-auto">
-                  <aside className="summary-button">
+              <aside className="summary-button">
+                <div className="row">
+                  <div className="col d-flex justify-content-center">
                     <Link
                       to={{
                         type: 'COUNTRY',
@@ -31,13 +31,13 @@ const Summary = ({ iso, categories }) => (
                     >
                       Know more
                     </Link>
-                  </aside>
+                  </div>
                 </div>
-              </div>
+              </aside>
             </article>
-          </div>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
   </section>
 );

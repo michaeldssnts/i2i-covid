@@ -60,10 +60,6 @@ export const getWidgetTheme = ({ calc }) => ({
     },
     formatter: capitalize,
   },
-  bar: {
-    minBarSize: 40,
-    maxBarSize: 120,
-  },
 });
 
 export default { getWidgetTheme };

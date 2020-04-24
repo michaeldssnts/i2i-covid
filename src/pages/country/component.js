@@ -13,25 +13,40 @@ import useAxios from 'axios-hooks';
 const CountryPage = ({ iso, current }) => {
   const [{ data, loading }] = useAxios(fetchCategories());
   const categories = data && data.rows ? data.rows : [];
-  const { name } = categories.find(({ slug }) => slug === current) || {};
+  const { name, description } = categories.find(({ slug }) => slug === current) || {};
 
   return (
     <div className="l-country">
       <Header />
       <Hero iso={iso} />
-      {loading && <Spinner />}
-      {data && !loading && (
-        <div className="country-content">
-          <Navigation tabs={categories} iso={iso} currentTab={current} />
-          <div className="country-info">
-            {current === 'summary' ? (
-              <Summary categories={categories} />
-            ) : (
-              <CardInfo title={name} iso={iso} category={current} />
-            )}
+
+      <div className="country-content">
+        <div className="container country-content-decoration" />
+        <div className="container">
+          <div className="row">
+            <div className="col">
+              {loading && <Spinner />}
+              {data && !loading && (
+                <>
+                  <Navigation tabs={categories} iso={iso} currentTab={current} />
+                  <div className="country-info">
+                    {current === 'summary' ? (
+                      <Summary categories={categories} />
+                    ) : (
+                      <CardInfo
+                        title={name}
+                        description={description}
+                        iso={iso}
+                        category={current}
+                      />
+                    )}
+                  </div>
+                </>
+              )}
+            </div>
           </div>
         </div>
-      )}
+      </div>
     </div>
   );
 };
