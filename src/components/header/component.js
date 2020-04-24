@@ -10,11 +10,11 @@ const Header = () => (
         <a href="/">
           <img src={logo} alt="i2i Covid Logo" className="logo-img" />
         </a>
-        <div className="header-buttons">
-          <Subscribe />
-        </div>
         <div className="col d-flex justify-content-end align-items-center">
-          <DownloadData />
+          <div className="header-buttons">
+            <Subscribe />
+            <DownloadData />
+          </div>
         </div>
       </div>
     </div>
