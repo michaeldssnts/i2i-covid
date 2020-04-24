@@ -29,3 +29,18 @@ $z-index-2: 2;
 $z-index-3: 3;
 $z-index-4: 4;
 $z-index-5: 10;
+
+
+// Breakpoints
+$sm: 384px;
+$md: 768px;
+$lg: 990px;
+$xlg: 1280px;
+
+$screen-max-width: 1100px;
+$breakpoints: (
+  sm: $sm,
+  md: $md,
+  lg: $lg,
+  xlg: $xlg
+);

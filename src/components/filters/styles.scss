@@ -3,6 +3,19 @@
   padding: 20px;
   justify-content: flex-end;
   width: 100%;
+
+  .display-btn {
+    position: relative;
+    padding-right: 40px;
+
+    &:after {
+      position: absolute;
+      top: 50%;
+      right: 15px;
+      @include arrow(9px,2px, $color-4, 'down');
+      transform: translateY(-50%) rotate(45deg);
+    }
+  }
 }
 
 .c-filters-action-buttons {

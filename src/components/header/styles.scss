@@ -6,7 +6,31 @@
   width: 100%;
   z-index: 1;
 
-  .logo-img {
+  .header {
     height: 66px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo-img {
+      height: 66px;
+    }
+
+    .header-buttons {
+      display: flex;
+
+      > div {
+
+        &:not(:last-of-type) {
+          margin-right: 20px;
+        }
+      }
+    }
+
+
+    @media screen and (min-width: map-get($breakpoints, md)) {
+      flex-direction: row;
+    }
   }
 }

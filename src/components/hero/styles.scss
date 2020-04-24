@@ -6,12 +6,15 @@
   background-size: cover;
 
   .hero-title {
-    font-size: 60px;
     font-weight: bold;
     letter-spacing: -2.16px;
-    line-height: 65px;
     text-align: center;
     color: $white;
     margin: 0;
+
+    @media screen and (min-width: map-get($breakpoints, lg)) {
+      font-size: 60px;
+      line-height: 65px;
+    }
   }
 }

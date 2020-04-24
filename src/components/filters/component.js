@@ -42,7 +42,7 @@ const Filters = ({ filters, resetFilters, setFilter }) => {
 
   return (
     <div className="c-filters">
-      <Button onClick={handleToggleModal} className="-color-2">
+      <Button onClick={handleToggleModal} className="-color-2 display-btn">
         Filter by {numberOfFilters} indicator{numberOfFilters > 1 ? 's' : ''}
       </Button>
       <Modal

@@ -8,7 +8,7 @@ const CardInfo = ({ title, iso, category }) => {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-sm-12 col-md-12">
-            <h2>{title}</h2>
+            <h2 className="title">{title}</h2>
           </div>
         </div>
         <div className="row justify-content-center">
