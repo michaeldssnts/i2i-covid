@@ -1,11 +1,20 @@
+import axios from 'axios';
 import cartoApi from 'utils/carto-api';
+import magicDownload from 'utils/download';
 
-export const fetchAllData = () => {
+export const getData = () => {
   const query = `
-    SELECT *
-    FROM ${process.env.REACT_APP_DATA_TABLENAME}`;
+  SELECT *
+  FROM ${process.env.REACT_APP_DATA_TABLENAME}`;
 
-  return cartoApi(query);
+  return axios
+    .get(cartoApi(query, 'csv'))
+    .then((data) => {
+
+      return magicDownload(data.data, `data-${Date.now()}.csv`);
+    })
+    .catch((err) => {
+      console.log(err);
+      return null;
+    });
 };
-
-export default { fetchAllData };
