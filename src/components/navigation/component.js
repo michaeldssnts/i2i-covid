@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { NavLink } from 'redux-first-router-link';
 
-const Navigation = ({ tabs, currentTab, iso }) => (
+const Navigation = ({ tabs, iso }) => (
   <div className="c-navigation">
     <div className="container">
       <div className="row justify-content-center">
@@ -16,7 +16,7 @@ const Navigation = ({ tabs, currentTab, iso }) => (
               isActive={(match, location) => location.payload.category === 'summary'}
             >
               Summary
-          </NavLink>
+            </NavLink>
             {tabs.map(({ name, slug }) => (
               <NavLink
                 key={slug}

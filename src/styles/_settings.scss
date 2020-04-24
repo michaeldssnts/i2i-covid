@@ -8,36 +8,19 @@ $color-2: #f9d031;
 $color-3: #001d22;
 $color-4: #2F939C;
 
+$body-bg: #F5F8F8;
 $border-color: rgba($color-3, 0.1);
 
 // Font
-// $body-line-height: ;
 $font-family-1: 'Open Sans', sans-serif;
-// $font-family-2: ;
-
-// Font sizes
-// $font-weight-regular: 300;
-// $font-weight-medium: 500;
-// $font-weight-bold: 700;
-
-// Spacing
-// $padding: ;
-
-// z-index
-$z-index-1: 1;
-$z-index-2: 2;
-$z-index-3: 3;
-$z-index-4: 4;
-$z-index-5: 10;
-
 
 // Breakpoints
-$sm: 384px;
+// https://getbootstrap.com/docs/4.0/layout/overview/#responsive-breakpoints
+$sm: 576px;
 $md: 768px;
-$lg: 990px;
-$xlg: 1280px;
+$lg: 992px;
+$xlg: 1200px;
 
-$screen-max-width: 1100px;
 $breakpoints: (
   sm: $sm,
   md: $md,

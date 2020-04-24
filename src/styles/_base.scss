@@ -6,27 +6,17 @@
 
 body {
   margin: 0;
+  background-color: $body-bg;
+
+  color: $color-3;
   font-family: $font-family-1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-button {
-  border: none;
-  background: none;
-  cursor: pointer;
-
-  &:focus {
-    outline: 0;
-  }
-}
-
-strong {
-  font-weight: bold;
-}
-
 a {
-  font-weight: 600;
+  color: $color-1;
+  font-weight: bold;
   text-decoration: none;
 
   &:hover {
@@ -34,30 +24,31 @@ a {
   }
 }
 
-li {
-  list-style: none;
+// Titles
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  color: $black;
+  margin-bottom: 1rem;
 }
 
-/**
- * For modern browsers
- * 1. The space content is one way to avoid an Opera bug when the
- *    contenteditable attribute is included anywhere else in the document.
- *    Otherwise it causes space to appear at the top and bottom of elements
- *    that are clearfixed.
- * 2. The use of `table` rather than `block` is only necessary if using
- *    `:before` to contain the top-margins of child elements.
- */
-.clearfix:before,
-.clearfix:after {
-  content: " "; /* 1 */
-  display: table; /* 2 */
+h1, .h1,
+h2, .h2 {
+  font-weight: bold;
+  line-height: 1;
 }
 
-.clearfix:after {
-  clear: both;
+h1, .h1 {
+  font-size: 64px;
 }
 
-h3 {
+h2, .h2 {
+  font-size: 35px;
+  margin-bottom: 2rem;
+}
+
+h3, .h3 {
   font-size: 18px;
   font-weight: bold;
+  line-height: 1.5;
 }

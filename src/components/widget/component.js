@@ -24,7 +24,7 @@ const Widget = (widgetSpec) => {
 
   return (
     <div className="c-widget">
-      <h2 className="widget-title">{title}</h2>
+      <h2 className="h3">{title}</h2>
       {loading && <p>Loading...</p>}
       {ChartComponent && data && !loading && <ChartComponent {...widgetProps} />}
       <Share slug={slug} />
