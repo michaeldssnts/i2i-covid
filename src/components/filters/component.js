@@ -2,18 +2,19 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import Button from 'components/button';
 import Modal from 'components/modal';
+import initialState from 'modules/filters/initial-state';
 import { filtersData } from './constants';
 
 const Filters = ({ filters, resetFilters, setFilter }) => {
   const [filtersResult, setFiltersResult] = useState(filters);
   const [isOpen, toggleModal] = useState(false);
 
-  const handleToggleModal = () => {
-    toggleModal(!isOpen);
-  };
+  const handleToggleModal = () => toggleModal(!isOpen);
 
   const handleReset = () => {
+    setFiltersResult({ ...initialState });
     resetFilters();
+    handleToggleModal();
   };
 
   const handleSubmit = (evt) => {
