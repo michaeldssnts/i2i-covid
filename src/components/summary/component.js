@@ -12,7 +12,7 @@ const Summary = ({ iso, categories }) => (
             <article className="summary-content">
               <div className="row justify-content-center">
                 <div className="col-sm-12 col-md-8">
-                  <h2>{name}</h2>
+                  <h2 className="title">{name}</h2>
                   {/* TODO: Indicators list from metadata */}
                   {/* <p>{indicatorsList}</p> */}
                 </div>

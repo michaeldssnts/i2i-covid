@@ -2,6 +2,16 @@
   display: inline-block;
   position: relative;
 
+  .dropdown-toggle {
+    &:after {
+      position: absolute;
+      top: 50%;
+      right: -30px;
+      @include arrow(13px,3px, $color-2, 'down');
+      transform: translateY(-50%) rotate(45deg);
+    }
+  }
+
   > .btn {
     color: $color-2;
     font-size: inherit;
