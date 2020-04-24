@@ -1,21 +1,27 @@
-import React from 'react';
-import useAxios from 'axios-hooks';
-import { CSVLink } from 'react-csv';
+import React, { useState } from 'react';
+import axios from 'axios';
+import { fetchAllData } from 'services/indicators';
 import Button from 'components/button';
-
-import { fetchAllData } from 'services/data';
+import magicDownload from 'utils/download';
 
 const DownloadData = () => {
-  const [{ data }] = useAxios(fetchAllData());
+  const [isLoading, setLoading] = useState(false);
 
-  const csvData = data && JSON.stringify(data.rows);
+  const handleClick = () => {
+    setLoading(true);
+    axios.get(fetchAllData({ format: 'csv' })).then(({ data }) => {
+      magicDownload(data, `data-${Date.now()}.csv`);
+      setLoading(false);
+    });
+  };
 
   return (
-    <div>
-      {data && (
-        <CSVLink data={csvData} filename={`data-${Date.now()}.csv`}>
-          <Button className="-border-color-1">Download data</Button>
-        </CSVLink>
+    <div className="c-download">
+      {isLoading && <p>...downloading</p>}
+      {!isLoading && (
+        <Button onClick={handleClick} className="-border-color-1">
+          Download data
+        </Button>
       )}
     </div>
   );
