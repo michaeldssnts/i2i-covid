@@ -3,7 +3,7 @@ import useAxios from 'axios-hooks';
 import { CSVLink } from 'react-csv';
 import Button from 'components/button';
 
-import { fetchAllData } from 'services/data'
+import { fetchAllData } from 'services/data';
 
 const DownloadData = () => {
   const [{ data }] = useAxios(fetchAllData());
@@ -13,7 +13,7 @@ const DownloadData = () => {
   return (
     <div>
       {data && (
-        <CSVLink data={csvData} filename={`Data-${Date.now()}}.csv`}>
+        <CSVLink data={csvData} filename={`data-${Date.now()}.csv`}>
           <Button className="-border-color-1">Download data</Button>
         </CSVLink>
       )}

@@ -10,6 +10,8 @@ const Header = () => (
           <a href="/">
             <img src={logo} alt="i2i Covid Logo" className="logo-img" />
           </a>
+        </div>
+        <div className="col d-flex justify-content-end align-items-center">
           <DownloadData />
         </div>
       </div>
