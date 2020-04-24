@@ -1,14 +1,18 @@
 import React, { useState } from 'react';
-
-import { getData } from 'services/data';
+import axios from 'axios';
+import { fetchAllData } from 'services/indicators';
 import Button from 'components/button';
+import magicDownload from 'utils/download';
 
 const DownloadData = () => {
   const [isLoading, setLoading] = useState(false);
 
   const handleClick = () => {
     setLoading(true);
-    getData().then(() => setLoading(false));
+    axios.get(fetchAllData({ format: 'csv' })).then(({ data }) => {
+      magicDownload(data, `data-${Date.now()}.csv`);
+      setLoading(false);
+    });
   };
 
   return (

@@ -30,7 +30,7 @@ export const fetchIndicators = ({ columns, weight, calc, iso }, filters = {}) =>
     query = `
       WITH a as (
         SELECT ${selectQuery}, update_date
-        FROM covid_data_dev
+        FROM ${process.env.REACT_APP_DATA_TABLENAME}
         WHERE country_iso = '${iso}' ${filtersQuery}
           AND ${whereQuery}
         GROUP BY update_date
@@ -80,4 +80,13 @@ export const fetchIndicators = ({ columns, weight, calc, iso }, filters = {}) =>
   return cartoApi(query);
 };
 
-export default { fetchIndicators };
+export const fetchAllData = ({ format = 'json' }) => {
+  const query = `
+    SELECT *
+    FROM ${process.env.REACT_APP_DATA_TABLENAME}
+  `;
+
+  return cartoApi(query, format);
+};
+
+export default { fetchIndicators, fetchAllData };

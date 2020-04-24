@@ -1,4 +1,4 @@
-export default (text, fileName, evt) => {
+export default (text, fileName) => {
   var blob = new Blob([text], {
     type: 'text/csv;charset=utf8;',
   });
@@ -12,5 +12,4 @@ export default (text, fileName, evt) => {
 
   element.click();
   document.body.removeChild(element);
-  evt.stopPropagation();
 };
