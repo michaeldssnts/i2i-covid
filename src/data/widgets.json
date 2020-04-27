@@ -29,8 +29,8 @@
   },
   {
     "slug": "access-to-medicine",
-    "title": "Access to medicine",
-    "hint": null,
+    "title": "Unavailable needed medicine",
+    "hint": "past week",
     "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
@@ -82,7 +82,7 @@
   {
     "slug": "change-in-cost-of-medicine",
     "title": "Change in cost of medicine",
-    "hint": null,
+    "hint": "since March 1st",
     "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
@@ -97,7 +97,7 @@
   {
     "slug": "relative-food-availability",
     "title": "Relative food availability",
-    "hint": null,
+    "hint": "compared to last year",
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
@@ -111,8 +111,8 @@
   },
   {
     "slug": "past-7-days-meals-eaten",
-    "title": "Skipped meals past week",
-    "hint": null,
+    "title": "Skipped meals",
+    "hint": "past week",
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
@@ -142,7 +142,7 @@
   {
     "slug": "change-in-ease-of-getting-contraceptives",
     "title": "Change in ease of getting contraceptives",
-    "hint": null,
+    "hint": "since March 1st",
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
@@ -194,7 +194,7 @@
   {
     "slug": "time-spent-caring-for-others",
     "title": "Time spent caring for others",
-    "hint": null,
+    "hint": "past 24h",
     "summary": false,
     "weight": "weight_ind",
     "calc": "average",
@@ -209,8 +209,8 @@
   },
   {
     "slug": "travel-within-past-two-weeks",
-    "title": "Travel within past two weeks",
-    "hint": null,
+    "title": "Recent travel",
+    "hint": "past two weeks",
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
@@ -220,11 +220,11 @@
     "columns": [
       "past_14_days_travel"
     ],
-    "chart": "single-bar"
+    "chart": "stacked-bar"
   },
   {
     "slug": "gvt-travel-restriction",
-    "title": "Gvt. travel restriction",
+    "title": "Government travel restriction in place",
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
@@ -235,12 +235,12 @@
     "columns": [
       "travel_restriction"
     ],
-    "chart": "single-bar"
+    "chart": "stacked-bar"
   },
   {
     "slug": "moved-location-since-march-1st",
-    "title": "Moved location since March 1st",
-    "hint": null,
+    "title": "Moved locations",
+    "hint": "since March 1st",
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
@@ -250,7 +250,7 @@
     "columns": [
       "moved_location_since_march_1st"
     ],
-    "chart": "single-bar"
+    "chart": "stacked-bar"
   },
   {
     "slug": "amount-willing-to-pay-for-covid-19-vaccine",
@@ -284,7 +284,7 @@
   },
   {
     "slug": "number-of-contacts",
-    "title": "Number of contacts",
+    "title": "Yesterday's number of contacts with...",
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
@@ -295,10 +295,24 @@
     "columns": [
       "number_of_contacts_with_children",
       "number_of_contacts_with_working_age_adults",
-      "number_of_contacts_with_elderly",
-      "past_14_days_religious_group_attendance"
+      "number_of_contacts_with_elderly"
     ],
     "chart": "multiple-bar"
+  },
+  {
+    "slug": "religious-group-attendance",
+    "title": "Religious group attendance",
+    "hint": "past two weeks",
+    "summary": false,
+    "weight": "weight_ind",
+    "calc": "average",
+    "gridspace": "one",
+    "orientation": "horizontal",
+    "category": "awareness_and_behaviour",
+    "columns": [
+      "past_14_days_religious_group_attendance"
+    ],
+    "chart": "single-bar"
   },
   {
     "slug": "where-children-stay-when-school-is-closed",
@@ -333,7 +347,7 @@
   {
     "slug": "likelihood_to_go_out_at_night",
     "title": "Changes in crime occurrence",
-    "hint": null,
+    "hint": "past two weeks",
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
@@ -347,8 +361,8 @@
   },
   {
     "slug": "applications-to-economic-support",
-    "title": "Applications to economic support",
-    "hint": true,
+    "title": "Applications to emergency government support",
+    "hint": "past month",
     "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
@@ -356,29 +370,15 @@
     "orientation": "horizontal",
     "category": "government_support",
     "columns": [
-      "emergency_money_support"
-    ],
-    "chart": "stacked-bar"
-  },
-  {
-    "slug": "applications-to-food-support",
-    "title": "Applications to food support",
-    "hint": true,
-    "summary": true,
-    "weight": "weight_ind",
-    "calc": "percentage",
-    "gridspace": "half",
-    "orientation": "horizontal",
-    "category": "government_support",
-    "columns": [
+      "emergency_money_support",
       "emergency_food_support"
     ],
-    "chart": "stacked-bar"
+    "chart": "multiple-stacked-bar"
   },
   {
     "slug": "government-support-preference",
     "title": "Government support preference",
-    "hint": true,
+    "hint": null,
     "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
@@ -422,8 +422,8 @@
   },
   {
     "slug": "government-support-during-past-moth",
-    "title": "Government support during past month",
-    "hint": null,
+    "title": "Government support",
+    "hint": "past month",
     "summary": false,
     "weight": "weight_hh",
     "calc": "average",
@@ -452,7 +452,7 @@
   },
   {
     "slug": "preferred-agent-availability",
-    "title": "Preferred agent availability",
+    "title": "Preferred agent currently unavailable",
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
@@ -468,7 +468,7 @@
   {
     "slug": "change-in-agent-fee",
     "title": "Change in agent fee",
-    "hint": null,
+    "hint": "since March 1st",
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
@@ -483,7 +483,7 @@
   {
     "slug": "difficulty-sending-receiving-cash",
     "title": "Difficulty sending/receiving cash",
-    "hint": null,
+    "hint": "past two weeks",
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
@@ -498,7 +498,7 @@
   {
     "slug": "recent-borrowing",
     "title": "Recent borrowing",
-    "hint": null,
+    "hint": "past two weeks",
     "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
@@ -538,7 +538,7 @@
   {
     "slug": "missed-repayment",
     "title": "Missed repayment",
-    "hint": null,
+    "hint": "past two weeks",
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
@@ -573,8 +573,8 @@
   },
   {
     "slug": "account-use-trends",
-    "title": "Account use trends",
-    "hint": null,
+    "title": "Mobile money account use",
+    "hint": "past month",
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
@@ -588,8 +588,8 @@
   },
   {
     "slug": "past-7-days-hours-worked",
-    "title": "Hours worked during past week",
-    "hint": null,
+    "title": "Hours worked",
+    "hint": "past week",
     "summary": true,
     "weight": "weight_ind",
     "calc": "average",
@@ -603,8 +603,8 @@
   },
   {
     "slug": "past-7-days-hours-earned",
-    "title": "Income earned during past week",
-    "hint": null,
+    "title": "Income earned",
+    "hint": "past week",
     "summary": true,
     "weight": "weight_ind",
     "calc": "average",
@@ -618,8 +618,8 @@
   },
   {
     "slug": "1-yr-income-comparison",
-    "title": "1 yr income comparison",
-    "hint": null,
+    "title": "Income comparison",
+    "hint": "past year",
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
@@ -633,8 +633,8 @@
   },
   {
     "slug": "asset-sales-since-march-1st",
-    "title": "Asset sales since March 1st",
-    "hint": null,
+    "title": "Asset sales",
+    "hint": "since March 1st",
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
@@ -648,7 +648,7 @@
   },
   {
     "slug": "financia-health-access-to-support",
-    "title": "Financial health: access to support",
+    "title": "Emergency funds availability",
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
@@ -663,7 +663,7 @@
   },
   {
     "slug": "financia-health-support-sources",
-    "title": "Financial health: support sources",
+    "title": "Emergency funds sources",
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
@@ -678,8 +678,8 @@
   },
   {
     "slug": "value-of-remittances",
-    "title": "Remittances transfers",
-    "hint": null,
+    "title": "Effective remittances",
+    "hint": "past two weeks",
     "summary": false,
     "weight": "weight_ind",
     "calc": "average",
@@ -709,8 +709,8 @@
   },
   {
     "slug": "farm-labour-changes",
-    "title": "Farm labour changes",
-    "hint": null,
+    "title": "Farm employees",
+    "hint": "compared to last year",
     "summary": false,
     "weight": "weight_hh",
     "calc": "percentage",
@@ -725,7 +725,7 @@
   {
     "slug": "ease-of-selling-crops",
     "title": "Ease of selling crops",
-    "hint": null,
+    "hint": "compared to last year",
     "summary": false,
     "weight": "weight_hh",
     "calc": "percentage",
@@ -768,11 +768,11 @@
   {
     "slug": "main-business-challenge",
     "title": "Main business challenge",
-    "hint": null,
+    "hint": "since March 1st",
     "summary": false,
     "weight": "weight_hh",
     "calc": "percentage",
-    "gridspace": "half",
+    "gridspace": "one",
     "orientation": "horizontal",
     "category": "livelihoods",
     "columns": [
@@ -782,8 +782,8 @@
   },
   {
     "slug": "main-income-earner-jobs-change",
-    "title": "Changed jobs in the past year",
-    "hint": null,
+    "title": "Changed jobs",
+    "hint": "past year",
     "summary": false,
     "weight": "weight_hh",
     "calc": "percentage",
@@ -797,7 +797,7 @@
   },
   {
     "slug": "former-job",
-    "title": "Former economic sector",
+    "title": "Previous economic sector",
     "hint": null,
     "summary": false,
     "weight": "weight_hh",
@@ -851,7 +851,7 @@
   },
   {
     "slug": "age-categories",
-    "title": "Age categories",
+    "title": "Age",
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
@@ -911,7 +911,7 @@
   },
   {
     "slug": "city-name",
-    "title": "City name",
+    "title": "City",
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
@@ -997,7 +997,7 @@
     "columns": [
       "live_with_spouse"
     ],
-    "chart": "stacked-bar"
+    "chart": "multiple-bar"
   },
   {
     "slug": "household-characteristics",
@@ -1016,21 +1016,6 @@
       "people_over_60_years_old"
     ],
     "chart": "multiple-stacked-bar"
-  },
-  {
-    "slug": "phone-ownership",
-    "title": "Phone ownership",
-    "hint": null,
-    "summary": false,
-    "weight": "weight_ind",
-    "calc": "percentage",
-    "gridspace": "half",
-    "orientation": "horizontal",
-    "category": "demographic",
-    "columns": [
-      "phone_ownership"
-    ],
-    "chart": "single-bar"
   },
   {
     "slug": "main-income-earner-sex",
