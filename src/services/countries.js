@@ -4,7 +4,7 @@ export const fetchCountries = () => {
   const query = `
     SELECT country,
       country_iso as iso
-    FROM covid_data_test
+    FROM ${process.env.REACT_APP_DATA_TABLENAME}
     GROUP BY country, country_iso
     ORDER BY country
   `;
