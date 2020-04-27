@@ -46,7 +46,7 @@ const Share = ({ slug, iso }) => {
       <Button className="-border-color-2 -small" onClick={toggleModal}>
         Share
       </Button>
-      <Modal title="Share" isOpen={true} onRequestClose={() => toggleModal(false)}>
+      <Modal title="Share" isOpen={isOpen} onRequestClose={() => toggleModal(false)}>
         <div className="share-content">
           <h3 className="label">Public url to share</h3>
           <div className="share-control">
