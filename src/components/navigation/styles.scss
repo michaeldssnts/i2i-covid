@@ -4,23 +4,38 @@
   .navigation {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-  }
+    align-items: center;
 
-  a {
-    color: $color-2;
-    text-decoration: none;
-    padding: 7px 20px;
-
-    &:not(last-child) {
-      margin-right: 20px;
+    .categories {
+      max-width: 500px;
+      overflow: hidden;
     }
 
-    &.-active {
-      background-color: $white;
-      border-radius: 20px;
-      box-shadow: 0 2px 3px 0 rgba($black, 0.15);
-      color: $color-4;
+    a {
+      color: $color-2;
+      text-decoration: none;
+      padding: 7px 20px;
+
+      &:not(last-child) {
+        margin-right: 20px;
+      }
+
+      &.-active {
+        background-color: $white;
+        border-radius: 20px;
+        box-shadow: 0 2px 3px 0 rgba($black, 0.15);
+        color: $color-4;
+      }
+    }
+
+    > button {
+      color: $color-2;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 7px 20px;
+      margin: 0;
+      background: transparent;
+      border: none;
     }
   }
 }
