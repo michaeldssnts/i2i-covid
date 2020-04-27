@@ -99,12 +99,9 @@ const Share = ({ slug, iso }) => {
                 <img alt="share-instagram" src={InstagramIcon} />
               </a> */}
 
-              <Button
-                className="copy-button -border-color-2 -small"
-                onClick={() => handleClick('Url')}
-              >
+              <button className="copy-btn" onClick={() => handleClick('Url')}>
                 {isCopied ? 'Copied' : 'Copy'}
-              </Button>
+              </button>
             </div>
           </div>
 
@@ -115,9 +112,9 @@ const Share = ({ slug, iso }) => {
               value={`<iframe src="${url}" width="100%" height="500px" frameBorder="0" />`}
               readOnly
             />
-            <Button className="-border-color-2 -small" onClick={() => handleClick('Embed')}>
+            <button className="copy-btn" onClick={() => handleClick('Embed')}>
               {isCopied ? 'Copied' : 'Copy'}
-            </Button>
+            </button>
           </div>
         </div>
       </Modal>

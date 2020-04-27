@@ -12,7 +12,6 @@
     border-radius: 20px;
     padding: 10px;
 
-
     > input {
       flex-grow: 1;
       overflow: hidden;
@@ -23,23 +22,20 @@
 
     .share-buttons {
       display: flex;
+      align-items: center;
 
       > a {
-        margin-left: 5px;
-
-        > img {
-          background-color: $color-4;
-          background-position: center;
-          background-size: cover;
-          border-radius: 5px;
-          box-shadow: 0 2px 3px 0 rgba(0,0,0,0.15);
-          border: 1px solid rgba($color-4, 0.5);
-        }
+        padding: 1px 7px 2px;
       }
-
-      .copy-button {
-        margin-left: 10px;
-      }
+    }
+    .copy-btn {
+      color: $color-4;
+      font-size: 13px;
+      font-weight: bold;
+      letter-spacing: 0;
+      background: transparent;
+      border: none;
+      align-content: baseline;
     }
   }
 }
