@@ -3,6 +3,12 @@ import PropTypes from 'prop-types';
 
 import Modal from 'components/modal';
 import Button from 'components/button';
+import FacebookIcon from './icons/social-facebook.svg';
+import TwitterIcon from './icons/social-twitter.svg';
+import InstagramIcon from './icons/social-instagram.svg';
+import LinkedynIcon from './icons/social-linkedin.svg';
+import YoutubeIcon from './icons/social-youtube.svg';
+
 
 const Share = ({ slug, iso }) => {
   const inputElUrl = useRef();
@@ -40,8 +46,7 @@ const Share = ({ slug, iso }) => {
       <Button className="-border-color-2 -small" onClick={toggleModal}>
         Share
       </Button>
-
-      <Modal title="Share" isOpen={isOpen} onRequestClose={() => toggleModal(false)}>
+      <Modal title="Share" isOpen={true} onRequestClose={() => toggleModal(false)}>
         <div className="share-content">
           <h3 className="label">Public url to share</h3>
           <div className="share-control">
@@ -52,15 +57,47 @@ const Share = ({ slug, iso }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                F
+                <img alt="share-facebook" src={FacebookIcon} />
               </a>
               <a
                 href={`https://twitter.com/share?url=${url}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                T
+                <img alt="share-twitter" src={TwitterIcon} />
               </a>
+
+              {/* <a
+                href={`mailto:?subject=Shared from i2i-COVID-19&body= I thought you'd be interested in some data about ${slug} in ${iso}: ${url}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img alt="share-email" src={EmailIcon} />
+              </a> */}
+
+              <a
+                href={`https://www.linkedin.com/shareArticle?mini=true&url=${url}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img alt="share-linkedin" src={LinkedynIcon} />
+              </a>
+
+              {/* <a
+                href={`${url}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img alt="share-youtube" src={YoutubeIcon} />
+              </a>
+
+              <a
+                href={`${url}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <img alt="share-instagram" src={InstagramIcon} />
+              </a> */}
 
               <Button
                 className="copy-button -border-color-2 -small"
