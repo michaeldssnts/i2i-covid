@@ -15,7 +15,7 @@ import {
 import { getWidgetTheme } from './utils';
 
 const UIBarChart = ({ data, config, widgetSpec }) => {
-  const { calc, chart: chartType } = widgetSpec;
+  const { calc, chart: chartType, gridspace } = widgetSpec;
   const {
     layout,
     cartesianGrid,
@@ -25,7 +25,7 @@ const UIBarChart = ({ data, config, widgetSpec }) => {
     legend,
     colors: defaultColors,
     bar,
-  } = getWidgetTheme({ calc });
+  } = getWidgetTheme({ calc, gridspace });
   const { groupBy, categories, colors: colorsConfig } = config;
   const colors = colorsConfig || defaultColors;
   const defaultBarProps = {};

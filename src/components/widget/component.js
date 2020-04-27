@@ -2,45 +2,40 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import useAxios from 'axios-hooks';
 
-import BarChart from 'components/chart/bar';
-import LineChart from 'components/chart/line';
+import Chart from 'components/chart';
 import Share from 'components/share';
+import Spinner from 'components/spinner';
 import { fetchIndicators } from 'services/indicators';
 import { getWidgetProps } from './utils.js';
 
-const chartsMap = {
-  line: LineChart,
-  'multiple-bar': BarChart,
-  'multiple-stacked-bar': BarChart,
-  'single-bar': BarChart,
-  'stacked-bar': BarChart,
-};
-
 const Widget = (widgetSpec) => {
-  const { title, chart, slug, filters } = widgetSpec;
-  const [{ data, loading }] = useAxios(fetchIndicators(widgetSpec, filters));
-  const ChartComponent = chartsMap[chart];
+  const { title, slug, filters } = widgetSpec;
+  const [{ data, loading, error }] = useAxios(fetchIndicators(widgetSpec, filters));
   const widgetProps = data && getWidgetProps(data.rows, widgetSpec);
+
+  // For widget debugging
+  if (error) console.error(`For widget ${title}`, error.response.data);
 
   return (
     <div className="c-widget">
       <h2 className="h3">{title}</h2>
-      {loading && <p>Loading...</p>}
-      {ChartComponent && data && !loading && <ChartComponent {...widgetProps} />}
-      <Share slug={slug} />
+      {loading && <Spinner loading />}
+      {!loading && error && <div className="alert alert-warning">Something was wrong.</div>}
+      {!loading && data && !error && (
+        <>
+          <Chart {...widgetProps} />
+          <Share slug={slug} />
+        </>
+      )}
+      {!loading && !data && !error && (
+        <div className="alert alert-info">There is no data for this widget.</div>
+      )}
     </div>
   );
 };
 
 Widget.propTypes = {
   title: PropTypes.string.isRequired,
-  chart: PropTypes.oneOf([
-    'single-bar',
-    'multiple-bar',
-    'stacked-bar',
-    'multiple-stacked-bar',
-    'line',
-  ]).isRequired,
   slug: PropTypes.string.isRequired,
 };
 
