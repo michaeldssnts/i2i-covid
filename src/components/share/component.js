@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 import Modal from 'components/modal';
 import Button from 'components/button';
-import FacebookIcon from './icons/social-facebook.svg';
-import TwitterIcon from './icons/social-twitter.svg';
-import InstagramIcon from './icons/social-instagram.svg';
-import LinkedynIcon from './icons/social-linkedin.svg';
-import YoutubeIcon from './icons/social-youtube.svg';
+import FacebookIcon from './icons/social-facebook-green.svg';
+import TwitterIcon from './icons/social-twitter-green.svg';
+import InstagramIcon from './icons/social-instagram-green.svg';
+import LinkedynIcon from './icons/social-linkedin-green.svg';
+import YoutubeIcon from './icons/social-youtube-green.svg';
 
 
 const Share = ({ slug, iso }) => {
@@ -115,6 +115,11 @@ const Share = ({ slug, iso }) => {
             <button className="copy-btn" onClick={() => handleClick('Embed')}>
               {isCopied ? 'Copied' : 'Copy'}
             </button>
+          </div>
+          <div className="modal-button">
+            <Button onClick={toggleModal} className="-color-1">
+              Close
+            </Button>
           </div>
         </div>
       </Modal>

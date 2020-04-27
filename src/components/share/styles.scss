@@ -25,17 +25,29 @@
       align-items: center;
 
       > a {
-        padding: 1px 7px 2px;
+        padding: 0px 4px 5px 0;
       }
     }
     .copy-btn {
-      color: $color-4;
+      color: $color-1;
       font-size: 13px;
       font-weight: bold;
       letter-spacing: 0;
       background: transparent;
       border: none;
       align-content: baseline;
+
+      &:hover {
+        background-color: rgba($color-1, 0.1);
+        border-radius: 20px;
+      }
     }
+  }
+
+  .modal-button {
+    width: 100%;
+    padding-top: 20px;
+    justify-content: flex-end;
+    display: flex;
   }
 }
