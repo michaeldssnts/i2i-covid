@@ -9,7 +9,7 @@ export const filtersData = [
   },
   {
     title: 'Geographic area',
-    column: 'urbancity',
+    column: 'urban_city',
     options: [
       { label: 'City', value: 'City' },
       { label: 'Rural', value: 'Rural area' },
@@ -18,7 +18,7 @@ export const filtersData = [
   },
   {
     title: 'Ages',
-    column: 'age_cat',
+    column: 'ps5_age_group',
     options: [
       { label: '18-24', value: '18-24' },
       { label: '25-34', value: '25-34' },
