@@ -20,9 +20,6 @@ export const fetchIndicators = ({ columns, weight, calc, iso }, filters = {}) =>
     const selectQuery = columns
       .map((column) => `AVG(${column}::float * ${weight}) AS ${column}`)
       .join(', ');
-    const whereQuery = columns
-      .map((column) => `${column} NOT IN ('${undefinedValues.join("', '")}')`)
-      .join(' AND ');
     const valuesQuery = columns
       .map((column) => `(a.${column}, '${column}', a.update_date)`)
       .join(', ');
@@ -32,7 +29,6 @@ export const fetchIndicators = ({ columns, weight, calc, iso }, filters = {}) =>
         SELECT ${selectQuery}, update_date
         FROM ${process.env.REACT_APP_DATA_TABLENAME}
         WHERE country_iso = '${iso}' ${filtersQuery}
-          AND ${whereQuery}
         GROUP BY update_date
       ), b as (
         SELECT t.*

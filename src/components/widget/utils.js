@@ -2,7 +2,7 @@ import groupBy from 'lodash/groupBy';
 import map from 'lodash/map';
 import uniq from 'lodash/uniq';
 
-export const parseSingleChart = (data) => {
+export const parseSingleChart = (data, { calc }) => {
   const groupedData = groupBy(data, (d) => d.update_date);
   const dates = Object.keys(groupedData);
   const widgetData = dates.map((date) => {
@@ -11,14 +11,14 @@ export const parseSingleChart = (data) => {
       update_date: date,
     };
 
-    arr.forEach(({ value, answer }) => {
-      obj[answer] = value;
+    arr.forEach(({ value, answer, label }) => {
+      obj[calc === 'average' ? label : answer] = value;
     });
 
     return obj;
   });
 
-  const categories = map(data, 'answer').map((d) => d.toString());
+  const categories = map(data, calc === 'average' ? 'label' : 'answer').map((d) => d.toString());
 
   return {
     config: {
@@ -87,10 +87,10 @@ export const parseMultipleStackedChart = (data) => {
   };
 };
 
-export const parseMultipleChart = (data) => {
+export const parseMultipleChart = (data, { calc }) => {
   return {
     config: {
-      groupBy: 'answer',
+      groupBy: calc === 'average' ? 'label' : 'answer',
       categories: ['value'],
     },
     data,
@@ -98,10 +98,10 @@ export const parseMultipleChart = (data) => {
 };
 
 export const getWidgetProps = (data, widgetSpec) => {
-  const { chart } = widgetSpec;
+  const { calc, chart } = widgetSpec;
 
   if (chart === 'single-bar') {
-    return { ...parseSingleChart(data), widgetSpec };
+    return { ...parseSingleChart(data, { calc }), widgetSpec };
   }
 
   if (chart === 'stacked-bar') {
@@ -112,7 +112,7 @@ export const getWidgetProps = (data, widgetSpec) => {
     return { ...parseMultipleStackedChart(data), widgetSpec };
   }
 
-  return { ...parseMultipleChart(data), widgetSpec };
+  return { ...parseMultipleChart(data, { calc }), widgetSpec };
 };
 
 export default { getWidgetProps };

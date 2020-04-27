@@ -298,7 +298,7 @@
       "number_of_contacts_with_elderly",
       "past_14_days_religious_group_attendance"
     ],
-    "chart": "multiple-stacked-bar"
+    "chart": "multiple-bar"
   },
   {
     "slug": "where-children-stay-when-school-is-closed",
