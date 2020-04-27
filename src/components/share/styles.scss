@@ -24,7 +24,13 @@
       align-items: center;
 
       > a {
-        padding: 0px 4px 5px 0;
+        margin-left: 5px;
+
+        > img {
+          background-color: $color-4;
+          background-position: center;
+          background-size: cover;
+        }
       }
     }
     .copy-btn {

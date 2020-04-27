@@ -6,8 +6,8 @@ import Button from 'components/button';
 import FacebookIcon from './icons/social-facebook-green.svg';
 import TwitterIcon from './icons/social-twitter-green.svg';
 import LinkedynIcon from './icons/social-linkedin-green.svg';
-// import InstagramIcon from './icons/social-instagram-green.svg';
-// import YoutubeIcon from './icons/social-youtube-green.svg';
+import EmailIcon from './icons/social-email-green.svg';
+
 
 const Share = ({ slug, iso }) => {
   const inputElUrl = useRef();
@@ -66,13 +66,13 @@ const Share = ({ slug, iso }) => {
                 <img alt="share-twitter" src={TwitterIcon} />
               </a>
 
-              {/* <a
+              <a
                 href={`mailto:?subject=Shared from i2i-COVID-19&body= I thought you'd be interested in some data about ${slug} in ${iso}: ${url}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <img alt="share-email" src={EmailIcon} />
-              </a> */}
+              </a>
 
               <a
                 href={`https://www.linkedin.com/shareArticle?mini=true&url=${url}`}
@@ -81,22 +81,6 @@ const Share = ({ slug, iso }) => {
               >
                 <img alt="share-linkedin" src={LinkedynIcon} />
               </a>
-
-              {/* <a
-                href={`${url}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img alt="share-youtube" src={YoutubeIcon} />
-              </a>
-
-              <a
-                href={`${url}`}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img alt="share-instagram" src={InstagramIcon} />
-              </a> */}
 
               <button className="copy-btn" onClick={() => handleClick('Url')}>
                 {isCopied ? 'Copied' : 'Copy'}
