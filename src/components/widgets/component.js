@@ -24,8 +24,8 @@ const Widgets = ({ category, iso, filterBySummary }) => {
           <div
             key={widgetSpec.slug}
             className={classnames({
-              'col-sm-12 col-md-6': widgetSpec.gridspace === 'half',
-              'col-sm-12 col-md-12': widgetSpec.gridspace === 'one',
+              'col-sm-12 col-lg-6': widgetSpec.gridspace === 'half',
+              'col-sm-12': widgetSpec.gridspace === 'one',
             })}
           >
             <Widget iso={iso} {...widgetSpec} />
