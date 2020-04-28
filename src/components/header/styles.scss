@@ -20,12 +20,17 @@
     .header-buttons {
       display: flex;
       align-items: center;
+      display: none;
 
       > div {
 
         &:not(:last-of-type) {
           margin-right: 20px;
         }
+      }
+
+      @media screen and (min-width: map-get($breakpoints, sm)) {
+        display: flex;
       }
     }
 

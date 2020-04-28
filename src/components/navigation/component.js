@@ -1,21 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import MediaQuery from 'react-responsive';
+import { breakpoints } from 'utils/responsive'
 import { NavLink } from 'redux-first-router-link';
 
 const Navigation = ({ tabs, currentTab, iso }) => {
   const handleClick = () => {
     document.getElementById('categories').scrollLeft += 100;
   };
-
   return (
     <div className="c-navigation">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12">
-            {/* <MadiaQuery minwidth={breakpoints}>
-
-            </MadiaQuery> */}
             <nav className="navigation">
               <NavLink
                 to={{ type: 'COUNTRY', payload: { iso, category: 'summary' } }}
@@ -25,8 +23,13 @@ const Navigation = ({ tabs, currentTab, iso }) => {
                 isActive={(match, location) => location.payload.category === 'summary'}
               >
                 Summary
-            </NavLink>
-              <div id="categories" className="categories">
+              </NavLink>
+              <div
+                id="categories"
+                className={classnames('categories', {
+                  '-dropdown': window.innerWidth < breakpoints.sm,
+                })}
+              >
                 {tabs.map(({ name, slug }) => (
                   <NavLink
                     key={slug}
