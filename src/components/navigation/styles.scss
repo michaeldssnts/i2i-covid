@@ -11,11 +11,18 @@
       position: relative;
 
       .dropdown-toggle {
+        max-width: 100%;
+        position: relative;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-right: 40px;
+
         &:after {
           position: absolute;
           top: 50%;
-          right: -30px;
-          @include arrow(5px,2px, $color-2, 'down');
+          right: 15px;
+          @include arrow(9px,2px, $color-4, 'down');
           transform: translateY(-50%) rotate(45deg);
         }
       }
@@ -42,8 +49,6 @@
       display: flex;
     }
 
-
-
     > button {
       color: $color-2;
       font-weight: bold;
@@ -65,13 +70,13 @@
     }
 
     &.-active {
-      display: none;
+      background-color: $white;
+      border-radius: 20px;
+      box-shadow: 0 2px 3px 0 rgba($black, 0.15);
+      color: $color-4;
 
-      @media screen and (min-width: map-get($breakpoints, md)) {
-        background-color: $white;
-        border-radius: 20px;
-        box-shadow: 0 2px 3px 0 rgba($black, 0.15);
-        color: $color-4;
+      @media screen and (max-width: map-get($breakpoints, md)) {
+        display: none;
       }
     }
   }
