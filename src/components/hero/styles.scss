@@ -1,5 +1,5 @@
 .c-hero {
-  height: 520px;
+  height: 420px;
   padding-top: 150px;
   background-image: url('./header-bg.jpg');
   background-position: center;
@@ -17,5 +17,8 @@
       font-size: 60px;
       line-height: 65px;
     }
+  }
+  @media screen and (min-width: map-get($breakpoints, md)) {
+    height: 520px;
   }
 }

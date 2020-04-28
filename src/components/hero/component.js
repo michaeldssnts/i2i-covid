@@ -1,6 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import useAxios from 'axios-hooks';
+import MediaQuery from 'react-responsive';
+import { breakpoints } from 'utils/responsive';
 import Dropdown from 'components/dropdown';
 import Filters from 'components/filters';
 import { fetchCountries } from 'services/countries';
@@ -23,11 +25,13 @@ const Hero = ({ iso }) => {
             </h1>
           </div>
         </div>
-        <div className="row">
-          <div className="col-auto ml-auto mr-auto">
-            <Filters />
+        <MediaQuery minWidth={breakpoints.md - 1}>
+          <div className="row">
+            <div className="col-auto ml-auto mr-auto">
+              <Filters />
+            </div>
           </div>
-        </div>
+        </MediaQuery>
       </div>
     </section>
   );
