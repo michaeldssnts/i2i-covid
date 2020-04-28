@@ -5,10 +5,9 @@ import Modal from 'components/modal';
 import Button from 'components/button';
 import FacebookIcon from './icons/social-facebook-green.svg';
 import TwitterIcon from './icons/social-twitter-green.svg';
-import InstagramIcon from './icons/social-instagram-green.svg';
 import LinkedynIcon from './icons/social-linkedin-green.svg';
-import YoutubeIcon from './icons/social-youtube-green.svg';
-
+// import InstagramIcon from './icons/social-instagram-green.svg';
+// import YoutubeIcon from './icons/social-youtube-green.svg';
 
 const Share = ({ slug, iso }) => {
   const inputElUrl = useRef();
