@@ -6,7 +6,7 @@ export const fetchIndicators = ({ columns, weight, calc, iso, exclude_query }, f
   const undefinedValues = exclude_query
     .filter((value) => String(value).toLowerCase() !== 'null')
     .map((param) => {
-      if (typeof Number(param) === 'number') return Number(param);
+      if (param !== '' && param !== ' ' && typeof Number(param) === 'number') return Number(param);
       return `'${param}'`;
     });
 
@@ -50,18 +50,20 @@ export const fetchIndicators = ({ columns, weight, calc, iso, exclude_query }, f
         CROSS JOIN LATERAL (
           VALUES ${valuesQuery}
         ) AS t(answer, indicator, update_date)
-      ), c as (
-        SELECT b.answer, b.indicator, b.update_date, m.label, b.answer AS value
-        FROM b
-        LEFT JOIN covid_metadata m ON m.field_name = indicator
       )
-      SELECT * FROM c ORDER BY value DESC
+      SELECT b.answer, b.indicator, b.update_date, m.label, b.answer AS value
+      FROM b
+      LEFT JOIN covid_metadata m ON m.field_name = indicator
+      ORDER BY answer DESC
     `;
   } else {
     const selectQuery = columns.join(', ');
     const valuesQuery = columns
       .map((column) => `(a.${column}, '${column}', a.${weight}, a.update_date)`)
       .join(', ');
+    const whereQuery = undefinedValues.length
+      ? `answer NOT IN (${undefinedValues.join(',')}) AND`
+      : '';
 
     query = `
       WITH a as (
@@ -80,7 +82,7 @@ export const fetchIndicators = ({ columns, weight, calc, iso, exclude_query }, f
         LEFT JOIN covid_metadata m ON m.field_name = indicator
       ), d as (
         SELECT answer, indicator, label, update_date, SUM(${weight}) AS value FROM c
-        WHERE answer NOT IN ('${undefinedValues.join("', '")}') AND ${weight} != 'NaN'
+        WHERE ${whereQuery} ${weight} != 'NaN'
         GROUP BY answer, indicator, update_date, label
       )
       SELECT d.answer, d.indicator, d.label, d.update_date, (d.value * 100 / SUM(d.value) OVER(PARTITION BY indicator)) as value
