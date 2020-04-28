@@ -223,7 +223,7 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
-    "exclude_query": [" "],
+    "exclude_query": [" ", "REFUSED"],
     "exclude_chart": [],
     "units": "%",
     "gridspace": "half",
