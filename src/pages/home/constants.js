@@ -1,7 +1,7 @@
 const countries = [
   {
     label: 'Nigeria',
-    iso: 'NGA',
+    // iso: 'NGA',
   },
   {
     label: 'Uganda',
@@ -9,7 +9,7 @@ const countries = [
   },
   {
     label: 'Rwanda',
-    iso: 'RWA',
+    // iso: 'RWA',
   },
   {
     label: 'Kenya',
@@ -21,7 +21,7 @@ const countries = [
   },
   {
     label: 'South Africa',
-    iso: 'ZAF',
+    // iso: 'ZAF',
   },
 ];
 

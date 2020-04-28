@@ -1,10 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import MediaQuery from 'react-responsive';
+import { breakpoints } from 'utils/responsive';
 
 import Header from 'components/header';
 import Hero from 'components/hero';
 import Spinner from 'components/spinner';
 import Navigation from 'components/navigation';
+import Filters from 'components/filters';
 import CardInfo from 'components/card';
 import Summary from 'components/summary';
 import { fetchCategories } from 'services/categories';

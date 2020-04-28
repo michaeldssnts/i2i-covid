@@ -4,7 +4,7 @@
   .navigation {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 
     &.-dropdown {
       display: inline-block;
@@ -15,40 +15,34 @@
           position: absolute;
           top: 50%;
           right: -30px;
-          @include arrow(13px,3px, $color-2, 'down');
+          @include arrow(5px,2px, $color-2, 'down');
           transform: translateY(-50%) rotate(45deg);
         }
       }
     }
 
-    @media screen and (min-width: map-get($breakpoints, sm)) {
+    .navigation-controls {
+      position: relative;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
     }
 
-    .categories {
-      max-width: 500px;
-      overflow: hidden;
-
-    }
-
-    a {
-      color: $color-2;
-      text-decoration: none;
-      padding: 7px 20px;
-
-      &:not(last-child) {
-        margin-right: 20px;
-      }
-
+    .dropdown-menu {
+      left: 50%;
+      transform: translateX(-50%);
       &.-active {
-        background-color: $white;
-        border-radius: 20px;
-        box-shadow: 0 2px 3px 0 rgba($black, 0.15);
-        color: $color-4;
+        display: flex;
+        flex-direction: column;
       }
     }
+
+    .categories {
+      overflow-x: scroll;
+      display: flex;
+    }
+
+
 
     > button {
       color: $color-2;
@@ -58,6 +52,27 @@
       margin: 0;
       background: transparent;
       border: none;
+    }
+  }
+
+  a {
+    color: $color-2;
+    text-decoration: none;
+    padding: 7px 20px;
+
+    &:not(last-child) {
+      margin-right: 20px;
+    }
+
+    &.-active {
+      display: none;
+
+      @media screen and (min-width: map-get($breakpoints, md)) {
+        background-color: $white;
+        border-radius: 20px;
+        box-shadow: 0 2px 3px 0 rgba($black, 0.15);
+        color: $color-4;
+      }
     }
   }
 }

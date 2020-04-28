@@ -10,8 +10,11 @@ const Dropdown = ({ options, current }) => {
   };
   return (
     <div className="c-dropdown dropdown">
-      <button className="btn dropdown-toggle" onClick={handleClick}>
-        {/* {current.country} */}
+      <button
+        className={classnames('btn', { 'dropdown-toggle': options.length > 0 })}
+        onClick={handleClick}
+      >
+        {current.country}
       </button>
       <div
         className={classnames('dropdown-menu', {
