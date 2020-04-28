@@ -4,7 +4,61 @@
   .navigation {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: flex-end;
+
+    &.-dropdown {
+      display: inline-block;
+      position: relative;
+      width: 100%;
+
+      .dropdown-toggle {
+        max-width: 100%;
+        position: relative;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        padding-right: 40px;
+
+        &:after {
+          position: absolute;
+          top: 50%;
+          right: 15px;
+          @include arrow(9px,2px, $color-4, 'down');
+          transform: translateY(-50%) rotate(45deg);
+        }
+      }
+    }
+
+    .navigation-controls {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .dropdown-menu {
+      left: 50%;
+      transform: translateX(-50%);
+      &.-active {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    .categories {
+      overflow-x: scroll;
+      display: flex;
+    }
+
+    > button {
+      color: $color-2;
+      font-weight: bold;
+      text-decoration: none;
+      padding: 7px 20px;
+      margin: 0;
+      background: transparent;
+      border: none;
+    }
   }
 
   a {
@@ -21,6 +75,10 @@
       border-radius: 20px;
       box-shadow: 0 2px 3px 0 rgba($black, 0.15);
       color: $color-4;
+
+      @media screen and (max-width: map-get($breakpoints, lg)) {
+        display: none;
+      }
     }
   }
 }

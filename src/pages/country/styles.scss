@@ -2,7 +2,10 @@
 
   .country-content {
     position: relative;
-    margin-top: -100px;
+
+    @media screen and (min-width: map-get($breakpoints, xlg)) {
+      margin-top: -100px;
+    }
   }
 
   .country-content-decoration {

@@ -1,5 +1,5 @@
 .c-hero {
-  height: 520px;
+  height: 420px;
   padding-top: 150px;
   background-image: url('./header-bg.jpg');
   background-position: center;
@@ -7,6 +7,7 @@
 
   .hero-title {
     font-weight: bold;
+    font-size: 35px;
     letter-spacing: -2.16px;
     text-align: center;
     color: $white;
@@ -16,5 +17,8 @@
       font-size: 60px;
       line-height: 65px;
     }
+  }
+  @media screen and (min-width: map-get($breakpoints, lg)) {
+    height: 520px;
   }
 }
