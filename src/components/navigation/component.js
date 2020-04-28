@@ -19,10 +19,8 @@ const Navigation = ({ tabs, currentTab, iso }) => {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12">
-            <nav className={classnames('navigation', {
-              '-dropdown': window.innerWidth < breakpoints.md })
-            }>
-              <MediaQuery maxWidth={breakpoints.md}>
+            <MediaQuery maxWidth={breakpoints.md}>
+              <nav className="navigation -dropdown">
                 <div className="row justify-content-center">
                   <div className="col-6">
                     <Button className="-color-2 dropdown-toggle" onClick={handleClick}>
@@ -52,8 +50,10 @@ const Navigation = ({ tabs, currentTab, iso }) => {
                     <Filters />
                   </div>
                 </div>
-              </MediaQuery>
-              <MediaQuery minWidth={breakpoints.md - 1}>
+              </nav>
+            </MediaQuery>
+            <MediaQuery minWidth={breakpoints.md - 1}>
+              <nav className="navigation">
                 <NavLink
                   to={{ type: 'COUNTRY', payload: { iso, category: 'summary' } }}
                   activeClassName="-active"
@@ -77,12 +77,12 @@ const Navigation = ({ tabs, currentTab, iso }) => {
                     </NavLink>
                   ))}
                 </div>
-              </MediaQuery>
-            </nav>
-          </div >
-        </div >
-      </div >
-    </div >
+              </nav>
+            </MediaQuery>
+          </div>
+        </div>
+      </div>
+    </div>
   );
 };
 
