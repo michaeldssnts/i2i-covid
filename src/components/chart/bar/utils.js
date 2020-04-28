@@ -10,7 +10,7 @@ const defaultLegend = {
   formatter: capitalize,
 };
 
-export const getWidgetTheme = ({ calc, gridspace, unit, iso }) => {
+export const getWidgetTheme = ({ calc, gridspace, units, iso }) => {
   let legend = { ...defaultLegend };
 
   if (gridspace === 'one') {
@@ -60,7 +60,7 @@ export const getWidgetTheme = ({ calc, gridspace, unit, iso }) => {
         fontSize: '13px',
         fill: '#022732',
       },
-      unit: unit === 'currency' ? getCurrency(iso) : unit,
+      unit: units === 'currency' ? getCurrency(iso) : units,
     },
     tooltip: {
       cursor: false,

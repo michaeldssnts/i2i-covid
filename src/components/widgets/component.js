@@ -1,23 +1,21 @@
 import React, { useMemo } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-
+import orderBy from 'lodash/orderBy';
 import Widget from 'components/widget';
 import widgetsSpec from 'data/widgets.json';
 
 const Widgets = ({ category, iso, filterBySummary }) => {
-  const widgetsSpecByCategory = useMemo(
-    // TODO: Implement order by here
-    () => {
-      if (filterBySummary) {
-        return widgetsSpec.filter(
-          (widgetSpec) => widgetSpec.category === category && widgetSpec.summary
-        );
-      }
-      return widgetsSpec.filter((widgetSpec) => widgetSpec.category === category);
-    },
-    [category, filterBySummary]
-  );
+  const widgetsSpecByCategory = useMemo(() => {
+    let result;
+    if (filterBySummary) {
+      result = widgetsSpec.filter(
+        (widgetSpec) => widgetSpec.category === category && widgetSpec.summary
+      );
+    }
+    result = widgetsSpec.filter((widgetSpec) => widgetSpec.category === category);
+    return orderBy(result, 'order');
+  }, [category, filterBySummary]);
 
   return (
     <div className="c-widgets">
