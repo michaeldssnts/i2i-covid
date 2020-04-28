@@ -5,28 +5,29 @@ import MediaQuery from 'react-responsive';
 import { breakpoints } from 'utils/responsive';
 import { NavLink } from 'redux-first-router-link';
 import Filters from 'components/filters';
+import Button from 'components/button';
 
 const Navigation = ({ tabs, currentTab, iso }) => {
   const [isActive, toggleDropdown] = useState(false);
-  const categories = document.getElementById('categories');
-  const handleDropdown = () => {
+
+  const handleClick = () => {
     toggleDropdown(!isActive);
   };
-  const handleClick = () => {
-    document.getElementById('categories').scrollLeft += 100;
-  };
+
   return (
     <div className="c-navigation">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12">
-            <nav className="navigation">
+            <nav className={classnames('navigation', {
+              '-dropdown': window.innerWidth < breakpoints.md })
+            }>
               <MediaQuery maxWidth={breakpoints.md}>
                 <div className="row justify-content-center">
                   <div className="col-6">
-                    <button className={classnames('btn', 'dropdown-toggle')} onClick={handleDropdown}>
+                    <Button className="-color-2 dropdown-toggle" onClick={handleClick}>
                       {currentTab}
-                    </button>
+                    </Button>
                     <div
                       id="categories"
                       className={classnames('dropdown-menu', {
@@ -76,7 +77,6 @@ const Navigation = ({ tabs, currentTab, iso }) => {
                     </NavLink>
                   ))}
                 </div>
-                {categories && categories.offsetWidth > 500 && <button onClick={handleClick}>More</button>}
               </MediaQuery>
             </nav>
           </div >

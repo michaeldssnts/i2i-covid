@@ -20,7 +20,6 @@
     .header-buttons {
       display: flex;
       align-items: center;
-      display: none;
 
       > div {
 
@@ -31,6 +30,7 @@
 
       @media screen and (min-width: map-get($breakpoints, sm)) {
         display: flex;
+        margin: 20px 0;
       }
     }
 
