@@ -1,41 +1,49 @@
 .l-homepage {
+  display: flex;
   position: relative;
   min-height: 100vh;
-
   background-repeat: no-repeat;
-  background-image: url(./covid-bg.png), linear-gradient(135deg, #20727E 0%, #2F939C 100%);
   background-color: $color-1;
   background-position: center;
 
+  @media screen and (min-width: map-get($breakpoints, lg)) {
+    display: block;
+    flex-direction: row;
+    background-image: url(./covid-bg.png), linear-gradient(135deg, #20727E 0%, #2F939C 100%);
+  }
+
+
   .homepage-wrapper {
+    margin-top: 120px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: $color-1;
+    width: 100%;
 
-    @media screen and (min-width: map-get($breakpoints, sm)) {
+    @media screen and (min-width: map-get($breakpoints, lg)) {
       display: block;
       flex-direction: row;
+      margin-top: 0;
     }
 
     .l-homepage-welcome {
-      position: absolute;
-      top: 120px;
+      position: relative;
       max-width: 370px;
       color: white;
-
+      box-sizing: border-box;
       $border-style: 10px solid white;
+      border: $border-style;
+      border-left: 0;
 
       > .welcome-top,
       > .welcome-bottom {
-        height: 60px;
+        height: 50px;
         border-left: $border-style;
-        border-right: $border-style;
-        border-top: $border-style;
       }
 
       > .welcome-content {
-        border-right: $border-style;
         font-size: 18px;
         letter-spacing: 0;
         line-height: 25px;
@@ -66,11 +74,7 @@
         }
       }
 
-      > .welcome-bottom {
-        border-top: 0;
-        border-bottom: $border-style;
-      }
-      @media screen and (min-width: map-get($breakpoints, sm)) {
+      @media screen and (min-width: map-get($breakpoints, lg)) {
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
@@ -78,8 +82,16 @@
     }
 
     .l-homepage-countries-nav {
-      position: absolute;
-      top: 550px;
+      position: relative;
+      background-repeat: no-repeat;
+      background-image: url(./mbl-bg1.png), linear-gradient($color-1 20%, #24a3af 100%, #2f939c 100%);
+      background-color: $color-1;
+      background-position: center;
+      background-color: $color-1;
+      background-position: top;
+      background-size: cover;
+      padding: 40px;
+      min-width: 100vw;
 
       > ul {
         list-style: none;
@@ -99,7 +111,7 @@
             letter-spacing: -1.26px;
             text-align: center;
 
-            @media screen and (min-width: map-get($breakpoints, sm)) {
+            @media screen and (min-width: map-get($breakpoints, lg)) {
               text-align: right;
             }
 
@@ -115,20 +127,23 @@
           }
         }
       }
-      @media screen and (min-width: map-get($breakpoints, sm)) {
+
+      @media screen and (min-width: map-get($breakpoints, lg)) {
         position: absolute;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
         margin-top: 17px;
+        background-image: none;
+        background-color: transparent;
+        min-width: 0;
       }
     }
   }
 
 
-  @media screen and (min-width: map-get($breakpoints, sm)) {
+  @media screen and (min-width: map-get($breakpoints, lg)) {
     display: block;
-
   }
 }
 
