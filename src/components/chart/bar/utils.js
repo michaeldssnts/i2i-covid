@@ -2,6 +2,7 @@ import { colors } from 'components/chart/constants';
 import { capitalize } from 'utils/strings';
 import { isValidDate, dateFormat } from 'utils/dates';
 import { formatNumber, formatPercentage } from 'utils/numbers';
+import { getCurrency } from 'utils/currency';
 
 const defaultLegend = {
   iconSize: 15,
@@ -9,7 +10,7 @@ const defaultLegend = {
   formatter: capitalize,
 };
 
-export const getWidgetTheme = ({ calc, gridspace }) => {
+export const getWidgetTheme = ({ calc, gridspace, unit, iso }) => {
   let legend = { ...defaultLegend };
 
   if (gridspace === 'one') {
@@ -59,7 +60,7 @@ export const getWidgetTheme = ({ calc, gridspace }) => {
         fontSize: '13px',
         fill: '#022732',
       },
-      unit: '%',
+      unit: unit === 'currency' ? getCurrency(iso) : unit,
     },
     tooltip: {
       cursor: false,

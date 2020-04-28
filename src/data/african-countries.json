@@ -1,0 +1,272 @@
+[
+  {
+    "name": "Angola",
+    "iso": "AGO",
+    "currency_iso": "AOA"
+  },
+  {
+    "name": "Morocco",
+    "iso": "MAR",
+    "currency_iso": "MAD"
+  },
+  {
+    "name": "Egypt",
+    "iso": "EGY",
+    "currency_iso": "EGP"
+  },
+  {
+    "name": "Eritrea",
+    "iso": "ERI",
+    "currency_iso": "ERN"
+  },
+  {
+    "name": "Mauritania",
+    "iso": "MRT",
+    "currency_iso": "MRO"
+  },
+  {
+    "name": "Malawi",
+    "iso": "MWI",
+    "currency_iso": "MWK"
+  },
+  {
+    "name": "Namibia",
+    "iso": "NAM",
+    "currency_iso": "NAD"
+  },
+  {
+    "name": "Uganda",
+    "iso": "UGA",
+    "currency_iso": "UGX"
+  },
+  {
+    "name": "S. Sudan",
+    "iso": "SDS",
+    "currency_iso": "SSP"
+  },
+  {
+    "name": "Somalia",
+    "iso": "SOM",
+    "currency_iso": "SOS"
+  },
+  {
+    "name": "Benin",
+    "iso": "BEN",
+    "currency_iso": "XOF"
+  },
+  {
+    "name": "Chad",
+    "iso": "TCD",
+    "currency_iso": "XAF"
+  },
+  {
+    "name": "South Africa",
+    "iso": "ZAF",
+    "currency_iso": "ZAR"
+  },
+  {
+    "name": "Tunisia",
+    "iso": "TUN",
+    "currency_iso": "TND"
+  },
+  {
+    "name": "Tanzania",
+    "iso": "TZA",
+    "currency_iso": "TZS"
+  },
+  {
+    "name": "Zambia",
+    "iso": "ZMB",
+    "currency_iso": "ZMW"
+  },
+  {
+    "name": "Swaziland",
+    "iso": "SWZ",
+    "currency_iso": "SZL"
+  },
+  {
+    "name": "Comoros",
+    "iso": "COM",
+    "currency_iso": "KMF"
+  },
+  {
+    "name": "Nigeria",
+    "iso": "NGA",
+    "currency_iso": "NGN"
+  },
+  {
+    "name": "Sierra Leone",
+    "iso": "SLE",
+    "currency_iso": "SLL"
+  },
+  {
+    "name": "Senegal",
+    "iso": "SEN",
+    "currency_iso": "XOF"
+  },
+  {
+    "name": "Eq. Guinea",
+    "iso": "GNQ",
+    "currency_iso": "XAF"
+  },
+  {
+    "name": "São Tomé and Principe",
+    "iso": "STP",
+    "currency_iso": "STD"
+  },
+  {
+    "name": "Djibouti",
+    "iso": "DJI",
+    "currency_iso": "DJF"
+  },
+  {
+    "name": "Gabon",
+    "iso": "GAB",
+    "currency_iso": "XAF"
+  },
+  {
+    "name": "Ghana",
+    "iso": "GHA",
+    "currency_iso": "GHS"
+  },
+  {
+    "name": "Guinea-Bissau",
+    "iso": "GNB",
+    "currency_iso": "XOF"
+  },
+  {
+    "name": "Kenya",
+    "iso": "KEN",
+    "currency_iso": "KES"
+  },
+  {
+    "name": "Niger",
+    "iso": "NER",
+    "currency_iso": "XOF"
+  },
+  {
+    "name": "Liberia",
+    "iso": "LBR",
+    "currency_iso": "LRD"
+  },
+  {
+    "name": "Libya",
+    "iso": "LBY",
+    "currency_iso": "LYD"
+  },
+  {
+    "name": "Madagascar",
+    "iso": "MDG",
+    "currency_iso": "MGA"
+  },
+  {
+    "name": "Mali",
+    "iso": "MLI",
+    "currency_iso": "XOF"
+  },
+  {
+    "name": "Mozambique",
+    "iso": "MOZ",
+    "currency_iso": "MZN"
+  },
+  {
+    "name": "Sudan",
+    "iso": "SDN",
+    "currency_iso": "SDG"
+  },
+  {
+    "name": "Burundi",
+    "iso": "BDI",
+    "currency_iso": "BIF"
+  },
+  {
+    "name": "Burkina Faso",
+    "iso": "BFA",
+    "currency_iso": "XOF"
+  },
+  {
+    "name": "Côte d'Ivoire",
+    "iso": "CIV",
+    "currency_iso": "XOF"
+  },
+  {
+    "name": "Congo",
+    "iso": "COG",
+    "currency_iso": "XAF"
+  },
+  {
+    "name": "Cameroon",
+    "iso": "CMR",
+    "currency_iso": "XAF"
+  },
+  {
+    "name": "Dem. Rep. Congo",
+    "iso": "COD",
+    "currency_iso": "CDF"
+  },
+  {
+    "name": "Guinea",
+    "iso": "GIN",
+    "currency_iso": "GNF"
+  },
+  {
+    "name": "Botswana",
+    "iso": "BWA",
+    "currency_iso": "BWP"
+  },
+  {
+    "name": "Central African Rep.",
+    "iso": "CAF",
+    "currency_iso": "XAF"
+  },
+  {
+    "name": "Cape Verde",
+    "iso": "CPV",
+    "currency_iso": "CVE"
+  },
+  {
+    "name": "Zimbabwe",
+    "iso": "ZWE",
+    "currency_iso": "ZBN"
+  },
+  {
+    "name": "Togo",
+    "iso": "TGO",
+    "currency_iso": "XOF"
+  },
+  {
+    "name": "Algeria",
+    "iso": "DZA",
+    "currency_iso": "DZD"
+  },
+  {
+    "name": "Ethiopia",
+    "iso": "ETH",
+    "currency_iso": "ETB"
+  },
+  {
+    "name": "Gambia",
+    "iso": "GMB",
+    "currency_iso": "GMD"
+  },
+  {
+    "name": "Lesotho",
+    "iso": "LSO",
+    "currency_iso": "LSL"
+  },
+  {
+    "name": "Rwanda",
+    "iso": "RWA",
+    "currency_iso": "RWF"
+  },
+  {
+    "name": "W. Sahara",
+    "iso": "SAH",
+    "currency_iso": ""
+  },
+  {
+    "name": "Somaliland",
+    "iso": "SOL",
+    "currency_iso": ""
+  }
+]
