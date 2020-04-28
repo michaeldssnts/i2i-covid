@@ -98,21 +98,24 @@ export const parseMultipleChart = (data, { calc }) => {
 };
 
 export const getWidgetProps = (data, widgetSpec) => {
-  const { calc, chart } = widgetSpec;
+  const { calc, chart, exclude_chart } = widgetSpec;
+
+  // Deciding not to show some values depending on WidgetSpec
+  const dataResult = data.filter((d) => !exclude_chart.includes(d.answer));
 
   if (chart === 'single-bar') {
-    return { ...parseSingleChart(data, { calc }), widgetSpec };
+    return { ...parseSingleChart(dataResult, { calc }), widgetSpec };
   }
 
   if (chart === 'stacked-bar') {
-    return { ...parseStackedChart(data), widgetSpec };
+    return { ...parseStackedChart(dataResult), widgetSpec };
   }
 
   if (chart === 'multiple-stacked-bar') {
-    return { ...parseMultipleStackedChart(data), widgetSpec };
+    return { ...parseMultipleStackedChart(dataResult), widgetSpec };
   }
 
-  return { ...parseMultipleChart(data, { calc }), widgetSpec };
+  return { ...parseMultipleChart(dataResult, { calc }), widgetSpec };
 };
 
 export default { getWidgetProps };

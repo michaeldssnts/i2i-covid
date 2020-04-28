@@ -1,9 +1,14 @@
 import cartoApi from 'utils/carto-api';
 
-const undefinedValues = ['N/A', 'NaN', 'nan', 'REFUSED', '-1'];
-
-export const fetchIndicators = ({ columns, weight, calc, iso }, filters = {}) => {
+export const fetchIndicators = ({ columns, weight, calc, iso, exclude_query }, filters = {}) => {
   let query;
+
+  const undefinedValues = exclude_query
+    .filter((value) => String(value).toLowerCase() !== 'null')
+    .map((param) => {
+      if (typeof Number(param) === 'number') return Number(param);
+      return `'${param}'`;
+    });
 
   const filtersQuery = Object.keys(filters)
     .map((filterKey) => {
@@ -23,12 +28,21 @@ export const fetchIndicators = ({ columns, weight, calc, iso }, filters = {}) =>
     const valuesQuery = columns
       .map((column) => `(a.${column}, '${column}', a.update_date)`)
       .join(', ');
+    const whereQuery = columns
+      .map((column) => {
+        if (undefinedValues.length) {
+          return `${column} IS NOT NULL AND ${column} NOT IN (${undefinedValues.join(',')})`;
+        }
+        return `${column} IS NOT NULL`;
+      })
+      .join(' AND ');
 
     query = `
       WITH a as (
         SELECT ${selectQuery}, update_date
         FROM ${process.env.REACT_APP_DATA_TABLENAME}
         WHERE country_iso = '${iso}' ${filtersQuery}
+          AND ${whereQuery}
         GROUP BY update_date
       ), b as (
         SELECT t.*
