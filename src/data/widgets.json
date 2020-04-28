@@ -6,9 +6,11 @@
     "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "one",
     "orientation": "horizontal",
     "category": "awareness_and_behaviour",
+    "order": 2,
     "columns": [
       "covid19_induced_behaviour_changes_go_to_work_less",
       "covid19_induced_behaviour_changes_limit_contact_with_people",
@@ -34,9 +36,11 @@
     "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "health_and_food_security",
+    "order": 21,
     "columns": [
       "access_to_medicine"
     ],
@@ -49,9 +53,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "one",
     "orientation": "horizontal",
     "category": "health_and_food_security",
+    "order": 22,
     "columns": [
       "reasons_for_not_accessing_medicine_did_not_have_enough_money",
       "reasons_for_not_accessing_medicine_hospital_etc_closed",
@@ -69,9 +75,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "average",
+    "units": "currency",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "health_and_food_security",
+    "order": 25,
     "columns": [
       "price_of_staple",
       "price_of_milk",
@@ -86,9 +94,11 @@
     "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "health_and_food_security",
+    "order": 20,
     "columns": [
       "change_in_cost_of_medicine"
     ],
@@ -101,9 +111,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "health_and_food_security",
+    "order": 26,
     "columns": [
       "relative_food_availability"
     ],
@@ -116,9 +128,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "health_and_food_security",
+    "order": 27,
     "columns": [
       "eaten_fewer_meals"
     ],
@@ -131,9 +145,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "health_and_food_security",
+    "order": 23,
     "columns": [
       "change_in_chronic_care"
     ],
@@ -146,9 +162,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "health_and_food_security",
+    "order": 24,
     "columns": [
       "change_in_ease_of_getting_contraceptives"
     ],
@@ -161,9 +179,11 @@
     "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "one",
     "orientation": "horizontal",
     "category": "awareness_and_behaviour",
+    "order": 1,
     "columns": [
       "understanding_of_covid19_a_weapon",
       "understanding_of_covid19_conspiracy",
@@ -183,9 +203,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units", "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "awareness_and_behaviour",
+    "order": 3,
     "columns": [
       "increase_in_household_care_due_to_covid19"
     ],
@@ -198,9 +220,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "average",
+    "units": "hrs",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "awareness_and_behaviour",
+    "order": 6,
     "columns": [
       "time_spent_caring_for_others",
       "time_spouse_spent_caring_for_others"
@@ -214,9 +238,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "awareness_and_behaviour",
+    "order": 13,
     "columns": [
       "past_14_days_travel"
     ],
@@ -229,9 +255,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "awareness_and_behaviour",
+    "order": 12,
     "columns": [
       "travel_restriction"
     ],
@@ -244,9 +272,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "awareness_and_behaviour",
+    "order": 14,
     "columns": [
       "moved_location_since_march_1st"
     ],
@@ -259,9 +289,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "average",
+    "units": "currency",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "awareness_and_behaviour",
+    "order": 5,
     "columns": [
       "amount_willing_to_pay_for_covid19_vaccine"
     ],
@@ -274,9 +306,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "awareness_and_behaviour",
+    "order": 4,
     "columns": [
       "likeliness_to_seek_medical_attention_mild_symptoms"
     ],
@@ -289,9 +323,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "average",
+    "units": "contacts",
     "gridspace": "one",
     "orientation": "horizontal",
     "category": "awareness_and_behaviour",
+    "order": 10,
     "columns": [
       "number_of_contacts_with_children",
       "number_of_contacts_with_working_age_adults",
@@ -306,9 +342,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "average",
+    "units": "att.",
     "gridspace": "one",
     "orientation": "horizontal",
     "category": "awareness_and_behaviour",
+    "order": 11,
     "columns": [
       "past_14_days_religious_group_attendance"
     ],
@@ -321,9 +359,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "one",
     "orientation": "horizontal",
     "category": "awareness_and_behaviour",
+    "order": 7,
     "columns": [
       "where_children_stay_when_school_is_closed"
     ],
@@ -336,9 +376,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "awareness_and_behaviour",
+    "order": 8,
     "columns": [
       "safety_worries"
     ],
@@ -351,9 +393,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "awareness_and_behaviour",
+    "order": 9,
     "columns": [
       "increase_in_crime"
     ],
@@ -365,10 +409,12 @@
     "hint": "past month",
     "summary": true,
     "weight": "weight_ind",
+    "units": "%",
     "calc": "percentage",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "government_support",
+    "order": 55,
     "columns": [
       "emergency_money_support",
       "emergency_food_support"
@@ -382,9 +428,11 @@
     "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "government_support",
+    "order": 57,
     "columns": [
       "govt_support_preference"
     ],
@@ -397,9 +445,11 @@
     "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "government_support",
+    "order": 58,
     "columns": [
       "difficulty_accessing_government_support"
     ],
@@ -412,9 +462,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "government_support",
+    "order": 59,
     "columns": [
       "need_to_pay_bribes_to_get_government_support"
     ],
@@ -427,9 +479,11 @@
     "summary": false,
     "weight": "weight_hh",
     "calc": "average",
+    "units": "currency",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "government_support",
+    "order": 56,
     "columns": [
       "past_30_days_value_of_govt_support"
     ],
@@ -442,9 +496,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "average",
+    "units": "currency",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "government_support",
+    "order": 60,
     "columns": [
       "amount_willing_to_accept_to_stay_home"
     ],
@@ -457,9 +513,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "financial_lives",
+    "order": 47,
     "columns": [
       "preferred_agent_open_closed"
     ],
@@ -472,9 +530,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "financial_lives",
+    "order": 48,
     "columns": [
       "change_in_agent_fee"
     ],
@@ -487,9 +547,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "financial_lives",
+    "order": 49,
     "columns": [
       "difficulty_sending_receiving_cash"
     ],
@@ -502,9 +564,11 @@
     "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "financial_lives",
+    "order": 50,
     "columns": [
       "recent_borrowing"
     ],
@@ -517,9 +581,11 @@
     "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "one",
     "orientation": "horizontal",
     "category": "financial_lives",
+    "order": 51,
     "columns": [
       "source_of_borrowing_friends_family_community",
       "source_of_borrowing_group_chama",
@@ -542,9 +608,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "financial_lives",
+    "order": 52,
     "columns": [
       "missed_repayment"
     ],
@@ -557,9 +625,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "one",
     "orientation": "horizontal",
     "category": "financial_lives",
+    "order": 53,
     "columns": [
       "reason_for_missed_payment_government_payment_holiday",
       "reason_for_missed_payment_need_money_for_essentials",
@@ -578,9 +648,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "financial_lives",
+    "order": 45,
     "columns": [
       "account_use_trends"
     ],
@@ -593,9 +665,11 @@
     "summary": true,
     "weight": "weight_ind",
     "calc": "average",
+    "units": "hrs",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "livelihoods",
+    "order": 30,
     "columns": [
       "past_7_days_hours_worked"
     ],
@@ -608,9 +682,11 @@
     "summary": true,
     "weight": "weight_ind",
     "calc": "average",
+    "units": "currency",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "livelihoods",
+    "order": 31,
     "columns": [
       "past_7_days_hours_earned"
     ],
@@ -623,9 +699,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "livelihoods",
+    "order": 32,
     "columns": [
       "one_yr_income_comparison"
     ],
@@ -638,9 +716,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "livelihoods",
+    "order": 46,
     "columns": [
       "sold_assets"
     ],
@@ -653,9 +733,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "livelihoods",
+    "order": 34,
     "columns": [
       "finhealth_possibility"
     ],
@@ -668,9 +750,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "livelihoods",
+    "order": 35,
     "columns": [
       "finhealth_sources"
     ],
@@ -683,9 +767,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "average",
+    "units": "currency",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "livelihoods",
+    "order": 33,
     "columns": [
       "value_of_remittances_received",
       "value_of_remittances_sent"
@@ -699,9 +785,11 @@
     "summary": false,
     "weight": "weight_hh",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "one",
     "orientation": "horizontal",
     "category": "livelihoods",
+    "order": 38,
     "columns": [
       "main_income_earner_primary_income_source"
     ],
@@ -714,9 +802,11 @@
     "summary": false,
     "weight": "weight_hh",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "livelihoods",
+    "order": 36,
     "columns": [
       "farm_labour_changes"
     ],
@@ -729,9 +819,11 @@
     "summary": false,
     "weight": "weight_hh",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "livelihoods",
+    "order": 37,
     "columns": [
       "ease_of_selling_crops"
     ],
@@ -744,9 +836,11 @@
     "summary": false,
     "weight": "weight_hh",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "one",
     "orientation": "horizontal",
     "category": "livelihoods",
+    "order": 40,
     "columns": [
       "current_economic_sector_transport",
       "current_economic_sector_tourism",
@@ -772,9 +866,11 @@
     "summary": false,
     "weight": "weight_hh",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "one",
     "orientation": "horizontal",
     "category": "livelihoods",
+    "order": 39,
     "columns": [
       "biggest_business_challenge"
     ],
@@ -787,9 +883,11 @@
     "summary": false,
     "weight": "weight_hh",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "livelihoods",
+    "order": 41,
     "columns": [
       "main_income_earner_jobs_change"
     ],
@@ -802,9 +900,11 @@
     "summary": false,
     "weight": "weight_hh",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "one",
     "orientation": "horizontal",
     "category": "livelihoods",
+    "order": 42,
     "columns": [
       "previous_economic_sector_transport",
       "previous_economic_sector_farmingorraisinglivestock",
@@ -826,9 +926,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "one",
     "orientation": "vertical",
     "category": "demographic",
+    "order: 76,
     "columns": [
       "main_language"
     ],
@@ -841,9 +943,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "demographic",
+    "order": 77,
     "columns": [
       "race"
     ],
@@ -856,9 +960,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "demographic",
+    "order": 65,
     "columns": [
       "ps5_age_group"
     ],
@@ -873,7 +979,9 @@
     "orientation": "horizontal",
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "category": "demographic",
+    "order": 66,
     "columns": [
       "sex"
     ],
@@ -886,9 +994,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "one",
     "orientation": "vertical",
     "category": "demographic",
+    "order": 72,
     "columns": [
       "region"
     ],
@@ -901,9 +1011,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "demographic",
+    "order": 71,
     "columns": [
       "urban_city"
     ],
@@ -916,9 +1028,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "one",
     "orientation": "vertical",
     "category": "demographic",
+    "order": 73,
     "columns": [
       "city_name"
     ],
@@ -931,9 +1045,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "one",
     "orientation": "vertical",
     "category": "demographic",
+    "order": 74,
     "columns": [
       "nearest_city"
     ],
@@ -946,9 +1062,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "vertical",
     "category": "demographic",
+    "order": 75,
     "columns": [
       "nearest_city_distance"
     ],
@@ -961,9 +1079,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "one",
     "orientation": "vertical",
     "category": "demographic",
+    "order": 67,
     "columns": [
       "education_level"
     ],
@@ -976,9 +1096,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "demographic",
+    "order": 68,
     "columns": [
       "relationship_status"
     ],
@@ -991,9 +1113,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "demographic",
+    "order": 69,
     "columns": [
       "live_with_spouse"
     ],
@@ -1006,9 +1130,11 @@
     "summary": false,
     "weight": "weight_hh",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "demographic",
+    "order": 70,
     "columns": [
       "hh_size",
       "children_under_5_years_old",
@@ -1024,9 +1150,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "demographic",
+    "order": 78,
     "columns": [
       "main_earner_gender"
     ],
@@ -1039,9 +1167,11 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
+    "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "demographic",
+    "order": 79,
     "columns": [
       "main_earner_age"
     ],
