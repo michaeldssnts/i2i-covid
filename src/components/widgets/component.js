@@ -12,8 +12,9 @@ const Widgets = ({ category, iso, filterBySummary }) => {
       result = widgetsSpec.filter(
         (widgetSpec) => widgetSpec.category === category && widgetSpec.summary
       );
+    } else {
+      result = widgetsSpec.filter((widgetSpec) => widgetSpec.category === category);
     }
-    result = widgetsSpec.filter((widgetSpec) => widgetSpec.category === category);
     return orderBy(result, 'order');
   }, [category, filterBySummary]);
 
