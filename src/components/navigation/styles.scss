@@ -6,9 +6,31 @@
     justify-content: center;
     align-items: center;
 
+    &.-dropdown {
+      display: inline-block;
+      position: relative;
+
+      .dropdown-toggle {
+        &:after {
+          position: absolute;
+          top: 50%;
+          right: -30px;
+          @include arrow(13px,3px, $color-2, 'down');
+          transform: translateY(-50%) rotate(45deg);
+        }
+      }
+    }
+
+    @media screen and (min-width: map-get($breakpoints, sm)) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
     .categories {
       max-width: 500px;
       overflow: hidden;
+
     }
 
     a {
