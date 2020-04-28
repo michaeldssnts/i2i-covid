@@ -29,6 +29,7 @@ const Chart = (props) => {
 
 Chart.propTypes = {
   widgetSpec: PropTypes.shape({
+    calc: PropTypes.oneOf(['average', 'percentage']),
     chart: PropTypes.oneOf([
       'single-bar',
       'multiple-bar',
@@ -36,6 +37,7 @@ Chart.propTypes = {
       'multiple-stacked-bar',
       'line',
     ]).isRequired,
+    gridspace: PropTypes.oneOf(['one', 'half']),
   }).isRequired,
 };
 
