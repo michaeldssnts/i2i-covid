@@ -11,7 +11,7 @@ const Dropdown = ({ options, current }) => {
   return (
     <div className="c-dropdown dropdown">
       <button className="btn dropdown-toggle" onClick={handleClick}>
-        {current.country}
+        {/* {current.country} */}
       </button>
       <div
         className={classnames('dropdown-menu', {
