@@ -18,7 +18,7 @@ export const parseSingleChart = (data, { calc }) => {
     return obj;
   });
 
-  const categories = map(data, calc === 'average' ? 'label' : 'answer').map((d) => d.toString());
+  let categories = map(data, calc === 'average' ? 'label' : 'answer').map((d) => d.toString());
 
   return {
     config: {

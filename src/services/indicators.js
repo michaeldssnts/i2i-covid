@@ -41,7 +41,7 @@ export const fetchIndicators = ({ columns, weight, calc, iso }, filters = {}) =>
         FROM b
         LEFT JOIN covid_metadata m ON m.field_name = indicator
       )
-      SELECT * FROM c
+      SELECT * FROM c ORDER BY value DESC
     `;
   } else {
     const selectQuery = columns.join(', ');
@@ -69,7 +69,9 @@ export const fetchIndicators = ({ columns, weight, calc, iso }, filters = {}) =>
         WHERE answer NOT IN ('${undefinedValues.join("', '")}') AND ${weight} != 'NaN'
         GROUP BY answer, indicator, update_date, label
       )
-      SELECT d.answer, d.indicator, d.label, d.update_date, (d.value * 100 / SUM(d.value) OVER(PARTITION BY indicator)) as value FROM d
+      SELECT d.answer, d.indicator, d.label, d.update_date, (d.value * 100 / SUM(d.value) OVER(PARTITION BY indicator)) as value
+      FROM d
+      ORDER BY d.answer
     `;
   }
 
