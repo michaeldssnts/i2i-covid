@@ -15,7 +15,7 @@ import {
 import { getWidgetTheme } from './utils';
 
 const UIBarChart = ({ data, config, widgetSpec }) => {
-  const { calc, chart: chartType, gridspace } = widgetSpec;
+  const { chart: chartType } = widgetSpec;
   const {
     layout,
     cartesianGrid,
@@ -25,7 +25,7 @@ const UIBarChart = ({ data, config, widgetSpec }) => {
     legend,
     colors: defaultColors,
     bar,
-  } = getWidgetTheme({ calc, gridspace });
+  } = getWidgetTheme(widgetSpec);
   const { groupBy, categories, colors: colorsConfig } = config;
   const colors = colorsConfig || defaultColors;
   const defaultBarProps = {};
@@ -59,22 +59,15 @@ const UIBarChart = ({ data, config, widgetSpec }) => {
 };
 
 UIBarChart.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.shape({})),
+  data: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   config: PropTypes.shape({
     groupBy: PropTypes.string,
     categories: PropTypes.array,
     colors: PropTypes.func,
   }).isRequired,
-  chartType: PropTypes.oneOf(['single-bar', 'multiple-bar', 'stacked-bar', 'multiple-stacked-bar']),
   widgetSpec: PropTypes.shape({
-    calc: PropTypes.string,
-    chart: PropTypes.string,
+    chart: PropTypes.oneOf(['single-bar', 'multiple-bar', 'stacked-bar', 'multiple-stacked-bar']),
   }).isRequired,
-};
-
-UIBarChart.defaultProps = {
-  data: null,
-  chartType: 'single-bar',
 };
 
 export default UIBarChart;
