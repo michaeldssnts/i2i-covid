@@ -19,9 +19,9 @@ const Navigation = ({ tabs, currentTab, iso }) => {
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-12">
-            <MediaQuery maxWidth={breakpoints.md}>
+            <MediaQuery maxWidth={breakpoints.lg}>
               <nav className="navigation -dropdown">
-                <div className="row justify-content-center">
+                <div className="row justify-content-between">
                   <div className="col-6">
                     <Button className="-color-2 dropdown-toggle" onClick={handleClick}>
                       {currentTab}
@@ -52,7 +52,7 @@ const Navigation = ({ tabs, currentTab, iso }) => {
                 </div>
               </nav>
             </MediaQuery>
-            <MediaQuery minWidth={breakpoints.md - 1}>
+            <MediaQuery minWidth={breakpoints.lg - 1}>
               <nav className="navigation">
                 <NavLink
                   to={{ type: 'COUNTRY', payload: { iso, category: 'summary' } }}

@@ -9,6 +9,7 @@
     &.-dropdown {
       display: inline-block;
       position: relative;
+      width: 100%;
 
       .dropdown-toggle {
         max-width: 100%;
@@ -75,7 +76,7 @@
       box-shadow: 0 2px 3px 0 rgba($black, 0.15);
       color: $color-4;
 
-      @media screen and (max-width: map-get($breakpoints, md)) {
+      @media screen and (max-width: map-get($breakpoints, lg)) {
         display: none;
       }
     }

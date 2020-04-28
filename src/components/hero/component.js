@@ -25,7 +25,7 @@ const Hero = ({ iso }) => {
             </h1>
           </div>
         </div>
-        <MediaQuery minWidth={breakpoints.md - 1}>
+        <MediaQuery minWidth={breakpoints.lg - 1}>
           <div className="row">
             <div className="col-auto ml-auto mr-auto">
               <Filters />

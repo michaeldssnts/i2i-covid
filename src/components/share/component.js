@@ -8,7 +8,6 @@ import TwitterIcon from './icons/social-twitter-green.svg';
 import LinkedynIcon from './icons/social-linkedin-green.svg';
 import EmailIcon from './icons/social-email-green.svg';
 
-
 const Share = ({ slug, iso }) => {
   const inputElUrl = useRef();
   const inputElEmbed = useRef();

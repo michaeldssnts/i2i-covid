@@ -18,7 +18,7 @@
       line-height: 65px;
     }
   }
-  @media screen and (min-width: map-get($breakpoints, md)) {
+  @media screen and (min-width: map-get($breakpoints, lg)) {
     height: 520px;
   }
 }

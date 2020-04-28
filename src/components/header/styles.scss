@@ -29,14 +29,14 @@
         }
       }
 
-      @media screen and (min-width: map-get($breakpoints, md)) {
+      @media screen and (min-width: map-get($breakpoints, lg)) {
         display: flex;
         margin: 0;
       }
     }
 
 
-    @media screen and (min-width: map-get($breakpoints, md)) {
+    @media screen and (min-width: map-get($breakpoints, lg)) {
       flex-direction: row;
     }
   }
