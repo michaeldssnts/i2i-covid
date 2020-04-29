@@ -10,11 +10,13 @@ import {
   Tooltip,
   Legend,
 } from 'recharts';
+import { useMediaQuery } from 'react-responsive';
 
 // constants
 import { getWidgetTheme } from './utils';
 
 const UIBarChart = ({ data, config, widgetSpec }) => {
+  const isMobileScreen = useMediaQuery({ query: '(max-device-width: 1024px)' });
   const { chart: chartType } = widgetSpec;
   const {
     layout,
@@ -25,7 +27,7 @@ const UIBarChart = ({ data, config, widgetSpec }) => {
     legend,
     colors: defaultColors,
     bar,
-  } = getWidgetTheme(widgetSpec);
+  } = getWidgetTheme({ ...widgetSpec, isMobileScreen });
   const { groupBy, categories, colors: colorsConfig } = config;
   const colors = colorsConfig || defaultColors;
   const defaultBarProps = {};

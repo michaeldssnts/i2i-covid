@@ -10,10 +10,10 @@ const defaultLegend = {
   formatter: capitalize,
 };
 
-export const getWidgetTheme = ({ calc, gridspace, units, iso }) => {
+export const getWidgetTheme = ({ calc, gridspace, units, iso, isMobileScreen }) => {
   let legend = { ...defaultLegend };
 
-  if (gridspace === 'one') {
+  if (gridspace === 'one' && !isMobileScreen) {
     legend = {
       ...defaultLegend,
       align: 'right',
@@ -53,7 +53,7 @@ export const getWidgetTheme = ({ calc, gridspace, units, iso }) => {
       },
     },
     yAxis: {
-      width: 80,
+      width: isMobileScreen ? 60 : 80,
       type: 'number',
       domain: [
         0,

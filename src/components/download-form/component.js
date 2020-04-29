@@ -1,22 +1,19 @@
 import React from 'react';
-import Button from 'components/button';
 
 const DownloadForm = () => (
   <div className="c-download-form">
-    <Button className="-border-color-1">
-      <a
-        className="typeform-share link"
-        href="https://i2ifacility.typeform.com/to/OC79X4"
-        dataMode="drawer_left"
-        dataHideHeaders={true}
-        dataHideFooter={true}
-        dataSubmitCloseDelay="3"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Download here
-      </a>
-    </Button>
+    <a
+      className="typeform-share link c-button -border-color-1"
+      href="https://i2ifacility.typeform.com/to/OC79X4"
+      datamode="drawer_left"
+      data-hide-headers={true}
+      data-hide-footer={true}
+      data-submit-close-delay="3"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      Download here
+    </a>
   </div>
 );
 
