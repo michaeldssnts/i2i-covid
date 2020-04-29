@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import Button from 'components/button';
 import Modal from 'components/modal';
 
@@ -11,7 +12,7 @@ const Subscribe = () => {
 
   return (
     <div className="c-subscribe">
-      <Button className="-border-color-1" onClick={toggleModal}>
+      <Button className="-border-color-1 btn" onClick={toggleModal}>
         Subscribe
       </Button>
 

@@ -29,7 +29,7 @@ const CountryPage = ({ iso, current }) => {
               {loading && <Spinner />}
               {data && !loading && (
                 <>
-                  <Navigation tabs={categories} iso={iso} currentTab={current} />
+                  <Navigation tabs={categories} iso={iso} currentTab={name} />
                   <div className="country-info">
                     {current === 'summary' ? (
                       <Summary categories={categories} />
