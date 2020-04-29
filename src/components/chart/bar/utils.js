@@ -1,7 +1,7 @@
 import { colors } from 'components/chart/constants';
 import { capitalize } from 'utils/strings';
 // import { isValidDate, dateFormat } from 'utils/dates';
-import { formatNumber, formatPercentage } from 'utils/numbers';
+import { formatNumber } from 'utils/numbers';
 import { getCurrency } from 'utils/currency';
 
 const defaultLegend = {
@@ -55,7 +55,7 @@ export const getWidgetTheme = ({ calc, gridspace, units, iso }) => {
     yAxis: {
       width: 80,
       type: 'number',
-      domain: [0, calc === 'average' ? 'auto' : 100],
+      domain: [0, 'auto'],
       tickLine: false,
       axisLine: false,
       tickFormatter: formatNumber,
