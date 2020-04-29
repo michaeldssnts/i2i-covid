@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import Header from 'components/header';
 import Hero from 'components/hero';
+import Footer from 'components/footer';
 import Spinner from 'components/spinner';
 import Navigation from 'components/navigation';
 import CardInfo from 'components/card';
@@ -47,6 +48,7 @@ const CountryPage = ({ iso, current }) => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
