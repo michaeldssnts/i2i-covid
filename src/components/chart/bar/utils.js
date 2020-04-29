@@ -28,7 +28,6 @@ export const getWidgetTheme = ({ calc, gridspace, units, iso }) => {
 
   return {
     layout: { width: '100%', height: 500 },
-    margin: { left: 5 },
     cartesianGrid: {
       strokeDasharray: '5 4',
       stroke: '#001D22',
@@ -54,6 +53,7 @@ export const getWidgetTheme = ({ calc, gridspace, units, iso }) => {
       },
     },
     yAxis: {
+      width: 80,
       type: 'number',
       domain: [0, calc === 'average' ? 'auto' : 100],
       tickLine: false,

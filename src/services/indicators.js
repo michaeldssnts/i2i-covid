@@ -1,6 +1,9 @@
 import cartoApi from 'utils/carto-api';
 
-export const fetchIndicators = ({ columns, weight, calc, iso, exclude_query }, filters = {}) => {
+export const fetchIndicators = (
+  { columns, weight, calc, iso, exclude_query, sort_by },
+  filters = {}
+) => {
   let query;
 
   const filtersQuery = Object.keys(filters)
@@ -12,6 +15,8 @@ export const fetchIndicators = ({ columns, weight, calc, iso, exclude_query }, f
       return '';
     })
     .join('');
+
+  const sortByQuery = sort_by ? `ORDER BY ${sort_by}` : '';
 
   if (calc === 'average') {
     const selectQuery = columns
@@ -55,7 +60,7 @@ export const fetchIndicators = ({ columns, weight, calc, iso, exclude_query }, f
       SELECT b.answer, b.indicator, b.update_date, m.label, b.answer AS value
       FROM b
       LEFT JOIN covid_metadata m ON m.field_name = indicator
-      ORDER BY answer DESC
+      ${sortByQuery}
     `;
   } else {
     const selectQuery = columns.join(', ');
@@ -91,7 +96,7 @@ export const fetchIndicators = ({ columns, weight, calc, iso, exclude_query }, f
       )
       SELECT d.answer, d.indicator, d.label, d.update_date, (d.value * 100 / SUM(d.value) OVER(PARTITION BY indicator)) as value
       FROM d
-      ORDER BY d.answer
+      ${sortByQuery}
     `;
   }
 
