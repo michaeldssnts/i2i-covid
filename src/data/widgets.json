@@ -38,13 +38,14 @@
     "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
-    "exclude_query": [" ", "nan"],
+    "exclude_query": [" ", "nan", "REFUSED"],
     "exclude_chart": ["No", "Don't know"],
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "health_and_food_security",
     "order": 21,
+    "sort_by": "answer DESC",
     "columns": [
       "access_to_medicine"
     ],
@@ -112,6 +113,7 @@
     "orientation": "horizontal",
     "category": "health_and_food_security",
     "order": 20,
+    "sort_by": "answer DESC",
     "columns": [
       "change_in_cost_of_medicine"
     ],
@@ -131,6 +133,7 @@
     "orientation": "horizontal",
     "category": "health_and_food_security",
     "order": 26,
+    "sort_by": "answer DESC",
     "columns": [
       "relative_food_availability"
     ],
@@ -150,6 +153,7 @@
     "orientation": "horizontal",
     "category": "health_and_food_security",
     "order": 27,
+    "sort_by": "answer ASC",
     "columns": [
       "eaten_fewer_meals"
     ],
@@ -169,6 +173,7 @@
     "orientation": "horizontal",
     "category": "health_and_food_security",
     "order": 23,
+    "sort_by": "answer DESC",
     "columns": [
       "change_in_chronic_care"
     ],
@@ -188,6 +193,7 @@
     "orientation": "horizontal",
     "category": "health_and_food_security",
     "order": 24,
+    "sort_by": "answer DESC",
     "columns": [
       "change_in_ease_of_getting_contraceptives"
     ],
@@ -233,6 +239,7 @@
     "orientation": "horizontal",
     "category": "awareness_and_behaviour",
     "order": 3,
+    "sort_by": "answer DESC",
     "columns": [
       "increase_in_household_care_due_to_covid19"
     ],
@@ -272,6 +279,7 @@
     "orientation": "horizontal",
     "category": "awareness_and_behaviour",
     "order": 13,
+    "sort_by": "answer DESC",
     "columns": [
       "past_14_days_travel"
     ],
@@ -291,6 +299,7 @@
     "orientation": "horizontal",
     "category": "awareness_and_behaviour",
     "order": 12,
+    "sort_by": "answer DESC",
     "columns": [
       "travel_restriction"
     ],
@@ -304,12 +313,13 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "exclude_query": [" ", "nan"],
-    "exclude_chart": [],
+    "exclude_chart": ["No"],
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "awareness_and_behaviour",
     "order": 14,
+    "sort_by": "answer DESC",
     "columns": [
       "moved_location_since_march_1st"
     ],
@@ -348,6 +358,7 @@
     "orientation": "horizontal",
     "category": "awareness_and_behaviour",
     "order": 4,
+    "sort_by": "answer DESC",
     "columns": [
       "likeliness_to_seek_medical_attention_mild_symptoms"
     ],
@@ -407,6 +418,7 @@
     "orientation": "horizontal",
     "category": "awareness_and_behaviour",
     "order": 7,
+    "sort_by": "value ASC",
     "columns": [
       "where_children_stay_when_school_is_closed"
     ],
@@ -426,6 +438,7 @@
     "orientation": "horizontal",
     "category": "awareness_and_behaviour",
     "order": 8,
+    "sort_by": "answer ASC",
     "columns": [
       "safety_worries"
     ],
@@ -445,6 +458,7 @@
     "orientation": "horizontal",
     "category": "awareness_and_behaviour",
     "order": 9,
+    "sort_by": "answer DESC",
     "columns": [
       "increase_in_crime"
     ],
@@ -452,23 +466,43 @@
   },
   {
     "slug": "applications-to-economic-support",
-    "title": "Applications to emergency government support",
+    "title": "Applications to economic government support",
     "hint": "past month",
     "summary": true,
     "weight": "weight_ind",
     "units": "%",
     "calc": "percentage",
     "exclude_query": [" ", "nan"],
-    "exclude_chart": ["No", "Don't know"],
+    "exclude_chart": ["NO", "DON'T KNOW"],
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "government_support",
     "order": 55,
+    "sort_by": "answer DESC",
     "columns": [
-      "emergency_money_support",
+      "emergency_money_support"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "applications-to-economic-support",
+    "title": "Applications to food government support",
+    "hint": "past month",
+    "summary": true,
+    "weight": "weight_ind",
+    "units": "%",
+    "calc": "percentage",
+    "exclude_query": [" ", "nan"],
+    "exclude_chart": ["NO", "DON'T KNOW"],
+    "gridspace": "half",
+    "orientation": "horizontal",
+    "category": "government_support",
+    "order": 55,
+    "sort_by": "answer DESC",
+    "columns": [
       "emergency_food_support"
     ],
-    "chart": "multiple-stacked-bar"
+    "chart": "stacked-bar"
   },
   {
     "slug": "government-support-preference",
@@ -484,6 +518,7 @@
     "orientation": "horizontal",
     "category": "government_support",
     "order": 57,
+    "sort_by": "value ASC",
     "columns": [
       "govt_support_preference"
     ],
@@ -496,13 +531,14 @@
     "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
-    "exclude_query": [" ", "nan", "Not applicable"],
-    "exclude_chart": ["No", "Don't know"],
+    "exclude_query": [" ", "nan", "Not applicable", "REFUSED"],
+    "exclude_chart": ["NO", "DON'T KNOW"],
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "government_support",
     "order": 58,
+    "sort_by": "answer DESC",
     "columns": [
       "difficulty_accessing_government_support"
     ],
@@ -515,13 +551,14 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
-    "exclude_query": [" ", "nan"],
+    "exclude_query": [" ", "nan", "REFUSED"],
     "exclude_chart": [],
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "government_support",
     "order": 59,
+    "sort_by": "answer ASC",
     "columns": [
       "need_to_pay_bribes_to_get_government_support"
     ],
@@ -598,6 +635,7 @@
     "orientation": "horizontal",
     "category": "financial_lives",
     "order": 48,
+    "sort_by": "answer DESC",
     "columns": [
       "change_in_agent_fee"
     ],
@@ -617,6 +655,7 @@
     "orientation": "horizontal",
     "category": "financial_lives",
     "order": 49,
+    "sort_by": "answer DESC",
     "columns": [
       "difficulty_sending_receiving_cash"
     ],
@@ -630,12 +669,13 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "exclude_query": [" ", "nan", "REFUSED"],
-    "exclude_chart": [],
+    "exclude_chart": ["NO", "DON'T KNOW"],
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "financial_lives",
     "order": 50,
+    "sort_by": "answer DESC",
     "columns": [
       "recent_borrowing"
     ],
@@ -679,12 +719,13 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "exclude_query": [" ", "nan", "Not applicable", "REFUSED"],
-    "exclude_chart": ["No", "Don't know"],
+    "exclude_chart": ["NO", "DON'T KNOW"],
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "financial_lives",
     "order": 51,
+    "sort_by": "answer DESC",
     "columns": [
       "missed_repayment"
     ],
@@ -723,12 +764,13 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "exclude_query": [" ", "nan"],
-    "exclude_chart": ["No"],
+    "exclude_chart": ["NO"],
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "financial_lives",
     "order": 45,
+    "sort_by": "answer DESC",
     "columns": [
       "account_use_trends"
     ],
@@ -780,12 +822,13 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "exclude_query": [" ", "nan", "REFUSED"],
-    "exclude_chart": [],
+    "exclude_chart": ["DON'T KNOW"],
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "livelihoods",
     "order": 32,
+    "sort_by": "answer DESC",
     "columns": [
       "one_yr_income_comparison"
     ],
@@ -798,13 +841,14 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
-    "exclude_query": [" ", "nan"],
-    "exclude_chart": ["No", "Don't know"],
+    "exclude_query": [" ", "nan", "REFUSED"],
+    "exclude_chart": ["NO", "DO DON'T KNOW"],
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "livelihoods",
     "order": 46,
+    "sort_by": "answer DESC",
     "columns": [
       "sold_assets"
     ],
@@ -818,12 +862,13 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "exclude_query": [" ", "nan", "REFUSED"],
-    "exclude_chart": [],
+    "exclude_chart": ["DON'T KNOW"],
     "units": "%",
     "gridspace": "one",
     "orientation": "horizontal",
     "category": "livelihoods",
     "order": 34,
+    "sort_by": "answer ASC",
     "columns": [
       "finhealth_possibility"
     ],
@@ -843,6 +888,7 @@
     "orientation": "horizontal",
     "category": "livelihoods",
     "order": 35,
+    "sort_by": "answer DESC",
     "columns": [
       "finhealth_sources"
     ],
@@ -882,6 +928,7 @@
     "orientation": "horizontal",
     "category": "livelihoods",
     "order": 38,
+    "sort_by": "answer ASC",
     "columns": [
       "main_income_earner_primary_income_source"
     ],
@@ -901,6 +948,7 @@
     "orientation": "horizontal",
     "category": "livelihoods",
     "order": 36,
+    "sort_by": "answer DESC",
     "columns": [
       "farm_labour_changes"
     ],
@@ -920,6 +968,7 @@
     "orientation": "horizontal",
     "category": "livelihoods",
     "order": 37,
+    "sort_by": "answer DESC",
     "columns": [
       "ease_of_selling_crops"
     ],
@@ -971,6 +1020,7 @@
     "orientation": "horizontal",
     "category": "livelihoods",
     "order": 39,
+    "sort_by": "answer ASC",
     "columns": [
       "biggest_business_challenge"
     ],
@@ -984,7 +1034,7 @@
     "weight": "weight_hh",
     "calc": "percentage",
     "exclude_query": [" ", "nan", "REFUSED"],
-    "exclude_chart": ["No", "Don't know"],
+    "exclude_chart": ["NO", "DON'T KNOW"],
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
@@ -1040,6 +1090,7 @@
     "orientation": "vertical",
     "category": "demographic",
     "order": 76,
+    "sort_by": "value DESC",
     "columns": [
       "mainlanguage"
     ],
@@ -1059,6 +1110,7 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 65,
+    "sort_by": "answer ASC",
     "columns": [
       "ps5_age_group"
     ],
@@ -1078,6 +1130,7 @@
     "units": "%",
     "category": "demographic",
     "order": 66,
+    "sort_by": "answer DESC",
     "columns": [
       "sex"
     ],
@@ -1097,6 +1150,7 @@
     "orientation": "vertical",
     "category": "demographic",
     "order": 72,
+    "sort_by": "value DESC",
     "columns": [
       "region"
     ],
@@ -1116,6 +1170,7 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 71,
+    "sort_by": "answer DESC",
     "columns": [
       "urban_city"
     ],
@@ -1135,6 +1190,7 @@
     "orientation": "vertical",
     "category": "demographic",
     "order": 73,
+    "sort_by": "value DESC",
     "columns": [
       "city_name"
     ],
@@ -1154,6 +1210,7 @@
     "orientation": "vertical",
     "category": "demographic",
     "order": 74,
+    "sort_by": "value DESC",
     "columns": [
       "nearest_city"
     ],
@@ -1173,6 +1230,7 @@
     "orientation": "vertical",
     "category": "demographic",
     "order": 75,
+    "sort_by": "answer ASC",
     "columns": [
       "nearest_city_distance"
     ],
@@ -1192,6 +1250,7 @@
     "orientation": "vertical",
     "category": "demographic",
     "order": 67,
+    "sort_by": "answer ASC",
     "columns": [
       "education_level"
     ],
@@ -1211,6 +1270,7 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 68,
+    "sort_by": "answer DESC",
     "columns": [
       "relationship_status"
     ],
@@ -1224,20 +1284,21 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "exclude_query": [" ", "nan", "REFUSED"],
-    "exclude_chart": [],
+    "exclude_chart": ["DON'T KNOW"],
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "demographic",
     "order": 69,
+    "sort_by": "answer DESC",
     "columns": [
       "live_with_spouse"
     ],
     "chart": "multiple-bar"
   },
   {
-    "slug": "household-characteristics",
-    "title": "Household characteristics",
+    "slug": "household-size",
+    "title": "Household size",
     "hint": null,
     "summary": false,
     "weight": "weight_hh",
@@ -1249,13 +1310,71 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 70,
+    "sort_by": "answer ASC",
     "columns": [
-      "hh_size",
-      "children_under_5_years_old",
-      "adults_in_hh",
+      "hh_size"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "household-children",
+    "title": "Children (<5 y.o.) in household",
+    "hint": null,
+    "summary": false,
+    "weight": "weight_hh",
+    "calc": "percentage",
+    "exclude_query": [" ", "nan"],
+    "exclude_chart": [],
+    "units": "%",
+    "gridspace": "half",
+    "orientation": "horizontal",
+    "category": "demographic",
+    "order": 70,
+    "sort_by": "answer ASC",
+    "columns": [
+      "children_under_5_years_old"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "household-adults",
+    "title": "Adults in household",
+    "hint": null,
+    "summary": false,
+    "weight": "weight_hh",
+    "calc": "percentage",
+    "exclude_query": [" ", "nan"],
+    "exclude_chart": [],
+    "units": "%",
+    "gridspace": "half",
+    "orientation": "horizontal",
+    "category": "demographic",
+    "order": 70,
+    "sort_by": "answer ASC",
+    "columns": [
+      "adults_in_hh"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "household-elders",
+    "title": "Elderly (> 60 y.o.) in household",
+    "hint": null,
+    "summary": false,
+    "weight": "weight_hh",
+    "calc": "percentage",
+    "exclude_query": [" ", "nan"],
+    "exclude_chart": [],
+    "units": "%",
+    "gridspace": "half",
+    "orientation": "horizontal",
+    "category": "demographic",
+    "order": 70,
+    "sort_by": "answer ASC",
+    "columns": [
       "people_over_60_years_old"
     ],
-    "chart": "multiple-stacked-bar"
+    "chart": "stacked-bar"
   },
   {
     "slug": "main-income-earner-sex",
@@ -1271,6 +1390,7 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 78,
+    "sort_by": "answer DESC",
     "columns": [
       "main_earner_gender"
     ],
