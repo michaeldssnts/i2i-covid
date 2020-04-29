@@ -1,14 +1,9 @@
 .c-footer {
-  position: relative;
-  min-height: 445px;
-  width: 100%;
-  z-index: 1;
   background-color: $color-5;
-  padding: 70px 20px;
+  padding: 70px 0;
 
   h2 {
     color: $white;
-    letter-spacing: -1px;
     text-align: center;
   }
 
@@ -21,8 +16,9 @@
     padding: 0;
 
     .partner-logo {
-      width: 250px;
-      height: 100px;
+      max-width: 250px;
+      max-height: 100px;
+      height: auto;
     }
   }
 }
