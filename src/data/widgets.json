@@ -11,7 +11,7 @@
     "units": "%",
     "gridspace": "one",
     "orientation": "horizontal",
-    "category": "awareness_and_behaviour",
+    "category": "health",
     "order": 2,
     "columns": [
       "covid19_induced_behaviour_changes_wash_hands_more",
@@ -43,8 +43,8 @@
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "health_and_food_security",
-    "order": 21,
+    "category": "health",
+    "order": 6,
     "sort_by": "answer DESC",
     "columns": [
       "access_to_medicine"
@@ -63,8 +63,8 @@
     "units": "%",
     "gridspace": "one",
     "orientation": "horizontal",
-    "category": "health_and_food_security",
-    "order": 22,
+    "category": "health",
+    "order": 7,
     "columns": [
       "reasons_for_not_accessing_medicine_did_not_have_enough_money",
       "reasons_for_not_accessing_medicine_medicines_unavailable",
@@ -90,8 +90,8 @@
     "units": "currency",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "health_and_food_security",
-    "order": 25,
+    "category": "food_security",
+    "order": 22,
     "columns": [
       "price_of_staple",
       "price_of_milk",
@@ -103,7 +103,7 @@
     "slug": "change-in-cost-of-medicine",
     "title": "Change in cost of medicine",
     "hint": "since March 1st",
-    "summary": true,
+    "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
     "exclude_query": [" ", "nan", "REFUSED"],
@@ -111,8 +111,8 @@
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "health_and_food_security",
-    "order": 20,
+    "category": "health",
+    "order": 5,
     "sort_by": "answer DESC",
     "columns": [
       "change_in_cost_of_medicine"
@@ -123,7 +123,7 @@
     "slug": "relative-food-availability",
     "title": "Relative food availability",
     "hint": "compared to last year",
-    "summary": false,
+    "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
     "exclude_query": [" ", "nan"],
@@ -131,8 +131,8 @@
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "health_and_food_security",
-    "order": 26,
+    "category": "food_security",
+    "order": 20,
     "sort_by": "answer DESC",
     "columns": [
       "relative_food_availability"
@@ -143,16 +143,16 @@
     "slug": "past-7-days-meals-eaten",
     "title": "Skipped meals",
     "hint": "past week",
-    "summary": false,
-    "weight": "weight_ind",
+    "summary": true,
+    "weight": "weight_hh",
     "calc": "percentage",
     "exclude_query": [" ", "nan"],
     "exclude_chart": [],
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "health_and_food_security",
-    "order": 27,
+    "category": "food_security",
+    "order": 21,
     "sort_by": "answer ASC",
     "columns": [
       "eaten_fewer_meals"
@@ -163,7 +163,7 @@
     "slug": "change-in-chronic-care",
     "title": "Change in chronic care",
     "hint": null,
-    "summary": false,
+    "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
     "exclude_query": [" ", "nan", "Not applicable", "REFUSED"],
@@ -171,8 +171,8 @@
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "health_and_food_security",
-    "order": 23,
+    "category": "health",
+    "order": 3,
     "sort_by": "answer DESC",
     "columns": [
       "change_in_chronic_care"
@@ -191,8 +191,8 @@
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "health_and_food_security",
-    "order": 24,
+    "category": "health",
+    "order": 4,
     "sort_by": "answer DESC",
     "columns": [
       "change_in_ease_of_getting_contraceptives"
@@ -211,7 +211,7 @@
     "units": "%",
     "gridspace": "one",
     "orientation": "horizontal",
-    "category": "awareness_and_behaviour",
+    "category": "health",
     "order": 1,
     "columns": [
       "understanding_of_covid19_a_weapon",
@@ -237,8 +237,8 @@
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "awareness_and_behaviour",
-    "order": 3,
+    "category": "health",
+    "order": 9,
     "sort_by": "answer DESC",
     "columns": [
       "increase_in_household_care_due_to_covid19"
@@ -257,8 +257,8 @@
     "units": "hrs",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "awareness_and_behaviour",
-    "order": 6,
+    "category": "health",
+    "order": 10,
     "columns": [
       "time_spent_caring_for_others",
       "time_spouse_spent_caring_for_others"
@@ -277,8 +277,8 @@
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "awareness_and_behaviour",
-    "order": 13,
+    "category": "safety",
+    "order": 28,
     "sort_by": "answer DESC",
     "columns": [
       "past_14_days_travel"
@@ -297,8 +297,8 @@
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "awareness_and_behaviour",
-    "order": 12,
+    "category": "safety",
+    "order": 27,
     "sort_by": "answer DESC",
     "columns": [
       "travel_restriction"
@@ -317,8 +317,8 @@
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "awareness_and_behaviour",
-    "order": 14,
+    "category": "safety",
+    "order": 29,
     "sort_by": "answer DESC",
     "columns": [
       "moved_location_since_march_1st"
@@ -337,8 +337,8 @@
     "units": "currency",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "awareness_and_behaviour",
-    "order": 5,
+    "category": "health",
+    "order": 13,
     "columns": [
       "amount_willing_to_pay_for_covid19_vaccine"
     ],
@@ -356,8 +356,8 @@
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "awareness_and_behaviour",
-    "order": 4,
+    "category": "health",
+    "order": 8,
     "sort_by": "answer DESC",
     "columns": [
       "likeliness_to_seek_medical_attention_mild_symptoms"
@@ -376,8 +376,8 @@
     "units": "",
     "gridspace": "one",
     "orientation": "horizontal",
-    "category": "awareness_and_behaviour",
-    "order": 10,
+    "category": "health",
+    "order": 14,
     "columns": [
       "number_of_contacts_with_children",
       "number_of_contacts_with_working_age_adults",
@@ -397,8 +397,8 @@
     "units": "att.",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "awareness_and_behaviour",
-    "order": 11,
+    "category": "health",
+    "order": 15,
     "columns": [
       "past_14_days_religious_group_attendance"
     ],
@@ -416,8 +416,8 @@
     "units": "%",
     "gridspace": "one",
     "orientation": "horizontal",
-    "category": "awareness_and_behaviour",
-    "order": 7,
+    "category": "health",
+    "order": 11,
     "sort_by": "value ASC",
     "columns": [
       "where_children_stay_when_school_is_closed"
@@ -428,7 +428,7 @@
     "slug": "safety-worries",
     "title": "Safety worries",
     "hint": null,
-    "summary": false,
+    "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
     "exclude_query": [" ", "nan", "REFUSED"],
@@ -436,8 +436,8 @@
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "awareness_and_behaviour",
-    "order": 8,
+    "category": "safety",
+    "order": 25,
     "sort_by": "answer ASC",
     "columns": [
       "safety_worries"
@@ -448,7 +448,7 @@
     "slug": "likelihood_to_go_out_at_night",
     "title": "Changes in crime occurrence",
     "hint": "past two weeks",
-    "summary": false,
+    "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
     "exclude_query": [" ", "nan", "REFUSED"],
@@ -456,8 +456,8 @@
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "awareness_and_behaviour",
-    "order": 9,
+    "category": "safety",
+    "order": 26,
     "sort_by": "answer DESC",
     "columns": [
       "increase_in_crime"
@@ -468,16 +468,16 @@
     "slug": "applications-to-economic-support",
     "title": "Applications to economic government support",
     "hint": "past month",
-    "summary": true,
-    "weight": "weight_ind",
+    "summary": false,
+    "weight": "weight_hh",
     "units": "%",
     "calc": "percentage",
     "exclude_query": [" ", "nan"],
     "exclude_chart": ["NO", "DON'T KNOW"],
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "government_support",
-    "order": 55,
+    "category": "financials",
+    "order": 58,
     "sort_by": "answer DESC",
     "columns": [
       "emergency_money_support"
@@ -488,16 +488,16 @@
     "slug": "applications-to-economic-support",
     "title": "Applications to food government support",
     "hint": "past month",
-    "summary": true,
-    "weight": "weight_ind",
+    "summary": false,
+    "weight": "weight_hh",
     "units": "%",
     "calc": "percentage",
     "exclude_query": [" ", "nan"],
     "exclude_chart": ["NO", "DON'T KNOW"],
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "government_support",
-    "order": 55,
+    "category": "financials",
+    "order": 59,
     "sort_by": "answer DESC",
     "columns": [
       "emergency_food_support"
@@ -508,7 +508,7 @@
     "slug": "government-support-preference",
     "title": "Government support preference",
     "hint": null,
-    "summary": true,
+    "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
     "exclude_query": [" ", "nan", "REFUSED"],
@@ -516,7 +516,7 @@
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "government_support",
+    "category": "financials",
     "order": 57,
     "sort_by": "value ASC",
     "columns": [
@@ -529,15 +529,15 @@
     "title": "Difficulty accessing government support",
     "hint": null,
     "summary": true,
-    "weight": "weight_ind",
+    "weight": "weight_hh",
     "calc": "percentage",
     "exclude_query": [" ", "nan", "Not applicable", "REFUSED"],
     "exclude_chart": ["NO", "DON'T KNOW"],
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "government_support",
-    "order": 58,
+    "category": "financials",
+    "order": 60,
     "sort_by": "answer DESC",
     "columns": [
       "difficulty_accessing_government_support"
@@ -556,8 +556,8 @@
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "government_support",
-    "order": 59,
+    "category": "financials",
+    "order": 61,
     "sort_by": "answer ASC",
     "columns": [
       "need_to_pay_bribes_to_get_government_support"
@@ -576,7 +576,7 @@
     "units": "currency",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "government_support",
+    "category": "financials",
     "order": 56,
     "columns": [
       "past_30_days_value_of_govt_support"
@@ -595,8 +595,8 @@
     "units": "currency",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "government_support",
-    "order": 60,
+    "category": "health",
+    "order": 12,
     "columns": [
       "amount_willing_to_accept_to_stay_home"
     ],
@@ -614,8 +614,8 @@
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "financial_lives",
-    "order": 47,
+    "category": "financials",
+    "order": 64,
     "columns": [
       "preferred_agent_open_closed"
     ],
@@ -633,8 +633,8 @@
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "financial_lives",
-    "order": 48,
+    "category": "financials",
+    "order": 65,
     "sort_by": "answer DESC",
     "columns": [
       "change_in_agent_fee"
@@ -653,8 +653,8 @@
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "financial_lives",
-    "order": 49,
+    "category": "financials",
+    "order": 66,
     "sort_by": "answer DESC",
     "columns": [
       "difficulty_sending_receiving_cash"
@@ -673,8 +673,8 @@
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "financial_lives",
-    "order": 50,
+    "category": "financials",
+    "order": 52,
     "sort_by": "answer DESC",
     "columns": [
       "recent_borrowing"
@@ -685,7 +685,7 @@
     "slug": "Source-of-borrowing",
     "title": "Source of borrowing",
     "hint": null,
-    "summary": true,
+    "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
     "exclude_query": [],
@@ -693,8 +693,8 @@
     "units": "%",
     "gridspace": "one",
     "orientation": "horizontal",
-    "category": "financial_lives",
-    "order": 52,
+    "category": "financials",
+    "order": 54,
     "columns": [
       "source_of_borrowing_government",
       "source_of_borrowing_friends_family_community",
@@ -715,7 +715,7 @@
     "slug": "missed-repayment",
     "title": "Missed repayment",
     "hint": "past two weeks",
-    "summary": false,
+    "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
     "exclude_query": [" ", "nan", "Not applicable", "REFUSED"],
@@ -723,8 +723,8 @@
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "financial_lives",
-    "order": 51,
+    "category": "financials",
+    "order": 53,
     "sort_by": "answer DESC",
     "columns": [
       "missed_repayment"
@@ -743,8 +743,8 @@
     "units": "%",
     "gridspace": "one",
     "orientation": "horizontal",
-    "category": "financial_lives",
-    "order": 53,
+    "category": "financials",
+    "order": 55,
     "columns": [
       "reason_for_missed_payment_need_money_for_essentials",
       "reason_for_missed_payment_prioritised_other_loan_payments",
@@ -768,8 +768,8 @@
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "financial_lives",
-    "order": 45,
+    "category": "financials",
+    "order": 63,
     "sort_by": "answer DESC",
     "columns": [
       "account_use_trends"
@@ -788,8 +788,8 @@
     "units": "hrs",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "livelihoods",
-    "order": 30,
+    "category": "earnings",
+    "order": 35,
     "columns": [
       "past_7_days_hours_worked"
     ],
@@ -799,7 +799,7 @@
     "slug": "past-7-days-hours-earned",
     "title": "Income earned",
     "hint": "past week (excludes not applicable)",
-    "summary": true,
+    "summary": false,
     "weight": "weight_ind",
     "calc": "average",
     "exclude_query": ["null", 0],
@@ -807,8 +807,8 @@
     "units": "currency",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "livelihoods",
-    "order": 31,
+    "category": "earnings",
+    "order": 36,
     "columns": [
       "past_7_days_hours_earned"
     ],
@@ -826,8 +826,8 @@
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "livelihoods",
-    "order": 32,
+    "category": "earnings",
+    "order": 37,
     "sort_by": "answer DESC",
     "columns": [
       "one_yr_income_comparison"
@@ -839,15 +839,15 @@
     "title": "Asset sales",
     "hint": "since March 1st",
     "summary": false,
-    "weight": "weight_ind",
+    "weight": "weight_hh",
     "calc": "percentage",
     "exclude_query": [" ", "nan", "REFUSED"],
     "exclude_chart": ["NO", "DO DON'T KNOW"],
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "livelihoods",
-    "order": 46,
+    "category": "financials",
+    "order": 68,
     "sort_by": "answer DESC",
     "columns": [
       "sold_assets"
@@ -858,7 +858,7 @@
     "slug": "financia-health-access-to-support",
     "title": "Emergency funds availability",
     "hint": null,
-    "summary": false,
+    "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
     "exclude_query": [" ", "nan", "REFUSED"],
@@ -866,8 +866,8 @@
     "units": "%",
     "gridspace": "one",
     "orientation": "horizontal",
-    "category": "livelihoods",
-    "order": 34,
+    "category": "financials",
+    "order": 50,
     "sort_by": "answer ASC",
     "columns": [
       "finhealth_possibility"
@@ -886,8 +886,8 @@
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "livelihoods",
-    "order": 35,
+    "category": "financials",
+    "order": 51,
     "sort_by": "answer DESC",
     "columns": [
       "finhealth_sources"
@@ -899,15 +899,15 @@
     "title": "Effective remittances",
     "hint": "past two weeks (excludes not applicable)",
     "summary": false,
-    "weight": "weight_ind",
+    "weight": "weight_hh",
     "calc": "average",
     "exclude_query": ["null", 0],
     "exclude_chart": [],
     "units": "currency",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "livelihoods",
-    "order": 33,
+    "category": "financials",
+    "order": 67,
     "columns": [
       "value_of_remittances_received",
       "value_of_remittances_sent"
@@ -918,7 +918,7 @@
     "slug": "main-income-earner-primary-income-source",
     "title": "Primary income source",
     "hint": null,
-    "summary": false,
+    "summary": true,
     "weight": "weight_hh",
     "calc": "percentage",
     "exclude_query": [" ", "nan", "REFUSED"],
@@ -926,8 +926,8 @@
     "units": "%",
     "gridspace": "one",
     "orientation": "horizontal",
-    "category": "livelihoods",
-    "order": 38,
+    "category": "earnings",
+    "order": 39,
     "sort_by": "answer ASC",
     "columns": [
       "main_income_earner_primary_income_source"
@@ -946,8 +946,8 @@
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "livelihoods",
-    "order": 36,
+    "category": "earnings",
+    "order": 41,
     "sort_by": "answer DESC",
     "columns": [
       "farm_labour_changes"
@@ -966,8 +966,8 @@
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "livelihoods",
-    "order": 37,
+    "category": "earnings",
+    "order": 42,
     "sort_by": "answer DESC",
     "columns": [
       "ease_of_selling_crops"
@@ -986,8 +986,8 @@
     "units": "%",
     "gridspace": "one",
     "orientation": "horizontal",
-    "category": "livelihoods",
-    "order": 40,
+    "category": "earnings",
+    "order": 45,
     "columns": [
       "current_economic_sector_cookingcleaningbabysittingdomesticwork",
       "current_economic_sector_farmingorraisinglivestock",
@@ -1018,8 +1018,8 @@
     "units": "%",
     "gridspace": "one",
     "orientation": "horizontal",
-    "category": "livelihoods",
-    "order": 39,
+    "category": "earnings",
+    "order": 43,
     "sort_by": "answer ASC",
     "columns": [
       "biggest_business_challenge"
@@ -1038,8 +1038,8 @@
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
-    "category": "livelihoods",
-    "order": 41,
+    "category": "earnings",
+    "order": 44,
     "columns": [
       "main_income_earner_jobs_change"
     ],
@@ -1057,8 +1057,8 @@
     "units": "%",
     "gridspace": "one",
     "orientation": "horizontal",
-    "category": "livelihoods",
-    "order": 42,
+    "category": "earnings",
+    "order": 46,
     "columns": [
       "previous_economic_sector_cookingcleaningbabysittingdomesticwork",
       "previous_economic_sector_farmingorraisinglivestock",
@@ -1077,46 +1077,6 @@
     "chart": "multiple-stacked-bar"
   },
   {
-    "slug": "main-language",
-    "title": "Main language",
-    "hint": null,
-    "summary": false,
-    "weight": "weight_ind",
-    "calc": "percentage",
-    "exclude_query": [" ", "nan"],
-    "exclude_chart": [],
-    "units": "%",
-    "gridspace": "one",
-    "orientation": "vertical",
-    "category": "demographic",
-    "order": 76,
-    "sort_by": "value DESC",
-    "columns": [
-      "mainlanguage"
-    ],
-    "chart": "multiple-bar"
-  },
-  {
-    "slug": "age-categories",
-    "title": "Age",
-    "hint": null,
-    "summary": false,
-    "weight": "weight_ind",
-    "calc": "percentage",
-    "exclude_query": [" ", "nan"],
-    "exclude_chart": [],
-    "units": "%",
-    "gridspace": "half",
-    "orientation": "horizontal",
-    "category": "demographic",
-    "order": 65,
-    "sort_by": "answer ASC",
-    "columns": [
-      "ps5_age_group"
-    ],
-    "chart": "multiple-bar"
-  },
-  {
     "slug": "sex",
     "title": "Sex",
     "hint": null,
@@ -1129,7 +1089,7 @@
     "exclude_chart": [],
     "units": "%",
     "category": "demographic",
-    "order": 66,
+    "order": 76,
     "sort_by": "answer DESC",
     "columns": [
       "sex"
@@ -1149,7 +1109,7 @@
     "gridspace": "one",
     "orientation": "vertical",
     "category": "demographic",
-    "order": 72,
+    "order": 82,
     "sort_by": "value DESC",
     "columns": [
       "region"
@@ -1169,7 +1129,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "demographic",
-    "order": 71,
+    "order": 81,
     "sort_by": "answer DESC",
     "columns": [
       "urban_city"
@@ -1189,7 +1149,7 @@
     "gridspace": "one",
     "orientation": "vertical",
     "category": "demographic",
-    "order": 73,
+    "order": 83,
     "sort_by": "value DESC",
     "columns": [
       "city_name"
@@ -1209,7 +1169,7 @@
     "gridspace": "one",
     "orientation": "vertical",
     "category": "demographic",
-    "order": 74,
+    "order": 84,
     "sort_by": "value DESC",
     "columns": [
       "nearest_city"
@@ -1229,7 +1189,7 @@
     "gridspace": "half",
     "orientation": "vertical",
     "category": "demographic",
-    "order": 75,
+    "order": 85,
     "sort_by": "answer ASC",
     "columns": [
       "nearest_city_distance"
@@ -1249,7 +1209,7 @@
     "gridspace": "one",
     "orientation": "vertical",
     "category": "demographic",
-    "order": 67,
+    "order": 87,
     "sort_by": "answer ASC",
     "columns": [
       "education_level"
@@ -1269,7 +1229,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "demographic",
-    "order": 68,
+    "order": 78,
     "sort_by": "answer DESC",
     "columns": [
       "relationship_status"
@@ -1289,7 +1249,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "demographic",
-    "order": 69,
+    "order": 79,
     "sort_by": "answer DESC",
     "columns": [
       "live_with_spouse"
@@ -1309,7 +1269,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "demographic",
-    "order": 70,
+    "order": 80,
     "sort_by": "answer ASC",
     "columns": [
       "hh_size"
@@ -1329,7 +1289,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "demographic",
-    "order": 70,
+    "order": 80,
     "sort_by": "answer ASC",
     "columns": [
       "children_under_5_years_old"
@@ -1349,7 +1309,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "demographic",
-    "order": 70,
+    "order": 80,
     "sort_by": "answer ASC",
     "columns": [
       "adults_in_hh"
@@ -1369,7 +1329,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "demographic",
-    "order": 70,
+    "order": 80,
     "sort_by": "answer ASC",
     "columns": [
       "people_over_60_years_old"
@@ -1389,7 +1349,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "demographic",
-    "order": 78,
+    "order": 88,
     "sort_by": "answer DESC",
     "columns": [
       "main_earner_gender"
@@ -1412,6 +1372,66 @@
     "order": 79,
     "columns": [
       "main_earner_age_group"
+    ],
+    "chart": "multiple-bar"
+  },
+  {
+    "slug": "main-income-earner",
+    "title": "Main income earner",
+    "hint": null,
+    "summary": false,
+    "weight": "weight_ind",
+    "calc": "percentage",
+    "exclude_query": [" ", "nan", "REFUSED"],
+    "exclude_chart": ["DON'T KNOW"],
+    "units": "%",
+    "gridspace": "half",
+    "orientation": "horizontal",
+    "category": "earnings",
+    "order": 38,
+    "sort_by": "answer DESC",
+    "columns": [
+      "main_income_earner"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "account-ownership",
+    "title": "Account ownership",
+    "hint": null,
+    "summary": false,
+    "weight": "weight_ind",
+    "calc": "percentage",
+    "exclude_query": [" ", "nan", "REFUSED"],
+    "exclude_chart": ["DON'T KNOW"],
+    "units": "%",
+    "gridspace": "half",
+    "orientation": "horizontal",
+    "category": "financials",
+    "order": 62,
+    "sort_by": "answer DESC",
+    "columns": [
+      "account_ownership_validation"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "former-closest-city",
+    "title": "Former closest city",
+    "hint": null,
+    "summary": false,
+    "weight": "weight_ind",
+    "calc": "percentage",
+    "exclude_query": [" ", "nan", "REFUSED"],
+    "exclude_chart": [],
+    "units": "%",
+    "gridspace": "half",
+    "orientation": "horizontal",
+    "category": "safety",
+    "order": 30,
+    "sort_by": "value ASC",
+    "columns": [
+      "closest_city_to_where_used_to_live"
     ],
     "chart": "multiple-bar"
   }
