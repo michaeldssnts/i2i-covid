@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Subscribe from 'components/subscribe';
 import logo from './logo.svg';
-import DownloadData from 'components/download/components';
+import DownloadForm from 'components/download-form';
 
 const Header = ({ page }) => (
   <header className="c-header">
@@ -18,7 +18,7 @@ const Header = ({ page }) => (
           })}
         >
           <Subscribe />
-          <DownloadData />
+          <DownloadForm />
         </div>
       </div>
     </div>
