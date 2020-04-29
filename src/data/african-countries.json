@@ -85,6 +85,11 @@
     "currency_iso": "SZL"
   },
   {
+    "name": "Kenya",
+    "iso": "KEN",
+    "currency_iso": "KSH"
+  },
+  {
     "name": "Comoros",
     "iso": "COM",
     "currency_iso": "KMF"
@@ -133,11 +138,6 @@
     "name": "Guinea-Bissau",
     "iso": "GNB",
     "currency_iso": "XOF"
-  },
-  {
-    "name": "Kenya",
-    "iso": "KEN",
-    "currency_iso": "KES"
   },
   {
     "name": "Niger",
