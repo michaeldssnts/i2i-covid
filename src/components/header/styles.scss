@@ -15,6 +15,10 @@
 
     .logo-img {
       height: 66px;
+
+      @media screen and (max-width: map-get($breakpoints, sm)) {
+        max-width: 320px;
+      }
     }
 
     .header-buttons {
