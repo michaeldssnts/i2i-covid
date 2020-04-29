@@ -55,7 +55,12 @@ export const getWidgetTheme = ({ calc, gridspace, units, iso }) => {
     yAxis: {
       width: 80,
       type: 'number',
-      domain: [0, 'auto'],
+      domain: [
+        0,
+        calc === 'average'
+          ? (dataMax) => Math.round(dataMax)
+          : (dataMax) => (dataMax < 100 ? Math.round(dataMax / 10) * 10 : 100),
+      ],
       tickLine: false,
       axisLine: false,
       tickFormatter: formatNumber,
