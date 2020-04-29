@@ -2,19 +2,11 @@ import React, { useState } from 'react';
 import ReactSelect from 'react-select';
 import PropTypes from 'prop-types';
 
-import './styles.scss';
+const Select = ({ options, placeholder, defaultValue }) => {
+  const [selectedOption, setOption] = useState(defaultValue);
 
-const Select = ({ options, option }) => {
-  const [selectedOption, changeOption] = useState(option);
-
-  const handleChange = () => {
-    changeOption(selectedOption);
-  };
-
-  const customStyles = {
-    control: () => ({
-      width: `${selectedOption.label.length * 35 + 35}px`,
-    }),
+  const handleChange = (value) => {
+    setOption(value);
   };
 
   return (
@@ -22,9 +14,10 @@ const Select = ({ options, option }) => {
       className="c-select"
       classNamePrefix="react-select"
       options={options}
-      onChange={handleChange}
+      onChange={() => handleChange}
+      placeholder={placeholder}
       value={selectedOption}
-      styles={customStyles}
+      defaultValue={defaultValue}
       dropdownSeparator={null}
     />
   );
@@ -32,13 +25,12 @@ const Select = ({ options, option }) => {
 
 Select.propTypes = {
   options: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
-  value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-  onChange: PropTypes.func,
+  placeholder: PropTypes.string,
+  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };
 
 Select.defaultProps = {
-  value: null,
-  onChange: () => null,
+  placeholder: '',
 };
 
 export default Select;

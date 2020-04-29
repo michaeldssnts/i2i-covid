@@ -44,12 +44,24 @@ const Share = ({ slug, iso }) => {
       <Button className="-border-color-2 -small" onClick={toggleModal}>
         Share
       </Button>
-      <Modal title="Share" isOpen={isOpen} onRequestClose={() => toggleModal(false)}>
-        <div className="share-content">
-          <h3 className="label">Public url to share</h3>
-          <div className="share-control">
+      <Modal
+        title="Share"
+        isOpen={isOpen}
+        onRequestClose={() => toggleModal(false)}
+        actionsComponent={() => (
+          <div className="c-filters-action-buttons">
+            <Button className="-border-color-1" onClick={toggleModal}>
+              Close
+            </Button>
+          </div>
+        )}
+      >
+        <div className="form-fields">
+          <label>Public url to share</label>
+          <div className="share-content">
             <input ref={inputElUrl} value={url} readOnly />
-            <div className="share-buttons">
+
+            <div className="share-controls">
               <a
                 href={`http://www.facebook.com/sharer/sharer.php?u=${url}`}
                 target="_blank"
@@ -86,22 +98,20 @@ const Share = ({ slug, iso }) => {
               </button>
             </div>
           </div>
-
-          <h3 className="label">Code to embed</h3>
-          <div className="share-control">
+        </div>
+        <div className="form-fields">
+          <label>Code to embed</label>
+          <div className="share-content">
             <input
               ref={inputElEmbed}
               value={`<iframe src="${url}" width="100%" height="500px" frameBorder="0" />`}
               readOnly
             />
-            <button className="copy-btn" onClick={() => handleClick('Embed')}>
-              {isCopied ? 'Copied' : 'Copy'}
-            </button>
-          </div>
-          <div className="modal-button">
-            <Button onClick={toggleModal} className="-color-1">
-              Close
-            </Button>
+            <div className="share-controls">
+              <button className="copy-btn" onClick={() => handleClick('Embed')}>
+                {isCopied ? 'Copied' : 'Copy'}
+              </button>
+            </div>
           </div>
         </div>
       </Modal>

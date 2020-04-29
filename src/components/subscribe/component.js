@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import Button from 'components/button';
 import Modal from 'components/modal';
+import Select from 'components/select';
+import countries from 'pages/home/constants'; //make dynamic when we get countries
 
 const Subscribe = () => {
   const [isOpen, setState] = useState(false);
@@ -9,13 +11,31 @@ const Subscribe = () => {
     setState(!isOpen);
   };
 
+  const countryOptions = countries.map(({ label, iso }) => {
+    return {
+      label,
+      value: iso,
+    };
+  });
+
   return (
     <div className="c-subscribe">
       <Button className="-border-color-1 btn" onClick={toggleModal}>
         Subscribe
       </Button>
 
-      <Modal isOpen={isOpen} onRequestClose={() => toggleModal(false)} title="Subscribe">
+      <Modal
+        isOpen={isOpen}
+        onRequestClose={() => toggleModal(false)}
+        title="Subscribe"
+        actionsComponent={() => (
+          <div className="c-filters-action-buttons">
+            <Button className="-border-color-1" type="submit" onClick={toggleModal}>
+              Notify me
+            </Button>
+          </div>
+        )}
+      >
         <div className="subscribe-modal">
           <h3 color="#000">Get notified on new data upload</h3>
           <form
@@ -45,13 +65,15 @@ const Subscribe = () => {
               </div>
               <div className="form-fields">
                 <label>Country </label>
-                <input aria-label="Country" id="fieldtjdudju" maxLength="200" name="cm-f-tjdudju" />
+                <Select
+                  name="cm-f-tjdudju"
+                  aria-label="Country"
+                  id="fieldtjdudju"
+                  maxLength="200"
+                  options={countryOptions}
+                  placeholder="Subscribe to an specific country"
+                />
               </div>
-            </div>
-            <div className="button">
-              <Button className="-color-1" type="submit">
-                Notify me
-              </Button>
             </div>
           </form>
         </div>

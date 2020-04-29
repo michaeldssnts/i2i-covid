@@ -4,7 +4,7 @@
     <title>social-email-green</title>
     <desc>Created with Sketch.</desc>
     <g id="social-email-green" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <rect fill="#FFFFFF" x="0" y="0" width="20" height="20"></rect>
+        <rect fill="none" x="0" y="0" width="20" height="20"></rect>
         <path d="M3,4 L18,4 L10.5,10 L3,4 Z M18,5 L18,13.7445158 L14.9099564,9.96369499 L13.6625148,10.948357 L16.9738998,15 L3.0235367,15 L6.31658839,10.9449044 L5.06602259,9.96407727 L2,13.739607 L2,5 L10,11.2896171 L18,5 Z" id="share-email" fill="#257B83"></path>
     </g>
 </svg>
