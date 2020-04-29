@@ -45,7 +45,7 @@ export const parseStackedChart = (data) => {
     return obj;
   });
 
-  const categories = map(data, 'answer').map((d) => d.toString());
+  const categories = map(data, 'answer').map((d) => d && d.toString());
 
   return {
     config: {
