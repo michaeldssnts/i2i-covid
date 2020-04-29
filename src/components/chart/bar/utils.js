@@ -57,9 +57,17 @@ export const getWidgetTheme = ({ calc, gridspace, units, iso, isMobileScreen }) 
       type: 'number',
       domain: [
         0,
-        calc === 'average'
-          ? (dataMax) => Math.round(dataMax)
-          : (dataMax) => (dataMax < 100 ? Math.round(dataMax / 10) * 10 : 100),
+        (dataMax) => {
+          if (calc === 'average') {
+            return Math.round(dataMax);
+          }
+          if (calc === 'percentage') {
+            if (dataMax < 10) return dataMax;
+            if (dataMax > 100) return Math.round(dataMax);
+            return Math.round(dataMax / 10) * 10;
+          }
+          return dataMax;
+        },
       ],
       tickLine: false,
       axisLine: false,
