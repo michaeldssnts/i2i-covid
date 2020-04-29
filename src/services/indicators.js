@@ -1,6 +1,6 @@
 import cartoApi from 'utils/carto-api';
 
-export const fetchIndicators = ({ title, columns, weight, calc, iso, exclude_query }, filters = {}) => {
+export const fetchIndicators = ({ columns, weight, calc, iso, exclude_query }, filters = {}) => {
   let query;
 
   const filtersQuery = Object.keys(filters)

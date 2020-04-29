@@ -9,7 +9,7 @@ import { fetchIndicators } from 'services/indicators';
 import { getWidgetProps } from './utils.js';
 
 const Widget = (widgetSpec) => {
-  const { title, slug, filters } = widgetSpec;
+  const { title, slug, filters, hint } = widgetSpec;
   const [{ data, loading, error }] = useAxios(fetchIndicators(widgetSpec, filters));
   const widgetProps = data && getWidgetProps(data.rows, widgetSpec);
 
@@ -19,6 +19,7 @@ const Widget = (widgetSpec) => {
   return (
     <div className="c-widget">
       <h2 className="h3">{title}</h2>
+      <p>{hint}</p>
       {loading && <Spinner loading />}
       {!loading && error && <div className="alert alert-warning">Something was wrong.</div>}
       {!loading && data && !error && (
