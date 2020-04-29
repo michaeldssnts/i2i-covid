@@ -1,19 +1,11 @@
 import cartoApi from 'utils/carto-api';
 
-export const fetchIndicators = ({ columns, weight, calc, iso, exclude_query }, filters = {}) => {
+export const fetchIndicators = ({ title, columns, weight, calc, iso, exclude_query }, filters = {}) => {
   let query;
-
-  const undefinedValues = exclude_query
-    .filter((value) => String(value).toLowerCase() !== 'null')
-    .map((param) => {
-      if (param !== '' && param !== ' ' && typeof Number(param) === 'number') return Number(param);
-      return `'${param}'`;
-    });
 
   const filtersQuery = Object.keys(filters)
     .map((filterKey) => {
       const filter = filters[filterKey];
-
       if (filter && filter.length) {
         return ` AND ${filterKey} IN ('${filter.join("', '")}')`;
       }
@@ -28,6 +20,15 @@ export const fetchIndicators = ({ columns, weight, calc, iso, exclude_query }, f
     const valuesQuery = columns
       .map((column) => `(a.${column}, '${column}', a.update_date)`)
       .join(', ');
+    const undefinedValues = exclude_query
+      .filter((value) => String(value).toLowerCase() !== 'null')
+      .map((param) => {
+        const paramToNumber = Number(param);
+        if (param !== '' && param !== ' ' && !isNaN(paramToNumber)) {
+          return Number(paramToNumber);
+        }
+        return param;
+      });
     const whereQuery = columns
       .map((column) => {
         if (undefinedValues.length) {
@@ -61,6 +62,9 @@ export const fetchIndicators = ({ columns, weight, calc, iso, exclude_query }, f
     const valuesQuery = columns
       .map((column) => `(a.${column}, '${column}', a.${weight}, a.update_date)`)
       .join(', ');
+    const undefinedValues = exclude_query
+      .filter((value) => value && String(value).toLowerCase() !== 'null')
+      .map((param) => `'${param}'`);
     const whereQuery = undefinedValues.length
       ? `answer NOT IN (${undefinedValues.join(',')}) AND`
       : '';
