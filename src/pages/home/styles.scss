@@ -1,103 +1,152 @@
 .l-homepage {
+  display: flex;
   position: relative;
   min-height: 100vh;
-
   background-repeat: no-repeat;
-  background-image: url(./covid-bg.png), linear-gradient(135deg, #20727E 0%, #2F939C 100%);
   background-color: $color-1;
   background-position: center;
-}
 
-.l-homepage-welcome {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  max-width: 370px;
-  color: white;
-
-  $border-style: 10px solid white;
-
-  > .welcome-top,
-  > .welcome-bottom {
-    height: 60px;
-    border-left: $border-style;
-    border-right: $border-style;
-    border-top: $border-style;
+  @media screen and (min-width: map-get($breakpoints, lg)) {
+    display: block;
+    flex-direction: row;
+    background-image: url(./covid-bg.png), linear-gradient(135deg, #20727E 0%, #2F939C 100%);
   }
 
-  > .welcome-content {
-    border-right: $border-style;
-    font-size: 18px;
-    letter-spacing: 0;
-    line-height: 25px;
 
-    h1 {
-      margin: 0;
+  .homepage-wrapper {
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-1;
+    width: 100%;
 
-      color: $color-2;
-      font-size: 60px;
-      font-weight: bold;
-      letter-spacing: -2.16px;
-      line-height: 65px;
-      text-transform: uppercase;
+    @media screen and (min-width: map-get($breakpoints, lg)) {
+      display: block;
+      flex-direction: row;
+      margin-top: 0;
     }
 
-    h2 {
-      display: inline-block;
-      padding: 2px 15px;
-      margin: 0;
-      background-color: white;
+    .l-homepage-welcome {
+      position: relative;
+      max-width: 370px;
+      color: white;
+      box-sizing: border-box;
+      $border-style: 10px solid white;
+      border: $border-style;
+      border-left: 0;
 
-      color: $color-1;
-      font-size: 16px;
-      font-weight: bold;
-      letter-spacing: 1.14px;
-      line-height: 14px;
-      text-transform: uppercase;
-    }
-  }
+      > .welcome-top,
+      > .welcome-bottom {
+        height: 50px;
+        border-left: $border-style;
+      }
 
-  > .welcome-bottom {
-    border-top: 0;
-    border-bottom: $border-style;
-  }
-}
+      > .welcome-content {
+        font-size: 18px;
+        letter-spacing: 0;
+        line-height: 25px;
 
-.l-homepage-countries-nav {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin-top: 17px;
+        h1 {
+          margin: 0;
 
-  > ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+          color: $color-2;
+          font-size: 60px;
+          font-weight: bold;
+          letter-spacing: -2.16px;
+          line-height: 65px;
+          text-transform: uppercase;
+        }
 
-    > li {
-      margin: 25px 0;
-      padding: 0;
+        h2 {
+          display: inline-block;
+          padding: 2px 15px;
+          margin: 0;
+          background-color: white;
 
-      > a,
-      > span {
-        display: block;
-        color: $color-2;
-        font-size: 35px;
-        font-weight: bold;
-        letter-spacing: -1.26px;
-        text-align: right;
-
-        &[disabled] {
-          color: white;
-          opacity: 0.3;
+          color: $color-1;
+          font-size: 16px;
+          font-weight: bold;
+          letter-spacing: 1.14px;
+          line-height: 14px;
+          text-transform: uppercase;
         }
       }
 
-      > span {
-        color: white;
-        opacity: 0.3;
+      @media screen and (min-width: map-get($breakpoints, lg)) {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+
+    .l-homepage-countries-nav {
+      position: relative;
+      background-repeat: no-repeat;
+      background-image: url(./mbl-bg1.png), linear-gradient($color-1 20%, #24a3af 100%, #2f939c 100%);
+      background-color: $color-1;
+      background-position: center;
+      background-color: $color-1;
+      background-position: top;
+      background-size: cover;
+      padding: 40px;
+      min-width: 100vw;
+
+      > ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+
+        > li {
+          margin: 13px 0;
+          padding: 0;
+
+          > a,
+          > span {
+            display: block;
+            color: $color-2;
+            font-size: 35px;
+            font-weight: bold;
+            letter-spacing: -1.26px;
+            text-align: center;
+
+            @media screen and (min-width: map-get($breakpoints, lg)) {
+              text-align: right;
+            }
+
+            &[disabled] {
+              color: white;
+              opacity: 0.3;
+            }
+          }
+
+          > span {
+            color: white;
+            opacity: 0.3;
+          }
+        }
+      }
+
+      @media screen and (min-width: map-get($breakpoints, lg)) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin-top: 17px;
+        background-image: none;
+        background-color: transparent;
+        min-width: 0;
       }
     }
   }
+
+
+  @media screen and (min-width: map-get($breakpoints, lg)) {
+    display: block;
+  }
 }
+
+
+
+
