@@ -4,8 +4,10 @@ import classnames from 'classnames';
 import MediaQuery from 'react-responsive';
 import { breakpoints } from 'utils/responsive';
 import Subscribe from 'components/subscribe';
-import logo from './logo.svg';
 import DownloadForm from 'components/download-form';
+import PageSwitch from 'components/page-switch';
+
+import logo from './logo.svg';
 
 const Header = ({ page }) => (
   <header className="c-header">
@@ -20,6 +22,7 @@ const Header = ({ page }) => (
           })}
         >
           <MediaQuery minWidth={breakpoints.md - 1}>
+            <PageSwitch />
             <Subscribe />
             <DownloadForm />
           </MediaQuery>

@@ -11,7 +11,7 @@ import Summary from 'components/summary';
 import { fetchCategories } from 'services/categories';
 import useAxios from 'axios-hooks';
 
-const CountryPage = ({ iso, current }) => {
+const CountryPage = ({ iso, current, page }) => {
   const [{ data, loading }] = useAxios(fetchCategories());
   const categories = data && data.rows ? data.rows : [];
   const { name, description } = categories.find(({ slug }) => slug === current) || {};
@@ -19,7 +19,7 @@ const CountryPage = ({ iso, current }) => {
   return (
     <div className="l-country">
       <Header />
-      <Hero iso={iso} />
+      <Hero iso={iso} page={page} />
 
       <div className="country-content">
         <div className="container country-content-decoration" />
@@ -56,6 +56,7 @@ const CountryPage = ({ iso, current }) => {
 CountryPage.propTypes = {
   iso: PropTypes.string.isRequired,
   current: PropTypes.string.isRequired,
+  page: PropTypes.string.isRequired,
 };
 
 export default CountryPage;
