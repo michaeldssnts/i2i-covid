@@ -24,7 +24,7 @@ export const filtersData = [
       { label: '25-34', value: '25-34' },
       { label: '35-44', value: '35-44' },
       { label: '45-54', value: '45-54' },
-      { label: '+55', value: '55+' },
+      { label: '+55', value: '55' },
     ],
   },
 ];
