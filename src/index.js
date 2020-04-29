@@ -1,17 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { Provider } from 'react-redux';
+import configureStore from './config/store';
+import Pages from './pages';
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+import 'styles/index.scss';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-serviceWorker.unregister();
+const { store } = configureStore();
+
+const App = () => {
+  return (
+    <Provider store={store}>
+      <Pages className="l-pages" />
+    </Provider>
+  );
+};
+
+ReactDOM.render(<App />, document.getElementById('root'));

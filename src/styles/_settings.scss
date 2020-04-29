@@ -1,0 +1,30 @@
+// Colors
+$white: #fff !default;
+$black: #000 !default;
+
+// colors
+$color-1: #257b83;
+$color-2: #f9d031;
+$color-3: #001d22;
+$color-4: #2F939C;
+$color-5: #001D22;
+
+$body-bg: #F5F8F8;
+$border-color: rgba($color-3, 0.1);
+
+// Font
+$font-family-1: 'Open Sans', sans-serif;
+
+// Breakpoints
+// https://getbootstrap.com/docs/4.0/layout/overview/#responsive-breakpoints
+$sm: 576px;
+$md: 768px;
+$lg: 1024px;
+$xlg: 1200px;
+
+$breakpoints: (
+  sm: $sm,
+  md: $md,
+  lg: $lg,
+  xlg: $xlg
+);

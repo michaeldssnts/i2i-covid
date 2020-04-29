@@ -1,0 +1,54 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: $body-bg;
+
+  color: $color-3;
+  font-family: $font-family-1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: $color-1;
+  font-weight: bold;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// Titles
+h1, .h1,
+h2, .h2,
+h3, .h3 {
+  color: $black;
+  margin-bottom: 1rem;
+}
+
+h1, .h1,
+h2, .h2 {
+  font-weight: bold;
+  line-height: 1;
+}
+
+h1, .h1 {
+  font-size: 64px;
+}
+
+h2, .h2 {
+  font-size: 35px;
+  margin-bottom: 2rem;
+}
+
+h3, .h3 {
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 1.5;
+}

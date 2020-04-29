@@ -1,0 +1,51 @@
+.c-header {
+  position: absolute;
+  padding: 10px 0;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+
+  .header {
+    height: 66px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo-img {
+      height: 66px;
+    }
+
+    .header-buttons {
+      align-items: center;
+      margin: 20px 0;
+      display: none;
+
+      > div {
+
+        &:not(:last-of-type) {
+          margin-right: 20px;
+        }
+      }
+
+      @media screen and (min-width: map-get($breakpoints, lg)) {
+        display: flex;
+        margin: 0;
+
+        &.-hidden {
+          display: none;
+        }
+      }
+
+      @media screen and (min-width: map-get($breakpoints, sm)) {
+        display: flex;
+      }
+    }
+
+
+    @media screen and (min-width: map-get($breakpoints, lg)) {
+      flex-direction: row;
+    }
+  }
+}
