@@ -84,7 +84,7 @@
   {
     "slug": "price-of-basics",
     "title": "Price of essentials",
-    "hint": null,
+    "hint": "(average)",
     "published": true,
     "summary": false,
     "weight": "weight_ind",
@@ -259,7 +259,7 @@
   {
     "slug": "time-spent-caring-for-others",
     "title": "Time spent caring for others",
-    "hint": "past 24h (excludes 0h)",
+    "hint": "past 24h (average, excludes 0h)",
     "published": true,
     "summary": false,
     "weight": "weight_ind",
@@ -272,8 +272,7 @@
     "category": "health",
     "order": 10,
     "columns": [
-      "time_spent_caring_for_others",
-      "time_spouse_spent_caring_for_others"
+      "time_spent_caring_for_others"
     ],
     "chart": "single-bar"
   },
@@ -343,8 +342,8 @@
   {
     "slug": "amount-willing-to-pay-for-covid-19-vaccine",
     "title": "Amount willing to pay for Covid-19 vaccine",
-    "hint": null,
-    "published": true,
+    "hint": "(average)",
+    "published": false,
     "summary": false,
     "weight": "weight_ind",
     "calc": "average",
@@ -384,7 +383,7 @@
   {
     "slug": "number-of-contacts",
     "title": "Yesterday's number of contacts with...",
-    "hint": null,
+    "hint": "(average)",
     "published": true,
     "summary": false,
     "weight": "weight_ind",
@@ -406,7 +405,7 @@
   {
     "slug": "religious-group-attendance",
     "title": "Religious group attendance",
-    "hint": "past two weeks",
+    "hint": "past two weeks (average, excludes 0 attendance)",
     "published": true,
     "summary": false,
     "weight": "weight_ind",
@@ -594,7 +593,7 @@
   {
     "slug": "government-support-during-past-moth",
     "title": "Government support",
-    "hint": "past month (excludes not applicable)",
+    "hint": "past month (average, excludes not applicable)",
     "published": true,
     "summary": false,
     "weight": "weight_hh",
@@ -614,7 +613,7 @@
   {
     "slug": "amount-willing-to-accept-to-stay-home",
     "title": "Amount willing to accept to stay home",
-    "hint": null,
+    "hint": "(average)",
     "published": true,
     "summary": false,
     "weight": "weight_ind",
@@ -816,7 +815,7 @@
   {
     "slug": "past-7-days-hours-worked",
     "title": "Hours worked",
-    "hint": "past week (excludes not applicable)",
+    "hint": "past week (average, excludes not applicable)",
     "published": true,
     "summary": false,
     "weight": "weight_ind",
@@ -836,7 +835,7 @@
   {
     "slug": "past-7-days-hours-earned",
     "title": "Income earned",
-    "hint": "past week (excludes not applicable)",
+    "hint": "past week (average, excludes not applicable)",
     "published": true,
     "summary": true,
     "weight": "weight_ind",
@@ -940,7 +939,7 @@
   {
     "slug": "value-of-remittances",
     "title": "Effective remittances",
-    "hint": "past two weeks (excludes not applicable)",
+    "hint": "past two weeks (average, excludes not applicable)",
     "published": true,
     "summary": false,
     "weight": "weight_hh",
@@ -1035,7 +1034,7 @@
     "gridspace": "one",
     "orientation": "horizontal",
     "category": "earnings",
-    "order": 45,
+    "order": 44,
     "columns": [
       "current_economic_sector_cookingcleaningbabysittingdomesticwork",
       "current_economic_sector_farmingorraisinglivestock",
@@ -1089,7 +1088,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "earnings",
-    "order": 44,
+    "order": 45,
     "columns": [
       "main_income_earner_jobs_change"
     ],
@@ -1207,7 +1206,7 @@
     "order": 81,
     "sort_by": "answer DESC",
     "columns": [
-      "urban_city"
+      "ur"
     ],
     "chart": "multiple-bar"
   },
