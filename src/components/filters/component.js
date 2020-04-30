@@ -17,7 +17,7 @@ const Filters = ({ location, filters, resetFilters, setFilter }) => {
       queryFilters[key] = isArray(query[key]) && query[key].length ? query[key] : [query[key]];
     });
   }
-  
+
   const [filtersResult, setFiltersResult] = useState({ ...filters, ...queryFilters });
   const [isOpen, toggleModal] = useState(false);
 
