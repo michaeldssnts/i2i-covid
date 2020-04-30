@@ -41,12 +41,13 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "exclude_query": [" ", "nan", "REFUSED"],
-    "exclude_chart": ["No", "Don't know"],
+    "exclude_chart": [],
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "health",
     "order": 6,
+    "category_order": ["YES", "NO", "DON'T KNOW"],
     "sort_by": "answer DESC",
     "columns": [
       "access_to_medicine"
@@ -118,6 +119,7 @@
     "orientation": "horizontal",
     "category": "health",
     "order": 5,
+    "category_order": ["Lot more", "Little more", "The same", "Little less", "Much less", "DON'T KNOW"],
     "sort_by": "answer DESC",
     "columns": [
       "change_in_cost_of_medicine"
@@ -139,6 +141,7 @@
     "orientation": "horizontal",
     "category": "food_security",
     "order": 20,
+    "category_order": ["Lot more", "Little more", "The same", "Little less", "Much less", "DON'T KNOW"],
     "sort_by": "answer DESC",
     "columns": [
       "relative_food_availability"
@@ -202,6 +205,7 @@
     "orientation": "horizontal",
     "category": "health",
     "order": 4,
+    "category_order": ["Easier", "The same", "Harder", "DON'T KNOW"],
     "sort_by": "answer DESC",
     "columns": [
       "change_in_ease_of_getting_contraceptives"
@@ -250,6 +254,7 @@
     "orientation": "horizontal",
     "category": "health",
     "order": 9,
+    "category_order": ["YES", "No more than usual", "NO", "DON'T KNOW"],
     "sort_by": "answer DESC",
     "columns": [
       "increase_in_household_care_due_to_covid19"
@@ -374,6 +379,7 @@
     "orientation": "horizontal",
     "category": "health",
     "order": 8,
+    "category_order": ["Very likely", "Little likely", "Not at all likely", "DON'T KNOW"],
     "sort_by": "answer DESC",
     "columns": [
       "likeliness_to_seek_medical_attention_mild_symptoms"
@@ -437,6 +443,7 @@
     "orientation": "horizontal",
     "category": "health",
     "order": 11,
+    "category_order": ["At home with parent", "At home with relative or friend", "At home by themselves", "Go with family member to work", "Outside the home with friend or relative", "Daycare / Childcare", "Other [specify]", "DON'T KNOW"],
     "sort_by": "value ASC",
     "columns": [
       "where_children_stay_when_school_is_closed"
@@ -479,6 +486,7 @@
     "orientation": "horizontal",
     "category": "safety",
     "order": 26,
+    "category_order": ["Increased", "The same", "Decreased", "DON'T KNOW"],
     "sort_by": "answer DESC",
     "columns": [
       "increase_in_crime"
@@ -487,7 +495,7 @@
   },
   {
     "slug": "applications-to-economic-support",
-    "title": "Applications to economic government support",
+    "title": "Received government support in the form of money",
     "hint": "past month",
     "published": true,
     "summary": false,
@@ -508,7 +516,7 @@
   },
   {
     "slug": "applications-to-food-support",
-    "title": "Applications to food government support",
+    "title": "Received government support in the form of food",
     "hint": "past month",
     "published": true,
     "summary": false,
@@ -542,6 +550,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 57,
+    "category_order": ["7 days worth of rice", "Equivalent value in cash", "INDIFFERENT / DON'T MIND", "DON'T KNOW"],
     "sort_by": "value ASC",
     "columns": [
       "govt_support_preference"
@@ -584,6 +593,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 61,
+    "category_order": ["Always", "Often", "Sometimes", "Never", "DON'T KNOW", "THERE IS NO EMERGENCY GOVERNMENT SUPPORT"],
     "sort_by": "answer ASC",
     "columns": [
       "need_to_pay_bribes_to_get_government_support"
@@ -665,6 +675,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 65,
+    "category_order": ["More", "The same", "Less", "DON'T KNOW", "Don't use agent"],
     "sort_by": "answer DESC",
     "columns": [
       "change_in_agent_fee"
@@ -686,6 +697,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 66,
+    "category_order": ["YES", "NO", "DON'T KNOW", "I DON'T DO THIS"],
     "sort_by": "answer DESC",
     "columns": [
       "difficulty_sending_receiving_cash"
@@ -753,7 +765,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "exclude_query": [" ", "nan", "Not applicable", "REFUSED"],
-    "exclude_chart": ["NO", "DON'T KNOW"],
+    "exclude_chart": [],
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
@@ -861,12 +873,13 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "exclude_query": [" ", "nan", "REFUSED"],
-    "exclude_chart": ["DON'T KNOW"],
+    "exclude_chart": [],
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "earnings",
     "order": 37,
+    "category_order": ["Bigger", "Stayed the Same", "Smaller", "DON'T MAKE ANY", "DON'T KNOW"],
     "sort_by": "answer DESC",
     "columns": [
       "one_yr_income_comparison"
@@ -903,12 +916,13 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "exclude_query": [" ", "nan", "REFUSED"],
-    "exclude_chart": ["DON'T KNOW"],
+    "exclude_chart": [],
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "financials",
     "order": 50,
+    "category_order": ["Very possible", "Somewhat possible", "Not very possible", "Not at all possible", "DON'T KNOW"],
     "sort_by": "answer ASC",
     "columns": [
       "finhealth_possibility"
@@ -930,6 +944,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 51,
+    "category_order": ["Regular earnings", "Working more", "Savings", "Gift from friends / family", "Loan from friends / family" , "Loan from employer", "Loan from shopkeeper", "Loan from Chama", "Loan from moneylender", "Borrow from financial institution", "Selling or pawning assets", "Other [specify]"],
     "sort_by": "answer DESC",
     "columns": [
       "finhealth_sources"
@@ -972,6 +987,7 @@
     "orientation": "horizontal",
     "category": "earnings",
     "order": 39,
+    "category_order": ["Casual labour", "Wage or salary job", "Running own business / self employed", "Farming - horticulture or raising livestock", "Renting land - house / rooms or equipment", "Money from Spouse / Friends or Family", "Investments", "Pension", "Money from Government / NGO", "Other [specify]"],
     "sort_by": "answer ASC",
     "columns": [
       "main_income_earner_primary_income_source"
@@ -993,6 +1009,7 @@
     "orientation": "horizontal",
     "category": "earnings",
     "order": 41,
+    "category_order": ["More", "The same", "Less", "DON'T KNOW", "Don't hire workers"],
     "sort_by": "answer DESC",
     "columns": [
       "farm_labour_changes"
@@ -1014,6 +1031,7 @@
     "orientation": "horizontal",
     "category": "earnings",
     "order": 42,
+    "category_order": ["Much easier", "Somewhat easier", "The same", "Somewhat more difficult", "Much more difficult", "DON'T KNOW"],
     "sort_by": "answer DESC",
     "columns": [
       "ease_of_selling_crops"
@@ -1068,6 +1086,7 @@
     "orientation": "horizontal",
     "category": "earnings",
     "order": 40,
+    "category_order": ["No challenges", "Unable to get supplies / cost of supplies increased", "Cannot leave the house / Travel and transport restrictions", "Markets are closed", "Fewer customers", "Unable to access the needed funds to support your operations or obligations", "Workers are not coming to work", "Clients are late paying invoiced work / services already provided", "Unable to pay other expenses", "Unable to pay staff wages", "Other [specify]", "DON'T KNOW"],
     "sort_by": "answer ASC",
     "columns": [
       "biggest_business_challenge"
@@ -1267,6 +1286,7 @@
     "orientation": "vertical",
     "category": "demographic",
     "order": 88,
+    "category_order": ["Less than 10km away", "10-20km away", "21-50km away", "5100km away", "101-200km away", "More than 200km away", "DON'T KNOW"],
     "sort_by": "answer ASC",
     "columns": [
       "nearest_city_distance"
@@ -1288,6 +1308,7 @@
     "orientation": "vertical",
     "category": "demographic",
     "order": 80,
+    "category_order": ["Pre-primary/Other/No formal/Dont know/Refused", "Any primary / Religious", "Some secondary", "Secondary complete", "Any higher"],
     "sort_by": "answer ASC",
     "columns": [
       "edu_reduced"
@@ -1309,6 +1330,7 @@
     "orientation": "horizontal",
     "category": "demographic",
     "order": 78,
+    "category_order": ["Single - Not in a relationship", "Not married but in a relationship", "Married"],
     "sort_by": "answer DESC",
     "columns": [
       "relationship_status"
@@ -1477,6 +1499,7 @@
     "orientation": "horizontal",
     "category": "earnings",
     "order": 38,
+    "category_order": ["You", "You and someone else equally", "Your spouse", "Other family member", "Other"],
     "sort_by": "answer DESC",
     "columns": [
       "main_income_earner"
