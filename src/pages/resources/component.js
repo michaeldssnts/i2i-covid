@@ -13,7 +13,15 @@ const Resources = ({ page }) => (
       <div className="container resources-content-decoration" />
       <div className="container">
         <div className="row">
-          <div className="col">{/* content */}</div>
+          <div className="col">
+            <iframe
+              title="Resources content"
+              src="/resources.html"
+              frameBorder="0"
+              width="100%"
+              height="1120px"
+            />
+          </div>
         </div>
       </div>
     </div>
