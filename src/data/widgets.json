@@ -1090,7 +1090,7 @@
     "units": "%",
     "category": "demographic",
     "order": 76,
-    "sort_by": "answer DESC",
+    "sort_by": "answer ASC",
     "columns": [
       "ps5_age_group"
     ],
@@ -1244,7 +1244,7 @@
     "weight": "weight_ind",
     "calc": "percentage",
     "exclude_query": [" ", "nan", "REFUSED"],
-    "exclude_chart": [],
+    "exclude_chart": ["DON'T KNOW"],
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
@@ -1383,13 +1383,14 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
-    "exclude_query": ["null"],
+    "exclude_query": ["null", " "],
     "exclude_chart": [],
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "demographic",
     "order": 91,
+    "sort_by": "answer ASC",
     "columns": [
       "main_earner_age_group"
     ],
