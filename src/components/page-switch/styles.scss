@@ -1,0 +1,14 @@
+.c-switch {
+
+  > a {
+    text-decoration: none;
+
+    @media screen and (max-width: map-get($breakpoints, lg)) {
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 0;
+      line-height: 15px;
+      padding: 2px 10px;
+    }
+  }
+}

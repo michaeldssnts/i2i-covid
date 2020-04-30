@@ -7,9 +7,10 @@ import Dropdown from 'components/dropdown';
 import Filters from 'components/filters';
 import DownloadForm from 'components/download-form';
 import Subscribe from 'components/subscribe';
+import PageSwitch from 'components/page-switch';
 import { fetchCountries } from 'services/countries';
 
-const Hero = ({ iso }) => {
+const Hero = ({ iso, page }) => {
   const [{ data }] = useAxios(fetchCountries());
   const countries = data && data.rows ? data.rows : null;
   const current = countries ? countries.find((country) => country.iso === iso) : null;
@@ -20,37 +21,48 @@ const Hero = ({ iso }) => {
       <div className="container">
         <div className="row">
           <div className="col">
-            <h1 className="hero-title">
-              COVID-19 tracking survey status <br />
-              in&nbsp;
-              {options && <Dropdown options={options} current={current} />}
-            </h1>
+            {page === 'Country' && (
+              <h1 className="hero-title">
+                COVID-19 tracking survey status <br />
+                in&nbsp;
+                {options && <Dropdown options={options} current={current} />}
+              </h1>
+            )}
+            {page === 'Resources' && <h1 className="hero-title">Resources</h1>}
           </div>
         </div>
-        <MediaQuery minWidth={breakpoints.lg - 1}>
-          <div className="row">
+      </div>
+      {page === 'Country' && (
+        <div className="row justify-content-center">
+          <MediaQuery minWidth={breakpoints.lg - 1}>
             <div className="col-auto ml-auto mr-auto">
               <Filters />
             </div>
-          </div>
-        </MediaQuery>
-        <MediaQuery maxWidth={breakpoints.md}>
-          <div className="row justify-content-center">
+          </MediaQuery>
+          <MediaQuery maxWidth={breakpoints.md}>
+            <div className="col-auto">
+              <PageSwitch />
+            </div>
             <div className="col-auto">
               <Subscribe />
             </div>
             <div className="col-auto">
               <DownloadForm />
             </div>
-          </div>
-        </MediaQuery>
-      </div>
+          </MediaQuery>
+        </div>
+      )}
     </section>
   );
 };
 
 Hero.propTypes = {
-  iso: PropTypes.string.isRequired,
+  iso: PropTypes.string,
+  page: PropTypes.string.isRequired,
+};
+
+Hero.defaultProps = {
+  iso: '',
 };
 
 export default Hero;
