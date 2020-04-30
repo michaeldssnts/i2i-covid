@@ -24,7 +24,7 @@ const Dropdown = ({ options, current, location, page }) => {
         {current.country}
       </button>
       <div
-        className={classnames('dropdown-menu', {
+        className={classnames('dropdown-menu dropdown-menu-center', {
           '-active': isActive,
         })}
       >

@@ -30,11 +30,11 @@ const Navigation = ({ tabs, currentTab, iso, location, page }) => {
                 <div className="row justify-content-between">
                   <div className="col-6">
                     <Button className="-color-2 dropdown-toggle" onClick={handleClick}>
-                      {currentTab}
+                      {currentTab || 'Summary'}
                     </Button>
                     <div
                       id="categories"
-                      className={classnames('dropdown-menu', {
+                      className={classnames('dropdown-menu dropdown-menu-center', {
                         '-active': isActive,
                       })}
                     >
