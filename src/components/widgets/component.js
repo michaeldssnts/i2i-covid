@@ -10,10 +10,13 @@ const Widgets = ({ category, iso, filterBySummary }) => {
     let result;
     if (filterBySummary) {
       result = widgetsSpec.filter(
-        (widgetSpec) => widgetSpec.category === category && widgetSpec.summary
+        (widgetSpec) =>
+          widgetSpec.category === category && widgetSpec.summary && widgetsSpec.published
       );
     } else {
-      result = widgetsSpec.filter((widgetSpec) => widgetSpec.category === category);
+      result = widgetsSpec.filter(
+        (widgetSpec) => widgetSpec.category === category && widgetsSpec.published
+      );
     }
     return orderBy(result, 'order');
   }, [category, filterBySummary]);
