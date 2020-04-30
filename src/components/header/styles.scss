@@ -6,47 +6,39 @@
   width: 100%;
   z-index: 1;
 
-  .header {
-    height: 66px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  .logo-img {
+    height: auto;
+    width: 270px;
+  }
+
+  .header-buttons {
     align-items: center;
+    margin: 20px 0;
+    display: none;
 
-    .logo-img {
-      height: auto;
-      width: 270px;
-    }
+    > div {
 
-    .header-buttons {
-      align-items: center;
-      margin: 20px 0;
-      display: none;
-
-      > div {
-
-        &:not(:last-of-type) {
-          margin-right: 20px;
-        }
-      }
-
-      @media screen and (min-width: map-get($breakpoints, lg - 1)) {
-        display: flex;
-        margin-top: 20px;
-
-        &.-hidden {
-          display: none;
-        }
-      }
-
-      @media screen and (min-width: map-get($breakpoints, sm)) {
-        display: flex;
+      &:not(:last-of-type) {
+        margin-right: 20px;
       }
     }
-
 
     @media screen and (min-width: map-get($breakpoints, lg - 1)) {
-      flex-direction: row;
+      display: flex;
+      margin-top: 20px;
+
+      &.-hidden {
+        display: none;
+      }
     }
+
+    @media screen and (min-width: map-get($breakpoints, sm)) {
+      display: flex;
+    }
+  }
+
+
+  @media screen and (min-width: map-get($breakpoints, lg - 1)) {
+    flex-direction: row;
   }
 }
