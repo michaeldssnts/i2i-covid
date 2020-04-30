@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
 const DownloadForm = () => (
   <div className="c-download-form">
