@@ -936,7 +936,7 @@
   },
   {
     "slug": "farm-labour-changes",
-    "title": "Farm employees",
+    "title": "Current number of farm employees",
     "hint": "compared to last year (excludes not applicable)",
     "summary": false,
     "weight": "weight_hh",
@@ -1019,7 +1019,7 @@
     "gridspace": "one",
     "orientation": "horizontal",
     "category": "earnings",
-    "order": 43,
+    "order": 40,
     "sort_by": "answer ASC",
     "columns": [
       "biggest_business_challenge"
@@ -1077,10 +1077,30 @@
     "chart": "multiple-stacked-bar"
   },
   {
+    "slug": "age",
+    "title": "Age",
+    "hint": null,
+    "summary": false,
+    "gridspace": "half",
+    "orientation": "horizontal",
+    "weight": "weight_ind",
+    "calc": "percentage",
+    "exclude_query": [" ", "nan"],
+    "exclude_chart": [],
+    "units": "%",
+    "category": "demographic",
+    "order": 76,
+    "sort_by": "answer DESC",
+    "columns": [
+      "ps5_age_group"
+    ],
+    "chart": "multiple-bar"
+  },
+  {
     "slug": "sex",
     "title": "Sex",
     "hint": null,
-    "summary": false,
+    "summary": true,
     "gridspace": "half",
     "orientation": "horizontal",
     "weight": "weight_ind",
@@ -1109,7 +1129,7 @@
     "gridspace": "one",
     "orientation": "vertical",
     "category": "demographic",
-    "order": 82,
+    "order": 86,
     "sort_by": "value DESC",
     "columns": [
       "region"
@@ -1120,7 +1140,7 @@
     "slug": "urban-city",
     "title": "Urban / rural setting",
     "hint": null,
-    "summary": false,
+    "summary": true,
     "weight": "weight_ind",
     "calc": "percentage",
     "exclude_query": [" ", "nan"],
@@ -1149,7 +1169,7 @@
     "gridspace": "one",
     "orientation": "vertical",
     "category": "demographic",
-    "order": 83,
+    "order": 87,
     "sort_by": "value DESC",
     "columns": [
       "city_name"
@@ -1169,7 +1189,7 @@
     "gridspace": "one",
     "orientation": "vertical",
     "category": "demographic",
-    "order": 84,
+    "order": 89,
     "sort_by": "value DESC",
     "columns": [
       "nearest_city"
@@ -1189,7 +1209,7 @@
     "gridspace": "half",
     "orientation": "vertical",
     "category": "demographic",
-    "order": 85,
+    "order": 88,
     "sort_by": "answer ASC",
     "columns": [
       "nearest_city_distance"
@@ -1209,10 +1229,10 @@
     "gridspace": "one",
     "orientation": "vertical",
     "category": "demographic",
-    "order": 87,
+    "order": 80,
     "sort_by": "answer ASC",
     "columns": [
-      "education_level"
+      "edu_reduced"
     ],
     "chart": "multiple-bar"
   },
@@ -1269,7 +1289,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "demographic",
-    "order": 80,
+    "order": 82,
     "sort_by": "answer ASC",
     "columns": [
       "hh_size"
@@ -1289,7 +1309,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "demographic",
-    "order": 80,
+    "order": 83,
     "sort_by": "answer ASC",
     "columns": [
       "children_under_5_years_old"
@@ -1309,7 +1329,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "demographic",
-    "order": 80,
+    "order": 84,
     "sort_by": "answer ASC",
     "columns": [
       "adults_in_hh"
@@ -1329,7 +1349,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "demographic",
-    "order": 80,
+    "order": 85,
     "sort_by": "answer ASC",
     "columns": [
       "people_over_60_years_old"
@@ -1349,7 +1369,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "demographic",
-    "order": 88,
+    "order": 90,
     "sort_by": "answer DESC",
     "columns": [
       "main_earner_gender"
@@ -1363,13 +1383,13 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
-    "exclude_query": ["null", " "],
+    "exclude_query": ["null"],
     "exclude_chart": [],
     "units": "%",
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "demographic",
-    "order": 88,
+    "order": 91,
     "columns": [
       "main_earner_age_group"
     ],
@@ -1377,7 +1397,7 @@
   },
   {
     "slug": "main-income-earner",
-    "title": "Main income earner",
+    "title": "Main income earner in household",
     "hint": null,
     "summary": false,
     "weight": "weight_ind",
