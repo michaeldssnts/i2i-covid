@@ -8,10 +8,10 @@ import TwitterIcon from './icons/social-twitter-green.svg';
 import LinkedynIcon from './icons/social-linkedin-green.svg';
 import EmailIcon from './icons/social-email-green.svg';
 
-const Share = ({ slug, iso }) => {
+const Share = ({ slug, iso, query }) => {
   const inputElUrl = useRef();
   const inputElEmbed = useRef();
-  const url = `${window.location.origin}/widget/${iso}/${slug}`;
+  const url = `${window.location.origin}/widget/${iso}/${slug}?${query}`;
 
   const [{ isCopied, isOpen }, setState] = useState({
     isUrlCopied: false,
@@ -120,11 +120,13 @@ const Share = ({ slug, iso }) => {
 };
 
 Share.propTypes = {
+  query: PropTypes.string,
   slug: PropTypes.string.isRequired,
   iso: PropTypes.string,
 };
 
 Share.defaultProps = {
+  query: '',
   iso: '',
 };
 
