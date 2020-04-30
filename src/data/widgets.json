@@ -1186,7 +1186,7 @@
     "order": 86,
     "sort_by": "value DESC",
     "columns": [
-      "region"
+      "reduced_reporting_region"
     ],
     "chart": "multiple-bar"
   },
