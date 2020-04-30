@@ -13,6 +13,10 @@ const Widget = (widgetSpec) => {
   const [{ data, loading, error }] = useAxios(fetchIndicators(widgetSpec, filters));
   const widgetProps = data && getWidgetProps(data.rows, widgetSpec);
 
+  const activeFilters = Object.values(filters)
+    .filter((filter) => filter.length > 0)
+    .flat();
+
   // For widget debugging
   if (error) console.error(`For widget ${title}`, error.response.data);
 
