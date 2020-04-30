@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import MediaQuery from 'react-responsive';
@@ -6,9 +6,15 @@ import { breakpoints } from 'utils/responsive';
 import { NavLink } from 'redux-first-router-link';
 import Filters from 'components/filters';
 import Button from 'components/button';
+import ReactGA from 'react-ga';
 
-const Navigation = ({ tabs, currentTab, iso }) => {
+const Navigation = ({ tabs, currentTab, iso, location, page }) => {
   const [isActive, toggleDropdown] = useState(false);
+
+  useEffect(() => {
+    ReactGA.ga('send', 'pageView', page);
+    ReactGA.pageview(window.location.pathname);
+  }, [location, page]);
 
   const handleClick = () => {
     toggleDropdown(!isActive);
@@ -24,11 +30,11 @@ const Navigation = ({ tabs, currentTab, iso }) => {
                 <div className="row justify-content-between">
                   <div className="col-6">
                     <Button className="-color-2 dropdown-toggle" onClick={handleClick}>
-                      {currentTab}
+                      {currentTab || 'Summary'}
                     </Button>
                     <div
                       id="categories"
-                      className={classnames('dropdown-menu', {
+                      className={classnames('dropdown-menu dropdown-menu-center', {
                         '-active': isActive,
                       })}
                     >
@@ -90,6 +96,13 @@ Navigation.propTypes = {
   iso: PropTypes.string.isRequired,
   tabs: PropTypes.array.isRequired,
   currentTab: PropTypes.string.isRequired,
+  location: PropTypes.shape({
+    payload: PropTypes.shape({
+      category: PropTypes.string,
+    }),
+    pathname: PropTypes.string,
+  }).isRequired,
+  page: PropTypes.string.isRequired,
 };
 
 export default Navigation;

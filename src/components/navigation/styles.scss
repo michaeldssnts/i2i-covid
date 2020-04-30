@@ -41,8 +41,7 @@
     }
 
     .dropdown-menu {
-      left: 50%;
-      transform: translateX(-50%);
+
       &.-active {
         display: flex;
         flex-direction: column;
@@ -79,6 +78,10 @@
       box-shadow: 0 2px 3px 0 rgba($black, 0.15);
       color: $color-4;
 
+      @media screen and (max-width: map-get($breakpoints, lg)) {
+        box-shadow: none;
+        border: 0;
+      }
     }
   }
 }
