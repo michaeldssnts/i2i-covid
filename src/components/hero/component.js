@@ -31,27 +31,27 @@ const Hero = ({ iso, page }) => {
             {page === 'Resources' && <h1 className="hero-title">Resources</h1>}
           </div>
         </div>
+        {page === 'Country' && (
+          <div className="row justify-content-center">
+            <MediaQuery minWidth={breakpoints.lg - 1}>
+              <div className="col-auto ml-auto mr-auto">
+                <Filters />
+              </div>
+            </MediaQuery>
+            <MediaQuery maxWidth={breakpoints.md}>
+              <div className="col-auto">
+                <PageSwitch />
+              </div>
+              <div className="col-auto">
+                <Subscribe />
+              </div>
+              <div className="col-auto">
+                <DownloadForm />
+              </div>
+            </MediaQuery>
+          </div>
+        )}
       </div>
-      {page === 'Country' && (
-        <div className="row justify-content-center">
-          <MediaQuery minWidth={breakpoints.lg - 1}>
-            <div className="col-auto ml-auto mr-auto">
-              <Filters />
-            </div>
-          </MediaQuery>
-          <MediaQuery maxWidth={breakpoints.md}>
-            <div className="col-auto">
-              <PageSwitch />
-            </div>
-            <div className="col-auto">
-              <Subscribe />
-            </div>
-            <div className="col-auto">
-              <DownloadForm />
-            </div>
-          </MediaQuery>
-        </div>
-      )}
     </section>
   );
 };
