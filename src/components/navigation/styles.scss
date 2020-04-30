@@ -66,10 +66,12 @@
   }
 
   a {
+    display: inline-block;
     color: $color-2;
     text-decoration: none;
     padding: 7px 20px;
     margin-bottom: 10px;
+    white-space: nowrap;
 
     &:not(last-child) {
       margin-right: 20px;

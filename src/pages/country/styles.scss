@@ -2,6 +2,7 @@
 
   .country-content {
     position: relative;
+    min-height: 400px;
 
     @media screen and (min-width: map-get($breakpoints, xlg)) {
       margin-top: -100px;
