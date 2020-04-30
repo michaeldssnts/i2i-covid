@@ -1,12 +1,24 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { replace } from 'redux-first-router';
+import queryString from 'query-string';
+import isArray from 'lodash/isArray';
 import Button from 'components/button';
 import Modal from 'components/modal';
 import initialState from 'modules/filters/initial-state';
 import { filtersData } from './constants';
 
-const Filters = ({ filters, resetFilters, setFilter }) => {
-  const [filtersResult, setFiltersResult] = useState(filters);
+const Filters = ({ location, filters, resetFilters, setFilter }) => {
+  const { pathname, query } = location;
+  const queryFilters = {};
+
+  if (query) {
+    Object.keys(query).forEach((key) => {
+      queryFilters[key] = isArray(query[key]) && query[key].length ? query[key] : [query[key]];
+    });
+  }
+  
+  const [filtersResult, setFiltersResult] = useState({ ...filters, ...queryFilters });
   const [isOpen, toggleModal] = useState(false);
 
   const handleToggleModal = () => toggleModal(!isOpen);
@@ -14,12 +26,18 @@ const Filters = ({ filters, resetFilters, setFilter }) => {
   const handleReset = () => {
     setFiltersResult({ ...initialState });
     resetFilters();
+    replace({ pathname });
     handleToggleModal();
   };
 
   const handleSubmit = (evt) => {
     evt.preventDefault();
     setFilter(filtersResult);
+    // Updating URL
+    replace({
+      pathname,
+      search: `?${queryString.stringify(filtersResult)}`
+    });
     handleToggleModal();
   };
 
@@ -91,6 +109,10 @@ const Filters = ({ filters, resetFilters, setFilter }) => {
 };
 
 Filters.propTypes = {
+  location: PropTypes.shape({
+    query: PropTypes.shape({}),
+    pathname: PropTypes.string,
+  }),
   filters: PropTypes.shape({
     gender: PropTypes.array,
     area: PropTypes.array,
