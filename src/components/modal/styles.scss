@@ -1,6 +1,5 @@
 .c-modal {
   $padding-box: 45px;
-
   background-color: rgba($color-4, 0.9);
   justify-content: center;
   align-items: center;
@@ -24,22 +23,50 @@
 
     .modal-title {
       padding: 1rem 0;
-
       font-size: 35px;
-      line-height: 1.5;
+      line-height: 1;
       color: $white;
       text-shadow: 0 2px 3px rgba(0,0,0,0.15);
+      font-weight: bold;
+      letter-spacing: -1px;
     }
 
     .modal-content {
       background-color: $white;
       border: 0;
-      box-shadow: 0 4px 12px 0 rgba($black, 0.15);
+      border-radius: 0;
+      box-shadow: 0 2px 3px 0 rgba(0,0,0,0.15);
       padding: $padding-box;
+
+      .form-fields {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding-bottom: 20px;
+
+        > label {
+          color: $color-1;
+          font-size: 13px;
+          font-weight: bold;
+          letter-spacing: 0;
+        }
+
+        input {
+          display: flex;
+          align-items: center;
+          border: none;
+          padding: 8px 15px;
+          background-color: rgba($color-4, 0.1);
+          line-height: 30px;
+          flex-grow: 1;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
     }
 
     .modal-footer {
-      padding: 1rem 0;
+      padding: 30px 0;
       border: 0;
     }
 
