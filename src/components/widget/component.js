@@ -5,6 +5,7 @@ import useAxios from 'axios-hooks';
 import Chart from 'components/chart';
 import Share from 'components/share';
 import Spinner from 'components/spinner';
+import { capitalize } from 'utils/strings';
 import { fetchIndicators } from 'services/indicators';
 import { getWidgetProps } from './utils.js';
 
@@ -12,6 +13,10 @@ const Widget = (widgetSpec) => {
   const { title, slug, filters, hint } = widgetSpec;
   const [{ data, loading, error }] = useAxios(fetchIndicators(widgetSpec, filters));
   const widgetProps = data && getWidgetProps(data.rows, widgetSpec);
+  const activeFilters = Object.values(filters)
+    .filter((filter) => filter.length > 0)
+    .flat()
+    .map(capitalize);
 
   // For widget debugging
   if (error) console.error(`For widget ${title}`, error.response.data);
@@ -21,6 +26,9 @@ const Widget = (widgetSpec) => {
       <div className="widget-header">
         <h2 className="h3">{title}</h2>
         <p className="small">{hint}</p>
+        {activeFilters.length > 0 && (
+          <p className="small">Filtered by: {activeFilters.join(', ')}</p>
+        )}
       </div>
       {loading && <Spinner loading />}
       {!loading && error && <div className="alert alert-warning">Something was wrong.</div>}

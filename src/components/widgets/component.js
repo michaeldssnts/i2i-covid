@@ -11,11 +11,11 @@ const Widgets = ({ category, iso, filterBySummary }) => {
     if (filterBySummary) {
       result = widgetsSpec.filter(
         (widgetSpec) =>
-          widgetSpec.category === category && widgetSpec.summary && widgetsSpec.published
+          widgetSpec.category === category && widgetSpec.summary && widgetSpec.published
       );
     } else {
       result = widgetsSpec.filter(
-        (widgetSpec) => widgetSpec.category === category && widgetsSpec.published
+        (widgetSpec) => widgetSpec.category === category && widgetSpec.published
       );
     }
     return orderBy(result, 'order');
