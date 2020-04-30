@@ -12,9 +12,11 @@ const Filters = ({ location, filters, resetFilters, setFilter }) => {
   const { pathname, query } = location;
   const queryFilters = {};
 
-  Object.keys(query).forEach((key) => {
-    queryFilters[key] = isArray(query[key]) && query[key].length ? query[key] : [query[key]];
-  });
+  if (query) {
+    Object.keys(query).forEach((key) => {
+      queryFilters[key] = isArray(query[key]) && query[key].length ? query[key] : [query[key]];
+    });
+  }
   
   const [filtersResult, setFiltersResult] = useState({ ...filters, ...queryFilters });
   const [isOpen, toggleModal] = useState(false);
@@ -24,6 +26,7 @@ const Filters = ({ location, filters, resetFilters, setFilter }) => {
   const handleReset = () => {
     setFiltersResult({ ...initialState });
     resetFilters();
+    replace({ pathname });
     handleToggleModal();
   };
 
