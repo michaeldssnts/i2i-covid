@@ -5,6 +5,8 @@ import MediaQuery from 'react-responsive';
 import { breakpoints } from 'utils/responsive';
 import Dropdown from 'components/dropdown';
 import Filters from 'components/filters';
+import DownloadForm from 'components/download-form';
+import Subscribe from 'components/subscribe';
 import { fetchCountries } from 'services/countries';
 
 const Hero = ({ iso }) => {
@@ -29,6 +31,16 @@ const Hero = ({ iso }) => {
           <div className="row">
             <div className="col-auto ml-auto mr-auto">
               <Filters />
+            </div>
+          </div>
+        </MediaQuery>
+        <MediaQuery maxWidth={breakpoints.md}>
+          <div className="row justify-content-center">
+            <div className="col-auto">
+              <Subscribe />
+            </div>
+            <div className="col-auto">
+              <DownloadForm />
             </div>
           </div>
         </MediaQuery>
