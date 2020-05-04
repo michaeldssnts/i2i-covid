@@ -15,11 +15,14 @@ const Widgets = ({ category, iso, filterBySummary }) => {
       );
     } else {
       result = widgetsSpec.filter(
-        (widgetSpec) => widgetSpec.category === category && widgetSpec.published
+        (widgetSpec) =>
+          widgetSpec.category === category &&
+          widgetSpec.published &&
+          (!widgetSpec.country || widgetSpec.country.includes(iso))
       );
     }
     return orderBy(result, 'order');
-  }, [category, filterBySummary]);
+  }, [category, filterBySummary, iso]);
 
   return (
     <div className="c-widgets">
