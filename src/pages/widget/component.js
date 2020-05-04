@@ -4,7 +4,9 @@ import Widget from 'components/widget';
 import widgetsSpec from 'data/widgets.json';
 
 const WidgetPage = ({ iso, widget_slug }) => {
-  const widgetSpec = widgetsSpec.find((widgetSpec) => widgetSpec.slug === widget_slug);
+  const widgetSpec = widgetsSpec.find(
+    (widgetSpec) => widgetSpec.slug === widget_slug && widgetSpec.country.includes(iso)
+  );
 
   return (
     <div className="l-widget-page">
