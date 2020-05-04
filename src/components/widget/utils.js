@@ -1,6 +1,5 @@
 import groupBy from 'lodash/groupBy';
 import map from 'lodash/map';
-import uniq from 'lodash/uniq';
 
 export const parseSingleChart = (data, { calc }) => {
   const groupedData = groupBy(data, (d) => d.update_date);
@@ -29,9 +28,11 @@ export const parseSingleChart = (data, { calc }) => {
   };
 };
 
-export const parseStackedChart = (data) => {
+export const parseStackedChart = (data, { category_order }) => {
   const groupedData = groupBy(data, (d) => d.update_date);
   const dates = Object.keys(groupedData);
+  const categories = category_order || map(data, 'answer').map((d) => d && d.toString());
+
   const widgetData = dates.map((date) => {
     const arr = groupedData[date];
     const obj = {
@@ -45,8 +46,6 @@ export const parseStackedChart = (data) => {
     return obj;
   });
 
-  const categories = map(data, 'answer').map((d) => d && d.toString());
-
   return {
     config: {
       groupBy: 'update_date',
@@ -59,12 +58,16 @@ export const parseStackedChart = (data) => {
   };
 };
 
-export const parseMultipleStackedChart = (data) => {
+export const parseMultipleStackedChart = (data, { columns }) => {
   const groupedData = groupBy(data, (d) => d.indicator);
-  const indicators = Object.keys(groupedData);
-  const widgetData = indicators.map((indicator) => {
+  const widgetData = columns.map((indicator) => {
     const arr = groupedData[indicator];
     const obj = {};
+
+    if (!arr) {
+      console.error(`Indicator ${indicator} doesn't exist`);
+      return obj;
+    }
 
     arr.forEach(({ answer, label, update_date, value }) => {
       obj[answer] = value;
@@ -76,7 +79,11 @@ export const parseMultipleStackedChart = (data) => {
     return obj;
   });
 
-  const categories = uniq(map(data, 'answer').map((d) => d.toString()));
+  const categories = columns.map((column) => {
+    const category = widgetData.find((d) => d.indicator === column);
+    if (category) return category.label;
+    return '';
+  });
 
   return {
     config: {
@@ -87,18 +94,24 @@ export const parseMultipleStackedChart = (data) => {
   };
 };
 
-export const parseMultipleChart = (data, { calc }) => {
+export const parseMultipleChart = (data, { calc, category_order }) => {
+  let resultData = data;
+
+  if (category_order) {
+    resultData = category_order.map((category) => data.find(({ answer }) => category === answer));
+  }
+
   return {
     config: {
       groupBy: calc === 'average' ? 'label' : 'answer',
       categories: ['value'],
     },
-    data,
+    data: resultData,
   };
 };
 
 export const getWidgetProps = (data, widgetSpec) => {
-  const { calc, chart, exclude_chart } = widgetSpec;
+  const { calc, chart, exclude_chart, category_order, columns } = widgetSpec;
 
   // Deciding not to show some values depending on WidgetSpec
   const dataResult = data.filter((d) => !exclude_chart.includes(d.answer));
@@ -108,14 +121,14 @@ export const getWidgetProps = (data, widgetSpec) => {
   }
 
   if (chart === 'stacked-bar') {
-    return { ...parseStackedChart(dataResult), widgetSpec };
+    return { ...parseStackedChart(dataResult, { category_order }), widgetSpec };
   }
 
   if (chart === 'multiple-stacked-bar') {
-    return { ...parseMultipleStackedChart(dataResult), widgetSpec };
+    return { ...parseMultipleStackedChart(dataResult, { columns }), widgetSpec };
   }
 
-  return { ...parseMultipleChart(dataResult, { calc }), widgetSpec };
+  return { ...parseMultipleChart(dataResult, { calc, category_order }), widgetSpec };
 };
 
 export default { getWidgetProps };
