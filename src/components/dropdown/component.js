@@ -8,9 +8,8 @@ const Dropdown = ({ options, current, location, page }) => {
   const [isActive, toggleDropdown] = useState(false);
 
   useEffect(() => {
-    ReactGA.ga('send', 'pageView', page);
-    ReactGA.pageview(window.location.pathname);
-  });
+    ReactGA.ga('send', 'pageView', location);
+  }, [location]);
 
   const handleClick = () => {
     toggleDropdown(!isActive);

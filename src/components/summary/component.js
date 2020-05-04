@@ -6,9 +6,8 @@ import ReactGA from 'react-ga';
 
 const Summary = ({ iso, categories, page, location }) => {
   useEffect(() => {
-    ReactGA.ga('send', 'pageView', page);
-    ReactGA.pageview(window.location.pathname);
-  }, [location, page]);
+    ReactGA.ga('send', 'pageView', location);
+  }, [location]);
 
   return (
     <section className="c-summary">
