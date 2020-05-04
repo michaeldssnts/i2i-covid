@@ -11,6 +11,9 @@ import initialState from 'modules/filters/initial-state';
 import { filtersData } from './constants';
 import { fetchFilter } from 'services/filters';
 
+const parseData = (data, filter) =>
+  Array.from(new Set(data.rows.map((row) => row[filter]))).map((f) => ({ label: f, value: f }));
+
 const Filters = ({ location, filters, resetFilters, setFilter, iso }) => {
   const { pathname, query } = location;
   const queryFilters = {};
@@ -30,15 +33,6 @@ const Filters = ({ location, filters, resetFilters, setFilter, iso }) => {
       )
     ).then((data) => setFilters(data));
   }, [iso]);
-
-  const parseData = (data, filter) => {
-    return Array.from(new Set(data.rows.map((row) => row[filter]))).map((f) => {
-      return {
-        label: f,
-        value: f,
-      };
-    });
-  };
 
   if (query) {
     Object.keys(query).forEach((key) => {
