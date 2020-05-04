@@ -34,7 +34,7 @@
   },
   {
     "slug": "access-to-medicine",
-    "title": "Unavailable needed medicine",
+    "title": "Access to required medicine",
     "hint": "past week",
     "published": true,
     "summary": true,
@@ -758,7 +758,7 @@
   },
   {
     "slug": "missed-repayment",
-    "title": "Missed repayment",
+    "title": "Missed loan repayment",
     "hint": "past two weeks",
     "published": true,
     "summary": true,
@@ -779,7 +779,7 @@
   },
   {
     "slug": "reason-for-missed-payment",
-    "title": "Reason for missed payment",
+    "title": "Reasons for missed loan repayment",
     "hint": null,
     "published": true,
     "summary": false,
@@ -809,6 +809,29 @@
     "hint": "past month",
     "published": true,
     "summary": false,
+    "country": ["KEN"],
+    "weight": "weight_ind",
+    "calc": "percentage",
+    "exclude_query": [" ", "nan"],
+    "exclude_chart": ["NO"],
+    "units": "%",
+    "gridspace": "half",
+    "orientation": "horizontal",
+    "category": "financials",
+    "order": 63,
+    "sort_by": "answer DESC",
+    "columns": [
+      "account_use_trends"
+    ],
+    "chart": "stacked-bar"
+  },
+  {
+    "slug": "account-use-trends",
+    "title": "Bank account use",
+    "hint": "past month",
+    "published": true,
+    "summary": false,
+    "country": ["NGA", "ZAF"],
     "weight": "weight_ind",
     "calc": "percentage",
     "exclude_query": [" ", "nan"],
@@ -974,7 +997,7 @@
   },
   {
     "slug": "main-income-earner-primary-income-source",
-    "title": "Primary income source",
+    "title": "Primary income source of main income earner",
     "hint": null,
     "published": true,
     "summary": false,
@@ -1040,7 +1063,7 @@
   },
   {
     "slug": "economic-sector",
-    "title": "Economic sector",
+    "title": "Economic sector of main income earner",
     "hint": null,
     "published": true,
     "summary": false,
@@ -1095,7 +1118,7 @@
   },
   {
     "slug": "main-income-earner-jobs-change",
-    "title": "Changed jobs",
+    "title": "Main income earner changed jobs",
     "hint": "past year",
     "published": true,
     "summary": false,
@@ -1115,7 +1138,7 @@
   },
   {
     "slug": "former-job",
-    "title": "Previous economic sector",
+    "title": "Previous economic sector of main income earner",
     "hint": null,
     "published": true,
     "summary": false,
@@ -1168,7 +1191,7 @@
   },
   {
     "slug": "sex",
-    "title": "Sex",
+    "title": "Gender",
     "hint": null,
     "published": true,
     "summary": true,
@@ -1205,6 +1228,28 @@
     "sort_by": "value DESC",
     "columns": [
       "reduced_reporting_region"
+    ],
+    "chart": "multiple-bar"
+  },
+  {
+    "slug": "race",
+    "title": "Race",
+    "hint": null,
+    "published": true,
+    "summary": false,
+    "country": ["ZAF"],
+    "weight": "weight_ind",
+    "calc": "percentage",
+    "exclude_query": [" ", "nan"],
+    "exclude_chart": [],
+    "units": "%",
+    "gridspace": "half",
+    "orientation": "horizontal",
+    "category": "demographic",
+    "order": 81,
+    "sort_by": "answer DESC",
+    "columns": [
+      "race"
     ],
     "chart": "multiple-bar"
   },
@@ -1444,9 +1489,9 @@
   },
   {
     "slug": "main-income-earner-sex",
-    "title": "Main income earner sex",
+    "title": "Main income earner gender",
     "hint": null,
-    "published": true,
+    "published": false,
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
