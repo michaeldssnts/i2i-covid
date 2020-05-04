@@ -8,8 +8,6 @@ const PageSwitch = ({ page }) => (
       <NavLink
         className="c-button -border-color-1"
         to={{ type: 'RESOURCES', pathname: '/resources' }}
-        exact={true}
-        strict={true}
       >
         Resources
       </NavLink>

@@ -14,7 +14,9 @@ import useAxios from 'axios-hooks';
 const CountryPage = ({ iso, current, page }) => {
   const [{ data, loading }] = useAxios(fetchCategories());
   const categories = data && data.rows ? data.rows : [];
-  const { name, description } = categories.find(({ slug }) => slug === current) || {};
+  const { name, description } = categories.find(({ slug }) => slug === current) || {
+    name: 'Summary',
+  };
 
   return (
     <div className="l-country">

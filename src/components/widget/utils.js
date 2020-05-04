@@ -1,7 +1,7 @@
 import groupBy from 'lodash/groupBy';
 import map from 'lodash/map';
 
-export const parseSingleChart = (data, { calc }) => {
+export const parseSingleChart = (data, { calc, columns }) => {
   const groupedData = groupBy(data, (d) => d.update_date);
   const dates = Object.keys(groupedData);
   const widgetData = dates.map((date) => {
@@ -17,7 +17,7 @@ export const parseSingleChart = (data, { calc }) => {
     return obj;
   });
 
-  let categories = map(data, calc === 'average' ? 'label' : 'answer').map((d) => d.toString());
+  let categories = map(data, calc === 'average' ? 'label' : 'answer').map((d) => String(d));
 
   return {
     config: {
@@ -31,7 +31,7 @@ export const parseSingleChart = (data, { calc }) => {
 export const parseStackedChart = (data, { category_order }) => {
   const groupedData = groupBy(data, (d) => d.update_date);
   const dates = Object.keys(groupedData);
-  const categories = category_order || map(data, 'answer').map((d) => d && d.toString());
+  const categories = category_order || map(data, 'answer').map((d) => String(d));
 
   const widgetData = dates.map((date) => {
     const arr = groupedData[date];
@@ -66,11 +66,12 @@ export const parseMultipleStackedChart = (data, { columns }) => {
 
     if (!arr) {
       console.error(`Indicator ${indicator} doesn't exist`);
-      return obj;
+      return {};
     }
 
     arr.forEach(({ answer, label, update_date, value }) => {
       obj[answer] = value;
+      obj.answer = answer;
       obj.indicator = indicator;
       obj.label = label;
       obj.update_date = update_date;
@@ -81,7 +82,7 @@ export const parseMultipleStackedChart = (data, { columns }) => {
 
   const categories = columns.map((column) => {
     const category = widgetData.find((d) => d.indicator === column);
-    if (category) return category.label;
+    if (category) return category.answer;
     return '';
   });
 
@@ -98,7 +99,14 @@ export const parseMultipleChart = (data, { calc, category_order }) => {
   let resultData = data;
 
   if (category_order) {
-    resultData = category_order.map((category) => data.find(({ answer }) => category === answer));
+    resultData = category_order.map((category) => {
+      const d = data.find(({ answer }) => category === answer);
+      if (!d) {
+        console.error(`Answer ${category} doesn't exist`);
+        return null;
+      }
+      return d;
+    });
   }
 
   return {
@@ -117,7 +125,7 @@ export const getWidgetProps = (data, widgetSpec) => {
   const dataResult = data.filter((d) => !exclude_chart.includes(d.answer));
 
   if (chart === 'single-bar') {
-    return { ...parseSingleChart(dataResult, { calc }), widgetSpec };
+    return { ...parseSingleChart(dataResult, { calc, columns }), widgetSpec };
   }
 
   if (chart === 'stacked-bar') {

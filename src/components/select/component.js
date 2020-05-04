@@ -26,7 +26,7 @@ const Select = ({ options, placeholder, defaultValue }) => {
 Select.propTypes = {
   options: PropTypes.arrayOf(PropTypes.shape({})).isRequired,
   placeholder: PropTypes.string,
-  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  defaultValue: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 Select.defaultProps = {

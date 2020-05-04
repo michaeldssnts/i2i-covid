@@ -26,10 +26,10 @@ const HomePage = ({ page, location }) => {
                 <h2>Tracking Survey Status</h2>
               </header>
               <p>
-                The COVID-19 tracking survey themes include health and risk behaviours, food security,
-                income, work and job security, personal safety concerns, and access to government and
-                community support.
-            </p>
+                The COVID-19 tracking survey themes include health and risk behaviours, food
+                security, income, work and job security, personal safety concerns, and access to
+                government and community support.
+              </p>
               <aside>
                 <p>Select a country to start &#8594;</p>
               </aside>
