@@ -15,12 +15,14 @@ const Subscribe = () => {
     setState(!isOpen);
   };
 
-  const countryOptions = countries ? countries.map(({ country, iso }) => {
-    return {
-      label: country,
-      value: iso,
-    };
-  }) : [];
+  const countryOptions = countries
+    ? countries.map(({ country, iso }) => {
+        return {
+          label: country,
+          value: iso,
+        };
+      })
+    : [];
 
   return (
     <div className="c-subscribe">

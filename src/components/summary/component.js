@@ -25,7 +25,7 @@ const Summary = ({ iso, categories, page, location }) => {
                 </div>
               </header>
 
-              <Widgets iso={iso} category={slug} filterBySummary={true} />
+              <Widgets iso={iso} category={slug} filterBySummary />
               <aside className="summary-button">
                 <div className="row">
                   <div className="col d-flex justify-content-center">

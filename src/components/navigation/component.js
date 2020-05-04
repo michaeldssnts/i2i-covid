@@ -43,8 +43,6 @@ const Navigation = ({ tabs, currentTab, iso, location, page }) => {
                           key={slug}
                           to={{ type: 'COUNTRY', payload: { iso, category: slug } }}
                           activeClassName="-active"
-                          exact={true}
-                          strict={true}
                           onClick={handleClick}
                           isActive={(match, location) => location.payload.category === slug}
                         >
@@ -65,8 +63,6 @@ const Navigation = ({ tabs, currentTab, iso, location, page }) => {
                   <NavLink
                     to={{ type: 'COUNTRY', payload: { iso, category: 'summary' } }}
                     activeClassName="-active"
-                    exact={true}
-                    strict={true}
                     isActive={(match, location) => location.payload.category === 'summary'}
                   >
                     Summary
@@ -76,8 +72,6 @@ const Navigation = ({ tabs, currentTab, iso, location, page }) => {
                       key={slug}
                       to={{ type: 'COUNTRY', payload: { iso, category: slug } }}
                       activeClassName="-active"
-                      exact={true}
-                      strict={true}
                       isActive={(match, location) => location.payload.category === slug}
                     >
                       {name}
