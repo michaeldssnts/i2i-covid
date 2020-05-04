@@ -17,10 +17,7 @@ const Dropdown = ({ options, current, location, page }) => {
   };
   return (
     <div className="c-dropdown dropdown">
-      <button
-        className={classnames('btn', { 'dropdown-toggle': options.length > 0 })}
-        onClick={handleClick}
-      >
+      <button className="btn dropdown-toggle" onClick={handleClick}>
         {current.country}
       </button>
       <div
