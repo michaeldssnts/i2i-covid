@@ -4,7 +4,8 @@ import { resetFilters, setFilter } from 'modules/filters/actions';
 import Component from './component';
 
 const mapStateToProps = (state) => ({
-  location: state.location, 
+  location: state.location,
+  iso: state.location.payload.iso,
   filters: state.filters,
 });
 
