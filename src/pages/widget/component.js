@@ -5,7 +5,7 @@ import widgetsSpec from 'data/widgets.json';
 
 const WidgetPage = ({ iso, widget_slug }) => {
   const widgetSpec = widgetsSpec.find(
-    (widgetSpec) => widgetSpec.slug === widget_slug && widgetSpec.country.includes(iso)
+    (widgetSpec) => widgetSpec.slug === widget_slug && (!widgetSpec.country || widgetSpec.country.includes(iso))
   );
 
   return (

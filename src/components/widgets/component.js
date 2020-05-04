@@ -11,14 +11,14 @@ const Widgets = ({ category, iso, filterBySummary }) => {
     if (filterBySummary) {
       result = widgetsSpec.filter(
         (widgetSpec) =>
-          widgetSpec.category === category &&
-          widgetSpec.country.includes(iso) &&
-          widgetSpec.summary &&
-          widgetSpec.published
+          widgetSpec.category === category && widgetSpec.summary && widgetSpec.published
       );
     } else {
       result = widgetsSpec.filter(
-        (widgetSpec) => widgetSpec.category === category && widgetSpec.published
+        (widgetSpec) =>
+          widgetSpec.category === category &&
+          widgetSpec.published &&
+          (!widgetSpec.country || widgetSpec.country.includes(iso))
       );
     }
     return orderBy(result, 'order');
