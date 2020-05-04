@@ -8,6 +8,7 @@ import Spinner from 'components/spinner';
 import { capitalize } from 'utils/strings';
 import { fetchIndicators } from 'services/indicators';
 import { getWidgetProps } from './utils.js';
+import { formatNumber } from 'utils/numbers';
 
 const Widget = (widgetSpec) => {
   const { title, slug, filters, hint } = widgetSpec;
@@ -21,14 +22,17 @@ const Widget = (widgetSpec) => {
   // For widget debugging
   if (error) console.error(`For widget ${title}`, error.response.data);
 
+  const responders = data && data.rows[0].responders;
+
   return (
     <div className="c-widget">
       <div className="widget-header">
         <h2 className="h3">{title}</h2>
-        <p className="small">{hint}</p>
-        {activeFilters.length > 0 && (
-          <p className="small">Filtered by: {activeFilters.join(', ')}</p>
-        )}
+        <p className="small">
+          {hint && hint.length && `${capitalize(hint)}. `}
+          {activeFilters && activeFilters.length > 0 && `Filtered by ${activeFilters.join(', ')}. `}
+          {responders && `${formatNumber(responders)} responder${responders > 1 ? 's' : ''}.`}
+        </p>
       </div>
       {loading && <Spinner loading />}
       {!loading && error && <div className="alert alert-warning">Something was wrong.</div>}
