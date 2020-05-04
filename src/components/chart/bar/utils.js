@@ -7,6 +7,7 @@ const defaultLegend = {
   iconSize: 15,
   iconType: 'circle',
   formatter: capitalize,
+  // formatter: (value, entry, index) => console.log(index) || capitalize(value),
 };
 
 export const getWidgetTheme = ({ calc, gridspace, units, iso, isMobileScreen }) => {

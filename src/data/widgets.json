@@ -486,7 +486,7 @@
     "orientation": "horizontal",
     "category": "safety",
     "order": 26,
-    "category_order": ["Increased", "The same", "Decreased", "DON'T KNOW"],
+    "category_order": ["Increased", "The same", "Decreased", "DK/REF"],
     "sort_by": "answer DESC",
     "columns": [
       "increase_in_crime"
@@ -655,6 +655,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 64,
+    "sort_by": "answer DESC",
     "columns": [
       "preferred_agent_open_closed"
     ],
@@ -1320,7 +1321,7 @@
     "slug": "distance-to-nearest-city",
     "title": "Distance to nearest city",
     "hint": null,
-    "published": true,
+    "published": false,
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
