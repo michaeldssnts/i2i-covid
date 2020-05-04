@@ -45,6 +45,7 @@ const Navigation = ({ tabs, currentTab, iso, location, page }) => {
                           activeClassName="-active"
                           exact={true}
                           strict={true}
+                          onClick={handleClick}
                           isActive={(match, location) => location.payload.category === slug}
                         >
                           {name}
