@@ -58,7 +58,7 @@ const Filters = ({ location, filters, resetFilters, setFilter, iso }) => {
     // Updating URL
     replace({
       pathname,
-      search: `?${queryString.stringify(filtersResult)}`
+      search: `?${queryString.stringify(filtersResult)}`,
     });
     handleToggleModal();
   };
@@ -80,7 +80,6 @@ const Filters = ({ location, filters, resetFilters, setFilter, iso }) => {
   const numberOfFilters = Object.keys(filtersResult)
     .map((key) => filtersResult[key].length)
     .reduce((prev, current) => prev + current);
-
 
   return (
     <div className="c-filters">
@@ -127,7 +126,8 @@ const Filters = ({ location, filters, resetFilters, setFilter, iso }) => {
                   </div>
                 ))}
               </div>
-            )))}
+            ))
+          )}
         </form>
       </Modal>
     </div>
