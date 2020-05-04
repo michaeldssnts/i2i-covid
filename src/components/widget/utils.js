@@ -17,7 +17,7 @@ export const parseSingleChart = (data, { calc, columns }) => {
     return obj;
   });
 
-  let categories = map(data, calc === 'average' ? 'label' : 'answer').map((d) => String(d));
+  const categories = map(data, calc === 'average' ? 'label' : 'answer').map((d) => String(d));
 
   return {
     config: {
@@ -60,31 +60,34 @@ export const parseStackedChart = (data, { category_order }) => {
 
 export const parseMultipleStackedChart = (data, { columns }) => {
   const groupedData = groupBy(data, (d) => d.indicator);
-  const widgetData = columns.map((indicator) => {
-    const arr = groupedData[indicator];
-    const obj = {};
+  const widgetData = columns
+    .map((indicator) => {
+      const arr = groupedData[indicator];
+      const obj = {};
 
-    if (!arr) {
-      console.error(`Indicator ${indicator} doesn't exist`);
-      return {};
-    }
+      if (!arr) {
+        console.error(`Indicator ${indicator} doesn't exist`);
+        return null;
+      }
 
-    arr.forEach(({ answer, label, update_date, value }) => {
-      obj[label] = value;
-      obj.answer = answer;
-      obj.indicator = indicator;
-      obj.label = label;
-      obj.update_date = update_date;
-    });
+      arr.forEach(({ answer, label, update_date, value }) => {
+        obj[label] = value;
+        obj.indicator = indicator;
+        obj.label = label;
+        obj.update_date = update_date;
+      });
 
-    return obj;
-  });
+      return obj;
+    })
+    .filter((d) => d);
 
-  const categories = columns.map((column) => {
-    const category = widgetData.find((d) => d.indicator === column);
-    if (category) return category.label;
-    return '';
-  });
+  const categories = columns
+    .map((column) => {
+      const category = data.find((d) => d.indicator === column);
+      if (category) return category.label;
+      return null;
+    })
+    .filter((cat) => cat);
 
   return {
     config: {
@@ -120,7 +123,6 @@ export const parseMultipleChart = (data, { calc, category_order }) => {
 
 export const getWidgetProps = (data, widgetSpec) => {
   const { calc, chart, exclude_chart, category_order, columns } = widgetSpec;
-  console.log(widgetSpec.title, calc, chart, data)
 
   // Deciding not to show some values depending on WidgetSpec
   const dataResult = data.filter((d) => !exclude_chart.includes(d.answer));
