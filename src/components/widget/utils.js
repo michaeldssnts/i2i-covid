@@ -70,7 +70,7 @@ export const parseMultipleStackedChart = (data, { columns }) => {
     }
 
     arr.forEach(({ answer, label, update_date, value }) => {
-      obj[answer] = value;
+      obj[label] = value;
       obj.answer = answer;
       obj.indicator = indicator;
       obj.label = label;
@@ -82,7 +82,7 @@ export const parseMultipleStackedChart = (data, { columns }) => {
 
   const categories = columns.map((column) => {
     const category = widgetData.find((d) => d.indicator === column);
-    if (category) return category.answer;
+    if (category) return category.label;
     return '';
   });
 
@@ -120,6 +120,7 @@ export const parseMultipleChart = (data, { calc, category_order }) => {
 
 export const getWidgetProps = (data, widgetSpec) => {
   const { calc, chart, exclude_chart, category_order, columns } = widgetSpec;
+  console.log(widgetSpec.title, calc, chart, data)
 
   // Deciding not to show some values depending on WidgetSpec
   const dataResult = data.filter((d) => !exclude_chart.includes(d.answer));
