@@ -57,7 +57,8 @@ export const fetchIndicators = (
           VALUES ${valuesQuery}
         ) AS t(answer, indicator, update_date)
       )
-      SELECT b.answer, b.indicator, b.update_date, m.label, b.answer AS value
+      SELECT b.answer, b.indicator, b.update_date, m.label, b.answer AS value,
+        COUNT(b.answer) OVER() as responders
       FROM b
       LEFT JOIN covid_metadata m ON m.field_name = indicator
       ${sortByQuery}
@@ -90,11 +91,16 @@ export const fetchIndicators = (
         FROM b
         LEFT JOIN covid_metadata m ON m.field_name = indicator
       ), d as (
-        SELECT answer, indicator, label, update_date, SUM(${weight}) AS value FROM c
+        SELECT answer, indicator, label, update_date,
+          SUM(${weight}) AS value,
+          count(answer) AS responders
+        FROM c
         WHERE ${whereQuery} ${weight} != 'NaN'
         GROUP BY answer, indicator, update_date, label
       )
-      SELECT d.answer, d.indicator, d.label, d.update_date, (d.value * 100 / SUM(d.value) OVER(PARTITION BY indicator)) as value
+      SELECT d.answer, d.indicator, d.label, d.update_date,
+        (d.value * 100 / SUM(d.value) OVER(PARTITION BY indicator)) as value,
+        SUM(d.responders) OVER() AS responders
       FROM d
       ${sortByQuery}
     `;

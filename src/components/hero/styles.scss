@@ -12,6 +12,7 @@
     text-align: center;
     color: $white;
     margin: 0;
+    padding-bottom: 20px;
 
     @media screen and (min-width: map-get($breakpoints, lg)) {
       font-size: 60px;

@@ -3,10 +3,6 @@
   justify-content: flex-end;
   width: 100%;
 
-  @media screen and (min-width: map-get($breakpoints, lg)) {
-    padding: 20px;
-  }
-
   .display-btn {
     position: relative;
     padding-right: 40px;

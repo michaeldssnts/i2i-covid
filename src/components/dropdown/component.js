@@ -1,23 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Link from 'redux-first-router-link';
+import ReactGA from 'react-ga';
 
-const Dropdown = ({ options, current }) => {
+const Dropdown = ({ options, current, location, page }) => {
   const [isActive, toggleDropdown] = useState(false);
+
+  useEffect(() => {
+    ReactGA.ga('send', 'pageView', page);
+    ReactGA.pageview(window.location.pathname);
+  });
+
   const handleClick = () => {
     toggleDropdown(!isActive);
   };
   return (
     <div className="c-dropdown dropdown">
-      <button
-        className={classnames('btn', { 'dropdown-toggle': options.length > 0 })}
-        onClick={handleClick}
-      >
+      <button className="btn dropdown-toggle" onClick={handleClick}>
         {current.country}
       </button>
       <div
-        className={classnames('dropdown-menu', {
+        className={classnames('dropdown-menu dropdown-menu-center', {
           '-active': isActive,
         })}
       >
@@ -47,6 +51,10 @@ Dropdown.propTypes = {
     country: PropTypes.string.isRequired,
     iso: PropTypes.string.isRequired,
   }),
+  location: PropTypes.shape({
+    pathname: PropTypes.string,
+  }).isRequired,
+  page: PropTypes.string.isRequired,
 };
 
 export default Dropdown;

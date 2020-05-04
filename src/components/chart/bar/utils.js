@@ -1,6 +1,5 @@
 import { colors } from 'components/chart/constants';
 import { capitalize } from 'utils/strings';
-// import { isValidDate, dateFormat } from 'utils/dates';
 import { formatNumber } from 'utils/numbers';
 import { getCurrency } from 'utils/currency';
 
@@ -37,14 +36,6 @@ export const getWidgetTheme = ({ calc, gridspace, units, iso, isMobileScreen }) 
     colors: (category, index) => colors(index),
     xAxis: {
       axisLine: false,
-      // Uncomment in case client has date
-      // tickFormatter: (value) => {
-      //   const valueDate = new Date(value);
-      //   if (isValidDate(valueDate)) {
-      //     return dateFormat(valueDate);
-      //   }
-      //   return capitalize(value);
-      // },
       tickFormatter: capitalize,
       tickLine: false,
       tick: {
@@ -55,20 +46,7 @@ export const getWidgetTheme = ({ calc, gridspace, units, iso, isMobileScreen }) 
     yAxis: {
       width: isMobileScreen ? 60 : 80,
       type: 'number',
-      domain: [
-        0,
-        (dataMax) => {
-          if (calc === 'average') {
-            return Math.round(dataMax);
-          }
-          if (calc === 'percentage') {
-            if (dataMax < 10) return dataMax;
-            if (dataMax > 100) return Math.round(dataMax);
-            return Math.round(dataMax / 10) * 10;
-          }
-          return dataMax;
-        },
-      ],
+      domain: [0, calc === 'percentage' ? 100 : 'auto'],
       tickLine: false,
       axisLine: false,
       tickFormatter: formatNumber,

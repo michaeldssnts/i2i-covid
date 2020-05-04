@@ -1,38 +1,15 @@
 .share-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 46px;
 
-  .label {
-    padding-top: 20px;
-  }
-
-  .share-control {
-    display: flex;
+  .share-controls {
+    background-color: rgba(47, 147, 156, 0.1);
     align-items: center;
-    border: 1px solid rgba(26,28,34,.1);
-    border-radius: 20px;
-    padding: 10px;
+    display: flex;
+    height: 100%;
 
-    > input {
-      flex-grow: 1;
-      overflow: hidden;
-      padding-right: 20px;
-      text-overflow: ellipsis;
-      border: none;
-    }
-
-    .share-buttons {
-      display: flex;
-      align-items: center;
-
-      > a {
-        margin-left: 5px;
-
-        > img {
-          background-color: $color-4;
-          background-position: center;
-          background-size: cover;
-        }
-      }
-    }
     .copy-btn {
       color: $color-1;
       font-size: 13px;
@@ -44,15 +21,7 @@
 
       &:hover {
         background-color: rgba($color-1, 0.1);
-        border-radius: 20px;
       }
     }
-  }
-
-  .modal-button {
-    width: 100%;
-    padding-top: 20px;
-    justify-content: flex-end;
-    display: flex;
   }
 }
