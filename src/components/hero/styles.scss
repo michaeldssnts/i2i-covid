@@ -19,7 +19,13 @@
       line-height: 65px;
     }
   }
+
   @media screen and (min-width: map-get($breakpoints, lg)) {
     height: 520px;
+  }
+
+  .size-text {
+    color: $white;
+    padding: 20px 0;
   }
 }

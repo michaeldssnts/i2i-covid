@@ -9,9 +9,13 @@ import DownloadForm from 'components/download-form';
 import Subscribe from 'components/subscribe';
 import PageSwitch from 'components/page-switch';
 import { fetchCountries } from 'services/countries';
+import { fetchTotalSize } from 'services/indicators';
 
 const Hero = ({ iso, page }) => {
   const [{ data }] = useAxios(fetchCountries());
+  const [{ data: dataSize }] = useAxios(fetchTotalSize(iso));
+  const totalSize = dataSize && dataSize.total_rows;
+
   const countries = data && data.rows ? data.rows : null;
   const current = countries ? countries.find((country) => country.iso === iso) : null;
   const options = countries ? countries.filter((country) => country.iso !== iso) : null;
@@ -51,6 +55,11 @@ const Hero = ({ iso, page }) => {
             </MediaQuery>
           </div>
         )}
+        <div className="row justify-content-end">
+          <div className="col-auto">
+            <p className="size-text">Sample size: {totalSize}</p>
+          </div>
+        </div>
       </div>
     </section>
   );
