@@ -22,7 +22,7 @@ const Widget = (widgetSpec) => {
   // For widget debugging
   if (error) console.error(`For widget ${title}`, error.response.data);
 
-  const responders = data && data.rows[0].responders;
+  const responders = !!(data && data.rows.length) && data.rows[0].responders;
 
   return (
     <div className="c-widget">
