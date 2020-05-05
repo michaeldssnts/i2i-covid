@@ -10,6 +10,7 @@ import Subscribe from 'components/subscribe';
 import PageSwitch from 'components/page-switch';
 import { fetchCountries } from 'services/countries';
 import { fetchTotalSize } from 'services/indicators';
+import { formatNumber } from 'utils/numbers';
 
 const Hero = ({ iso, page }) => {
   const [{ data }] = useAxios(fetchCountries());
@@ -58,7 +59,7 @@ const Hero = ({ iso, page }) => {
         {page === 'Country' && (
           <div className="row justify-content-end">
             <div className="col-auto">
-              <p className="size-text">Sample size: {totalSize}</p>
+              <p className="size-text">Sample size: {formatNumber(totalSize)}</p>
             </div>
           </div>
         )}
