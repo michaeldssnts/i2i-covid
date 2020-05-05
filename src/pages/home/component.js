@@ -3,11 +3,16 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import Link from 'redux-first-router-link';
 import ReactGA from 'react-ga';
+import useAxios from 'axios-hooks';
 import Header from 'components/header';
+import Spinner from 'components/spinner';
 
-import countries from './constants';
+import { fetchCountries } from 'services/countries';
 
 const HomePage = ({ page, location }) => {
+
+  const [{ data, loading }] = useAxios(fetchCountries());
+  const countries = data && data.rows && !loading && data.rows;
   useEffect(() => {
     ReactGA.ga('send', 'pageView', location);
   }, [location]);
@@ -36,24 +41,28 @@ const HomePage = ({ page, location }) => {
             <div className="welcome-bottom" />
           </article>
           <nav className="l-homepage-countries-nav">
-            <ul>
-              {countries.map((country) => (
-                <li key={country.label}>
-                  {country.iso ? (
-                    <Link
-                      to={{
-                        type: 'COUNTRY',
-                        payload: { iso: country.iso, category: 'summary' },
-                      }}
-                    >
-                      {country.label}
-                    </Link>
-                  ) : (
-                    <span>{country.label}</span>
-                  )}
-                </li>
-              ))}
-            </ul>
+            {!countries ? (
+              <Spinner />
+            ) : (
+              <ul>
+                {countries.map((country) => (
+                  <li key={country.country}>
+                    {country.iso ? (
+                      <Link
+                        to={{
+                          type: 'COUNTRY',
+                          payload: { iso: country.iso, category: 'summary' },
+                        }}
+                      >
+                        {country.country}
+                      </Link>
+                    ) : (
+                      <span>{country.country}</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            )}
           </nav>
         </div>
       </div>
