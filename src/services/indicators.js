@@ -118,4 +118,12 @@ export const fetchAllData = ({ format = 'json' }) => {
   return cartoApi(query, format);
 };
 
+export const fetchTotalSize = (iso) => {
+  const query = `
+  SELECT update_date
+  FROM ${process.env.REACT_APP_DATA_TABLENAME}
+  WHERE country_iso = '${iso}'`;
+  return cartoApi(query);
+};
+
 export default { fetchIndicators, fetchAllData };
