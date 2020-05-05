@@ -1269,7 +1269,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "demographic",
-    "order": 81,
+    "order": 80,
     "sort_by": "answer DESC",
     "columns": [
       "ur"
@@ -1354,7 +1354,7 @@
     "gridspace": "one",
     "orientation": "vertical",
     "category": "demographic",
-    "order": 80,
+    "order": 81,
     "category_order": ["Pre-primary/Other/No formal/Dont know/Refused", "Any primary / Religious", "Some secondary", "Secondary complete", "Any higher"],
     "sort_by": "answer ASC",
     "columns": [
@@ -1373,7 +1373,7 @@
     "exclude_query": [" ", "nan", "DK/Refused"],
     "exclude_chart": [],
     "units": "%",
-    "gridspace": "half",
+    "gridspace": "one",
     "orientation": "horizontal",
     "category": "demographic",
     "order": 78,
