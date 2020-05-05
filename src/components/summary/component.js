@@ -4,9 +4,9 @@ import Link from 'redux-first-router-link';
 import Widgets from 'components/widgets';
 import ReactGA from 'react-ga';
 
-const Summary = ({ iso, categories, page, location }) => {
+const Summary = ({ iso, categories, location }) => {
   useEffect(() => {
-    ReactGA.ga('send', 'pageView', location);
+    ReactGA.ga('send', 'pageView', location.pathname);
   }, [location]);
 
   return (
@@ -48,7 +48,6 @@ const Summary = ({ iso, categories, page, location }) => {
 };
 
 Summary.propTypes = {
-  page: PropTypes.string.isRequired,
   location: PropTypes.shape({
     pathname: PropTypes.string,
   }).isRequired,

@@ -8,11 +8,11 @@ import Filters from 'components/filters';
 import Button from 'components/button';
 import ReactGA from 'react-ga';
 
-const Navigation = ({ tabs, currentTab, iso, location, page }) => {
+const Navigation = ({ tabs, currentTab, iso, location }) => {
   const [isActive, toggleDropdown] = useState(false);
 
   useEffect(() => {
-    ReactGA.ga('send', 'pageView', location);
+    ReactGA.ga('send', 'pageView', location.pathname);
   }, [location]);
 
   const handleClick = () => {
@@ -96,7 +96,6 @@ Navigation.propTypes = {
     }),
     pathname: PropTypes.string,
   }).isRequired,
-  page: PropTypes.string.isRequired,
 };
 
 export default Navigation;

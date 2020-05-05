@@ -4,11 +4,11 @@ import classnames from 'classnames';
 import Link from 'redux-first-router-link';
 import ReactGA from 'react-ga';
 
-const Dropdown = ({ options, current, location, page }) => {
+const Dropdown = ({ options, current, location }) => {
   const [isActive, toggleDropdown] = useState(false);
 
   useEffect(() => {
-    ReactGA.ga('send', 'pageView', location);
+    ReactGA.ga('send', 'pageView', location.pathname);
   }, [location]);
 
   const handleClick = () => {
@@ -53,7 +53,6 @@ Dropdown.propTypes = {
   location: PropTypes.shape({
     pathname: PropTypes.string,
   }).isRequired,
-  page: PropTypes.string.isRequired,
 };
 
 export default Dropdown;
