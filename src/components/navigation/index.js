@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import Component from './component';
 
 const mapStateToProps = (state) => ({
-  location: state.location,
+  location: state.location.pathname,
   page: state.page,
 });
 

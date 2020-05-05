@@ -9,9 +9,8 @@ import countries from './constants';
 
 const HomePage = ({ page, location }) => {
   useEffect(() => {
-    ReactGA.ga('send', 'pageView', page);
-    ReactGA.pageview(window.location.pathname);
-  }, [location, page]);
+    ReactGA.ga('send', 'pageView', location);
+  }, [location]);
 
   return (
     <section className="l-homepage">
