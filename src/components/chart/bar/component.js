@@ -27,7 +27,7 @@ const UIBarChart = ({ data, config, widgetSpec }) => {
     legend,
     colors: defaultColors,
     bar,
-  } = getWidgetTheme({ ...widgetSpec, isMobileScreen });
+  } = getWidgetTheme({ data, ...widgetSpec, isMobileScreen, widgetSpec });
   const { groupBy, categories, colors: colorsConfig } = config;
   const colors = colorsConfig || defaultColors;
   const defaultBarProps = {};

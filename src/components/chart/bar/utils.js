@@ -10,8 +10,9 @@ const defaultLegend = {
   // formatter: (value, entry, index) => console.log(index) || capitalize(value),
 };
 
-export const getWidgetTheme = ({ calc, gridspace, units, iso, isMobileScreen }) => {
+export const getWidgetTheme = ({ data, chart, calc, gridspace, units, iso, isMobileScreen }) => {
   let legend = { ...defaultLegend };
+  let xAxis;
 
   if (gridspace === 'one' && !isMobileScreen) {
     legend = {
@@ -26,6 +27,26 @@ export const getWidgetTheme = ({ calc, gridspace, units, iso, isMobileScreen }) 
     };
   }
 
+  if (chart === 'multiple-stacked-bar') {
+    xAxis = {
+      tickFormatter: 0,
+      label: data[0].update_date,
+      tick: false,
+    };
+  }
+
+  if (chart !== 'multiple-stacked-bar') {
+    xAxis = {
+      axisLine: false,
+      tickFormatter: capitalize,
+      tickLine: false,
+      tick: {
+        fontSize: '13px',
+        fill: '#022732',
+      },
+    };
+  }
+
   return {
     layout: { width: '100%', height: 500 },
     cartesianGrid: {
@@ -35,15 +56,7 @@ export const getWidgetTheme = ({ calc, gridspace, units, iso, isMobileScreen }) 
       vertical: false,
     },
     colors: (category, index) => colors(index),
-    xAxis: {
-      axisLine: false,
-      tickFormatter: capitalize,
-      tickLine: false,
-      tick: {
-        fontSize: '13px',
-        fill: '#022732',
-      },
-    },
+    xAxis,
     yAxis: {
       width: isMobileScreen ? 60 : 80,
       type: 'number',
