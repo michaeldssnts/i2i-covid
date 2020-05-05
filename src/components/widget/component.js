@@ -22,7 +22,7 @@ const Widget = (widgetSpec) => {
   // For widget debugging
   if (error) console.error(`For widget ${title}`, error.response.data);
 
-  const responders = !!(data && data.rows.length) && data.rows[0].responders;
+  // const responders = !!(data && data.rows.length) && data.rows[0].responders;
 
   return (
     <div className="c-widget">
@@ -31,7 +31,7 @@ const Widget = (widgetSpec) => {
         <p className="small">
           {hint && hint.length && `${capitalize(hint)}. `}
           {activeFilters && activeFilters.length > 0 && `Filtered by ${activeFilters.join(', ')}. `}
-          {responders && `${formatNumber(responders)} responder${responders > 1 ? 's' : ''}.`}
+          {/*responders && `${formatNumber(responders)} responder${responders > 1 ? 's' : ''}.`*/}
         </p>
       </div>
       {loading && <Spinner loading />}
