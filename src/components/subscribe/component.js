@@ -37,7 +37,7 @@ const Subscribe = () => {
         actionsComponent={() => (
           <div className="c-filters-action-buttons">
             <Button className="-border-color-1" type="submit" onClick={toggleModal}>
-              Notify me
+              Cancel
             </Button>
           </div>
         )}
@@ -84,6 +84,11 @@ const Subscribe = () => {
                     />
                   </div>
                 )}
+                <div>
+                  <Button className="c-button -color-1" type="submit">
+                    Notify me
+                  </Button>
+                </div>
               </div>
             </form>
           )}
