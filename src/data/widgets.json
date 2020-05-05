@@ -47,7 +47,7 @@
     "orientation": "horizontal",
     "category": "health",
     "order": 6,
-    "category_order": ["YES", "NO", "DK/REF"],
+    "category_order": ["YES", "NO", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "access_to_medicine"
@@ -119,7 +119,7 @@
     "orientation": "horizontal",
     "category": "health",
     "order": 5,
-    "category_order": ["Lot more", "Little more", "The same", "Little less", "Much less", "DK/REF"],
+    "category_order": ["Lot more", "Little more", "The same", "Little less", "Much less", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "change_in_cost_of_medicine"
@@ -141,7 +141,7 @@
     "orientation": "horizontal",
     "category": "food_security",
     "order": 20,
-    "category_order": ["Lot more", "Little more", "The same", "Little less", "Much less", "DK/REF"],
+    "category_order": ["Lot more", "Little more", "The same", "Little less", "Much less", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "relative_food_availability"
@@ -205,7 +205,7 @@
     "orientation": "horizontal",
     "category": "health",
     "order": 4,
-    "category_order": ["Easier", "The same", "Harder", "DK/REF"],
+    "category_order": ["Easier", "The same", "Harder", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "change_in_ease_of_getting_contraceptives"
@@ -254,7 +254,7 @@
     "orientation": "horizontal",
     "category": "health",
     "order": 9,
-    "category_order": ["YES", "No more than usual", "NO", "DK/REF"],
+    "category_order": ["YES", "No more than usual", "NO", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "increase_in_household_care_due_to_covid19"
@@ -379,7 +379,7 @@
     "orientation": "horizontal",
     "category": "health",
     "order": 8,
-    "category_order": ["Very likely", "Little likely", "Not at all likely", "DK/REF"],
+    "category_order": ["Very likely", "Little likely", "Not at all likely", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "likeliness_to_seek_medical_attention_mild_symptoms"
@@ -443,7 +443,7 @@
     "orientation": "horizontal",
     "category": "health",
     "order": 11,
-    "category_order": ["At home with parent", "At home with relative or friend", "At home by themselves", "Go with family member to work", "Outside the home with friend or relative", "Daycare / Childcare", "Other [specify]", "DK/REF", "You have no children"],
+    "category_order": ["At home with parent", "At home with relative or friend", "At home by themselves", "Go with family member to work", "Outside the home with friend or relative", "Daycare / Childcare", "Other [specify]", "DK/Refused", "You have no children"],
     "sort_by": "value ASC",
     "columns": [
       "where_children_stay_when_school_is_closed"
@@ -486,7 +486,7 @@
     "orientation": "horizontal",
     "category": "safety",
     "order": 26,
-    "category_order": ["Increased", "The same", "Decreased", "DK/REF"],
+    "category_order": ["Increased", "The same", "Decreased", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "increase_in_crime"
@@ -550,7 +550,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 57,
-    "category_order": ["7 days worth of rice", "Equivalent value in cash", "INDIFFERENT / DON'T MIND", "DK/REF"],
+    "category_order": ["7 days worth of rice", "Equivalent value in cash", "INDIFFERENT / DON'T MIND", "DK/Refused"],
     "sort_by": "value ASC",
     "columns": [
       "govt_support_preference"
@@ -593,7 +593,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 61,
-    "category_order": ["Always", "Often", "Sometimes", "Never", "THERE IS NO EMERGENCY GOVERNMENT SUPPORT", "DK/REF"],
+    "category_order": ["Always", "Often", "Sometimes", "Never", "THERE IS NO EMERGENCY GOVERNMENT SUPPORT", "DK/Refused"],
     "sort_by": "answer ASC",
     "columns": [
       "need_to_pay_bribes_to_get_government_support"
@@ -676,7 +676,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 65,
-    "category_order": ["More", "The same", "Less", "DK/REF", "Don't use agent"],
+    "category_order": ["More", "The same", "Less", "DK/Refused", "Don't use agent"],
     "sort_by": "answer DESC",
     "columns": [
       "change_in_agent_fee"
@@ -698,7 +698,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 66,
-    "category_order": ["YES", "NO", "DK/REF", "I DON'T DO THIS"],
+    "category_order": ["YES", "NO", "DK/Refused", "I DON'T DO THIS"],
     "sort_by": "answer DESC",
     "columns": [
       "difficulty_sending_receiving_cash"
@@ -903,7 +903,7 @@
     "orientation": "horizontal",
     "category": "earnings",
     "order": 37,
-    "category_order": ["Bigger", "Stayed the Same", "Smaller", "DON'T MAKE ANY", "DK/REF"],
+    "category_order": ["Bigger", "Stayed the Same", "Smaller", "DON'T MAKE ANY", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "one_yr_income_comparison"
@@ -946,7 +946,7 @@
     "orientation": "horizontal",
     "category": "financials",
     "order": 50,
-    "category_order": ["Very possible", "Somewhat possible", "Not very possible", "Not at all possible", "DK/REF"],
+    "category_order": ["Very possible", "Somewhat possible", "Not very possible", "Not at all possible", "DK/Refused"],
     "sort_by": "answer ASC",
     "columns": [
       "finhealth_possibility"
@@ -1011,7 +1011,7 @@
     "orientation": "horizontal",
     "category": "earnings",
     "order": 39,
-    "category_order": ["Casual labour", "Wage or salary job", "Running own business / self employed", "Farming - horticulture or raising livestock", "Renting land - house / rooms or equipment", "Money from Spouse / Friends or Family", "Investments", "Pension", "Money from Government / NGO", "Other [specify]", "DK/REF"],
+    "category_order": ["Casual labour", "Wage or salary job", "Running own business / self employed", "Farming - horticulture or raising livestock", "Renting land - house / rooms or equipment", "Money from Spouse / Friends or Family", "Investments", "Pension", "Money from Government / NGO", "Other [specify]", "DK/Refused"],
     "sort_by": "answer ASC",
     "columns": [
       "main_income_earner_primary_income_source"
@@ -1033,7 +1033,7 @@
     "orientation": "horizontal",
     "category": "earnings",
     "order": 41,
-    "category_order": ["More", "The same", "Less", "DK/REF", "Don't hire workers"],
+    "category_order": ["More", "The same", "Less", "DK/Refused", "Don’t hire workers"],
     "sort_by": "answer DESC",
     "columns": [
       "farm_labour_changes"
@@ -1055,7 +1055,7 @@
     "orientation": "horizontal",
     "category": "earnings",
     "order": 42,
-    "category_order": ["Much easier", "Somewhat easier", "The same", "Somewhat more difficult", "Much more difficult", "DK/REF"],
+    "category_order": ["Much easier", "Somewhat easier", "The same", "Somewhat more difficult", "Much more difficult", "DK/Refused"],
     "sort_by": "answer DESC",
     "columns": [
       "ease_of_selling_crops"
@@ -1131,6 +1131,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "earnings",
+    "sort_by": "answer DESC",
     "order": 45,
     "columns": [
       "main_income_earner_jobs_change"
@@ -1268,7 +1269,7 @@
     "gridspace": "half",
     "orientation": "horizontal",
     "category": "demographic",
-    "order": 81,
+    "order": 80,
     "sort_by": "answer DESC",
     "columns": [
       "ur"
@@ -1353,7 +1354,7 @@
     "gridspace": "one",
     "orientation": "vertical",
     "category": "demographic",
-    "order": 80,
+    "order": 81,
     "category_order": ["Pre-primary/Other/No formal/Dont know/Refused", "Any primary / Religious", "Some secondary", "Secondary complete", "Any higher"],
     "sort_by": "answer ASC",
     "columns": [
@@ -1369,14 +1370,14 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
-    "exclude_query": [" ", "nan"],
+    "exclude_query": [" ", "nan", "DK/Refused"],
     "exclude_chart": [],
     "units": "%",
-    "gridspace": "half",
+    "gridspace": "one",
     "orientation": "horizontal",
     "category": "demographic",
     "order": 78,
-    "category_order": ["Single", "Unmarried, in a relationship", "Married", "DK/REF"],
+    "category_order": ["Single", "Unmarried, in a relationship", "Married"],
     "sort_by": "answer DESC",
     "columns": [
       "relationship_status"

@@ -12,9 +12,8 @@ const Navigation = ({ tabs, currentTab, iso, location, page }) => {
   const [isActive, toggleDropdown] = useState(false);
 
   useEffect(() => {
-    ReactGA.ga('send', 'pageView', page);
-    ReactGA.pageview(window.location.pathname);
-  }, [location, page]);
+    ReactGA.ga('send', 'pageView', location);
+  }, [location]);
 
   const handleClick = () => {
     toggleDropdown(!isActive);
