@@ -5,6 +5,7 @@ export const routes = {
   [NOT_FOUND]: '/404',
   COUNTRY: '/country/:iso/:category',
   WIDGET: '/widget/:iso/:widget_slug',
+  RESOURCES: '/resources',
 };
 
 export default routes;

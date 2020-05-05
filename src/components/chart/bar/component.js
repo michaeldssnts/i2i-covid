@@ -16,7 +16,7 @@ import { useMediaQuery } from 'react-responsive';
 import { getWidgetTheme } from './utils';
 
 const UIBarChart = ({ data, config, widgetSpec }) => {
-  const isMobileScreen = useMediaQuery({ query: '(max-device-width: 1024px)' });
+  const isMobileScreen = useMediaQuery({ query: '(max-width: 1024px)' });
   const { chart: chartType } = widgetSpec;
   const {
     layout,

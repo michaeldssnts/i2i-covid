@@ -1,0 +1,32 @@
+
+.c-select {
+
+  .react-select__control {
+    border: none;
+    border-radius: 0;
+    background-color: rgba($color-4, 0.1);
+    height: 46px;
+
+    .react-select__value-container {
+      line-height: 30px;
+      flex-grow: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: $color-3;
+    }
+
+    .react-select__indicator-separator {
+      padding: 10px;
+      display: none;
+    }
+
+    .react-select__dropdown-indicator {
+      svg {
+        fill: $black;
+      }
+    }
+  }
+  .react-select__menu {
+    background-color: $white;
+  }
+}

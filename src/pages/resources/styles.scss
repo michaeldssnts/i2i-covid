@@ -1,15 +1,15 @@
-.l-country {
+.l-resources {
 
-  .country-content {
+  .resources-content {
     position: relative;
-    min-height: 400px;
 
     @media screen and (min-width: map-get($breakpoints, xlg)) {
       margin-top: -100px;
+      min-height: 300px; //Remove when there is content
     }
   }
 
-  .country-content-decoration {
+  .resources-content-decoration {
     @media screen and (min-width: $xlg) {
       position: relative;
       height: 0px;
@@ -39,7 +39,7 @@
     }
   }
 
-  .country-info {
+  .resources-info {
     padding: 50px 0;
   }
 }
