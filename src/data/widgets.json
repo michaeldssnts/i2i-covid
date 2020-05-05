@@ -734,7 +734,7 @@
     "summary": false,
     "weight": "weight_ind",
     "calc": "percentage",
-    "exclude_query": [" ", "nan"],
+    "exclude_query": [" ", "nan", ""],
     "exclude_chart": ["No"],
     "units": "%",
     "gridspace": "one",
