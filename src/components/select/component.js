@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import ReactSelect from 'react-select';
 import PropTypes from 'prop-types';
 
 const Select = ({ options, placeholder, defaultValue }) => {
   const [selectedOption, setOption] = useState(defaultValue);
 
-  const handleChange = (value) => {
+  const handleChange = useCallback((value) => {
     setOption(value);
-  };
+  }, []);
 
   return (
     <ReactSelect
       className="c-select"
       classNamePrefix="react-select"
       options={options}
-      onChange={() => handleChange}
+      onChange={handleChange}
       placeholder={placeholder}
       value={selectedOption}
       defaultValue={defaultValue}

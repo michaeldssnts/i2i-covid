@@ -71,17 +71,19 @@ const Subscribe = () => {
                     type="email"
                   />
                 </div>
-                <div className="form-fields">
-                  <label>Country </label>
-                  <Select
-                    name="cm-f-tjdudju"
-                    aria-label="Country"
-                    id="fieldtjdudju"
-                    maxLength="200"
-                    options={countryOptions}
-                    placeholder="Subscribe to an specific country"
-                  />
-                </div>
+                {!!(countryOptions && countryOptions.length) && (
+                  <div className="form-fields">
+                    <label>Country </label>
+                    <Select
+                      name="cm-f-tjdudju"
+                      aria-label="Country"
+                      id="fieldtjdudju"
+                      maxLength="200"
+                      options={countryOptions}
+                      placeholder="Subscribe to an specific country"
+                    />
+                  </div>
+                )}
               </div>
             </form>
           )}
