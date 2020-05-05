@@ -37,7 +37,7 @@ const Subscribe = () => {
         actionsComponent={() => (
           <div className="c-filters-action-buttons">
             <Button className="-border-color-1" type="submit" onClick={toggleModal}>
-              Notify me
+              Cancel
             </Button>
           </div>
         )}
@@ -71,16 +71,23 @@ const Subscribe = () => {
                     type="email"
                   />
                 </div>
-                <div className="form-fields">
-                  <label>Country </label>
-                  <Select
-                    name="cm-f-tjdudju"
-                    aria-label="Country"
-                    id="fieldtjdudju"
-                    maxLength="200"
-                    options={countryOptions}
-                    placeholder="Subscribe to an specific country"
-                  />
+                {!!(countryOptions && countryOptions.length) && (
+                  <div className="form-fields">
+                    <label>Country </label>
+                    <Select
+                      name="cm-f-tjdudju"
+                      aria-label="Country"
+                      id="fieldtjdudju"
+                      maxLength="200"
+                      options={countryOptions}
+                      placeholder="Subscribe to an specific country"
+                    />
+                  </div>
+                )}
+                <div>
+                  <Button className="c-button -color-1" type="submit">
+                    Notify me
+                  </Button>
                 </div>
               </div>
             </form>

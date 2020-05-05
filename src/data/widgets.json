@@ -981,6 +981,7 @@
     "hint": "past two weeks (average, excludes not applicable)",
     "published": true,
     "summary": false,
+    "country": ["KEN"],
     "weight": "weight_hh",
     "calc": "average",
     "exclude_query": ["null", 0, 8, 9, 88, 99, 888, 999, 8888, 9999, 88888, 99999],

@@ -8,7 +8,7 @@ import Spinner from 'components/spinner';
 import { capitalize } from 'utils/strings';
 import { fetchIndicators } from 'services/indicators';
 import { getWidgetProps } from './utils.js';
-import { formatNumber } from 'utils/numbers';
+// import { formatNumber } from 'utils/numbers';
 
 const Widget = (widgetSpec) => {
   const { title, slug, filters, hint } = widgetSpec;
