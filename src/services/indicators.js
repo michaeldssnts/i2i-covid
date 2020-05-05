@@ -1,7 +1,7 @@
 import cartoApi from 'utils/carto-api';
 
 export const fetchIndicators = (
-  { columns, weight, calc, iso, exclude_query, sort_by },
+  { title, columns, weight, calc, iso, exclude_query, sort_by },
   filters = {}
 ) => {
   let query;
@@ -68,9 +68,7 @@ export const fetchIndicators = (
     const valuesQuery = columns
       .map((column) => `(a.${column}, '${column}', a.${weight}, a.update_date)`)
       .join(', ');
-    const undefinedValues = exclude_query
-      .filter((value) => value && String(value).toLowerCase() !== 'null')
-      .map((param) => `'${param}'`);
+    const undefinedValues = exclude_query.map((param) => `'${param}'`);
     const whereQuery = undefinedValues.length
       ? `answer NOT IN (${undefinedValues.join(',')}) AND`
       : '';
