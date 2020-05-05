@@ -55,11 +55,13 @@ const Hero = ({ iso, page }) => {
             </MediaQuery>
           </div>
         )}
-        <div className="row justify-content-end">
-          <div className="col-auto">
-            <p className="size-text">Sample size: {totalSize}</p>
+        {page === 'Country' && (
+          <div className="row justify-content-end">
+            <div className="col-auto">
+              <p className="size-text">Sample size: {totalSize}</p>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );
