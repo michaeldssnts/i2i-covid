@@ -9,12 +9,12 @@ import Spinner from 'components/spinner';
 
 import { fetchCountries } from 'services/countries';
 
-const HomePage = ({ page, location }) => {
-
+const HomePage = ({ location }) => {
   const [{ data, loading }] = useAxios(fetchCountries());
   const countries = data && data.rows && !loading && data.rows;
+
   useEffect(() => {
-    ReactGA.ga('send', 'pageView', location);
+    ReactGA.pageview(location.pathname);
   }, [location]);
 
   return (
@@ -71,7 +71,6 @@ const HomePage = ({ page, location }) => {
 };
 
 HomePage.propTypes = {
-  page: PropTypes.string.isRequired,
   location: PropTypes.shape({
     pathname: PropTypes.string,
   }).isRequired,

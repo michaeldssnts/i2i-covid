@@ -12,7 +12,7 @@ const DownloadForm = () => (
       target="_blank"
       rel="noopener noreferrer"
     >
-      Download here
+      Download
     </a>
   </div>
 );
