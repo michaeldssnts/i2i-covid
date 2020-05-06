@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import ReactGA from 'react-ga';
 import useAxios from 'axios-hooks';
 import Button from 'components/button';
 import Modal from 'components/modal';
@@ -23,6 +24,15 @@ const Subscribe = () => {
         };
       })
     : [];
+
+  useEffect(() => {
+    if (isOpen) {
+      ReactGA.event({
+        category: 'UI',
+        action: 'Open subscribe form',
+      });
+    }
+  });
 
   return (
     <div className="c-subscribe">

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import MediaQuery from 'react-responsive';
@@ -6,14 +6,9 @@ import { breakpoints } from 'utils/responsive';
 import { NavLink } from 'redux-first-router-link';
 import Filters from 'components/filters';
 import Button from 'components/button';
-import ReactGA from 'react-ga';
 
-const Navigation = ({ tabs, currentTab, iso, location }) => {
+const Navigation = ({ tabs, currentTab, iso }) => {
   const [isActive, toggleDropdown] = useState(false);
-
-  useEffect(() => {
-    ReactGA.ga('send', 'pageView', location.pathname);
-  }, [location]);
 
   const handleClick = () => {
     toggleDropdown(!isActive);
@@ -90,12 +85,6 @@ Navigation.propTypes = {
   iso: PropTypes.string.isRequired,
   tabs: PropTypes.array.isRequired,
   currentTab: PropTypes.string.isRequired,
-  location: PropTypes.shape({
-    payload: PropTypes.shape({
-      category: PropTypes.string,
-    }),
-    pathname: PropTypes.string,
-  }).isRequired,
 };
 
 export default Navigation;

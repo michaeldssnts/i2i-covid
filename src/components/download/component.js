@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ReactGA from 'react-ga';
 import axios from 'axios';
 import { fetchAllData } from 'services/indicators';
 import Button from 'components/button';
@@ -12,6 +13,10 @@ const DownloadData = () => {
     axios.get(fetchAllData({ format: 'csv' })).then(({ data }) => {
       magicDownload(data, `data-${Date.now()}.csv`);
       setLoading(false);
+    });
+    ReactGA.event({
+      category: 'UI',
+      action: 'Request download data',
     });
   };
 

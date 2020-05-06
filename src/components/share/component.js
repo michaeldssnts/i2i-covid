@@ -1,6 +1,6 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
-
+import ReactGA from 'react-ga';
 import Modal from 'components/modal';
 import Button from 'components/button';
 import FacebookIcon from './icons/social-facebook-green.svg';
@@ -38,6 +38,15 @@ const Share = ({ slug, iso, query }) => {
   const toggleModal = () => {
     setState({ isOpen: !isOpen });
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      ReactGA.event({
+        category: 'UI',
+        action: 'Share modal is open',
+      });
+    }
+  });
 
   return (
     <div className="c-share">

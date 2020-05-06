@@ -1,14 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import Link from 'redux-first-router-link';
 import Widgets from 'components/widgets';
-import ReactGA from 'react-ga';
 
 const Summary = ({ iso, categories, location }) => {
-  useEffect(() => {
-    ReactGA.ga('send', 'pageView', location.pathname);
-  }, [location]);
-
   return (
     <section className="c-summary">
       <div className="row">
