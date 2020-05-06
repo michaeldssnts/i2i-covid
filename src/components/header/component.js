@@ -12,7 +12,7 @@ import logo from './logo.svg';
 
 const Header = ({ page }) => (
   <header className="c-header">
-    {page !== 'Home' && <Disclaimer />}
+    <Disclaimer />
     <div className="container">
       <div className="row">
         <div className="col-sm-12 col-md-6">
