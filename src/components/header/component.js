@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import MediaQuery from 'react-responsive';
 import { breakpoints } from 'utils/responsive';
+import Disclaimer from 'components/disclaimer';
 import Subscribe from 'components/subscribe';
 import DownloadForm from 'components/download-form';
 import PageSwitch from 'components/page-switch';
@@ -11,6 +12,7 @@ import logo from './logo.svg';
 
 const Header = ({ page }) => (
   <header className="c-header">
+    <Disclaimer />
     <div className="container">
       <div className="row">
         <div className="col-sm-12 col-md-6">
