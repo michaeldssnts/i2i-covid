@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
+import ReactGA from 'react-ga';
+import useAxios from 'axios-hooks';
 
 import Header from 'components/header';
 import Hero from 'components/hero';
@@ -9,14 +11,19 @@ import Navigation from 'components/navigation';
 import CardInfo from 'components/card';
 import Summary from 'components/summary';
 import { fetchCategories } from 'services/categories';
-import useAxios from 'axios-hooks';
 
-const CountryPage = ({ iso, current, page }) => {
+const CountryPage = ({ page, location }) => {
+  const { payload, pathname } = location;
+  const { iso, category: current } = payload;
   const [{ data, loading }] = useAxios(fetchCategories());
   const categories = data && data.rows ? data.rows : [];
   const { name, description } = categories.find(({ slug }) => slug === current) || {
     name: 'Summary',
   };
+
+  useEffect(() => {
+    ReactGA.pageview(pathname);
+  }, [pathname]);
 
   return (
     <div className="l-country">
@@ -56,9 +63,14 @@ const CountryPage = ({ iso, current, page }) => {
 };
 
 CountryPage.propTypes = {
-  iso: PropTypes.string.isRequired,
-  current: PropTypes.string.isRequired,
   page: PropTypes.string.isRequired,
+  location: PropTypes.shape({
+    payload: PropTypes.shape({
+      iso: PropTypes.string,
+      category: PropTypes.string,
+    }),
+    pathname: PropTypes.string,
+  }).isRequired,
 };
 
 export default CountryPage;

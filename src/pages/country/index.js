@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import Component from './component';
 
 const mapStateToProps = (state) => ({
-  current: state.location.payload.category,
-  iso: state.location.payload.iso,
+  location: state.location,
   page: state.page,
 });
 

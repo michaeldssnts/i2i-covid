@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import ReactGA from 'react-ga';
 import { Provider } from 'react-redux';
@@ -7,17 +7,16 @@ import Pages from './pages';
 
 import 'styles/index.scss';
 
+ReactGA.initialize(`${process.env.REACT_APP_GOOGLE_ANALYTICS_TOKEN}`, {
+  debug: process.env !== 'production',
+});
+
 const { store } = configureStore();
 
-const App = () => {
-  useEffect(() => {
-    ReactGA.initialize(`${process.env.REACT_APP_GOOGLE_ANALYTCIS_TOKEN}`, { debug: true });
-  });
-  return (
-    <Provider store={store}>
-      <Pages className="l-pages" />
-    </Provider>
-  );
-};
+const App = () => (
+  <Provider store={store}>
+    <Pages className="l-pages" />
+  </Provider>
+);
 
 ReactDOM.render(<App />, document.getElementById('root'));
